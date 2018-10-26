@@ -414,9 +414,9 @@ p {
 }
 
 .object__container--satellite {
-  -webkit-animation: float 60s infinite linear both alternate;
-  -moz-animation: float 60s infinite linear both alternate;
-  animation: float 60s infinite linear both alternate;
+  -webkit-animation: float 60s infinite linear both alternate-reverse;
+  -moz-animation: float 60s infinite linear both alternate-reverse;
+  animation: float 60s infinite linear both alternate-reverse;
 
   left: calc(65% + 130px);
   position: absolute;
@@ -434,23 +434,15 @@ p {
 }
 
 .object__container--astronaut {
-  -webkit-animation: float 10s infinite linear both alternate-reverse;
-  -moz-animation: float 10s infinite linear both alternate-reverse;
-  animation: float 10s infinite linear both alternate-reverse;
+  -webkit-animation: float 5s infinite ease-in-out both alternate;
+  -moz-animation: float 5s infinite ease-in-out both alternate;
+  animation: float 5s infinite ease-in-out both alternate;
 
   left: 50%;
   position: absolute;
   top: 50%;
   will-change: transform;
   z-index: 15px;
-}
-
-.astronaut {
-  -webkit-animation: rotate 200s infinite linear both alternate;
-  -moz-animation: rotate 200s infinite linear both alternate;
-  animation: rotate 200s infinite linear both alternate;
-
-  will-change: transform;
 }
 
 .rocket {
