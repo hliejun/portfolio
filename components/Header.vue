@@ -4,27 +4,27 @@
       <amp-img class='avatar__image' v-if='splash' src='/images/profile.png' width='50' height='50'/>
     </nuxt-link>
     <div class='logo' v-if='logo'>
-      <button class='logo__button link'>
+      <div class='logo__button link'>
         <nuxt-link class='logo__content' v-bind:to='logo.link'>
           <span v-if='logo.label'>{{logo.label}}</span>
         </nuxt-link>
-      </button>
+      </div>
     </div>
     <div id='menu' class='menu'>
       <div id='panel' class='menu__panel hidden'>
         <div class='menu__content'>
           <div class='links--mobile'>
-            <button class='link' v-for='link in links'>
+            <div class='link' v-for='link in links'>
               <div class='card link__container'>
                 <nuxt-link class='code link__content' v-bind:to='link.url'>
                   {{ link.label }}
                 </nuxt-link>
               </div>
-            </button>
+            </div>
           </div>
         </div>
       </div>
-      <button class='card button menu__button' on="tap:
+      <div class='card button menu__button' on="tap:
         close.toggleVisibility,
         hamburger.toggleVisibility,
         menu.toggleClass(class='menu--open'),
@@ -47,7 +47,7 @@
                    13.453-49.106-.003-13.453-13.476-13.453-35.627 0-49.103L400.537
                    107.3c13.475-13.455 35.63-13.457 49.105-.003 13.457 13.477 13.457 35.633 0 49.11z' />
         </svg>
-      </button>
+      </div>
     </div>
   </div>
 </template>

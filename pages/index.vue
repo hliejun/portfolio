@@ -8,14 +8,18 @@
       <div class='gradient gradient--dawn' />
     </div>
     <div class='content'>
-      <amp-img class='earth' src='/vectors/earth.svg' width='200' height='200' sizes='(max-width: 500px) 150px, 200px'/>
+      <amp-img class='earth' src='/vectors/earth.svg' width='200' height='200' sizes='
+        (max-width: 500px) 140px,
+        (min-width: 901px) 240px,
+        200px'
+      />
       <h1>hliejun</h1>
       <h2>full-stack &lt;div&gt;eloper</h2>
       <h3>Singapore</h3>
       <a class='link__content resume__link' href='/documents/resume_dummy.pdf' target='_blank'>
-        <button class='card code button resume__button'>
+        <div class='card code button resume__button'>
           download resume
-        </button>
+        </div>
       </a>
     </div>
   </div>
