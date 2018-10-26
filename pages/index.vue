@@ -11,8 +11,14 @@
       <amp-img class='earth' src='/vectors/earth.svg' width='200' height='200' sizes='
         (max-width: 500px) 140px,
         (min-width: 901px) 240px,
-        200px'
-      />
+        200px' />
+      <amp-img class='rocket' src='/vectors/rocket.svg' width='60' height='60'/>
+      <div class='object__container--satellite'>
+        <amp-img class='satellite' src='/vectors/satellite.svg' width='60' height='60'/>
+      </div>
+      <div class='object__container--astronaut'>
+        <amp-img class='astronaut' src='/vectors/astronaut.svg' width='100' height='100'/>
+      </div>
       <h1>hliejun</h1>
       <h2>full-stack &lt;div&gt;eloper</h2>
       <h3>Singapore</h3>
