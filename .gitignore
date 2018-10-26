@@ -1,0 +1,18 @@
+# system files
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist
