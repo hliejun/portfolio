@@ -5,7 +5,7 @@
       <div class='social'>
         <button class='button social__button' v-for='link in links'>
           <a class='social__content' v-bind:href='link.url' target='_blank'>
-            <amp-img class='social-logo' v-bind:src='link.src' height='40' width='40'/>
+            <amp-img class='social-logo' v-bind:src='link.src' height='40' width='40' sizes='(min-width: 600px) 40px, 30px'/>
           </a>
         </button>
       </div>
