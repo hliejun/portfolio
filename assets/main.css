@@ -6,9 +6,19 @@
 }
 
 html, body {
+  min-height: 100%;
+}
+
+html {
   color: #424242;
   font-family: 'Roboto', sans-serif;
-  min-height: 100%;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
 }
 
 body, #__nuxt, #__layout, .layout {
@@ -19,8 +29,12 @@ h1 {
   padding-bottom: 5px;
 }
 
+h2, h3 {
+  padding-bottom: 2px;
+}
+
 p {
-  font-size: 18px;
+  font-size: 1em;
   line-height: 30px;
   padding-top: 30px;
 }
@@ -119,7 +133,7 @@ p {
 
 .link__content {
   color: #424242;
-  font-size: 14px;
+  font-size: 1.2em;
   font-weight: 600;
   padding: 8px 12px;
   text-decoration: none;
@@ -132,7 +146,7 @@ p {
 .logo__content {
   color: #424242;
   font-family: 'Roboto', sans-serif;
-  font-size: 24px;
+  font-size: 2em;
   font-weight: 600;
   margin-left: 5px;
   text-decoration: none;
@@ -238,7 +252,7 @@ p {
 .footer__text {
   color: rgba(240, 240, 240, .7);
   display: block;
-  font-size: 12px;
+  font-size: .8em;
   margin: -10px auto 15px auto;
   text-align: center;
   width: 100%;
@@ -297,6 +311,10 @@ p {
   width: 100%;
 }
 
+.earth {
+  margin: auto;
+}
+
 .resume__link {
   display: block;
   margin: 15px auto;
@@ -308,7 +326,7 @@ p {
   border-radius: 30px;
   color: rgba(240, 240, 240, 1);
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1em;
   font-weight: 500;
   padding: 8px 15px;
 }

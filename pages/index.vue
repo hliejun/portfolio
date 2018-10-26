@@ -8,7 +8,7 @@
       <div class='gradient gradient--dawn' />
     </div>
     <div class='content'>
-      <amp-img src='/vectors/earth.svg' width='200' height='200'/>
+      <amp-img class='earth' src='/vectors/earth.svg' width='200' height='200' sizes='(max-width: 500px) 150px, 200px'/>
       <h1>hliejun</h1>
       <h2>full-stack &lt;div&gt;eloper</h2>
       <h3>Singapore</h3>
