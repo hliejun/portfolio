@@ -61,6 +61,7 @@ p {
   min-height: 110px;
   overflow: hidden;
   position: relative;
+  z-index: 5;
 }
 
 /* Pages */
@@ -89,6 +90,10 @@ p {
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
   -moz-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+}
+
+.stylized {
+  font-family: 'Roboto Mono', sans-serif;
 }
 
 .code {
@@ -422,7 +427,7 @@ p {
   position: absolute;
   top: 100%;
   will-change: transform;
-  z-index: 15px;
+  z-index: 0;
 }
 
 .satellite {
@@ -431,6 +436,7 @@ p {
   animation: rotate 200s infinite linear both alternate-reverse;
 
   will-change: transform;
+  z-index: 0;
 }
 
 .object__container--astronaut {
@@ -442,19 +448,19 @@ p {
   position: absolute;
   top: 50%;
   will-change: transform;
-  z-index: 15px;
+  z-index: 0;
 }
 
 .rocket {
-  -webkit-animation: revolve 160s infinite linear both;
-  -moz-animation: revolve 160s infinite linear both;
-  animation: revolve 160s infinite linear both;
+  -webkit-animation: revolve 120s infinite linear both;
+  -moz-animation: revolve 120s infinite linear both;
+  animation: revolve 120s infinite linear both;
 
-  left: 50%;
+  left: 48%;
   position: absolute;
-  top: 35%;
+  top: 30%;
   will-change: transform;
-  z-index: 10;
+  z-index: -1;
 }
 
 @media (max-height: 500px) {
@@ -485,6 +491,7 @@ p {
   display: block;
   margin: 15px auto;
   width: fit-content;
+  z-index: 15;
 }
 
 .resume__button {
@@ -499,6 +506,7 @@ p {
   font-size: 1em;
   font-weight: 500;
   padding: 8px 15px;
+  z-index: 15;
 }
 
 .resume__button:hover {
@@ -695,17 +703,11 @@ p {
 
 @-webkit-keyframes revolve {
   0% { -webkit-transform: rotate(0) translateX(calc(-115% - 7vw)) translateY(calc(-30vh)) }
-  25% { -webkit-transform: rotate(90deg) translateX(calc(-115% - 7vw)) translateY(calc(-28vh)) }
-  50% { -webkit-transform: rotate(180deg) translateX(calc(-115% - 7vw)) translateY(calc(-30vh)) }
-  75% { -webkit-transform: rotate(270deg) translateX(calc(-115% - 7vw)) translateY(calc(-32vh)) }
   100% { -webkit-transform: rotate(360deg) translateX(calc(-115% - 7vw)) translateY(calc(-30vh)) }
 }
 
 @-moz-keyframes revolve {
   0% { -moz-transform: rotate(0) translateX(calc(-115% - 7vw)) translateY(calc(-30vh)) }
-  25% { -moz-transform: rotate(90deg) translateX(calc(-115% - 7vw)) translateY(calc(-28vh)) }
-  50% { -moz-transform: rotate(180deg) translateX(calc(-115% - 7vw)) translateY(calc(-30vh)) }
-  75% { -moz-transform: rotate(270deg) translateX(calc(-115% - 7vw)) translateY(calc(-32vh)) }
   100% { -moz-transform: rotate(360deg) translateX(calc(-115% - 7vw)) translateY(calc(-30vh)) }
 }
 
@@ -713,18 +715,6 @@ p {
   0% {
     -webkit-transform: rotate(0) translateX(calc(-115% - 7vw)) translateY(calc(-30vh));
     transform: rotate(0) translateX(calc(-115% - 7vw)) translateY(calc(-30vh));
-  }
-  25% {
-    -webkit-transform: rotate(90deg) translateX(calc(-115% - 7vw)) translateY(calc(-28vh));
-    transform: rotate(90deg) translateX(calc(-115% - 7vw)) translateY(calc(-28vh));
-  }
-  50% {
-    -webkit-transform: rotate(180deg) translateX(calc(-115% - 7vw)) translateY(calc(-30vh));
-    transform: rotate(180deg) translateX(calc(-115% - 7vw)) translateY(calc(-30vh));
-  }
-  75% {
-    -webkit-transform: rotate(270deg) translateX(calc(-115% - 7vw)) translateY(calc(-32vh));
-    transform: rotate(270deg) translateX(calc(-115% - 7vw)) translateY(calc(-32vh));
   }
   100% {
     -webkit-transform: rotate(360deg) translateX(calc(-115% - 7vw)) translateY(calc(-30vh));

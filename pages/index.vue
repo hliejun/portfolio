@@ -20,9 +20,9 @@
         <amp-img class='astronaut' src='/vectors/astronaut.svg' width='100' height='100'/>
       </div>
       <h1>hliejun</h1>
-      <h2>full-stack &lt;div&gt;eloper</h2>
-      <h3>Singapore</h3>
-      <a class='link__content resume__link' href='/documents/resume_dummy.pdf' target='_blank'>
+      <h4 class='stylized'>full-stack &lt;div&gt;eloper</h4>
+      <h4 class='stylized'>Singapore</h4>
+      <a class='link__content resume__link' href='/documents/resume.pdf' target='_blank'>
         <div class='card code button resume__button'>
           download resume
         </div>
