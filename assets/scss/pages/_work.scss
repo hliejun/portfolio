@@ -1,0 +1,30 @@
+@import './colors.scss';
+@import './mixins.scss';
+
+.work .jumbotron {
+  background: linear-gradient(0deg, #a7425c 0%, #f3825f 100%);
+}
+
+.work__gallery {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  padding: 15px;
+}

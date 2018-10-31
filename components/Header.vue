@@ -1,7 +1,7 @@
 <template>
   <div v-bind:class="['header', theme, { splash }]">
     <nuxt-link class='avatar' to='/'>
-      <amp-img class='avatar__image' v-if='splash' src='/images/profile.png' width='50' height='50'/>
+      <amp-img class='avatar__image' v-if='splash' src='/images/profile.png' width='50' height='50' />
     </nuxt-link>
     <div class='logo' v-if='logo'>
       <div class='logo__button link'>
@@ -10,8 +10,17 @@
         </nuxt-link>
       </div>
     </div>
+    <div class='links'>
+      <div class='link' v-for='link in links'>
+        <div class='card link__container'>
+          <nuxt-link class='code link__content' v-bind:to='link.url'>
+            {{ link.label }}
+          </nuxt-link>
+        </div>
+      </div>
+    </div>
     <div id='menu' class='menu'>
-      <div id='panel' class='menu__panel hidden'>
+      <div id='panel' class='menu__panel hiding'>
         <div class='menu__content'>
           <div class='links--mobile'>
             <div class='link' v-for='link in links'>
@@ -28,8 +37,8 @@
         close.toggleVisibility,
         hamburger.toggleVisibility,
         menu.toggleClass(class='menu--open'),
-        panel.toggleClass(class='hidden'),
-        body.toggleClass(class='hidden')
+        panel.toggleClass(class='hiding'),
+        body.toggleClass(class='hiding')
       ">
         <svg id='hamburger' class='menu__image' viewBox='0 0 134 134' fill='currentColor'>
           <path d='M16.667 41.667h100A8.34 8.34 0 0 0 125 33.333 8.34 8.34 0 0 0 116.667

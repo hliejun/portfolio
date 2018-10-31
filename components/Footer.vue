@@ -1,13 +1,22 @@
 <template>
   <div v-bind:class="['footer', theme, { splash }]">
     <div class='footer__content'>
-      <span class='code footer__text'>print('hello world!')</span>
+      <span class='code footer__text'>Hello world, let's connect!</span>
       <div class='social'>
         <div class='button social__button' v-for='link in links'>
           <a class='social__content' v-bind:href='link.url' target='_blank'>
-            <amp-img class='social-logo' v-bind:src='link.src' height='40' width='40' sizes='(min-width: 600px) 40px, 30px'/>
+            <amp-img
+              class='social-logo'
+              v-bind:src='link.src'
+              height='40'
+              width='40'
+              sizes='(min-width: 600px) 40px, 30px' />
           </a>
         </div>
+      </div>
+      <div class='site-map' v-if='!splash'>
+        <!-- Place sitemap here -->
+        <!-- <span class='code footer__text'>Site Map</span> -->
       </div>
     </div>
   </div>
@@ -43,11 +52,6 @@ export default {
     splash: {
       type: Boolean,
       default: false
-    },
-    variant: {
-      type: String,
-      default: 'desktop',
-      validator: value => value.match(/^(mobile|tablet|desktop)$/)
     }
   }
 }

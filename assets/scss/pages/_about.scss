@@ -1,0 +1,11 @@
+@import './colors.scss';
+@import './mixins.scss';
+
+.about .jumbotron {
+  background: linear-gradient(0deg, #386a9d 0%, #43aea2 100%);
+}
+
+.book {
+  padding: 15px 0;
+  margin-bottom: -20px;
+}

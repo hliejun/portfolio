@@ -1,8 +1,15 @@
 <template>
   <div class='layout'>
-    <Header :logo= 'logo' :links='siteLinks'/>
+    <amp-animation id='fadeIn' layout='nodisplay'>
+      <script type='application/json' v-html='fadeIn' />
+    </amp-animation>
+    <amp-animation id='fadeOut' layout='nodisplay'>
+      <script type='application/json' v-html='fadeOut' />
+    </amp-animation>
+    <div id='headerBackground' class='header__background card' />
+    <Header :logo= 'logo' :links='siteLinks' />
     <nuxt/>
-    <Footer :links='socialLinks'/>
+    <Footer :links='socialLinks' />
   </div>
 </template>
 
@@ -17,11 +24,15 @@ export default {
   },
   data () {
     return {
+      fadeIn: '{"duration": "200ms","fill": "both","iterations": "1","direction": "alternate",' +
+                '"animations": [{"selector": "#headerBackground","keyframes": [{"opacity": "1"}]}]}',
+      fadeOut: '{"duration": "200ms","fill": "both","iterations": "1","direction": "alternate",' +
+                '"animations": [{"selector": "#headerBackground","keyframes": [{"opacity": "0"}]}]}',
       logo: { label: 'dev/hliejun', link: '/', src: '/images/profile.png' },
       siteLinks: [
         { label: '127.0.0.1', url: '/' },
         { label: 'commits', url: '/work' },
-        { label: 'logs', url: '/blog' },
+        { label: 'logs', url: '/experience' },
         { label: 'readme', url: '/about' }
       ],
       socialLinks: [

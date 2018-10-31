@@ -1,0 +1,47 @@
+@import '../colors.scss';
+@import '../mixins.scss';
+
+.jumbotron {
+  height: 300px;
+  margin-top: -60px;
+  position: relative;
+}
+
+.jumbotron__content {
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.jumbotron__image {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.jumbotron__title {
+  color: rgba(240, 240, 240, .7);
+  display: block;
+  font-size: 2em;
+  font-weight: 500;
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.jumbotron__subtitle {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: rgba(240, 240, 240, .7);
+  display: block;
+  font-size: 1em;
+  font-weight: 500;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  width: 80vw;
+}

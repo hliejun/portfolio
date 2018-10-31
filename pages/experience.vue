@@ -1,5 +1,5 @@
 <template>
-  <div class='page about'>
+  <div class='page experience'>
     <Jumbotron :name='jumbotron.name' :title='jumbotron.title' :subtitle='jumbotron.subtitle' :src='jumbotron.src' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start'
@@ -81,10 +81,10 @@ export default {
   data () {
     return {
       jumbotron: {
-        name: 'book',
-        title: 'readme',
-        subtitle: 'introduction about me and my background',
-        src: '/vectors/book.svg'
+        name: 'logs',
+        title: 'logs',
+        subtitle: 'employment history and work experiences',
+        src: '/vectors/logs.svg'
       }
     }
   },

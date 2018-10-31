@@ -1,0 +1,83 @@
+@import '../colors.scss';
+@import '../mixins.scss';
+
+// Main
+
+.footer {
+  background-color: #455a64;
+  min-height: 110px;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+
+.footer.splash {
+  background-color: transparent;
+  min-height: 100px;
+}
+
+.footer__content {
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.footer__text {
+  color: rgba(240, 240, 240, .7);
+  display: block;
+  font-size: .8em;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  width: 100%;
+}
+
+.footer__subtext {
+  bottom: 0;
+  color: rgba(240, 240, 240, .7);
+  display: block;
+  float: right;
+  font-size: .8em;
+  margin: 5px 10px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+
+// Social Buttons
+
+.social {
+  background-color: transparent;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.social__content {
+  display: inline-block;
+}
+
+.social__button {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+
+  display: inline-block;
+  margin: 0 5px;
+  opacity: .7;
+  z-index: 15;
+}
+
+.social__button:hover {
+  opacity: 1;
+}
+
+.social__button svg {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+}

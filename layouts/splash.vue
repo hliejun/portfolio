@@ -1,8 +1,8 @@
 <template>
   <div class='layout'>
-    <Header :logo= 'logo' :links='siteLinks' splash/>
+    <Header :logo= 'logo' :links='siteLinks' splash />
     <nuxt/>
-    <Footer :links='socialLinks' splash/>
+    <Footer :links='socialLinks' splash />
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
       logo: { label: 'dev/hliejun', link: '/', src: '/images/profile.png' },
       siteLinks: [
         { label: 'commits', url: '/work' },
-        { label: 'logs', url: '/blog' },
+        { label: 'logs', url: '/experience' },
         { label: 'readme', url: '/about' }
       ],
       socialLinks: [

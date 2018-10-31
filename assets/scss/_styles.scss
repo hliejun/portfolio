@@ -1,0 +1,101 @@
+@import './colors.scss';
+@import './mixins.scss';
+
+// Generic
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+html {
+  color: #424242;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body, #__nuxt, #__layout, .layout {
+  min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+h1 {
+  padding-bottom: 5px;
+}
+
+h2, h3 {
+  padding-bottom: 2px;
+}
+
+p {
+  font-size: 1em;
+  line-height: 30px;
+  padding-top: 30px;
+}
+
+// Common
+
+.page {
+  min-height: calc(100vh - 100px);
+  padding-top: 60px;
+}
+
+.page--splash {
+  min-height: calc(100vh - 100px);
+  padding-top: 70px;
+}
+
+.content {
+  z-index: 5;
+}
+
+.page__content {
+  background-color: #fafafa;
+  position: relative;
+}
+
+.background {
+  overflow: hidden;
+  width: 100%;
+}
+
+.card {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+}
+
+.stylized {
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.code {
+  font-family: 'Roboto Mono', monospace;
+}
