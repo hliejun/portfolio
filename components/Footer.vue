@@ -3,7 +3,7 @@
     <div class='footer__content'>
       <span class='code footer__text'>Hello world, let's connect!</span>
       <div class='social'>
-        <div class='button social__button' v-for='link in links'>
+        <div class='button social__button' v-for='link in links' :key='link.url'>
           <a class='social__content' v-bind:href='link.url' target='_blank'>
             <amp-img
               class='social-logo'

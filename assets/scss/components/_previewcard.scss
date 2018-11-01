@@ -66,6 +66,7 @@
 
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+
   margin: 5px 0;
 }
 
@@ -140,9 +141,6 @@
   text-rendering: optimizeLegibility;
 }
 
-.preview__text {
-}
-
 // Media Queries
 
 @media (max-width: 640px) {
@@ -168,7 +166,7 @@
 
 @media (min-width: 1601px) {
   .preview {
-    width: 480px;
-    height: 480px;
+    width: 400px;
+    height: 400px;
   }
 }

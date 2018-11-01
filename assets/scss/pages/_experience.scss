@@ -2,5 +2,103 @@
 @import './mixins.scss';
 
 .experience .jumbotron {
-  background: linear-gradient(0deg, #368852 0%, #8dc26f 100%)
+  background: linear-gradient(0deg, #368852 0%, #8dc26f 100%);
+}
+
+.experience .page__content {
+  padding: 15px 0;
+}
+
+.experience .page__container {
+  margin: 10px auto;
+  max-width: 1200px;
+  width: calc(100vw - 20px);
+}
+
+.experience .section {
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.experience .section__left {
+  margin-left: 5px;
+}
+
+.experience .timeline__date {
+  background-color: rgba(240, 240, 240, 1);
+  border-radius: 20px;
+  display: block;
+  font-family: 'Roboto Mono', monospace;
+  font-size: .8em;
+  font-weight: 500;
+  padding: 4px 8px;
+  position: absolute;
+  text-align: center;
+  z-index: 6;
+}
+
+.experience .timeline__image {
+  background-color: #455a64;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-top: 20px;
+  min-height: 50px;
+  min-width: 50px;
+  z-index: 5;
+}
+
+.experience .timeline__line {
+  background-color: #455a64;
+  bottom: 0;
+  height: 100%;
+  left: 33px;
+  position: absolute;
+  top: 50px;
+  width: 4px;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .experience .timeline__date {
+    left: 6px;
+    top: -5px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  .experience .timeline__date {
+    left: 4px;
+    top: -10px;
+  }
+}
+
+@media (min-width: 801px) {
+  .experience .timeline__date {
+    left: 2px;
+    top: -15px;
+  }
 }

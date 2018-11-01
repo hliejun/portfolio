@@ -11,10 +11,10 @@
       </div>
     </div>
     <div class='links'>
-      <div class='link' v-for='link in links'>
+      <div class='link' v-for='link in links' :key='link.label'>
         <div class='card link__container'>
           <nuxt-link class='code link__content' v-bind:to='link.url'>
-            {{ link.label }}
+            {{link.label}}
           </nuxt-link>
         </div>
       </div>
@@ -23,10 +23,10 @@
       <div id='panel' class='menu__panel hiding'>
         <div class='menu__content'>
           <div class='links--mobile'>
-            <div class='link' v-for='link in links'>
+            <div class='link' v-for='link in links' :key='link.label'>
               <div class='card link__container'>
                 <nuxt-link class='code link__content' v-bind:to='link.url'>
-                  {{ link.label }}
+                  {{link.label}}
                 </nuxt-link>
               </div>
             </div>

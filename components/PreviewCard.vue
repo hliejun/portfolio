@@ -15,7 +15,7 @@
             <span class='preview__text'>{{subtitle}}</span>
           </div>
           <div class='preview__tags'>
-            <div class='preview__tag' v-for='tag in tags'>
+            <div class='preview__tag' v-for='tag in tags' :key='tag'>
               <span>{{tag}}</span>
             </div>
           </div>

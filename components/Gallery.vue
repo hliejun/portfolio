@@ -12,7 +12,8 @@
           v-for='image in suppImages'
           v-bind:src='image.src'
           height='1'
-          width='1' />
+          width='1'
+          :key='image.src' />
       </div>
     </div>
   </div>

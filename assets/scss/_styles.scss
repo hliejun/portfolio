@@ -47,13 +47,13 @@ h2, h3 {
 p {
   font-size: 1em;
   line-height: 30px;
-  padding-top: 30px;
+  padding: 5px 0;
 }
 
 // Common
 
 .page {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 110px);
   padding-top: 60px;
 }
 

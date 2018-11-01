@@ -5,6 +5,16 @@
   background: linear-gradient(0deg, #a7425c 0%, #f3825f 100%);
 }
 
+.work .page__content {
+  padding: 20px 0;
+}
+
+.work .page__container {
+  max-width: 1600px;
+  width: calc(100vw - 20px);
+  margin: 10px auto;
+}
+
 .work__gallery {
   display: -webkit-box;
   display: -moz-box;

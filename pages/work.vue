@@ -6,17 +6,19 @@
         intersection-ratios='.4'
         layout='nodisplay'>
       </amp-position-observer>
-      <div class='work__gallery'>
-        <PreviewCard
-          v-for='project in projects'
-          :name='project.name'
-          :src='project.src'
-          :title='project.title'
-          :subtitle='project.subtitle'
-          :description='project.description'
-          :url='project.url'
-          :tags='project.tags'
-          :key='project.name' />
+      <div class='page__container'>
+        <div class='work__gallery'>
+          <PreviewCard
+            v-for='project in projects'
+            :name='project.name'
+            :src='project.src'
+            :title='project.title'
+            :subtitle='project.subtitle'
+            :description='project.description'
+            :url='project.url'
+            :tags='project.tags'
+            :key='project.name' />
+        </div>
       </div>
     </div>
   </div>
@@ -150,16 +152,6 @@ export default {
         }
       ]
     }
-  },
-  asyncData (context) {
-    // called every time before loading the component
-    return {}
-  },
-  fetch () {
-    // The `fetch` method is used to fill the store before rendering the page
-  },
-  // ...
+  }
 }
 </script>
-
-<!-- You should not write any CSS here, but use ~/assets/main.css instead -->
