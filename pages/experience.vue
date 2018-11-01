@@ -16,8 +16,8 @@
             <amp-img
               class='timeline__image'
               v-bind:src='article.avatar'
-              height='50'
-              width='50' />
+              height='1'
+              width='1' />
           </div>
           <div class='section__right'>
             <ArticleCard
@@ -55,7 +55,7 @@ export default {
       jumbotron: {
         name: 'logs',
         title: 'logs',
-        subtitle: 'employment history and work experiences',
+        subtitle: 'employment, partnership history and work experiences',
         src: '/vectors/logs.svg'
       },
       articles: [
@@ -231,7 +231,7 @@ export default {
             { src: '' }
           ],
           title: 'Singapore Armed Forces',
-          subtitle: 'Battalion manpower, transport and discipline administration',
+          subtitle: 'Battalion Manpower, Transport and Discipline Administration',
           tags: ['ARMY', 'STAFF', 'ADMINISTRATION'],
           text: `
             <p>
