@@ -3,7 +3,7 @@
   -moz-box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .2);
   box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .2);
 
-  border-radius: 10px;
+  border-radius: 6px;
   box-sizing: border-box;
   margin: 20px;
   overflow: visible;
@@ -34,7 +34,7 @@
 }
 
 .preview__content {
-  border-radius: 8px;
+  border-radius: 5px;
   height: 100%;
   overflow: hidden;
   position: relative;
@@ -88,7 +88,7 @@
 
 .preview__image {
   background-color: #455a64;
-  border-radius: 10px;
+  border-radius: 6px;
   min-height: 100%;
   min-width: 100%;
   z-index: 1;
@@ -103,7 +103,7 @@
   -moz-transition: all .6s ease;
   transition: all .6s ease;
 
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, .98);
   bottom: 0;
   left: 0;
   padding: 10px 20px 15px 20px;
@@ -127,9 +127,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  -webkit-transform: translateY(10px);
-  -moz-transform: translateY(10px);
-  transform: translateY(10px);
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  transform: translateY(30px);
 
   -webkit-transition: all .6s ease;
   -moz-transition: all .6s ease;

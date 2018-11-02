@@ -1,7 +1,7 @@
 <template>
   <div v-bind:class="['header', theme, { splash }]">
     <nuxt-link class='avatar' to='/'>
-      <amp-img class='avatar__image' v-if='splash' src='/images/profile.png' width='50' height='50' />
+      <amp-img class='avatar__image' v-if='splash' src='/images/avatar.png' width='1' height='1' />
     </nuxt-link>
     <div class='logo' v-if='logo'>
       <div class='logo__button link'>
