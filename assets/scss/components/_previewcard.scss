@@ -14,6 +14,7 @@
   -moz-transition: all .6s ease;
   transition: all .6s ease;
 
+  border-radius: 6px;
   color: inherit;
   height: 100%;
   width: 100%;
@@ -33,8 +34,19 @@
   transform: translateY(0);
 }
 
+.preview__link:hover .preview__info-pane::before {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.preview__link:hover .preview__image {
+  -webkit-filter: saturate(1) brightness(1.05);
+  filter: saturate(1) brightness(1.05);
+}
+
 .preview__content {
-  border-radius: 5px;
+  border-radius: 6px;
   height: 100%;
   overflow: hidden;
   position: relative;
@@ -71,7 +83,11 @@
 }
 
 .preview__tag {
-  background-color: rgba(240, 240, 240, .7);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 64, 128, .1);
+  -moz-box-shadow: 0 2px 4px rgba(0, 64, 128, .1);
+  box-shadow: 0 2px 4px rgba(0, 64, 128, .1);
+
+  background-color: rgba(255, 255, 255, .7);
   border-radius: 20px;
   font-family: 'Roboto Mono', monospace;
   font-size: .66em;
@@ -87,11 +103,22 @@
 }
 
 .preview__image {
+  -webkit-filter: saturate(.7) brightness(.98);
+  filter: saturate(.7) brightness(.98);
+
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  transition: all .6s ease;
+
   background-color: #455a64;
   border-radius: 6px;
   min-height: 100%;
   min-width: 100%;
   z-index: 1;
+}
+
+.preview__image img {
+  object-fit: cover;
 }
 
 .preview__info-pane {
@@ -103,13 +130,44 @@
   -moz-transition: all .6s ease;
   transition: all .6s ease;
 
-  background-color: rgba(255, 255, 255, .98);
+  background-color: rgba(255, 255, 255, .8);
+  background: inherit;
+  border-radius: 0 0 6px 6px;
   bottom: 0;
   left: 0;
+  overflow: hidden;
   padding: 10px 20px 15px 20px;
   position: absolute;
   right: 0;
   z-index: 5;
+}
+
+.preview__info-pane::before {
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  transition: all .6s ease;
+
+  -webkit-transform: translateY(-20px);
+  -moz-transform: translateY(-20px);
+  transform: translateY(-20px);
+
+  -webkit-box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .5);
+  -moz-box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .5);
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .5);
+
+  background: inherit;
+  bottom: 0;
+  content: ' ';
+  height: calc(100% + 60px);
+  left: -20px;
+  position: absolute;
+  right: 0;
+  top: -40px;
+  width: calc(100% + 40px);
+  z-index: -1;
 }
 
 .preview__title {
@@ -148,12 +206,132 @@
     width: 80vw;
     height: 80vw;
   }
+
+  .todo-list .preview__content {
+    background: url(/images/todolist-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
+
+  .weight .preview__content {
+    background: url(/images/weight-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
+
+  .bubble .preview__content {
+    background: url(/images/bubble-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
+
+  .food-logging .preview__content {
+    background: url(/images/food-logging-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
+
+  .sats-solver .preview__content {
+    background: url(/images/sats-solver-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
+
+  .hypedyn .preview__content {
+    background: url(/images/hypedyn-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
+
+  .bitsy .preview__content {
+    background: url(/images/bitsy-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
+
+  .pokemania .preview__content {
+    background: url(/images/pokemania-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
+
+  .little-lives .preview__content {
+    background: url(/images/little-lives-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
+
+  .urbanzoom .preview__content {
+    background: url(/images/urbanzoom-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
+
+  .react-chat .preview__content {
+    background: url(/images/react-chat-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
+
+  .portfolio .preview__content {
+    background: url(/images/portfolio-preview.png) no-repeat center bottom;
+    background-size: 80vw calc(80vw + 40px);
+  }
 }
 
 @media (min-width: 641px) and (max-width: 1400px) {
   .preview {
     width: 40vw;
     height: 40vw;
+  }
+
+  .todo-list .preview__content {
+    background: url(/images/todolist-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
+  }
+
+  .weight .preview__content {
+    background: url(/images/weight-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
+  }
+
+  .bubble .preview__content {
+    background: url(/images/bubble-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
+  }
+
+  .food-logging .preview__content {
+    background: url(/images/food-logging-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
+  }
+
+  .sats-solver .preview__content {
+    background: url(/images/sats-solver-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
+  }
+
+  .hypedyn .preview__content {
+    background: url(/images/hypedyn-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
+  }
+
+  .bitsy .preview__content {
+    background: url(/images/bitsy-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
+  }
+
+  .pokemania .preview__content {
+    background: url(/images/pokemania-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
+  }
+
+  .little-lives .preview__content {
+    background: url(/images/little-lives-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
+  }
+
+  .urbanzoom .preview__content {
+    background: url(/images/urbanzoom-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
+  }
+
+  .react-chat .preview__content {
+    background: url(/images/react-chat-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
+  }
+
+  .portfolio .preview__content {
+    background: url(/images/portfolio-preview.png) no-repeat center bottom;
+    background-size: 40vw calc(40vw + 40px);
   }
 }
 
@@ -162,11 +340,131 @@
     width: 25vw;
     height: 25vw;
   }
+
+  .todo-list .preview__content {
+    background: url(/images/todolist-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
+
+  .weight .preview__content {
+    background: url(/images/weight-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
+
+  .bubble .preview__content {
+    background: url(/images/bubble-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
+
+  .food-logging .preview__content {
+    background: url(/images/food-logging-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
+
+  .sats-solver .preview__content {
+    background: url(/images/sats-solver-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
+
+  .hypedyn .preview__content {
+    background: url(/images/hypedyn-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
+
+  .bitsy .preview__content {
+    background: url(/images/bitsy-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
+
+  .pokemania .preview__content {
+    background: url(/images/pokemania-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
+
+  .little-lives .preview__content {
+    background: url(/images/little-lives-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
+
+  .urbanzoom .preview__content {
+    background: url(/images/urbanzoom-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
+
+  .react-chat .preview__content {
+    background: url(/images/react-chat-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
+
+  .portfolio .preview__content {
+    background: url(/images/portfolio-preview.png) no-repeat center bottom;
+    background-size: 25vw calc(25vw + 40px);
+  }
 }
 
 @media (min-width: 1601px) {
   .preview {
     width: 400px;
     height: 400px;
+  }
+
+  .todo-list .preview__content {
+    background: url(/images/todolist-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
+  }
+
+  .weight .preview__content {
+    background: url(/images/weight-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
+  }
+
+  .bubble .preview__content {
+    background: url(/images/bubble-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
+  }
+
+  .food-logging .preview__content {
+    background: url(/images/food-logging-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
+  }
+
+  .sats-solver .preview__content {
+    background: url(/images/sats-solver-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
+  }
+
+  .hypedyn .preview__content {
+    background: url(/images/hypedyn-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
+  }
+
+  .bitsy .preview__content {
+    background: url(/images/bitsy-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
+  }
+
+  .pokemania .preview__content {
+    background: url(/images/pokemania-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
+  }
+
+  .little-lives .preview__content {
+    background: url(/images/little-lives-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
+  }
+
+  .urbanzoom .preview__content {
+    background: url(/images/urbanzoom-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
+  }
+
+  .react-chat .preview__content {
+    background: url(/images/react-chat-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
+  }
+
+  .portfolio .preview__content {
+    background: url(/images/portfolio-preview.png) no-repeat center bottom;
+    background-size: 400px 440px;
   }
 }

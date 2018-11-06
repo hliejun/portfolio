@@ -53,7 +53,7 @@ export default {
         },
         {
           name: 'react-chat',
-          src: '',
+          src: '/images/react-chat-preview.png',
           title: 'React Chat',
           subtitle: '2018 / PERSONAL / 2 WEEKS',
           description: 'Extensible ReactJS presentational chat components written as an NPM library.',
@@ -62,7 +62,7 @@ export default {
         },
         {
           name: 'urbanzoom',
-          src: '',
+          src: '/images/urbanzoom-preview.png',
           title: 'Urbanzoom Assistant',
           subtitle: '2018 / FREELANCE / 6 WEEKS',
           description: 'Property valuation Google Assistant agent accessible through Twilio Voice.',
@@ -70,8 +70,8 @@ export default {
           tags: ['DIALOGFLOW', 'EXPRESS', 'TWILIO']
         },
         {
-          name: 'little-faces',
-          src: '',
+          name: 'little-lives',
+          src: '/images/little-lives-preview.png',
           title: 'Little Lives Check-In',
           subtitle: '2018 / NUS CS3217 / 5 WEEKS',
           description: 'Pre-school attendance-taking iOS application made for LittleLives.',
@@ -80,7 +80,7 @@ export default {
         },
         {
           name: 'pokemania',
-          src: '',
+          src: '/images/pokemania-preview.png',
           title: 'Pokémania',
           subtitle: '2018 / NUS CS3217 / 3 WEEKS',
           description: 'Pokémon-themed Bubble Blast game with a simple Physics and game engine library.',
@@ -89,7 +89,7 @@ export default {
         },
         {
           name: 'bitsy',
-          src: '',
+          src: '/images/bitsy-preview.png',
           title: 'Bitsy Pixel Story',
           subtitle: '2018 / NUS NM3222 / 1 WEEK',
           description: 'Explorative pixel-art story focused on replay and discoverability.',
@@ -98,7 +98,7 @@ export default {
         },
         {
           name: 'hypedyn',
-          src: '',
+          src: '/images/hypedyn-preview.png',
           title: 'HypeDyn Text Stories',
           subtitle: '2018 / NUS NM3222 / 1 WEEK',
           description: 'Text-based interactive stories focused on emotions, choice as agency and replay.',
@@ -107,7 +107,7 @@ export default {
         },
         {
           name: 'sats-solver',
-          src: '',
+          src: '/images/sats-solver-preview.png',
           title: 'SATS Solver',
           subtitle: '2018 / NUS CS4244 / 5 WEEKS',
           description: 'Implementing and comparing various satisfiability solving techniques and heuristics.',
@@ -115,8 +115,8 @@ export default {
           tags: ['RESEARCH', 'DPLL', 'CDCL']
         },
         {
-          name: 'food-logger',
-          src: '',
+          name: 'food-logging',
+          src: '/images/food-logging-preview.png',
           title: 'Food Logging',
           subtitle: '2017 / NUS CS4249 / 3 WEEKS',
           description: 'Mobile food logging interface prototyping with careful study of design principles.',
@@ -125,7 +125,7 @@ export default {
         },
         {
           name: 'bubble',
-          src: '',
+          src: '/images/bubble-preview.png',
           title: 'Bubble Chat',
           subtitle: '2016 / NUS CS3216 / 4 WEEKS',
           description: 'Topic-threaded mobile chat application using a real-time mobile chat event-based environment.',
@@ -134,7 +134,7 @@ export default {
         },
         {
           name: 'weight',
-          src: '',
+          src: '/images/weight-preview.png',
           title: 'Weight',
           subtitle: '2016 / NUS NM3216 / 3 WEEKS',
           description: 'Infinite run game that pits the player against a gravity-field stage while maintaining weight.',
@@ -143,7 +143,7 @@ export default {
         },
         {
           name: 'todo-list',
-          src: '',
+          src: '/images/todolist-preview.png',
           title: 'TodoList',
           subtitle: '2016 / NUS CS2103T / 6 WEEKS',
           description: 'To-do list application with focus on natural language text input and keyboard interactions.',
