@@ -16,6 +16,11 @@ const modifyHtml = (html, url) => {
       + '<script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>'
       + '<script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>'
   }
+  if (url && url === '/experience') {
+    ampScript = ampScript
+      + '<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>'
+      + '<script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>'
+  }
   html = html.replace('</head>', ampScript + '</head>')
   return html
 }

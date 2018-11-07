@@ -1,6 +1,6 @@
 <template>
   <div v-bind:class="['preview', theme, name]">
-    <a class='preview__link' v-bind:href='url' target='_blank'>
+    <a class='preview__link' v-bind:href='url'>
       <div class='preview__content'>
         <amp-img
           class='preview__image'

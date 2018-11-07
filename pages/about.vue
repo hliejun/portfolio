@@ -41,13 +41,13 @@ export default {
         name: 'book',
         title: 'readme',
         subtitle: 'introduction about me and my background',
-        src: '/vectors/book.svg'
+        src: '/vectors/jumbotron/book.svg'
       },
-      src: '/images/about.jpg',
+      src: '/images/profiles/about.jpg',
       sections: [
         {
           title: 'PROFILE',
-          src: '/vectors/profile.svg',
+          src: '/vectors/about/profile.svg',
           text: `
             I'm a full-stack software engineer
             who is passionate about developing
@@ -57,7 +57,7 @@ export default {
         },
         {
           title: 'INTERESTS',
-          src: '/vectors/interests.svg',
+          src: '/vectors/about/interests.svg',
           text: `
             Besides getting psyched about the
             latest technology, I also yearn to
@@ -71,7 +71,7 @@ export default {
         },
         {
           title: 'EDUCATION',
-          src: '/vectors/education.svg',
+          src: '/vectors/about/education.svg',
           text: `
             I completed my primary education at Woodlands Primary,
             then high school at Hwa Chong Institution and tertiary
@@ -80,7 +80,7 @@ export default {
         },
         {
           title: 'HOBBIES',
-          src: '/vectors/hobbies.svg',
+          src: '/vectors/about/hobbies.svg',
           text: `
             Apart from programming and designing experiences,
             my hobbies include food hunting, exploring nature,

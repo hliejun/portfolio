@@ -39,7 +39,7 @@ export default {
         name: 'computer',
         title: 'commits',
         subtitle: 'showcase of some projects that I have worked on',
-        src: '/vectors/computer.svg'
+        src: '/vectors/jumbotron/computer.svg'
       },
       projects: [
         {
@@ -48,106 +48,106 @@ export default {
           title: 'Portfolio',
           subtitle: '2018 / PERSONAL / 1 WEEK',
           description: 'Lightweight personal portfolio website and experimenting with NuxtJS and AMPHTHML.',
-          url: 'https://www.google.com',
+          url: '/projects/portfolio',
           tags: ['NUXT', 'VUE', 'AMP']
         },
         {
           name: 'react-chat',
-          src: '/images/react-chat-preview.png',
+          src: '/images/previews/react-chat.png',
           title: 'React Chat',
           subtitle: '2018 / PERSONAL / 2 WEEKS',
           description: 'Extensible ReactJS presentational chat components written as an NPM library.',
-          url: '',
+          url: '/projects/reactchat',
           tags: ['REACT', 'STORYBOOK', 'ROLLUP']
         },
         {
           name: 'urbanzoom',
-          src: '/images/urbanzoom-preview.png',
+          src: '/images/previews/urbanzoom.png',
           title: 'Urbanzoom Assistant',
           subtitle: '2018 / FREELANCE / 6 WEEKS',
           description: 'Property valuation Google Assistant agent accessible through Twilio Voice.',
-          url: '',
+          url: '/projects/urbanzoom',
           tags: ['DIALOGFLOW', 'EXPRESS', 'TWILIO']
         },
         {
           name: 'little-lives',
-          src: '/images/little-lives-preview.png',
+          src: '/images/previews/little-lives.png',
           title: 'Little Lives Check-In',
           subtitle: '2018 / NUS CS3217 / 5 WEEKS',
           description: 'Pre-school attendance-taking iOS application made for LittleLives.',
-          url: '',
+          url: '/projects/littlelives',
           tags: ['IOS', 'VISION', 'AZURE FACE']
         },
         {
           name: 'pokemania',
-          src: '/images/pokemania-preview.png',
+          src: '/images/previews/pokemania.png',
           title: 'Pokémania',
           subtitle: '2018 / NUS CS3217 / 3 WEEKS',
           description: 'Pokémon-themed Bubble Blast game with a simple Physics and game engine library.',
-          url: '',
+          url: '/projects/pokemania',
           tags: ['IOS', 'COCOA TOUCH']
         },
         {
           name: 'bitsy',
-          src: '/images/bitsy-preview.png',
+          src: '/images/previews/bitsy.png',
           title: 'Bitsy Pixel Story',
           subtitle: '2018 / NUS NM3222 / 1 WEEK',
           description: 'Explorative pixel-art story focused on replay and discoverability.',
-          url: '',
+          url: '/projects/bitsy',
           tags: ['BITSY', 'STORYTELLING']
         },
         {
           name: 'hypedyn',
-          src: '/images/hypedyn-preview.png',
+          src: '/images/previews/hypedyn.png',
           title: 'HypeDyn Text Stories',
           subtitle: '2018 / NUS NM3222 / 1 WEEK',
           description: 'Text-based interactive stories focused on emotions, choice as agency and replay.',
-          url: '',
+          url: '/projects/hypedyn',
           tags: ['HYPEDYN', 'STORYTELLING']
         },
         {
-          name: 'sats-solver',
-          src: '/images/sats-solver-preview.png',
-          title: 'SATS Solver',
+          name: 'sat-solver',
+          src: '/images/previews/sat-solver.png',
+          title: 'SAT Solver',
           subtitle: '2018 / NUS CS4244 / 5 WEEKS',
           description: 'Implementing and comparing various satisfiability solving techniques and heuristics.',
-          url: '',
+          url: '/projects/satsolver',
           tags: ['RESEARCH', 'DPLL', 'CDCL']
         },
         {
           name: 'food-logging',
-          src: '/images/food-logging-preview.png',
+          src: '/images/previews/food-logging.png',
           title: 'Food Logging',
           subtitle: '2017 / NUS CS4249 / 3 WEEKS',
           description: 'Mobile food logging interface prototyping with careful study of design principles.',
-          url: '',
+          url: '/projects/foodlogging',
           tags: ['MARVEL', 'UX']
         },
         {
           name: 'bubble',
-          src: '/images/bubble-preview.png',
+          src: '/images/previews/bubble.png',
           title: 'Bubble Chat',
           subtitle: '2016 / NUS CS3216 / 4 WEEKS',
           description: 'Topic-threaded mobile chat application using a real-time mobile chat event-based environment.',
-          url: '',
+          url: '/projects/bubble',
           tags: ['REACT NATIVE', 'SOCKETS', 'NODE']
         },
         {
           name: 'weight',
-          src: '/images/weight-preview.png',
+          src: '/images/previews/weight.png',
           title: 'Weight',
           subtitle: '2016 / NUS NM3216 / 3 WEEKS',
           description: 'Infinite run game that pits the player against a gravity-field stage while maintaining weight.',
-          url: '',
+          url: '/projects/weight',
           tags: ['UNITY', 'GAME DESIGN']
         },
         {
           name: 'todo-list',
-          src: '/images/todolist-preview.png',
+          src: '/images/previews/todolist.png',
           title: 'TodoList',
           subtitle: '2016 / NUS CS2103T / 6 WEEKS',
           description: 'To-do list application with focus on natural language text input and keyboard interactions.',
-          url: '',
+          url: '/projects/todolist',
           tags: ['JAVAFX', 'NATTY', 'JUNIT']
         }
       ]

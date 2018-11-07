@@ -33,12 +33,18 @@
   width: 100%;
 }
 
+.gallery__content.standalone {
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
 .gallery__image--main {
   -webkit-box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .4);
   -moz-box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .4);
   box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .4);
 
-  background-color: #455a64;
   border-radius: 6px;
 }
 
@@ -77,8 +83,21 @@
   -moz-box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .4);
   box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .4);
 
-  background-color: #455a64;
   border-radius: 6px;
+}
+
+.gallery__image--main img,
+.gallery__image--main video,
+.gallery__image--supp img,
+.gallery__image--supp video {
+  object-fit: cover;
+}
+
+.gallery__image--main,
+.gallery__image--main img,
+.gallery__image--supp,
+.gallery__image--supp img {
+  outline: none;
 }
 
 @media (max-width: 600px) {
@@ -94,13 +113,13 @@
   }
 
   .gallery__image--supp {
-    margin: 0 5px 5px 0;
+    margin: 0 5px 0 0;
     min-height: calc(.49 * .75 * (100vw - 120px));
     min-width: calc(.49 * (100vw - 120px));
   }
 }
 
-@media (min-width: 601px) and (max-width: 1294px) {
+@media (min-width: 601px) and (max-width: 1287px) {
   .gallery__image--main {
     margin: 0 5px 5px 0;
     min-height: calc(.75 * .45 * (100vw - 100px) + 20px);
@@ -113,27 +132,28 @@
   }
 
   .gallery__image--supp {
-    margin: 0 5px 5px 0;
+    margin: 0 5px 0 0;
     min-height: calc(.75 * .22 * (100vw - 100px) + 10px);
     min-width: calc(.22 * (100vw - 100px) + 10px);
   }
 }
 
-@media (min-width: 1295px) {
+@media (min-width: 1288px) {
   .gallery__image--main {
-    margin: 0 10px 10px 0;
-    min-height: 420px;
-    min-width: 540px;
+    margin: 0 0 10px 0;
+    min-height: 400px;
+    min-width: 533px;
   }
 
   .gallery__supp-images {
     max-height: 430px;
     max-width: 570px;
+    margin-left: -5px;
   }
 
   .gallery__image--supp {
-    margin: 0 10px 10px 0;
-    min-height: 204px;
-    min-width: 272px;
+    margin: 0 10px 5px 0;
+    min-height: 195px;
+    min-width: 260px;
   }
 }

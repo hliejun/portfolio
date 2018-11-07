@@ -3,16 +3,8 @@
   padding: 15px 5px 15px 5px;
 }
 
-.article__content {
-
-}
-
 .article__header {
   margin-bottom: 10px;
-}
-
-.article__header-text {
-
 }
 
 .article__title {
@@ -90,23 +82,14 @@
   margin: 10px 0;
 }
 
-.article__footer {
-
-}
-
 .article__link-icon {
-  background-color: #fff;
-  min-height: .8em;
-  min-width: .8em;
-}
-
-.article__link-text {
+  margin-bottom: -3px;
+  margin-right: 2px;
+  min-height: 1.2em;
+  min-width: 1.2em;
 }
 
 @media (max-width: 600px) {
-
-  // Change text to icon for links instead
-
   .article__links {
     -webkit-box-align: start;
     -moz-box-align: start;
