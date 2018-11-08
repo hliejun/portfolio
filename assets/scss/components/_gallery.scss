@@ -90,6 +90,7 @@
 .gallery__image--main video,
 .gallery__image--supp img,
 .gallery__image--supp video {
+  border-radius: 6px;
   object-fit: cover;
 }
 
