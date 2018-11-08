@@ -1,16 +1,11 @@
 <template>
   <div class='jumbotron'>
-    <amp-position-observer on='exit:fadeIn.start'
-      intersection-ratios='0.2'
-      layout='nodisplay'>
-    </amp-position-observer>
-    <amp-position-observer on='enter:fadeOut.start'
-      intersection-ratios='0.2'
-      layout='nodisplay'>
-    </amp-position-observer>
+    <amp-position-observer on='exit:fadeIn.start' intersection-ratios='0.2' layout='nodisplay' />
+    <amp-position-observer on='enter:fadeOut.start' intersection-ratios='0.2' layout='nodisplay' />
     <div class='jumbotron__content'>
       <amp-img
         v-bind:class="['jumbotron__image', theme, name]"
+        v-if='src'
         v-bind:src='src'
         height='150'
         width='150'

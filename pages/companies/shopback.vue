@@ -1,11 +1,8 @@
 <template>
-  <div class='page shopback'>
+  <div class='page shopback company'>
     <Jumbotron :name='jumbotron.name' :title='jumbotron.title' :subtitle='jumbotron.subtitle' :src='jumbotron.src' />
     <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start'
-        intersection-ratios='0'
-        layout='nodisplay'>
-      </amp-position-observer>
+      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='0' layout='nodisplay' />
     </div>
   </div>
 </template>

@@ -30,12 +30,17 @@ export default {
     title: 'dev/hliejun',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width,minimum-scale=1' }
+      { name: 'viewport', content: 'width=device-width,minimum-scale=1' },
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      { name: 'mobile-web-app-capable', content: 'yes' }
     ],
     link: [
       { rel: 'canonical', href: '/' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700' },
+      { rel: 'manifest', href: '/manifest.json' },
+      { rel: 'apple-touch-icon', href: '/apple-icon.png' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-icon-180x180.png' }
     ],
     bodyAttrs: {
       id: 'body'

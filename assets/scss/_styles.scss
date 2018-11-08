@@ -58,6 +58,15 @@ p {
   padding-top: 60px;
 }
 
+.page.company,
+.page.company .page__content,
+.page.project,
+.page.project .page__content {
+  background-color: #455a64;
+}
+
+
+
 .page--splash {
   min-height: calc(100vh - 100px);
   padding-top: 70px;

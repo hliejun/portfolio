@@ -2,10 +2,7 @@
   <div class='page experience'>
     <Jumbotron :name='jumbotron.name' :title='jumbotron.title' :subtitle='jumbotron.subtitle' :src='jumbotron.src' />
     <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start'
-        intersection-ratios='.4'
-        layout='nodisplay'>
-      </amp-position-observer>
+      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.4' layout='nodisplay' />
       <div class='page__container'>
         <div v-for='article in articles' v-bind:class="['section', article.name]" :key='article.name'>
           <div class='section__left'>
@@ -13,11 +10,7 @@
             <div class='timeline__date'>
               {{article.date}}
             </div>
-            <amp-img
-              class='timeline__image'
-              v-bind:src='article.avatar'
-              height='1'
-              width='1' />
+            <amp-img class='timeline__image' v-bind:src='article.avatar' height='1' width='1' />
           </div>
           <div class='section__right'>
             <ArticleCard
@@ -28,10 +21,7 @@
               :text='article.text'
               :links='article.links'
               :notes='article.notes' />
-            <Gallery
-              :name='article.name'
-              :mainImage='article.mainImage'
-              :suppImages='article.suppImages' />
+            <Gallery :name='article.name' :mainImage='article.mainImage' :suppImages='article.suppImages' />
           </div>
         </div>
       </div>
@@ -54,9 +44,9 @@ export default {
     return {
       jumbotron: {
         name: 'logs',
-        title: 'logs',
+        title: './logs',
         subtitle: 'employment, partnership history and work experiences',
-        src: '/vectors/jumbotron/logs.svg'
+        // src: '/vectors/jumbotron/logs.svg'
       },
       articles: [
         {
@@ -90,18 +80,30 @@ export default {
           tags: ['WEB', 'RESPONSIVE', 'UI/UX'],
           text: `
             <p>
-              <b>Lorem Ipsum</b><br>
-              <u>Hello</u> <i>World</i><br>
-            </p>
-            <p>
-              <b>Ipsum Lorem</b><br>
-              <u>Goodbye</u> <i>World</i><br>
+              <b>About The Job</b><br>
+              I helped NodeFlair to bring mobile responsiveness to some features
+              on their web application. Apart from designing and implementing
+              responsive layouts, the project also involves transitioning
+              from a plain Ruby Rails environment to a React on Rails architecture
+              and moving from a monolithic application to modular microservices.
             </p>
           `,
           links: [
-            { src: '/vectors/experience/read.svg', label: 'Read More', url: '/companies/nodeflair', in: true },
-            { src: '/vectors/experience/visit.svg', label: 'Visit NodeFlair', url: 'http://www.nodeflair.com/' },
-            { src: '/vectors/experience/repo.svg', label: 'React Chat on GitHub', url: 'https://hliejun.github.io/react-chat/' }
+            {
+              src: '/vectors/experience/read.svg',
+              label: 'Read More',
+              url: '/companies/nodeflair', in: true
+            },
+            {
+              src: '/vectors/experience/visit.svg',
+              label: 'Visit NodeFlair',
+              url: 'http://www.nodeflair.com/'
+            },
+            {
+              src: '/vectors/experience/repo.svg',
+              label: 'React Chat on GitHub',
+              url: 'https://hliejun.github.io/react-chat/'
+            }
           ]
         },
         {
@@ -118,19 +120,37 @@ export default {
           tags: ['VOICE', 'CHATBOT', 'TELEPHONY', 'ASSISTANT'],
           text: `
             <p>
-              <b>Lorem Ipsum</b><br>
-              <u>Hello</u> <i>World</i><br>
-            </p>
-            <p>
-              <b>Ipsum Lorem</b><br>
-              <u>Goodbye</u> <i>World</i><br>
+              <b>About The Job</b><br>
+              I built a Google Assistant action for UrbanZoom using the Dialogflow API.
+              The project scope includes designing the context flow for the property
+              valuation query, as well as ensuring the fidelity of commands, both voice
+              and textual, in a Singaporean context. After implementing the Action, I
+              hooked up the Dialogflow agent with a Twilio Voice service, providing
+              access to the agent through a phone call.
             </p>
           `,
           links: [
-            { src: '/vectors/experience/read.svg', label: 'Read More', url: '/companies/urbanzoom', in: true },
-            { src: '/vectors/experience/visit.svg', label: 'Visit UrbanZoom', url: 'https://www.urbanzoom.com/' },
-            { src: '/vectors/experience/feature.svg', label: 'Featured on Business Times', url: 'http://bt.sg/4ZPg' },
-            { src: '/vectors/experience/try.svg', label: 'Try it on Google Assistant', url: 'https://assistant.google.com/services/a/uid/0000002516830acd?hl=en&source=web' }
+            {
+              src: '/vectors/experience/read.svg',
+              label: 'Read More',
+              url: '/companies/urbanzoom',
+              in: true
+            },
+            {
+              src: '/vectors/experience/visit.svg',
+              label: 'Visit UrbanZoom',
+              url: 'https://www.urbanzoom.com/'
+            },
+            {
+              src: '/vectors/experience/feature.svg',
+              label: 'Featured on Business Times',
+              url: 'http://bt.sg/4ZPg'
+            },
+            {
+              src: '/vectors/experience/try.svg',
+              label: 'Try it on Google Assistant',
+              url: 'https://assistant.google.com/services/a/uid/0000002516830acd?hl=en&source=web'
+            }
           ]
         },
         {
@@ -153,18 +173,28 @@ export default {
           subtitle: 'Face Recognition iOS Attendance Application for Pre-Schools',
           tags: ['IOS', 'NATIVE', 'FACE RECOGNITION', 'LIVE DETECTION'],
           text: `
-            <p>
-              <b>Lorem Ipsum</b><br>
-              <u>Hello</u> <i>World</i><br>
-            </p>
-            <p>
-              <b>Ipsum Lorem</b><br>
-              <u>Goodbye</u> <i>World</i><br>
-            </p>
+          <p>
+            <b>About The Project</b><br>
+            As part of the NUS CS3217 module, my team and I partnered with Little Lives
+            and helped them with face recognition functionalities on their iOS check-in
+            application for pre-school children. The application is written in Swift and
+            adopted the VIPER design pattern. We also leveraged on emotion and face
+            recognition capabilities of the Azure Face API, as well as face and object
+            detection using the iOS Vision API.
+          </p>
           `,
           links: [
-            { src: '/vectors/experience/read.svg', label: 'Read More', url: '/companies/littlelives', in: true },
-            { src: '/vectors/experience/visit.svg', label: 'Visit LittleLives', url: 'https://www.littlelives.com/' }
+            {
+              src: '/vectors/experience/read.svg',
+              label: 'Read More',
+              url: '/companies/littlelives',
+              in: true
+            },
+            {
+              src: '/vectors/experience/visit.svg',
+              label: 'Visit LittleLives',
+              url: 'https://www.littlelives.com/'
+            }
           ]
         },
         {
@@ -185,17 +215,26 @@ export default {
           tags: ['CONTENT MANAGEMENT', 'WEB', 'RESPONSIVE'],
           text: `
             <p>
-              <b>Lorem Ipsum</b><br>
-              <u>Hello</u> <i>World</i><br>
-            </p>
-            <p>
-              <b>Ipsum Lorem</b><br>
-              <u>Goodbye</u> <i>World</i><br>
+              <b>About The Internship</b><br>
+              During my internship at ShopBack, I was tasked with implementing multiple
+              features on their ReactJS-based content management system. I created a CSV
+              upload and cashback validation platform, a timeline view for shopping trips,
+              agenda view for cashback rates, and more. I also helped with liberating snacks
+              at their well-stocked pantry as one of the weekly Chief Welfare Officers.
             </p>
           `,
           links: [
-            { src: '/vectors/experience/read.svg', label: 'Read More', url: '/companies/shopback', in: true },
-            { src: '/vectors/experience/visit.svg', label: 'Visit ShopBack', url: 'https://www.shopback.sg/' }
+            {
+              src: '/vectors/experience/read.svg',
+              label: 'Read More',
+              url: '/companies/shopback',
+              in: true
+            },
+            {
+              src: '/vectors/experience/visit.svg',
+              label: 'Visit ShopBack',
+              url: 'https://www.shopback.sg/'
+            }
           ]
         },
         {
@@ -209,17 +248,25 @@ export default {
           tags: ['IMAGE PROCESSING', 'OPTIMISATIONS', 'RESEARCH'],
           text: `
             <p>
-              <b>Lorem Ipsum</b><br>
-              <u>Hello</u> <i>World</i><br>
-            </p>
-            <p>
-              <b>Ipsum Lorem</b><br>
-              <u>Goodbye</u> <i>World</i><br>
+              <b>About The Internship</b><br>
+              I interned in the Emerging Systems department at DSO, where I fiddled with
+              image processing toolkits such as the OpenCV library. I was particularly
+              vested in object and blob tracking strategies with multi-threading
+              and multi-processing optimisations.
             </p>
           `,
           links: [
-            { src: '/vectors/experience/read.svg', label: 'Read More', url: '/companies/dso', in: true },
-            { src: '/vectors/experience/visit.svg', label: 'Visit DSO', url: 'https://www.dso.org.sg/' }
+            {
+              src: '/vectors/experience/read.svg',
+              label: 'Read More',
+              url: '/companies/dso',
+              in: true
+            },
+            {
+              src: '/vectors/experience/visit.svg',
+              label: 'Visit DSO',
+              url: 'https://www.dso.org.sg/'
+            }
           ]
         },
         {
@@ -232,18 +279,25 @@ export default {
           subtitle: 'Battalion Manpower, Transport and Discipline Administration',
           tags: ['ARMY', 'STAFF', 'ADMINISTRATION'],
           text: `
-            <p>
-              <b>Lorem Ipsum</b><br>
-              <u>Hello</u> <i>World</i><br>
-            </p>
-            <p>
-              <b>Ipsum Lorem</b><br>
-              <u>Goodbye</u> <i>World</i><br>
-            </p>
+          <p>
+            <b>About The Service</b><br>
+            I was a Deputy Manpower Officer in my service at the 1st SAF Transport Battalion,
+            overseeing personnel matters that involves induction training, postings,
+            disciplinary and legal actions, vehicular administration, and more.
+          </p>
           `,
           links: [
-            { src: '/vectors/experience/read.svg', label: 'Read More', url: '/companies/saf', in: true },
-            { src: '/vectors/experience/visit.svg', label: 'Visit MINDEF', url: 'https://www.mindef.gov.sg/web/portal/mindef/home' }
+            {
+              src: '/vectors/experience/read.svg',
+              label: 'Read More',
+              url: '/companies/saf',
+              in: true
+            },
+            {
+              src: '/vectors/experience/visit.svg',
+              label: 'Visit MINDEF',
+              url: 'https://www.mindef.gov.sg/web/portal/mindef/home'
+            }
           ]
         }
       ]

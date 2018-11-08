@@ -2,10 +2,7 @@
   <div class='page work'>
     <Jumbotron :name='jumbotron.name' :title='jumbotron.title' :subtitle='jumbotron.subtitle' :src='jumbotron.src' />
     <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start'
-        intersection-ratios='.4'
-        layout='nodisplay'>
-      </amp-position-observer>
+      <amp-position-observer on='enter:fadeIn.start'intersection-ratios='.4'layout='nodisplay' />
       <div class='page__container'>
         <div class='work__gallery'>
           <PreviewCard
@@ -37,9 +34,9 @@ export default {
     return {
       jumbotron: {
         name: 'computer',
-        title: 'commits',
+        title: './commits',
         subtitle: 'showcase of some projects that I have worked on',
-        src: '/vectors/jumbotron/computer.svg'
+        // src: '/vectors/jumbotron/computer.svg'
       },
       projects: [
         {

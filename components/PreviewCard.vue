@@ -2,11 +2,7 @@
   <div v-bind:class="['preview', theme, name]">
     <a class='preview__link' v-bind:href='url'>
       <div class='preview__content'>
-        <amp-img
-          class='preview__image'
-          v-bind:src='src'
-          height='1'
-          width='1' />
+        <amp-img class='preview__image' v-bind:src='src' height='1' width='1' />
         <div class='preview__info-pane'>
           <div class='preview__title'>
             <span class='preview__text'>{{title}}</span>

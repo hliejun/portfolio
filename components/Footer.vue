@@ -16,7 +16,6 @@
       </div>
       <div class='site-map' v-if='!splash'>
         <!-- Place sitemap here -->
-        <!-- <span class='code footer__text'>Site Map</span> -->
       </div>
     </div>
   </div>

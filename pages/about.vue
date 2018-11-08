@@ -2,10 +2,7 @@
   <div class='page about'>
     <Jumbotron :name='jumbotron.name' :title='jumbotron.title' :subtitle='jumbotron.subtitle' :src='jumbotron.src' />
     <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start'
-        intersection-ratios='1'
-        layout='nodisplay'>
-      </amp-position-observer>
+      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='1' layout='nodisplay' />
       <div class='about__introduction'>
         <amp-img class='introduction__image' v-bind:src='src' width='1' height='1' />
         <div class='about__introduction-text'>
@@ -16,7 +13,7 @@
           </h4>
           <br>
           <div class='section' v-for='section in sections'>
-            <amp-img class='section__image' v-bind:src='section.src' width='1' height='1' />
+            <amp-img class='section__image' v-if='section.src' v-bind:src='section.src' width='1' height='1' />
             <div class='section__content'>
               <h5>{{section.title}}</h5>
               {{section.text}}
@@ -39,15 +36,15 @@ export default {
     return {
       jumbotron: {
         name: 'book',
-        title: 'readme',
+        title: './readme',
         subtitle: 'introduction about me and my background',
-        src: '/vectors/jumbotron/book.svg'
+        // src: '/vectors/jumbotron/book.svg'
       },
       src: '/images/profiles/about.jpg',
       sections: [
         {
           title: 'PROFILE',
-          src: '/vectors/about/profile.svg',
+          // src: '/vectors/about/profile.svg',
           text: `
             I'm a full-stack software engineer
             who is passionate about developing
@@ -57,7 +54,7 @@ export default {
         },
         {
           title: 'INTERESTS',
-          src: '/vectors/about/interests.svg',
+          // src: '/vectors/about/interests.svg',
           text: `
             Besides getting psyched about the
             latest technology, I also yearn to
@@ -71,7 +68,7 @@ export default {
         },
         {
           title: 'EDUCATION',
-          src: '/vectors/about/education.svg',
+          // src: '/vectors/about/education.svg',
           text: `
             I completed my primary education at Woodlands Primary,
             then high school at Hwa Chong Institution and tertiary
@@ -80,7 +77,7 @@ export default {
         },
         {
           title: 'HOBBIES',
-          src: '/vectors/about/hobbies.svg',
+          // src: '/vectors/about/hobbies.svg',
           text: `
             Apart from programming and designing experiences,
             my hobbies include food hunting, exploring nature,

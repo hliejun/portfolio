@@ -15,12 +15,13 @@
       <div class='article__text' v-html='text' />
       <div class='article__footer'>
         <div class='article__links'>
-          <a class='article__link' v-for='link in links' v-bind:href='link.url' v-bind:target="link.in ? '_self' : '_blank'" :key='link.url'>
-            <amp-img
-              class='article__link-icon'
-              v-bind:src='link.src'
-              height='1'
-              width='1' />
+          <a
+            class='article__link'
+            v-for='link in links'
+            v-bind:href='link.url'
+            v-bind:target="link.in ? '_self' : '_blank'"
+            :key='link.url'>
+            <amp-img class='article__link-icon' v-bind:src='link.src' height='1' width='1' />
             <span class='article__link-text'>
               {{link.label}}
             </span>

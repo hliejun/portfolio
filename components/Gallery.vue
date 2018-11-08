@@ -10,9 +10,6 @@
         v-bind:poster='mainImage.poster'>
         <source v-bind:src='mainImage.webm' type='video/webm' />
         <source v-bind:src='mainImage.video' type='video/mp4' />
-        <div fallback>
-          <p>This browser does not support the video element.</p>
-        </div>
       </amp-video>
       <amp-img
         class='gallery__image--main'
@@ -25,7 +22,7 @@
         width='1' />
       <div class='gallery__supp-images' v-if='suppImages.length'>
         <div class='gallery__image-container' v-for='image in suppImages' :key='image.src'>
-          <amp-video controls autoplay loop noaudio
+          <amp-video autoplay controls loop noaudio
             class='gallery__image--supp'
             height='1'
             width='1'
@@ -34,9 +31,6 @@
             :key='image.src'>
             <source v-bind:src='image.webm' type='video/webm' />
             <source v-bind:src='image.video' type='video/mp4' />
-            <div fallback>
-              <p>This browser does not support the video element.</p>
-            </div>
           </amp-video>
           <amp-img
             class='gallery__image--supp'
