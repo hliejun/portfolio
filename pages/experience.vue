@@ -1,6 +1,11 @@
 <template>
   <div class='page experience'>
-    <Jumbotron :name='jumbotron.name' :title='jumbotron.title' :subtitle='jumbotron.subtitle' :src='jumbotron.src' />
+    <Jumbotron
+      :name='jumbotron.name'
+      :title='jumbotron.title'
+      :subtitle='jumbotron.subtitle'
+      :src='jumbotron.src'
+      :actions='jumbotron.actions' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.4' layout='nodisplay' />
       <div class='page__container'>
@@ -46,6 +51,16 @@ export default {
         name: 'logs',
         title: './logs',
         subtitle: 'employment, partnership history and work experiences',
+        actions: [
+          {
+            label: 'LinkedIn',
+            url: 'https://www.linkedin.com/in/hliejun'
+          },
+          {
+            label: 'Résumé',
+            url: '/documents/resume.pdf'
+          }
+        ],
         // src: '/vectors/jumbotron/logs.svg'
       },
       articles: [

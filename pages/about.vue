@@ -1,6 +1,11 @@
 <template>
   <div class='page about'>
-    <Jumbotron :name='jumbotron.name' :title='jumbotron.title' :subtitle='jumbotron.subtitle' :src='jumbotron.src' />
+    <Jumbotron
+      :name='jumbotron.name'
+      :title='jumbotron.title'
+      :subtitle='jumbotron.subtitle'
+      :src='jumbotron.src'
+      :actions='jumbotron.actions' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='1' layout='nodisplay' />
       <div class='about__introduction'>
@@ -38,6 +43,16 @@ export default {
         name: 'book',
         title: './readme',
         subtitle: 'introduction about me and my background',
+        actions: [
+          {
+            label: 'Twitter',
+            url: 'https://twitter.com/hliejun'
+          },
+          {
+            label: 'Stories',
+            url: 'https://medium.com/@hliejun.dev'
+          }
+        ],
         // src: '/vectors/jumbotron/book.svg'
       },
       src: '/images/profiles/about.jpg',
@@ -81,7 +96,8 @@ export default {
           text: `
             Apart from programming and designing experiences,
             my hobbies include food hunting, exploring nature,
-            binge watching drama and movies and listening to good music.
+            browsing dank memes, binge watching drama and movies
+            and listening to good music.
           `
         }
       ]

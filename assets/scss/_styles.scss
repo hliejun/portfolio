@@ -19,18 +19,6 @@ html {
   line-height: 1.414;
 }
 
-@media (max-width: 600px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 800px) {
-  html {
-    font-size: 16px;
-  }
-}
-
 body, #__nuxt, #__layout, .layout {
   min-height: 100vh;
   overflow-x: hidden;
@@ -64,8 +52,6 @@ p {
 .page.project .page__content {
   background-color: #455a64;
 }
-
-
 
 .page--splash {
   min-height: calc(100vh - 100px);
@@ -108,4 +94,18 @@ p {
 
 .code {
   font-family: 'Roboto Mono', monospace;
+}
+
+// Media Queries
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  html {
+    font-size: 16px;
+  }
 }

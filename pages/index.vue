@@ -29,7 +29,7 @@
         <span class='stylized subtitle'>Singapore</span>
         <a class='link__content resume__link' href='/documents/resume.pdf' target='_blank'>
           <div class='card code button resume__button'>
-            download resume
+            download résumé
           </div>
         </a>
       </div>

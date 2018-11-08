@@ -1,5 +1,5 @@
 {
- "name": "App",
+ "name": "hliejun",
  "icons": [
   {
    "src": "\/android-icon-144x144.png",
@@ -13,5 +13,6 @@
    "type": "image\/png",
    "density": "4.0"
   }
- ]
+],
+"display": "standalone"
 }

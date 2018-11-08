@@ -12,6 +12,13 @@
         sizes='(min-width: 600px) 150px, 100px' />
       <span class='stylized jumbotron__title'>{{title}}</span>
       <span class='stylized jumbotron__subtitle'>{{subtitle}}</span>
+      <div class='jumbotron__actions' v-if='actions.length'>
+        <a class='jumbotron__link' v-for='action in actions' v-bind:href='action.url' target='_blank'>
+          <div class='code button jumbotron__button'>
+            {{action.label}}
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +41,10 @@ export default {
     subtitle: {
       type: String,
       default: ''
+    },
+    actions: {
+      type: Array,
+      default: []
     },
     theme: {
       type: String,

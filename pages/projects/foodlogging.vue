@@ -19,6 +19,7 @@ export default {
       jumbotron: {
         title: 'Food Logging',
         subtitle: 'This page is under construction, please check back later.',
+        actions: []
       }
     }
   }

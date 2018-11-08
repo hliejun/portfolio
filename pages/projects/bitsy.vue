@@ -19,6 +19,7 @@ export default {
       jumbotron: {
         title: 'Bitsy Story',
         subtitle: 'This page is under construction, please check back later.',
+        actions: []
       }
     }
   }

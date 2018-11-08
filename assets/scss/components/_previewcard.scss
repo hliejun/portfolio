@@ -35,24 +35,24 @@
 }
 
 .preview__link:hover .preview__info-pane::before {
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  transform: translateY(0);
+  -webkit-transform: translateY(5px);
+  -moz-transform: translateY(5px);
+  transform: translateY(5px);
 }
 
 .preview__link:hover .preview__image {
+  -webkit-filter: saturate(1) brightness(1);
+  filter: saturate(1) brightness(1);
+}
+
+.weight .preview__link:hover .preview__image {
   -webkit-filter: saturate(1) brightness(1.1);
   filter: saturate(1) brightness(1.1);
 }
 
-.weight .preview__link:hover .preview__image {
-  -webkit-filter: saturate(1) brightness(1.2);
-  filter: saturate(1) brightness(1.2);
-}
-
 .bubble .preview__link:hover .preview__image {
-  -webkit-filter: saturate(1) brightness(1.2);
-  filter: saturate(1) brightness(1.2);
+  -webkit-filter: saturate(1) brightness(1.1);
+  filter: saturate(1) brightness(1.1);
 }
 
 .preview__content {
@@ -113,14 +113,14 @@
 }
 
 .preview__image {
-  -webkit-filter: saturate(.7) brightness(.98);
-  filter: saturate(.7) brightness(.98);
+  -webkit-filter: saturate(.7) brightness(.9);
+  filter: saturate(.7) brightness(.9);
 
   -webkit-transition: all .6s ease;
   -moz-transition: all .6s ease;
   transition: all .6s ease;
 
-  background-color: #455a64;
+  // background-color: #455a64;
   border-radius: 6px;
   min-height: 100%;
   min-width: 100%;
@@ -132,9 +132,9 @@
 }
 
 .preview__info-pane {
-  -webkit-transform: translateY(10px);
-  -moz-transform: translateY(10px);
-  transform: translateY(10px);
+  -webkit-transform: translateY(15px);
+  -moz-transform: translateY(15px);
+  transform: translateY(15px);
 
   -webkit-transition: all .6s ease;
   -moz-transition: all .6s ease;
@@ -153,30 +153,30 @@
 }
 
 .preview__info-pane::before {
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
 
   -webkit-transition: all .6s ease;
   -moz-transition: all .6s ease;
   transition: all .6s ease;
 
-  -webkit-transform: translateY(-20px);
-  -moz-transform: translateY(-20px);
-  transform: translateY(-20px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  transform: translateY(-10px);
 
-  -webkit-box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .5);
-  -moz-box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .5);
-  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .5);
+  -webkit-box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .6);
+  -moz-box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .6);
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .6);
 
   background: inherit;
   bottom: 0;
   content: ' ';
-  height: calc(100% + 80px);
-  left: -20px;
+  height: calc(100% + 40px);
+  left: -15px;
   position: absolute;
   right: 0;
-  top: -60px;
-  width: calc(100% + 40px);
+  top: -30px;
+  width: calc(100% + 30px);
   z-index: -1;
 }
 
@@ -219,62 +219,62 @@
 
   .todo-list .preview__content {
     background: url(/images/previews/todolist.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
   .weight .preview__content {
     background: url(/images/previews/weight.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
   .bubble .preview__content {
     background: url(/images/previews/bubble.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
   .food-logging .preview__content {
     background: url(/images/previews/food-logging.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
   .sat-solver .preview__content {
     background: url(/images/previews/sat-solver.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
   .hypedyn .preview__content {
     background: url(/images/previews/hypedyn.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
   .bitsy .preview__content {
     background: url(/images/previews/bitsy.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
   .pokemania .preview__content {
     background: url(/images/previews/pokemania.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
   .little-lives .preview__content {
     background: url(/images/previews/little-lives.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
   .urbanzoom .preview__content {
     background: url(/images/previews/urbanzoom.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
   .react-chat .preview__content {
     background: url(/images/previews/react-chat.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
   .portfolio .preview__content {
     background: url(/images/previews/portfolio.png) no-repeat center bottom;
-    background-size: 80vw calc(80vw + 60px);
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 }
 
@@ -286,62 +286,62 @@
 
   .todo-list .preview__content {
     background: url(/images/previews/todolist.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
   .weight .preview__content {
     background: url(/images/previews/weight.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
   .bubble .preview__content {
     background: url(/images/previews/bubble.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
   .food-logging .preview__content {
     background: url(/images/previews/food-logging.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
   .sat-solver .preview__content {
     background: url(/images/previews/sat-solver.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
   .hypedyn .preview__content {
     background: url(/images/previews/hypedyn.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
   .bitsy .preview__content {
     background: url(/images/previews/bitsy.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
   .pokemania .preview__content {
     background: url(/images/previews/pokemania.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
   .little-lives .preview__content {
     background: url(/images/previews/little-lives.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
   .urbanzoom .preview__content {
     background: url(/images/previews/urbanzoom.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
   .react-chat .preview__content {
     background: url(/images/previews/react-chat.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
   .portfolio .preview__content {
     background: url(/images/previews/portfolio.png) no-repeat center bottom;
-    background-size: 40vw calc(40vw + 60px);
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 }
 
@@ -353,62 +353,62 @@
 
   .todo-list .preview__content {
     background: url(/images/previews/todolist.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
   .weight .preview__content {
     background: url(/images/previews/weight.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
   .bubble .preview__content {
     background: url(/images/previews/bubble.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
   .food-logging .preview__content {
     background: url(/images/previews/food-logging.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
   .sat-solver .preview__content {
     background: url(/images/previews/sat-solver.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
   .hypedyn .preview__content {
     background: url(/images/previews/hypedyn.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
   .bitsy .preview__content {
     background: url(/images/previews/bitsy.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
   .pokemania .preview__content {
     background: url(/images/previews/pokemania.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
   .little-lives .preview__content {
     background: url(/images/previews/little-lives.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
   .urbanzoom .preview__content {
     background: url(/images/previews/urbanzoom.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
   .react-chat .preview__content {
     background: url(/images/previews/react-chat.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
   .portfolio .preview__content {
     background: url(/images/previews/portfolio.png) no-repeat center bottom;
-    background-size: 25vw calc(25vw + 60px);
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 }
 
@@ -420,61 +420,61 @@
 
   .todo-list .preview__content {
     background: url(/images/previews/todolist.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 
   .weight .preview__content {
     background: url(/images/previews/weight.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 
   .bubble .preview__content {
     background: url(/images/previews/bubble.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 
   .food-logging .preview__content {
     background: url(/images/previews/food-logging.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 
   .sat-solver .preview__content {
     background: url(/images/previews/sat-solver.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 
   .hypedyn .preview__content {
     background: url(/images/previews/hypedyn.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 
   .bitsy .preview__content {
     background: url(/images/previews/bitsy.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 
   .pokemania .preview__content {
     background: url(/images/previews/pokemania.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 
   .little-lives .preview__content {
     background: url(/images/previews/little-lives.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 
   .urbanzoom .preview__content {
     background: url(/images/previews/urbanzoom.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 
   .react-chat .preview__content {
     background: url(/images/previews/react-chat.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 
   .portfolio .preview__content {
     background: url(/images/previews/portfolio.png) no-repeat center bottom;
-    background-size: 400px 460px;
+    background-size: 430px 440px;
   }
 }

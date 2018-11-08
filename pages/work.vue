@@ -1,6 +1,11 @@
 <template>
   <div class='page work'>
-    <Jumbotron :name='jumbotron.name' :title='jumbotron.title' :subtitle='jumbotron.subtitle' :src='jumbotron.src' />
+    <Jumbotron
+      :name='jumbotron.name'
+      :title='jumbotron.title'
+      :subtitle='jumbotron.subtitle'
+      :src='jumbotron.src'
+      :actions='jumbotron.actions' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start'intersection-ratios='.4'layout='nodisplay' />
       <div class='page__container'>
@@ -36,14 +41,24 @@ export default {
         name: 'computer',
         title: './commits',
         subtitle: 'showcase of some projects that I have worked on',
+        actions: [
+          {
+            label: 'GitHub',
+            url: 'https://github.com/hliejun'
+          },
+          {
+            label: 'Dribbble',
+            url: 'https://dribbble.com/hliejun'
+          }
+        ],
         // src: '/vectors/jumbotron/computer.svg'
       },
       projects: [
         {
           name: 'portfolio',
-          src: '',
+          src: '/images/previews/portfolio.png',
           title: 'Portfolio',
-          subtitle: '2018 / PERSONAL / 1 WEEK',
+          subtitle: '2018 / PERSONAL / 2 WEEKS',
           description: 'Lightweight personal portfolio website and experimenting with NuxtJS and AMPHTHML.',
           url: '/projects/portfolio',
           tags: ['NUXT', 'VUE', 'AMP']
