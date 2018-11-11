@@ -1,6 +1,15 @@
 <template>
   <div class='page portfolio project'>
-    <Jumbotron :name='jumbotron.name' :title='jumbotron.title' :subtitle='jumbotron.subtitle' :src='jumbotron.src' />
+    <div class='project__header'>
+      <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+      <Jumbotron
+        :name='jumbotron.name'
+        :title='jumbotron.title'
+        :subtitle='jumbotron.subtitle'
+        :src='jumbotron.src'
+        :actions='jumbotron.actions' />
+    </div>
+
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='0' layout='nodisplay' />
     </div>
@@ -9,17 +18,29 @@
 
 <script>
 import Jumbotron from '../../components/Jumbotron'
+import Mockup from '../../components/Mockup'
 
 export default {
   components: {
-    Jumbotron
+    Jumbotron,
+    Mockup
   },
   data () {
     return {
       jumbotron: {
         title: 'Portfolio',
-        subtitle: 'This page is under construction, please check back later.',
-        actions: []
+        subtitle: 'Portfolio website documenting my personal work and projects.',
+        actions: [
+          {
+            label: 'GitHub Repo',
+            url: 'https://github.com/hliejun/portfolio'
+          },
+        ]
+      },
+      mockup: {
+        src: '/images/projects/portfolio-1.png',
+        orientation: 'portrait',
+        type: 'wide'
       }
     }
   }

@@ -42,6 +42,7 @@
   display: block;
   font-size: 1em;
   font-weight: 500;
+  margin: auto;
   text-align: center;
   text-rendering: optimizeLegibility;
   width: 80vw;
@@ -93,6 +94,7 @@
   font-size: .8em;
   font-weight: 500;
   padding: 5px 10px;
+  white-space: nowrap;
 }
 
 .jumbotron__button:hover {

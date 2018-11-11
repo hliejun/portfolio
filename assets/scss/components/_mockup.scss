@@ -1,0 +1,121 @@
+.mockup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wide.portrait.mockup {
+  padding: 2em .9em 0 .9em;
+}
+
+.narrow.portrait.mockup {
+  padding: 1.7em .9em .3em .9em;
+}
+
+.landscape.mockup {
+  padding: 3.5em .9em .5em .9em;
+}
+
+.mockup__container {
+  position: relative;
+  margin: 0 3em;
+}
+
+.mockup__image,
+.mockup__shadow {
+  transform-style: preserve-3d;
+  transition: .3s;
+}
+
+.portrait .mockup__image,
+.portrait .mockup__shadow {
+  transform: rotateX(45deg) rotateZ(-45deg);
+}
+
+.landscape .mockup__image,
+.landscape .mockup__shadow {
+  transform: rotateX(50deg) rotateZ(-40deg);
+}
+
+.mockup__image {
+  position: relative;
+}
+
+.mockup__image::before,
+.mockup__image::after {
+  content: '';
+  position: absolute;
+}
+
+.mockup__image::before {
+  bottom: -4px;
+  left: 0;
+  background-color: #d0d0d0;
+  width: 100%;
+  height: 8px;
+  transform: rotateX(90deg) translateY(-4px);
+}
+
+.mockup__image::after {
+  top: 0;
+  left: -4px;
+  width: 8px;
+  height: 100%;
+  background-color: #bbb;
+  transform: rotateY(90deg) translateX(4px);
+}
+
+.isometric__image {
+  vertical-align: bottom;
+  transition: .3s;
+}
+
+.wide.portrait .isometric__image {
+  max-height: 420px;
+  max-width: 315px;
+}
+
+.wide.landscape .isometric__image {
+  max-width: 480px;
+  max-height: 360px;
+}
+
+.narrow.portrait .isometric__image {
+  max-height: 420px;
+  max-width: 236px;
+}
+
+.narrow.landscape .isometric__image {
+  max-width: 480px;
+  max-height: 270px;
+}
+
+.isometric__image img {
+  object-fit: cover;
+}
+
+.mockup__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: -35px 45px 15px rgba(0, 0, 0, .1);
+}
+
+.mockup__container:hover .mockup__image,
+.mockup__container:hover .mockup__shadow {
+  transform: rotate(0);
+}
+
+.landscape .mockup__container:hover .mockup__image,
+.landscape .mockup__container:hover .mockup__shadow {
+  transform: rotate(0) scale(1.1);
+}
+
+.mockup__container:hover .mockup__shadow {
+  box-shadow: 0 5px 40px rgba(0, 0, 0, .5);
+}
