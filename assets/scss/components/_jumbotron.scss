@@ -102,3 +102,11 @@
   background-color: rgba(240, 240, 240, 1);
   color: #455a64;
 }
+
+@media (max-width: 600px) {
+  .jumbotron__title {
+    font-size: 1.8em;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+}

@@ -33,7 +33,7 @@ export default {
             url: 'https://hliejun.github.io/hypedyn-air-crash-investigation'
           },
           {
-            label: 'The Patrol',
+            label: 'Patrol',
             url: 'https://hliejun.github.io/hypedyn-the-patrol'
           },
           {

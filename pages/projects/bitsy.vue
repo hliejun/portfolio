@@ -29,11 +29,11 @@ export default {
         subtitle: 'Interactive pixel story made using Bitsy for NUS module NM3222.',
         actions: [
           {
-            label: 'Play Story',
+            label: 'Story',
             url: 'https://hliejun.github.io/bitsy-story'
           },
           {
-            label: 'On itch.io',
+            label: 'itch.io',
             url: 'https://hliejun.itch.io/missing-children-of-ann-siang-hill'
           },
           {
