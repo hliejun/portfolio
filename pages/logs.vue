@@ -1,5 +1,5 @@
 <template>
-  <div class='page experience'>
+  <div class='page logs'>
     <Jumbotron
       :name='jumbotron.name'
       :title='jumbotron.title'
@@ -105,17 +105,17 @@ export default {
           `,
           links: [
             {
-              src: '/vectors/experience/read.svg',
+              src: '/vectors/logs/read.svg',
               label: 'Read More',
               url: '/companies/nodeflair', in: true
             },
             {
-              src: '/vectors/experience/visit.svg',
+              src: '/vectors/logs/visit.svg',
               label: 'Visit NodeFlair',
               url: 'http://www.nodeflair.com/'
             },
             {
-              src: '/vectors/experience/repo.svg',
+              src: '/vectors/logs/repo.svg',
               label: 'React Chat on GitHub',
               url: 'https://hliejun.github.io/react-chat/'
             }
@@ -146,23 +146,23 @@ export default {
           `,
           links: [
             {
-              src: '/vectors/experience/read.svg',
+              src: '/vectors/logs/read.svg',
               label: 'Read More',
               url: '/companies/urbanzoom',
               in: true
             },
             {
-              src: '/vectors/experience/visit.svg',
+              src: '/vectors/logs/visit.svg',
               label: 'Visit UrbanZoom',
               url: 'https://www.urbanzoom.com/'
             },
             {
-              src: '/vectors/experience/feature.svg',
+              src: '/vectors/logs/feature.svg',
               label: 'Featured on Business Times',
               url: 'http://bt.sg/4ZPg'
             },
             {
-              src: '/vectors/experience/try.svg',
+              src: '/vectors/logs/try.svg',
               label: 'Try it on Google Assistant',
               url: 'https://assistant.google.com/services/a/uid/0000002516830acd?hl=en&source=web'
             }
@@ -173,12 +173,12 @@ export default {
           date: 'MAR 18',
           avatar: '/vectors/logos/littlelives.svg',
           mainImage: {
-            src: '/images/experience/article-littlelives-01.png'
+            src: '/images/logs/article-littlelives-01.png'
           },
           suppImages: [
-            { src: '/images/experience/article-littlelives-02.png' },
-            { src: '/images/experience/article-littlelives-03.png' },
-            { src: '/images/experience/article-littlelives-04.png' },
+            { src: '/images/logs/article-littlelives-02.png' },
+            { src: '/images/logs/article-littlelives-03.png' },
+            { src: '/images/logs/article-littlelives-04.png' },
             {
               video: '/videos/article-littlelives-05.mp4',
               webm: '/videos/article-littlelives-05.webm'
@@ -200,13 +200,13 @@ export default {
           `,
           links: [
             {
-              src: '/vectors/experience/read.svg',
+              src: '/vectors/logs/read.svg',
               label: 'Read More',
               url: '/companies/littlelives',
               in: true
             },
             {
-              src: '/vectors/experience/visit.svg',
+              src: '/vectors/logs/visit.svg',
               label: 'Visit LittleLives',
               url: 'https://www.littlelives.com/'
             }
@@ -217,13 +217,13 @@ export default {
           date: 'DEC 16',
           avatar: '/vectors/logos/shopback.svg',
           mainImage: {
-            src: '/images/experience/article-shopback-01.png'
+            src: '/images/logs/article-shopback-01.png'
           },
           suppImages: [
-            { src: '/images/experience/article-shopback-02.png' },
-            { src: '/images/experience/article-shopback-03.png' },
-            { src: '/images/experience/article-shopback-04.png' },
-            { src: '/images/experience/article-shopback-05.png' }
+            { src: '/images/logs/article-shopback-02.png' },
+            { src: '/images/logs/article-shopback-03.png' },
+            { src: '/images/logs/article-shopback-04.png' },
+            { src: '/images/logs/article-shopback-05.png' }
           ],
           title: 'ShopBack',
           subtitle: 'Adding Features to Content Management System',
@@ -240,13 +240,13 @@ export default {
           `,
           links: [
             {
-              src: '/vectors/experience/read.svg',
+              src: '/vectors/logs/read.svg',
               label: 'Read More',
               url: '/companies/shopback',
               in: true
             },
             {
-              src: '/vectors/experience/visit.svg',
+              src: '/vectors/logs/visit.svg',
               label: 'Visit ShopBack',
               url: 'https://www.shopback.sg/'
             }
@@ -272,13 +272,13 @@ export default {
           `,
           links: [
             {
-              src: '/vectors/experience/read.svg',
+              src: '/vectors/logs/read.svg',
               label: 'Read More',
               url: '/companies/dso',
               in: true
             },
             {
-              src: '/vectors/experience/visit.svg',
+              src: '/vectors/logs/visit.svg',
               label: 'Visit DSO',
               url: 'https://www.dso.org.sg/'
             }
@@ -303,13 +303,13 @@ export default {
           `,
           links: [
             {
-              src: '/vectors/experience/read.svg',
+              src: '/vectors/logs/read.svg',
               label: 'Read More',
               url: '/companies/saf',
               in: true
             },
             {
-              src: '/vectors/experience/visit.svg',
+              src: '/vectors/logs/visit.svg',
               label: 'Visit MINDEF',
               url: 'https://www.mindef.gov.sg/web/portal/mindef/home'
             }

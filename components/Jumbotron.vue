@@ -13,7 +13,11 @@
       <span class='stylized jumbotron__title'>{{title}}</span>
       <span class='stylized jumbotron__subtitle'>{{subtitle}}</span>
       <div class='jumbotron__actions' v-if='actions.length'>
-        <a class='jumbotron__link' v-for='action in actions' v-bind:href='action.url' target='_blank'>
+        <a
+          class='jumbotron__link'
+          v-for='action in actions'
+          v-bind:href='action.url'
+          v-bind:target="action.in ? '_self' : '_blank'">
           <div class='code button jumbotron__button'>
             {{action.label}}
           </div>

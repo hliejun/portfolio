@@ -41,7 +41,7 @@ export default {
     return {
       jumbotron: {
         name: 'book',
-        title: './readme',
+        title: './about',
         subtitle: 'introduction about me and my background',
         actions: [
           {

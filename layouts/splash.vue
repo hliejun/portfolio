@@ -19,9 +19,10 @@ export default {
     return {
       logo: { label: 'dev/hliejun', link: '/', src: '/images/splash/profile.png' },
       siteLinks: [
-        { label: 'commits', url: '/work' },
-        { label: 'logs', url: '/experience' },
-        { label: 'readme', url: '/about' }
+        { label: 'home', url: '/' },
+        { label: 'work', url: '/work' },
+        { label: 'logs', url: '/logs' },
+        { label: 'about', url: '/about' }
       ],
       socialLinks: [
         { url: 'https://github.com/hliejun', src: '/vectors/social/github.svg' },

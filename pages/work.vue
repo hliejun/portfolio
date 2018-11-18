@@ -39,7 +39,7 @@ export default {
     return {
       jumbotron: {
         name: 'computer',
-        title: './commits',
+        title: './work',
         subtitle: 'showcase of some projects that I have worked on',
         actions: [
           {
@@ -97,7 +97,7 @@ export default {
           subtitle: '2018 / NUS CS3217 / 3 WEEKS',
           description: 'Pokémon-themed Bubble Blast game with a simple Physics and game engine library.',
           url: '/projects/pokemania',
-          tags: ['IOS', 'COCOA TOUCH']
+          tags: ['IOS', 'GAME', 'COCOAPODS']
         },
         {
           name: 'bitsy',
@@ -106,7 +106,7 @@ export default {
           subtitle: '2018 / NUS NM3222 / 1 WEEK',
           description: 'Explorative pixel-art story focused on replay and discoverability.',
           url: '/projects/bitsy',
-          tags: ['BITSY', 'STORYTELLING']
+          tags: ['BITSY', 'STORY', 'PIXEL']
         },
         {
           name: 'hypedyn',
@@ -115,7 +115,7 @@ export default {
           subtitle: '2018 / NUS NM3222 / 1 WEEK',
           description: 'Text-based interactive stories focused on emotions, choice as agency and replay.',
           url: '/projects/hypedyn',
-          tags: ['HYPEDYN', 'STORYTELLING']
+          tags: ['HYPEDYN', 'STORY', 'TEXT']
         },
         {
           name: 'sat-solver',
@@ -124,7 +124,7 @@ export default {
           subtitle: '2018 / NUS CS4244 / 5 WEEKS',
           description: 'Implementing and comparing various satisfiability solving techniques and heuristics.',
           url: '/projects/satsolver',
-          tags: ['RESEARCH', 'DPLL', 'CDCL']
+          tags: ['RESEARCH', 'KB', 'LOGIC']
         },
         {
           name: 'food-logging',
@@ -133,7 +133,7 @@ export default {
           subtitle: '2017 / NUS CS4249 / 3 WEEKS',
           description: 'Mobile food logging interface prototyping with careful study of design principles.',
           url: '/projects/foodlogging',
-          tags: ['MARVEL', 'UX']
+          tags: ['MARVEL', 'MOBILE', 'UX']
         },
         {
           name: 'bubble',
@@ -142,7 +142,7 @@ export default {
           subtitle: '2016 / NUS CS3216 / 4 WEEKS',
           description: 'Topic-threaded mobile chat application using a real-time mobile chat event-based environment.',
           url: '/projects/bubble',
-          tags: ['REACT NATIVE', 'SOCKETS', 'NODE']
+          tags: ['REACT NATIVE', 'SOCKETS', 'CHAT']
         },
         {
           name: 'weight',
@@ -151,7 +151,7 @@ export default {
           subtitle: '2016 / NUS NM3216 / 3 WEEKS',
           description: 'Infinite run game that pits the player against a gravity-field stage while maintaining weight.',
           url: '/projects/weight',
-          tags: ['UNITY', 'GAME DESIGN']
+          tags: ['UNITY', 'GAME DESIGN', 'INFINITE']
         },
         {
           name: 'todo-list',
@@ -160,7 +160,7 @@ export default {
           subtitle: '2016 / NUS CS2103T / 6 WEEKS',
           description: 'To-do list application with focus on natural language text input and keyboard interactions.',
           url: '/projects/todolist',
-          tags: ['JAVAFX', 'NATTY', 'JUNIT']
+          tags: ['JAVAFX', 'DESKTOP', 'AGENDA']
         }
       ]
     }

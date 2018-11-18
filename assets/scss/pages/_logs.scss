@@ -1,21 +1,21 @@
 @import './colors.scss';
 @import './mixins.scss';
 
-.experience .jumbotron {
+.logs .jumbotron {
   background: linear-gradient(0deg, #368852 0%, #8dc26f 100%);
 }
 
-.experience .page__content {
+.logs .page__content {
   padding: 50px 0 15px 0;
 }
 
-.experience .page__container {
+.logs .page__container {
   margin: 10px auto;
   max-width: 1200px;
   width: calc(100vw - 20px);
 }
 
-.experience .section {
+.logs .section {
   -webkit-box-align: start;
   -moz-box-align: start;
   -webkit-align-items: flex-start;
@@ -44,11 +44,11 @@
   width: 100%;
 }
 
-.experience .section__left {
+.logs .section__left {
   margin-left: 5px;
 }
 
-.experience .timeline__date {
+.logs .timeline__date {
   -webkit-box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
   -moz-box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
   box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
@@ -65,7 +65,7 @@
   z-index: 6;
 }
 
-.experience .timeline__image {
+.logs .timeline__image {
   -webkit-box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
   -moz-box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
   box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
@@ -78,14 +78,14 @@
   z-index: 5;
 }
 
-.experience .timeline__image img,
-.experience .timeline__image svg {
+.logs .timeline__image img,
+.logs .timeline__image svg {
   margin-left: -5px;
   min-height: 60px;
   min-width: 60px;
 }
 
-.experience .timeline__line {
+.logs .timeline__line {
   -webkit-box-shadow: 0 2px 4px 1px rgba(0, 64, 128, .2);
   -moz-box-shadow: 0 2px 4px 1px rgba(0, 64, 128, .2);
   box-shadow: 0 2px 4px 1px rgba(0, 64, 128, .2);
@@ -101,21 +101,21 @@
 }
 
 @media (max-width: 600px) {
-  .experience .timeline__date {
+  .logs .timeline__date {
     left: 6px;
     top: -10px;
   }
 }
 
 @media (min-width: 601px) and (max-width: 800px) {
-  .experience .timeline__date {
+  .logs .timeline__date {
     left: 4px;
     top: -10px;
   }
 }
 
 @media (min-width: 801px) {
-  .experience .timeline__date {
+  .logs .timeline__date {
     left: 2px;
     top: -15px;
   }

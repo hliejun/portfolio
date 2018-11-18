@@ -4,6 +4,8 @@
 // Generic
 
 * {
+  -webkit-tap-highlight-color: transparent;
+
   box-sizing: border-box;
   margin: 0;
 }
@@ -89,7 +91,7 @@ p {
 }
 
 .stylized {
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .code {

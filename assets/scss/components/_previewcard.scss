@@ -1,7 +1,7 @@
 .preview {
-  -webkit-box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .2);
-  -moz-box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .2);
-  box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .2);
+  -webkit-box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .4);
+  -moz-box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .4);
+  box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .4);
 
   border-radius: 6px;
   box-sizing: border-box;
@@ -10,9 +10,9 @@
 }
 
 .preview__link {
-  -webkit-transition: all .6s ease;
-  -moz-transition: all .6s ease;
-  transition: all .6s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  transition: all .4s ease;
 
   border-radius: 6px;
   color: inherit;
@@ -40,20 +40,10 @@
   transform: translateY(5px);
 }
 
-.preview__link:hover .preview__image {
-  -webkit-filter: saturate(1) brightness(1);
-  filter: saturate(1) brightness(1);
-}
-
-.weight .preview__link:hover .preview__image {
-  -webkit-filter: saturate(1) brightness(1.1);
-  filter: saturate(1) brightness(1.1);
-}
-
-.bubble .preview__link:hover .preview__image {
-  -webkit-filter: saturate(1) brightness(1.1);
-  filter: saturate(1) brightness(1.1);
-}
+// .preview__link:hover .preview__image {
+//   -webkit-filter: saturate(1) brightness(1);
+//   filter: saturate(1) brightness(1);
+// }
 
 .preview__content {
   border-radius: 6px;
@@ -113,12 +103,12 @@
 }
 
 .preview__image {
-  -webkit-filter: saturate(.7) brightness(.9);
-  filter: saturate(.7) brightness(.9);
+  // -webkit-filter: saturate(.7) brightness(.9);
+  // filter: saturate(.7) brightness(.9);
 
-  -webkit-transition: all .6s ease;
-  -moz-transition: all .6s ease;
-  transition: all .6s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  transition: all .4s ease;
 
   // background-color: #455a64;
   border-radius: 6px;
@@ -128,6 +118,10 @@
 }
 
 .preview__image img {
+  -webkit-transform: scale(1.07);
+  -moz-transform: scale(1.07);
+  transform: scale(1.07);
+
   object-fit: cover;
 }
 
@@ -136,13 +130,13 @@
   -moz-transform: translateY(15px);
   transform: translateY(15px);
 
-  -webkit-transition: all .6s ease;
-  -moz-transition: all .6s ease;
-  transition: all .6s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  transition: all .4s ease;
 
   background-color: rgba(255, 255, 255, .8);
   background: inherit;
-  border-radius: 0 0 6px 6px;
+  // border-radius: 0 0 6px 6px;
   bottom: 0;
   left: 0;
   overflow: hidden;
@@ -156,19 +150,19 @@
   -webkit-filter: blur(8px);
   filter: blur(8px);
 
-  -webkit-transition: all .6s ease;
-  -moz-transition: all .6s ease;
-  transition: all .6s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  transition: all .4s ease;
 
   -webkit-transform: translateY(-10px);
   -moz-transform: translateY(-10px);
   transform: translateY(-10px);
 
-  -webkit-box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .6);
-  -moz-box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .6);
-  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .6);
+  -webkit-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, .65);
+  -moz-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, .65);
+  box-shadow: inset 0 0 0 300px rgba(255, 255, 255, .65);
 
-  background: inherit;
+  // background: inherit;
   bottom: 0;
   content: ' ';
   height: calc(100% + 40px);
@@ -199,9 +193,9 @@
   -moz-transform: translateY(30px);
   transform: translateY(30px);
 
-  -webkit-transition: all .6s ease;
-  -moz-transition: all .6s ease;
-  transition: all .6s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  transition: all .4s ease;
 
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
@@ -217,62 +211,62 @@
     height: 80vw;
   }
 
-  .todo-list .preview__content {
+  .todo-list .preview__info-pane::before {
     background: url(/images/previews/todolist.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
-  .weight .preview__content {
+  .weight .preview__info-pane::before {
     background: url(/images/previews/weight.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
-  .bubble .preview__content {
+  .bubble .preview__info-pane::before {
     background: url(/images/previews/bubble.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
-  .food-logging .preview__content {
+  .food-logging .preview__info-pane::before {
     background: url(/images/previews/food-logging.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
-  .sat-solver .preview__content {
+  .sat-solver .preview__info-pane::before {
     background: url(/images/previews/sat-solver.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
-  .hypedyn .preview__content {
+  .hypedyn .preview__info-pane::before {
     background: url(/images/previews/hypedyn.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
-  .bitsy .preview__content {
+  .bitsy .preview__info-pane::before {
     background: url(/images/previews/bitsy.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
-  .pokemania .preview__content {
+  .pokemania .preview__info-pane::before {
     background: url(/images/previews/pokemania.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
-  .little-lives .preview__content {
+  .little-lives .preview__info-pane::before {
     background: url(/images/previews/little-lives.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
-  .urbanzoom .preview__content {
+  .urbanzoom .preview__info-pane::before {
     background: url(/images/previews/urbanzoom.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
-  .react-chat .preview__content {
+  .react-chat .preview__info-pane::before {
     background: url(/images/previews/react-chat.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 
-  .portfolio .preview__content {
+  .portfolio .preview__info-pane::before {
     background: url(/images/previews/portfolio.png) no-repeat center bottom;
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
@@ -284,62 +278,62 @@
     height: 40vw;
   }
 
-  .todo-list .preview__content {
+  .todo-list .preview__info-pane::before {
     background: url(/images/previews/todolist.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
-  .weight .preview__content {
+  .weight .preview__info-pane::before {
     background: url(/images/previews/weight.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
-  .bubble .preview__content {
+  .bubble .preview__info-pane::before {
     background: url(/images/previews/bubble.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
-  .food-logging .preview__content {
+  .food-logging .preview__info-pane::before {
     background: url(/images/previews/food-logging.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
-  .sat-solver .preview__content {
+  .sat-solver .preview__info-pane::before {
     background: url(/images/previews/sat-solver.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
-  .hypedyn .preview__content {
+  .hypedyn .preview__info-pane::before {
     background: url(/images/previews/hypedyn.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
-  .bitsy .preview__content {
+  .bitsy .preview__info-pane::before {
     background: url(/images/previews/bitsy.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
-  .pokemania .preview__content {
+  .pokemania .preview__info-pane::before {
     background: url(/images/previews/pokemania.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
-  .little-lives .preview__content {
+  .little-lives .preview__info-pane::before {
     background: url(/images/previews/little-lives.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
-  .urbanzoom .preview__content {
+  .urbanzoom .preview__info-pane::before {
     background: url(/images/previews/urbanzoom.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
-  .react-chat .preview__content {
+  .react-chat .preview__info-pane::before {
     background: url(/images/previews/react-chat.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 
-  .portfolio .preview__content {
+  .portfolio .preview__info-pane::before {
     background: url(/images/previews/portfolio.png) no-repeat center bottom;
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
@@ -351,62 +345,62 @@
     height: 25vw;
   }
 
-  .todo-list .preview__content {
+  .todo-list .preview__info-pane::before {
     background: url(/images/previews/todolist.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
-  .weight .preview__content {
+  .weight .preview__info-pane::before {
     background: url(/images/previews/weight.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
-  .bubble .preview__content {
+  .bubble .preview__info-pane::before {
     background: url(/images/previews/bubble.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
-  .food-logging .preview__content {
+  .food-logging .preview__info-pane::before {
     background: url(/images/previews/food-logging.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
-  .sat-solver .preview__content {
+  .sat-solver .preview__info-pane::before {
     background: url(/images/previews/sat-solver.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
-  .hypedyn .preview__content {
+  .hypedyn .preview__info-pane::before {
     background: url(/images/previews/hypedyn.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
-  .bitsy .preview__content {
+  .bitsy .preview__info-pane::before {
     background: url(/images/previews/bitsy.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
-  .pokemania .preview__content {
+  .pokemania .preview__info-pane::before {
     background: url(/images/previews/pokemania.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
-  .little-lives .preview__content {
+  .little-lives .preview__info-pane::before {
     background: url(/images/previews/little-lives.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
-  .urbanzoom .preview__content {
+  .urbanzoom .preview__info-pane::before {
     background: url(/images/previews/urbanzoom.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
-  .react-chat .preview__content {
+  .react-chat .preview__info-pane::before {
     background: url(/images/previews/react-chat.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 
-  .portfolio .preview__content {
+  .portfolio .preview__info-pane::before {
     background: url(/images/previews/portfolio.png) no-repeat center bottom;
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
@@ -418,62 +412,62 @@
     height: 400px;
   }
 
-  .todo-list .preview__content {
+  .todo-list .preview__info-pane::before {
     background: url(/images/previews/todolist.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
 
-  .weight .preview__content {
+  .weight .preview__info-pane::before {
     background: url(/images/previews/weight.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
 
-  .bubble .preview__content {
+  .bubble .preview__info-pane::before {
     background: url(/images/previews/bubble.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
 
-  .food-logging .preview__content {
+  .food-logging .preview__info-pane::before {
     background: url(/images/previews/food-logging.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
 
-  .sat-solver .preview__content {
+  .sat-solver .preview__info-pane::before {
     background: url(/images/previews/sat-solver.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
 
-  .hypedyn .preview__content {
+  .hypedyn .preview__info-pane::before {
     background: url(/images/previews/hypedyn.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
 
-  .bitsy .preview__content {
+  .bitsy .preview__info-pane::before {
     background: url(/images/previews/bitsy.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
 
-  .pokemania .preview__content {
+  .pokemania .preview__info-pane::before {
     background: url(/images/previews/pokemania.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
 
-  .little-lives .preview__content {
+  .little-lives .preview__info-pane::before {
     background: url(/images/previews/little-lives.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
 
-  .urbanzoom .preview__content {
+  .urbanzoom .preview__info-pane::before {
     background: url(/images/previews/urbanzoom.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
 
-  .react-chat .preview__content {
+  .react-chat .preview__info-pane::before {
     background: url(/images/previews/react-chat.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
 
-  .portfolio .preview__content {
+  .portfolio .preview__info-pane::before {
     background: url(/images/previews/portfolio.png) no-repeat center bottom;
     background-size: 430px 440px;
   }
