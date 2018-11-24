@@ -1,15 +1,23 @@
 <template>
+
+  <!-- TODO: Add animations and banner background image -->
+
   <div class='page logs'>
     <Jumbotron
+      :actions='jumbotron.actions'
       :name='jumbotron.name'
-      :title='jumbotron.title'
-      :subtitle='jumbotron.subtitle'
       :src='jumbotron.src'
-      :actions='jumbotron.actions' />
+      :subtitle='jumbotron.subtitle'
+      :title='jumbotron.title' />
+    <div class='background-waves'>
+      <div class='background-wave' />
+      <div class='background-wave' />
+      <div class='background-wave' />
+    </div>
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.4' layout='nodisplay' />
       <div class='page__container'>
-        <div v-for='article in articles' v-bind:class="['section', article.name]" :key='article.name'>
+        <div v-for='article in articles' :key='article.name' v-bind:class="['section', article.name]">
           <div class='section__left'>
             <div class='timeline__line' />
             <div class='timeline__date'>
@@ -19,13 +27,13 @@
           </div>
           <div class='section__right'>
             <ArticleCard
+              :links='article.links'
               :name='article.name'
-              :title='article.title'
+              :notes='article.notes'
               :subtitle='article.subtitle'
               :tags='article.tags'
               :text='article.text'
-              :links='article.links'
-              :notes='article.notes' />
+              :title='article.title' />
             <Gallery :name='article.name' :mainImage='article.mainImage' :suppImages='article.suppImages' />
           </div>
         </div>
@@ -35,15 +43,15 @@
 </template>
 
 <script>
-import Jumbotron from '../components/Jumbotron'
-import Gallery from '../components/Gallery'
 import ArticleCard from '../components/ArticleCard'
+import Gallery from '../components/Gallery'
+import Jumbotron from '../components/Jumbotron'
 
 export default {
   components: {
-    Jumbotron,
+    ArticleCard,
     Gallery,
-    ArticleCard
+    Jumbotron
   },
   data () {
     return {
@@ -57,11 +65,10 @@ export default {
             url: 'https://www.linkedin.com/in/hliejun'
           },
           {
-            label: 'Résumé',
-            url: '/documents/resume.pdf'
+            label: 'Curriculum Vitæ',
+            url: '/documents/cv.pdf'
           }
-        ],
-        // src: '/vectors/jumbotron/logs.svg'
+        ]
       },
       articles: [
         {
@@ -98,26 +105,26 @@ export default {
               <b>About The Job</b><br>
               I helped NodeFlair to bring mobile responsiveness to some features
               on their web application. Apart from designing and implementing
-              responsive layouts, the project also involves transitioning
-              from a plain Ruby Rails environment to a React on Rails architecture
-              and moving from a monolithic application to modular microservices.
+              responsive layouts, the project also involved transitioning
+              from a plain Ruby Rails environment to a React on Rails architecture.
             </p>
           `,
           links: [
             {
-              src: '/vectors/logs/read.svg',
+              in: true,
               label: 'Read More',
-              url: '/companies/nodeflair', in: true
+              src: '/vectors/logs/read.svg',
+              url: '/companies/nodeflair'
             },
             {
-              src: '/vectors/logs/visit.svg',
               label: 'Visit NodeFlair',
-              url: 'http://www.nodeflair.com/'
+              src: '/vectors/logs/visit.svg',
+              url: 'http://www.nodeflair.com'
             },
             {
-              src: '/vectors/logs/repo.svg',
               label: 'React Chat on GitHub',
-              url: 'https://hliejun.github.io/react-chat/'
+              src: '/vectors/logs/repo.svg',
+              url: 'https://hliejun.github.io/react-chat'
             }
           ]
         },
@@ -137,7 +144,7 @@ export default {
             <p>
               <b>About The Job</b><br>
               I built a Google Assistant action for UrbanZoom using the Dialogflow API.
-              The project scope includes designing the context flow for the property
+              The project scope included designing the context flow for the property
               valuation query, as well as ensuring the fidelity of commands, both voice
               and textual, in a Singaporean context. After implementing the Action, I
               hooked up the Dialogflow agent with a Twilio Voice service, providing
@@ -154,7 +161,7 @@ export default {
             {
               src: '/vectors/logs/visit.svg',
               label: 'Visit UrbanZoom',
-              url: 'https://www.urbanzoom.com/'
+              url: 'https://www.urbanzoom.com'
             },
             {
               src: '/vectors/logs/feature.svg',
@@ -176,9 +183,15 @@ export default {
             src: '/images/logs/article-littlelives-01.png'
           },
           suppImages: [
-            { src: '/images/logs/article-littlelives-02.png' },
-            { src: '/images/logs/article-littlelives-03.png' },
-            { src: '/images/logs/article-littlelives-04.png' },
+            {
+              src: '/images/logs/article-littlelives-02.png'
+            },
+            {
+              src: '/images/logs/article-littlelives-03.png'
+            },
+            {
+              src: '/images/logs/article-littlelives-04.png'
+            },
             {
               video: '/videos/article-littlelives-05.mp4',
               webm: '/videos/article-littlelives-05.webm'
@@ -192,7 +205,7 @@ export default {
             <b>About The Project</b><br>
             As part of the NUS CS3217 module, my team and I partnered with Little Lives
             and helped them with face recognition functionalities on their iOS check-in
-            application for pre-school children. The application is written in Swift and
+            application for pre-school children. The application was written in Swift and
             adopted the VIPER design pattern. We also leveraged on emotion and face
             recognition capabilities of the Azure Face API, as well as face and object
             detection using the iOS Vision API.
@@ -200,15 +213,15 @@ export default {
           `,
           links: [
             {
-              src: '/vectors/logs/read.svg',
+              in: true,
               label: 'Read More',
-              url: '/companies/littlelives',
-              in: true
+              src: '/vectors/logs/read.svg',
+              url: '/companies/littlelives'
             },
             {
-              src: '/vectors/logs/visit.svg',
               label: 'Visit LittleLives',
-              url: 'https://www.littlelives.com/'
+              src: '/vectors/logs/visit.svg',
+              url: 'https://www.littlelives.com'
             }
           ]
         },
@@ -220,10 +233,18 @@ export default {
             src: '/images/logs/article-shopback-01.png'
           },
           suppImages: [
-            { src: '/images/logs/article-shopback-02.png' },
-            { src: '/images/logs/article-shopback-03.png' },
-            { src: '/images/logs/article-shopback-04.png' },
-            { src: '/images/logs/article-shopback-05.png' }
+            {
+              src: '/images/logs/article-shopback-02.png'
+            },
+            {
+              src: '/images/logs/article-shopback-03.png'
+            },
+            {
+              src: '/images/logs/article-shopback-04.png'
+            },
+            {
+              src: '/images/logs/article-shopback-05.png'
+            }
           ],
           title: 'ShopBack',
           subtitle: 'Adding Features to Content Management System',
@@ -240,15 +261,15 @@ export default {
           `,
           links: [
             {
-              src: '/vectors/logs/read.svg',
+              in: true,
               label: 'Read More',
-              url: '/companies/shopback',
-              in: true
+              src: '/vectors/logs/read.svg',
+              url: '/companies/shopback'
             },
             {
-              src: '/vectors/logs/visit.svg',
               label: 'Visit ShopBack',
-              url: 'https://www.shopback.sg/'
+              src: '/vectors/logs/visit.svg',
+              url: 'https://www.shopback.sg'
             }
           ]
         },
@@ -272,15 +293,15 @@ export default {
           `,
           links: [
             {
-              src: '/vectors/logs/read.svg',
+              in: true,
               label: 'Read More',
-              url: '/companies/dso',
-              in: true
+              src: '/vectors/logs/read.svg',
+              url: '/companies/dso'
             },
             {
-              src: '/vectors/logs/visit.svg',
               label: 'Visit DSO',
-              url: 'https://www.dso.org.sg/'
+              src: '/vectors/logs/visit.svg',
+              url: 'https://www.dso.org.sg'
             }
           ]
         },
@@ -303,14 +324,14 @@ export default {
           `,
           links: [
             {
-              src: '/vectors/logs/read.svg',
+              in: true,
               label: 'Read More',
-              url: '/companies/saf',
-              in: true
+              src: '/vectors/logs/read.svg',
+              url: '/companies/saf'
             },
             {
-              src: '/vectors/logs/visit.svg',
               label: 'Visit MINDEF',
+              src: '/vectors/logs/visit.svg',
               url: 'https://www.mindef.gov.sg/web/portal/mindef/home'
             }
           ]

@@ -2,108 +2,50 @@
   <div class='page littlelives project'>
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
+      :actions='jumbotron.actions'
       :name='jumbotron.name'
-      :title='jumbotron.title'
-      :subtitle='jumbotron.subtitle'
       :src='jumbotron.src'
-      :actions='jumbotron.actions' />
+      :subtitle='jumbotron.subtitle'
+      :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.1' layout='nodisplay' />
 
-      <!-- Screenshots and videos of flow -->
+      <!-- TODO: Screenshots and videos of flow -->
+      <!-- TODO: Icons and glyphs for sections and items -->
 
-      <div class='project__section technologies' v-if='technologies.length'>
-        <div class='section__title'>TECHNOLOGY</div>
-        <div class='section__container'>
-          <div v-bind:class="['section__items', section.name]" v-for='section in technologies'>
-            <div class='section__subtitle'>{{section.title}}</div>
-            <div class='section__row'>
-              <div class='section__item tag' v-for='item in section.items'>
-                <amp-img class='section__item-icon' v-if='item.src' v-bind:src='item.src' height='1' width='1' />
-                <span class='section__item-label tag' v-if='item.label'>{{item.label}}</span>
-                <span class='section__item-description' v-if='item.description'>{{item.description}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='project__section about' v-if='about.length'>
-        <div class='section__title'>ABOUT</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in about'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section design' v-if='design.length'>
-        <div class='section__title'>DESIGN</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in design'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section features' v-if='features.length'>
-        <div class='section__title'>FEATURES</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in features'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section team' v-if='team.length'>
-        <div class='section__title'>TEAM</div>
-        <div class='section__items'>
-          <div class='section__row'>
-            <div class='section__item' v-for='member in team'>
-              <amp-img class='section__item-icon' v-if='member.src' v-bind:src='member.src' height='1' width='1' />
-              <span class='section__item-label' v-if='member.name'>{{member.name}}</span>
-              <span class='section__item-description' v-if='member.description'>{{member.description}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='project__section references' v-if='references.length'>
-        <div class='section__title'>REFERENCES</div>
-        <div class='section__items'>
-          <div class='section__item' v-for='item in references'>
-            <amp-img class='section__item-icon' v-if='item.src' v-bind:src='item.src' height='1' width='1' />
-            <span class='section__item-label' v-if='item.label'>{{item.label}}</span>
-            <span class='section__item-description' v-if='item.description'>{{item.description}}</span>
-          </div>
-        </div>
-      </div>
-      <div class='project__section actions'>
-        <div class='project__actions' v-if='actions.length'>
-          <a
-            class='project__link'
-            v-for='action in actions'
-            v-bind:href='action.url'
-            v-bind:target="action.in ? '_self' : '_blank'">
-            <div class='code button project__button'>
-              {{action.label}}
-            </div>
-          </a>
-        </div>
-      </div>
+      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
+      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='design' label='DESIGN' :items='design' />
+      <HTMLSection name='features' label='FEATURES' :items='features' />
+      <LinksSection name='team' label='TEAM' :items='team' />
+      <LinksSection name='references' label='REFERENCES' :items='references' />
+      <ActionsSection name='actions' :items='actions' />
     </div>
   </div>
 </template>
 
 <script>
+import ActionsSection from '../../components/ActionsSection'
+import HTMLSection from '../../components/HTMLSection'
 import Jumbotron from '../../components/Jumbotron'
 import Mockup from '../../components/Mockup'
+import LinksSection from '../../components/LinksSection'
+import TagsSection from '../../components/TagsSection'
 
 export default {
   components: {
+    ActionsSection,
+    HTMLSection,
     Jumbotron,
-    Mockup
+    Mockup,
+    LinksSection,
+    TagsSection
   },
   data () {
     return {
       jumbotron: {
         title: 'Little Lives Check-In',
-        subtitle: 'Face Check-In features built into Little Check-In iOS application, a group project with Little Lives.',
+        subtitle: 'Face Check-In features built into Little Check-In iOS application.',
         actions: [
           {
             label: 'About Little Lives',
@@ -120,95 +62,87 @@ export default {
         {
           name: 'build',
           title: 'BUILD',
-          items: [
+          tags: [
             {
-              src: '',
               label: 'Swift',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'Alamofire',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'Vision',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'Azure Face',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'CoreData',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'SnapKit',
-              description: ''
+              src: ''
             }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
-          items: [
+          tags: [
             {
-              src: '',
               label: 'XCode',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'Jazzy',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'SwiftLint',
-              description: ''
+              src: ''
             }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          items: [
+          tags: [
             {
-              src: '',
               label: 'iOS',
-              description: ''
+              src: ''
             }
           ]
         }
       ],
       about: [
         {
-          name: 'motivation',
-          title: 'MOTIVATION',
-          src: '',
-          text: `
-            This application was built with the goal to speed up the check-in process of pre-schoolers.
-            The face recognition solution was explored as it not only boosts efficiency, but also
-            provides entertainment value and novel technical branding to the process. Detecting additional
-            information such as emotions of children at check-in could prove useful to parents.
-            As part of our software engineering module, it was also an opportunity to hone our software
-            architecture design skills.
-          `
-        },
-        {
           name: 'description',
           title: 'DESCRIPTION',
           src: '',
           text: `
-            Little Lives Check-In is an iOS application optimised for iPads and used to perform check-in on
-            pre-schoolers by taking individual or group photos. The application uses face recognition technology
-            to register attendance for individuals in the photos, and sends the check-in photo along with details
-            to parents.
+            Little Lives Check-In is an iOS application optimised for
+            iPads and used to perform check-in on re-schoolers by taking
+            individual or group photos. The application uses face recognition
+            technology to register attendance for individuals in the photos
+            and sends the check-in photo along with other details to parents.
+          `
+        },
+        {
+          name: 'motivation',
+          title: 'MOTIVATION',
+          src: '',
+          text: `
+            This application was built with the goal to speed up the check-in
+            process of pre-schoolers. The face recognition solution was explored
+            as it not only could boost efficiency, but also provide entertainment
+            value and novel technical branding to the process. Detecting additional
+            information such as emotions of children at check-in could prove useful
+            to parents. As part of our software engineering module, it was also an
+            opportunity to hone our software architecture design skills.
           `
         },
         {
@@ -216,22 +150,26 @@ export default {
           title: 'CHALLENGES',
           src: '',
           text: `
-            The main issue we faced was speed and performance of the face-tracking, especially on older iPads.
-            Since visual computations tend to be expensive, the lack of processing power on old tablet models would
-            result in sluggishness of the interface and overheating, especially when processing multiple faces
-            simultaneously. We moved heavy processes to the cloud by using Azure Face API for emotion and face
-            detection, as well as face recognition, and performed object tracking offline periodically using
-            the iOS Vision API.<br>
+            The main issue we faced was speed and performance of the face-tracking,
+            especially on older iPads. Since visual computations tend to be expensive,
+            the lack of processing power on old tablet models would result in sluggishness
+            of the interface and overheating, especially when processing multiple faces
+            simultaneously. We moved heavy processes to the cloud by using Azure Face API
+            for emotion and face detection, as well as face recognition, and performed
+            object tracking offline periodically using the iOS Vision API.<br>
             <br>
-            Another issue would be the recognition accuracy for young children. We filtered, normalised and tagged
-            a good amount of photos of participating pre-schoolers to train the model on Azure Face. We also
-            proposed that newly taken and normalised profiles should be used in training and updating the model to
-            keep up with the children's growth.<br>
+            Another issue would be the recognition accuracy for young children. We
+            filtered, normalised and tagged a good amount of photos of participating
+            pre-schoolers to train the model on Azure Face. We also proposed that newly
+            taken and normalised profiles should be used in training and updating the model
+            to progressively keep up with the children's growth.<br>
             <br>
-            A key concern would be to track faces of active children who tend to move about in the frame. We improved
-            our tracking fidelity by toggling between authoritative face detection using Azure Face API and accessory
-            object tracking on Vision API. With object tracking being less computation-intensive, we could afford higher
-            refresh rates and more reliable tracking with relatively lesser performance trade-off.
+            A key concern would be to track faces of active children who tend to move
+            about in the frame. We improved our tracking fidelity by toggling between
+            authoritative face detection using Azure Face API and auxillary object tracking
+            on Vision API. With object tracking being less computation-intensive, we could
+            afford higher refresh rates and more reliable tracking with relatively lesser
+            performance trade-off.
           `
         },
       ],
@@ -241,10 +179,11 @@ export default {
           title: 'ARCHITECTURE',
           src: '',
           text: `
-            Little Lives Check-In was written in a VIPER (Views, Interactors, Presenters, Entities, Router)
-            architecture, along with Data Access Objects, Service Workers and Adapters for access to both
-            networked and local services, and database resources. The design ultimately geared towards an
-            extensible application that could be integrated with other third party data storage and recognition
+            Little Lives Check-In was written in a VIPER (Views, Interactors, Presenters,
+            Entities, Router) architecture, along with Data Access Objects, Service Workers
+            and Adapters for access to both networked and local services, and database
+            resources. The design ultimately geared towards an extensible application
+            that could be integrated with other third party data storage, recognition
             services and maintained modularity of front-end components.
           `
         }
@@ -279,8 +218,8 @@ export default {
           title: 'MANUAL SEARCH AND TAG',
           src: '',
           text: `
-            In the occasion that a face is tagged wrongly or has no valid tags, you may manually search
-            and tag the face using the school registry.
+            In the occasion that a face is tagged wrongly or has no valid tags,
+            you may manually search and tag the face using the school registry.
           `
         },
         {
@@ -288,63 +227,74 @@ export default {
           title: 'ACCESS CONTROL',
           src: '',
           text: `
-            Passwords can be set to lock certain views such as the check-in view from unauthorised access
-            to the check-in feature.
+            Passwords can be set to lock certain views such as the check-in view
+            from unauthorised access to the check-in feature.
           `
         }
       ],
       team: [
         {
-          src: '',
-          name: 'Abel Lim',
+          label: 'Abel Lim',
           description: `
-            Abel was responsible for writing data access objects, offline face service and face tracking.
-          `
+            Abel was responsible for writing data access objects, offline face
+            service and face tracking.
+          `,
+          src: '',
+          url: 'https://github.com/abellimz'
         },
         {
-          src: '',
-          name: 'Joel Lim',
+          label: 'Joel Lim',
           description: `
             Joel wrote the access control module and face rectangles logic.
-          `
+          `,
+          src: '',
+          url: 'https://aljorhythm.github.io'
         },
         {
-          src: '',
-          name: 'Nicholas Lui',
+          label: 'Nicholas Lui',
           description: `
-            Nicholas was in-charged of writing network services, azure face service and data entities.
-          `
+            Nicholas was in-charged of writing network services, Azure Face
+            service and data entities.
+          `,
+          src: '',
+          url: 'https://github.com/nicholasluimy'
         },
         {
-          src: '',
-          name: 'Huang Lie Jun',
+          label: 'Huang Lie Jun',
           description: `
-            I wrote the views, interactors, presenters and controllers, linking the UI with
-            services and data layers.
-          `
+            I wrote the views, interactors, presenters and controllers, linking
+            the UI with services and data layers.
+          `,
+          src: '',
+          url: 'https://github.com/hliejun'
         }
       ],
       references: [
         {
-          src: '',
           label: 'VIPER Design Pattern',
           description: `
             Guide to the VIPER design principles, structure and implementations.
-          `
+          `,
+          src: '',
+          url: 'https://medium.com/@smalam119/viper-design-pattern-for-ios-application-development-7a9703902af6'
         },
         {
-          src: '',
           label: 'Azure Face API',
           description: `
-            Instructions to using Azure Face for emotion detection, face detection and face recognition.
-          `
+            Instructions to using Azure Face for emotion detection, face detection
+            and face recognition.
+          `,
+          src: '',
+          url: 'https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview'
         },
         {
-          src: '',
           label: 'AVCapture and Vision API',
           description: `
-            Details on how to process and link the camera frame inputs with detection and tracking using Vision.
-          `
+            Details on how to process and link the camera frame inputs with detection
+            and tracking using Vision.
+          `,
+          src: '',
+          url: 'https://developer.apple.com/documentation/vision/recognizing_objects_in_live_capture'
         }
       ],
       actions: [

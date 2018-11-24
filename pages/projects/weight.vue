@@ -2,114 +2,43 @@
   <div class='page weight project'>
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
+      :actions='jumbotron.actions'
       :name='jumbotron.name'
-      :title='jumbotron.title'
-      :subtitle='jumbotron.subtitle'
       :src='jumbotron.src'
-      :actions='jumbotron.actions' />
+      :subtitle='jumbotron.subtitle'
+      :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
 
-      <!-- Built Using: Unity -->
+      <!-- TODO: Video of gameplay, screenshots -->
+      <!-- TODO: Icons and glyphs for sections and items -->
 
-      <!-- About:  -->
-      <!-- Motivations:  -->
-      <!-- Constraints:  -->
-
-      <!-- Features:  -->
-      <!-- Video of gameplay, screenshots -->
-
-      <!-- Team (Check GDrive) -->
-
-      <!-- References:  -->
-
-      <div class='project__section technologies' v-if='technologies.length'>
-        <div class='section__title'>TECHNOLOGY</div>
-        <div class='section__container'>
-          <div v-bind:class="['section__items', section.name]" v-for='section in technologies'>
-            <div class='section__subtitle'>{{section.title}}</div>
-            <div class='section__row'>
-              <div class='section__item tag' v-for='item in section.items'>
-                <amp-img class='section__item-icon' v-if='item.src' v-bind:src='item.src' height='1' width='1' />
-                <span class='section__item-label tag' v-if='item.label'>{{item.label}}</span>
-                <span class='section__item-description' v-if='item.description'>{{item.description}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='project__section about' v-if='about.length'>
-        <div class='section__title'>ABOUT</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in about'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section design' v-if='design.length'>
-        <div class='section__title'>DESIGN</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in design'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section features' v-if='features.length'>
-        <div class='section__title'>FEATURES</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in features'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section team' v-if='team.length'>
-        <div class='section__title'>TEAM</div>
-        <div class='section__items'>
-          <div class='section__row'>
-            <div class='section__item' v-for='member in team'>
-              <amp-img class='section__item-icon' v-if='member.src' v-bind:src='member.src' height='1' width='1' />
-              <span class='section__item-label' v-if='member.name'>{{member.name}}</span>
-              <span class='section__item-description' v-if='member.description'>{{member.description}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='project__section references' v-if='references.length'>
-        <div class='section__title'>REFERENCES</div>
-        <div class='section__items'>
-          <div class='section__item' v-for='item in references'>
-            <amp-img class='section__item-icon' v-if='item.src' v-bind:src='item.src' height='1' width='1' />
-            <span class='section__item-label' v-if='item.label'>{{item.label}}</span>
-            <span class='section__item-description' v-if='item.description'>{{item.description}}</span>
-          </div>
-        </div>
-      </div>
-      <div class='project__section actions'>
-        <div class='project__actions' v-if='actions.length'>
-          <a
-            class='project__link'
-            v-for='action in actions'
-            v-bind:href='action.url'
-            v-bind:target="action.in ? '_self' : '_blank'">
-            <div class='code button project__button'>
-              {{action.label}}
-            </div>
-          </a>
-        </div>
-      </div>
-
+      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
+      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='design' label='DESIGN' :items='design' />
+      <LinksSection name='team' label='TEAM' :items='team' />
+      <LinksSection name='references' label='REFERENCES' :items='references' />
+      <ActionsSection name='actions' :items='actions' />
     </div>
   </div>
 </template>
 
 <script>
+import ActionsSection from '../../components/ActionsSection'
+import HTMLSection from '../../components/HTMLSection'
 import Jumbotron from '../../components/Jumbotron'
 import Mockup from '../../components/Mockup'
+import LinksSection from '../../components/LinksSection'
+import TagsSection from '../../components/TagsSection'
 
 export default {
   components: {
+    ActionsSection,
+    HTMLSection,
     Jumbotron,
-    Mockup
+    Mockup,
+    LinksSection,
+    TagsSection
   },
   data () {
     return {
@@ -132,52 +61,61 @@ export default {
         {
           name: 'build',
           title: 'BUILD',
-          items: [
+          tags: [
             {
-              src: '',
-              label: '...',
-              description: ''
+              label: 'C#',
+              src: ''
             }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
-          items: [
+          tags: [
             {
-              src: '',
-              label: '...',
-              description: ''
+              label: 'Unity',
+              src: ''
             }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          items: [
+          tags: [
             {
-              src: '',
-              label: '...',
-              description: ''
+              label: 'Windows',
+              src: ''
+            },
+            {
+              label: 'macOS',
+              src: ''
             }
           ]
         }
       ],
       about: [
         {
-          name: 'motivation',
-          title: 'MOTIVATION',
-          src: '',
-          text: `
-            ...
-          `
-        },
-        {
           name: 'description',
           title: 'DESCRIPTION',
           src: '',
           text: `
-            ...
+            Weight is a infinite runner where you control the gravity shift
+            in a room. You control the fate of a fox who has had some bad
+            mushrooms and is therefore stuck in a dream. You must maintain
+            the healthy weight to maximise your speed of avoiding evil
+            alter-egos and strategically eating or avoiding mushrooms.
+            If you run into your evil half, become under or overweight,
+            the game ends.
+          `
+        },
+        {
+          name: 'motivation',
+          title: 'MOTIVATION',
+          src: '',
+          text: `
+            The objective of Weight was to experiment with infinite runner
+            game design and learn how to use Unity to create a simple 2D
+            platformer.
           `
         },
         {
@@ -185,46 +123,79 @@ export default {
           title: 'CHALLENGES',
           src: '',
           text: `
-            ...
+            This project was difficult as it was my first time trying out
+            Unity and I'm the only programmer in the team. It was also
+            challenging to procure game assets and meet the module
+            requirements of an infinite run game.
           `
         },
       ],
       design: [
         {
-          name: '...',
-          title: '...',
+          name: 'progression',
+          title: 'Game Progression',
           src: '',
           text: `
-            ...
+            As the game progresses, evil halfs and mushrooms will spawn
+            at an increasing rate. This increase the difficulty by reducing
+            the safe spaces for the player and makes it harder to avoid the
+            mushrooms and the evil halfs.
           `
-        }
-      ],
-      features: [
+        },
         {
-          name: '...',
-          title: '...',
+          name: 'balance',
+          title: 'Balancing Mechanisms',
           src: '',
           text: `
-            ...
+            Evil halfs are spawned at random locations with a buffer period.
+            Mushrooms can be avoided or eaten to adjust the weight of the
+            fox. The reapers and mushrooms will disappear after some time
+            to reduce the clutter. Obstacles in the dream room are randomised
+            at the start of the game session.
           `
         }
       ],
       team: [
         {
-          src: '',
-          name: '...',
+          label: 'Ashley Tan',
           description: `
-            ...
-          `
+            Ashley was the writer and UI designer. She helped Bettina with
+            asset creation.
+          `,
+          src: ''
+        },
+        {
+          label: 'Bettina Tan',
+          description: `
+            Bettina was our asset and content creator. She drew game
+            graphics, procured music and fonts.
+          `,
+          src: ''
+        },
+        {
+          label: 'Koh Tze Hui',
+          description: `
+            Tze Hui was the producer and QA. She validated and documented
+            the game development.
+          `,
+          src: ''
+        },
+        {
+          label: 'Huang Lie Jun',
+          description: `
+            I worked on game prototyping and implementation using Unity.
+          `,
+          src: ''
         }
       ],
       references: [
         {
-          src: '',
-          label: '...',
+          label: '2D Unity Tutorials',
           description: `
-            ...
-          `
+            Tutorials on building a 2D game in Unity.
+          `,
+          src: '',
+          url: ''
         }
       ],
       actions: [

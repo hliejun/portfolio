@@ -1,11 +1,11 @@
 <template>
   <div class='page urbanzoom company'>
     <Jumbotron
+      :actions='jumbotron.actions'
       :name='jumbotron.name'
-      :title='jumbotron.title'
-      :subtitle='jumbotron.subtitle'
       :src='jumbotron.src'
-      :actions='jumbotron.actions' />
+      :subtitle='jumbotron.subtitle'
+      :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='0' layout='nodisplay' />
     </div>
@@ -23,7 +23,10 @@ export default {
     return {
       jumbotron: {
         title: 'UrbanZoom',
-        subtitle: 'Sorry, but this page is currently under construction. Please check back later.',
+        subtitle: `
+          Sorry, but this page is currently under construction.
+          Please check back later.
+        `,
         actions: [
           {
             label: 'Return',

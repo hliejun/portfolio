@@ -2,114 +2,44 @@
   <div class='page todolist project'>
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
+      :actions='jumbotron.actions'
       :name='jumbotron.name'
-      :title='jumbotron.title'
-      :subtitle='jumbotron.subtitle'
       :src='jumbotron.src'
-      :actions='jumbotron.actions' />
+      :subtitle='jumbotron.subtitle'
+      :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
 
-      <!-- Built Using: JavaFX, ControlsFX, JUnit, Natty, PrettyTime -->
+      <!-- TODO: Screenshots and video for different functions, sequences -->
+      <!-- TODO: Icons and glyphs for sections and items -->
 
-      <!-- About:  -->
-      <!-- Motivations:  -->
-      <!-- Constraints:  -->
-
-      <!-- Features:  -->
-      <!-- Screenshots and video for different functions, sequences -->
-
-      <!-- Team -->
-
-      <!-- References:  -->
-
-      <div class='project__section technologies' v-if='technologies.length'>
-        <div class='section__title'>TECHNOLOGY</div>
-        <div class='section__container'>
-          <div v-bind:class="['section__items', section.name]" v-for='section in technologies'>
-            <div class='section__subtitle'>{{section.title}}</div>
-            <div class='section__row'>
-              <div class='section__item tag' v-for='item in section.items'>
-                <amp-img class='section__item-icon' v-if='item.src' v-bind:src='item.src' height='1' width='1' />
-                <span class='section__item-label tag' v-if='item.label'>{{item.label}}</span>
-                <span class='section__item-description' v-if='item.description'>{{item.description}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='project__section about' v-if='about.length'>
-        <div class='section__title'>ABOUT</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in about'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section design' v-if='design.length'>
-        <div class='section__title'>DESIGN</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in design'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section features' v-if='features.length'>
-        <div class='section__title'>FEATURES</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in features'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section team' v-if='team.length'>
-        <div class='section__title'>TEAM</div>
-        <div class='section__items'>
-          <div class='section__row'>
-            <div class='section__item' v-for='member in team'>
-              <amp-img class='section__item-icon' v-if='member.src' v-bind:src='member.src' height='1' width='1' />
-              <span class='section__item-label' v-if='member.name'>{{member.name}}</span>
-              <span class='section__item-description' v-if='member.description'>{{member.description}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='project__section references' v-if='references.length'>
-        <div class='section__title'>REFERENCES</div>
-        <div class='section__items'>
-          <div class='section__item' v-for='item in references'>
-            <amp-img class='section__item-icon' v-if='item.src' v-bind:src='item.src' height='1' width='1' />
-            <span class='section__item-label' v-if='item.label'>{{item.label}}</span>
-            <span class='section__item-description' v-if='item.description'>{{item.description}}</span>
-          </div>
-        </div>
-      </div>
-      <div class='project__section actions'>
-        <div class='project__actions' v-if='actions.length'>
-          <a
-            class='project__link'
-            v-for='action in actions'
-            v-bind:href='action.url'
-            v-bind:target="action.in ? '_self' : '_blank'">
-            <div class='code button project__button'>
-              {{action.label}}
-            </div>
-          </a>
-        </div>
-      </div>
-
+      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
+      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='design' label='DESIGN' :items='design' />
+      <HTMLSection name='features' label='FEATURES' :items='features' />
+      <LinksSection name='team' label='TEAM' :items='team' />
+      <LinksSection name='references' label='REFERENCES' :items='references' />
+      <ActionsSection name='actions' :items='actions' />
     </div>
   </div>
 </template>
 
 <script>
+import ActionsSection from '../../components/ActionsSection'
+import HTMLSection from '../../components/HTMLSection'
 import Jumbotron from '../../components/Jumbotron'
 import Mockup from '../../components/Mockup'
+import LinksSection from '../../components/LinksSection'
+import TagsSection from '../../components/TagsSection'
 
 export default {
   components: {
+    ActionsSection,
+    HTMLSection,
     Jumbotron,
-    Mockup
+    Mockup,
+    LinksSection,
+    TagsSection
   },
   data () {
     return {
@@ -118,12 +48,20 @@ export default {
         subtitle: 'Group project on keyboard and text-based agenda and organiser Java applet.',
         actions: [
           {
-            label: 'GitHub Repo',
+            label: 'Repo',
             url: 'https://github.com/cs2103jan2016-w13-2j/ToDoList'
           },
           {
             label: 'Release',
             url: 'https://github.com/cs2103jan2016-w13-2j/ToDoList/releases/tag/V0.6'
+          },
+          {
+            label: 'Docs',
+            url: 'https://hliejun.github.io/ToDoList/docs'
+          },
+          {
+            label: 'Guide',
+            url: 'https://hliejun.github.io/ToDoList/docs/guide.pdf'
           }
         ]
       },
@@ -136,52 +74,58 @@ export default {
         {
           name: 'build',
           title: 'BUILD',
-          items: [
+          tags: [
             {
-              src: '',
-              label: '...',
-              description: ''
+              label: 'JavaFX',
+              src: ''
+            },
+            {
+              label: 'ControlsFX',
+              src: ''
+            },
+            {
+              label: 'JUnit',
+              src: ''
+            },
+            {
+              label: 'Natty',
+              src: ''
+            },
+            {
+              label: 'PrettyTime',
+              src: ''
             }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
-          items: [
+          tags: [
             {
-              src: '',
-              label: '...',
-              description: ''
-            }
-          ]
-        },
-        {
-          name: 'platforms',
-          title: 'PLATFORMS',
-          items: [
-            {
-              src: '',
-              label: '...',
-              description: ''
+              label: 'Javadoc',
+              src: ''
             }
           ]
         }
       ],
       about: [
         {
-          name: 'motivation',
-          title: 'MOTIVATION',
-          src: '',
-          text: `
-            ...
-          `
-        },
-        {
           name: 'description',
           title: 'DESCRIPTION',
           src: '',
           text: `
-            ...
+            ToDoList is an agenda organiser for keyboard experts. It manipulates an
+            agenda list by natural text commands.
+          `
+        },
+        {
+          name: 'motivation',
+          title: 'MOTIVATION',
+          src: '',
+          text: `
+            ToDoList was our first software engineering project, part of a module
+            to learn the essentials of software architecture and software development
+            lifecycle.
           `
         },
         {
@@ -189,46 +133,148 @@ export default {
           title: 'CHALLENGES',
           src: '',
           text: `
-            ...
+            The challenge in designing ToDoList was the constraint of limiting most
+            interactions to the keyboard. We had to experiment with practical and
+            natural ways to manipulate the agenda items without the use of a pointer
+            device.
           `
         },
       ],
       design: [
         {
-          name: '...',
-          title: '...',
+          name: 'architecture',
+          title: 'Software Architecture',
           src: '',
           text: `
-            ...
+            We split our application into interface, logic and storage modules in a
+            Model-View-Controller design pattern.
           `
         }
       ],
       features: [
         {
-          name: '...',
-          title: '...',
+          name: 'natural',
+          title: 'Natural Commands',
           src: '',
           text: `
-            ...
+            ToDoList will recognize special events or occasions, time of the day and
+            verbs as actions or commands, adverbs of time.
+          `
+        },
+        {
+          name: 'search',
+          title: 'Search and Filter',
+          src: '',
+          text: `
+            You can search for an event by its title or name, or filter events by their
+            tagged categories.
+          `
+        },
+        {
+          name: 'sort',
+          title: 'Sort',
+          src: '',
+          text: `
+            You can sort events by title, start or end time, duration, and more.
+          `
+        },
+        {
+          name: 'undo',
+          title: 'Undo and Redo',
+          src: '',
+          text: `
+            If you wish to correct your previous action, you can choose to undo or
+            redo changes made to your agenda list.
+          `
+        },
+        {
+          name: 'remind',
+          title: 'Reminders',
+          src: '',
+          text: `
+            Reminders can be set for important events and you will be notified as
+            long as you have the Java Applet running.
+          `
+        },
+        {
+          name: 'recurring',
+          title: 'Recurring Tasks',
+          src: '',
+          text: `
+            You can choose to set a task to be recurring for a specified time interval
+            and it will be reflected in your agenda list.
+          `
+        },
+        {
+          name: 'shortcuts',
+          title: 'Shortcuts',
+          src: '',
+          text: `
+            You can refer to agenda items by their index, make aliases for commands
+            and use arrow keys to browse the agenda list.
+          `
+        },
+        {
+          name: 'night',
+          title: 'Day and Night Mode',
+          src: '',
+          text: `
+            If you work in low-light environment, you can choose to switch over to
+            night mode.
           `
         }
       ],
       team: [
         {
-          src: '',
-          name: '...',
+          label: 'Xiao Yu Xin',
           description: `
-            ...
-          `
+            Yu Xin wrote the search and database modules for ToDoList.
+          `,
+          src: '',
+          url: 'https://github.com/XiaoYuxin'
+        },
+        {
+          label: 'Zhang Jiyi',
+          description: `
+            Jiyi designed and implemented the parsers and logic components.
+          `,
+          src: '',
+          url: 'https://github.com/cs2103t'
+        },
+        {
+          name: 'Huang Lie Jun',
+          description: `
+            I worked on the UI/UX designs, the views, controllers and project
+            coordination.
+          `,
+          src: '',
+          url: 'https://github.com/hliejun'
         }
       ],
       references: [
         {
-          src: '',
-          label: '...',
+          label: 'JavaFX Tutorial',
           description: `
-            ...
-          `
+            How to use JavaFX to implement interfaces in a Java applet.
+          `,
+          src: '',
+          url: 'https://docs.oracle.com/javase/8/javafx/get-started-tutorial/get_start_apps.htm'
+        },
+        {
+          label: 'Natty Guide',
+          description: `
+            Guide on how to integrate Natty into Java applications.
+          `,
+          src: '',
+          url: 'http://natty.joestelmach.com/doc.jsp'
+        },
+        {
+          label: 'PrettyTime Documentation',
+          description: `
+            Documentation on PrettyTime API.
+          `,
+          src: '',
+          url: 'http://www.ocpsoft.org/prettytime'
         }
       ],
       actions: [

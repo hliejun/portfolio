@@ -7,29 +7,60 @@
 </template>
 
 <script>
-import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Header from '../components/Header'
 
 export default {
   components: {
-    Header,
-    Footer
+    Footer,
+    Header
   },
   data () {
     return {
-      logo: { label: 'dev/hliejun', link: '/', src: '/images/splash/profile.png' },
+      logo: {
+        label: 'dev/hliejun',
+        link: '/',
+        src: '/images/splash/profile.png'
+      },
       siteLinks: [
-        { label: 'home', url: '/' },
-        { label: 'work', url: '/work' },
-        { label: 'logs', url: '/logs' },
-        { label: 'about', url: '/about' }
+        {
+          label: 'home',
+          url: '/'
+        },
+        {
+          label: 'work',
+          url: '/work'
+        },
+        {
+          label: 'logs',
+          url: '/logs'
+        },
+        {
+          label: 'about',
+          url: '/about'
+        }
       ],
       socialLinks: [
-        { url: 'https://github.com/hliejun', src: '/vectors/social/github.svg' },
-        { url: 'https://www.linkedin.com/in/hliejun/', src: '/vectors/social/linkedin.svg' },
-        { url: 'https://twitter.com/hliejun', src: '/vectors/social/twitter.svg' },
-        { url: 'https://medium.com/@hliejun.dev', src: '/vectors/social/medium.svg' },
-        { url: 'https://dribbble.com/hliejun', src: '/vectors/social/dribbble.svg' }
+        {
+          src: '/vectors/social/github.svg',
+          url: 'https://github.com/hliejun'
+        },
+        {
+          src: '/vectors/social/linkedin.svg',
+          url: 'https://www.linkedin.com/in/hliejun/'
+        },
+        {
+          src: '/vectors/social/twitter.svg',
+          url: 'https://twitter.com/hliejun'
+        },
+        {
+          src: '/vectors/social/medium.svg',
+          url: 'https://medium.com/@hliejun.dev'
+        },
+        {
+          src: '/vectors/social/dribbble.svg',
+          url: 'https://dribbble.com/hliejun'
+        }
       ]
     }
   }

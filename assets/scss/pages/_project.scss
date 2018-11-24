@@ -77,6 +77,8 @@
 }
 
 .project__section .section__title {
+  animation: raise .4s ease-in-out both;
+
   display: block;
   font-family: 'Roboto Mono', monospace;
   font-weight: 600;
@@ -91,6 +93,8 @@
 }
 
 .project__section .section__subtitle {
+  animation: raise .4s ease-in-out .1s both;
+
   display: block;
   font-family: 'Roboto Mono', monospace;
   font-size: 1em;
@@ -104,6 +108,46 @@
 
 .project__section .section__item {
   margin-bottom: 1em;
+}
+
+.project__section .section__item:nth-child(1) {
+  animation: raise .4s ease-in-out .1s both;
+}
+
+.project__section .section__item:nth-child(2) {
+  animation: raise .4s ease-in-out .2s both;
+}
+
+.project__section .section__item:nth-child(3) {
+  animation: raise .4s ease-in-out .3s both;
+}
+
+.project__section .section__item:nth-child(4) {
+  animation: raise .4s ease-in-out .4s both;
+}
+
+.project__section .section__item:nth-child(5) {
+  animation: raise .4s ease-in-out .5s both;
+}
+
+.project__section .section__item:nth-child(6) {
+  animation: raise .4s ease-in-out .6s both;
+}
+
+.project__section .section__item:nth-child(7) {
+  animation: raise .4s ease-in-out .7s both;
+}
+
+.project__section .section__item:nth-child(8) {
+  animation: raise .4s ease-in-out .8s both;
+}
+
+.project__section .section__item:nth-child(9) {
+  animation: raise .4s ease-in-out .9s both;
+}
+
+.project__section .section__item:nth-child(10) {
+  animation: raise .4s ease-in-out 1s both;
 }
 
 .project__section .section__item.tag {
@@ -145,6 +189,8 @@
 }
 
 .project__section .section__item-text {
+  animation: raise .4s ease-in-out .2s both;
+
   margin-bottom: 20px;
   margin-top: -10px;
   // text-align: justify;
@@ -182,6 +228,8 @@
 }
 
 .project__link {
+  animation: raise .4s ease-in-out .2s both;
+
   display: block;
   margin: 15px 0;
   width: fit-content;

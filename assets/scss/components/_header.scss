@@ -42,6 +42,8 @@
 // Avatar
 
 .avatar__image {
+  animation: drop-translucent .4s ease-in-out both;
+
   background-color: #fff;
   border-radius: 50%;
   margin-bottom: -20px;
@@ -74,6 +76,22 @@
   margin-right: 10px;
   margin-top: 14px;
   overflow: visible;
+}
+
+.links .link:nth-child(1) {
+  animation: drop .4s ease-in-out both;
+}
+
+.links .link:nth-child(2) {
+  animation: drop .4s ease-in-out .1s both;
+}
+
+.links .link:nth-child(3) {
+  animation: drop .4s ease-in-out .2s both;
+}
+
+.links .link:nth-child(4) {
+  animation: drop .4s ease-in-out .3s both;
 }
 
 .links--mobile {
@@ -156,6 +174,8 @@
 // Logo
 
 .logo {
+  animation: drop .4s ease-in-out both;
+
   display: inline-block;
   height: 60px;
 }
@@ -190,6 +210,8 @@
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+
+  animation: drop .4s ease-in-out both;
 
   background-color: rgba(240, 240, 240, .7);
   border-radius: 50%;
@@ -248,9 +270,9 @@
 }
 
 .menu__panel .link {
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  transition: all .4s ease;
 }
 
 .menu__panel .link:nth-child(1) {
@@ -306,7 +328,7 @@
 
 @media (max-width: 800px) {
   .header__background {
-    background-color: #37474f;
+    background-color: rgba(#37474f, .9);
     height: 35px;
     left: 10px;
     opacity: 0;
@@ -351,5 +373,18 @@
 
   .header:not(.splash) .link__container:hover {
     background-color: rgba(255, 255, 255, 1);
+  }
+}
+
+@keyframes drop-translucent {
+  0% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }

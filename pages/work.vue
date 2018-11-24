@@ -1,25 +1,31 @@
 <template>
+
+  <!-- TODO: Add animations and banner background image -->
+
   <div class='page work'>
     <Jumbotron
+      :actions='jumbotron.actions'
       :name='jumbotron.name'
-      :title='jumbotron.title'
-      :subtitle='jumbotron.subtitle'
       :src='jumbotron.src'
-      :actions='jumbotron.actions' />
+      :subtitle='jumbotron.subtitle'
+      :title='jumbotron.title' />
+    <div class='background-waves'>
+      <div class='background-wave' />
+      <div class='background-wave' />
+      <div class='background-wave' />
+    </div>
     <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start'intersection-ratios='.4'layout='nodisplay' />
+      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.4' layout='nodisplay' />
       <div class='page__container'>
         <div class='work__gallery'>
-          <PreviewCard
-            v-for='project in projects'
+          <PreviewCard v-for='project in projects' :key='project.name'
+            :description='project.description'
             :name='project.name'
             :src='project.src'
-            :title='project.title'
             :subtitle='project.subtitle'
-            :description='project.description'
-            :url='project.url'
             :tags='project.tags'
-            :key='project.name' />
+            :title='project.title'
+            :url='project.url' />
         </div>
       </div>
     </div>
@@ -50,8 +56,7 @@ export default {
             label: 'Dribbble',
             url: 'https://dribbble.com/hliejun'
           }
-        ],
-        // src: '/vectors/jumbotron/computer.svg'
+        ]
       },
       projects: [
         {
@@ -113,7 +118,7 @@ export default {
           src: '/images/previews/hypedyn.png',
           title: 'HypeDyn Text Stories',
           subtitle: '2018 / NUS NM3222 / 1 WEEK',
-          description: 'Text-based interactive stories focused on emotions, choice as agency and replay.',
+          description: 'Text-based interactive stories focused on emotions, agency of choice and replay.',
           url: '/projects/hypedyn',
           tags: ['HYPEDYN', 'STORY', 'TEXT']
         },

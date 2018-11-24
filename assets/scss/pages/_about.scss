@@ -2,11 +2,17 @@
 @import './mixins.scss';
 
 .about .page__content {
+  animation: raise .4s ease-in-out both;
+
   padding: 40px 10px;
 }
 
 .about .jumbotron {
   background: linear-gradient(0deg, #386a9d 0%, #43aea2 100%);
+}
+
+.about .jumbotron .jumbotron__content {
+  z-index: 6;
 }
 
 .about .book {
@@ -15,6 +21,8 @@
 }
 
 .about .introduction__image {
+  animation: raise .4s ease-in-out both;
+
   margin: 5px 10px;
   border-radius: 50%;
   display: block;
@@ -33,9 +41,9 @@
 }
 
 .about__introduction {
-  -webkit-box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .2);
-  -moz-box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .2);
-  box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .2);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 64, 128, .2);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 64, 128, .2);
+  box-shadow: 0 4px 8px 0 rgba(0, 64, 128, .2);
 
   -webkit-box-align: start;
   -moz-box-align: start;
@@ -75,9 +83,12 @@
   width: calc(90vw - 30px);
 }
 
+.about__introduction-text h2 {
+  animation: raise .4s ease-in-out .1s both;
+}
+
 .about__introduction-text h4 {
-  font-size: 1.2em;
-  font-weight: 600;
+  animation: raise .4s ease-in-out .2s both;
 }
 
 .about .section {
@@ -104,6 +115,26 @@
   justify-content: flex-start;
 
   margin-bottom: 30px;
+}
+
+.about__introduction-text .section:nth-child(4) {
+  animation: raise .4s ease-in-out .2s both;
+}
+
+.about__introduction-text .section:nth-child(5) {
+  animation: raise .4s ease-in-out .3s both;
+}
+
+.about__introduction-text .section:nth-child(6) {
+  animation: raise .4s ease-in-out .4s both;
+}
+
+.about__introduction-text .section:nth-child(7) {
+  animation: raise .4s ease-in-out .5s both;
+}
+
+.about__introduction-text .section:nth-child(8) {
+  animation: raise .4s ease-in-out .6s both;
 }
 
 @media (max-width: 500px) {

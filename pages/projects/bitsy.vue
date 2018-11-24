@@ -2,90 +2,43 @@
   <div class='page bitsy project'>
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
+      :actions='jumbotron.actions'
       :name='jumbotron.name'
-      :title='jumbotron.title'
-      :subtitle='jumbotron.subtitle'
       :src='jumbotron.src'
-      :actions='jumbotron.actions' />
+      :subtitle='jumbotron.subtitle'
+      :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
 
-      <!-- Screenshots of scenes and video of interactions -->
+      <!-- TODO: Screenshots of scenes and video of interactions + styling -->
+      <!-- TODO: Icons and glyphs for sections and items -->
 
-      <div class='project__section technologies' v-if='technologies.length'>
-        <div class='section__title'>TECHNOLOGY</div>
-        <div class='section__container'>
-          <div v-bind:class="['section__items', section.name]" v-for='section in technologies'>
-            <div class='section__subtitle'>{{section.title}}</div>
-            <div class='section__row'>
-              <div class='section__item tag' v-for='item in section.items'>
-                <amp-img class='section__item-icon' v-if='item.src' v-bind:src='item.src' height='1' width='1' />
-                <span class='section__item-label tag' v-if='item.label'>{{item.label}}</span>
-                <span class='section__item-description' v-if='item.description'>{{item.description}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='project__section about' v-if='about.length'>
-        <div class='section__title'>ABOUT</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in about'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section design' v-if='design.length'>
-        <div class='section__title'>DESIGN</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in design'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section features' v-if='features.length'>
-        <div class='section__title'>FEATURES</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in features'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section references' v-if='references.length'>
-        <div class='section__title'>REFERENCES</div>
-        <div class='section__items'>
-          <div class='section__item' v-for='item in references'>
-            <amp-img class='section__item-icon' v-if='item.src' v-bind:src='item.src' height='1' width='1' />
-            <span class='section__item-label' v-if='item.label'>{{item.label}}</span>
-            <span class='section__item-description' v-if='item.description'>{{item.description}}</span>
-          </div>
-        </div>
-      </div>
-      <div class='project__section actions'>
-        <div class='project__actions' v-if='actions.length'>
-          <a
-            class='project__link'
-            v-for='action in actions'
-            v-bind:href='action.url'
-            v-bind:target="action.in ? '_self' : '_blank'">
-            <div class='code button project__button'>
-              {{action.label}}
-            </div>
-          </a>
-        </div>
-      </div>
+      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
+      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='design' label='DESIGN' :items='design' />
+      <HTMLSection name='features' label='FEATURES' :items='features' />
+      <LinksSection name='references' label='REFERENCES' :items='references' />
+      <ActionsSection name='actions' :items='actions' />
     </div>
   </div>
 </template>
 
 <script>
+import ActionsSection from '../../components/ActionsSection'
+import HTMLSection from '../../components/HTMLSection'
 import Jumbotron from '../../components/Jumbotron'
 import Mockup from '../../components/Mockup'
+import LinksSection from '../../components/LinksSection'
+import TagsSection from '../../components/TagsSection'
 
 export default {
   components: {
+    ActionsSection,
+    HTMLSection,
     Jumbotron,
-    Mockup
+    Mockup,
+    LinksSection,
+    TagsSection
   },
   data () {
     return {
@@ -116,78 +69,78 @@ export default {
         {
           name: 'build',
           title: 'BUILD',
-          items: [
+          tags: [
             {
-              src: '',
               label: 'Javascript',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'HTML',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'CSS',
-              description: ''
+              src: ''
             }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
-          items: [
+          tags: [
             {
-              src: '',
               label: 'Bitsy',
-              description: ''
+              src: ''
             }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          items: [
+          tags: [
             {
-              src: '',
               label: 'itch.io',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'GitHub Pages',
-              description: ''
+              src: ''
             }
           ]
         }
       ],
       about: [
         {
-          name: 'motivation',
-          title: 'MOTIVATION',
-          src: '',
-          text: `
-            The goal of this project was to learn about the agency of exploration: uncovering a story through
-            unordered discovery and gameplay, driven by interactions and dialogues between characters and
-            key items. It was also an avenue for me to fiddle with pixel art and game design.
-          `
-        },
-        {
           name: 'description',
           title: 'DESCRIPTION',
           src: '',
           text: `
-            Set in the small town of Ann Siang Hill, an infamous cold case on children going missing led to the
-            abandonment of the ghastly neighbourhood. Inspector Tan took the case into his own hands for personal
-            reasons, only to struggle between hallucinations and reality. The mysterious visions he encounters as
-            he travels through the ghost town looking for clues leads him closer towards the larger truth behind the
-            disappearances of the children.<br>
+            Set in the small town of Ann Siang Hill, an infamous cold case
+            on children going missing led to the abandonment of the ghastly
+            neighbourhood. Inspector Tan took the case into his own hands
+            for personal reasons, only to struggle between hallucinations
+            and reality. The mysterious visions he encounters as he travels
+            through the ghost town looking for clues leads him closer towards
+            the larger truth behind the disappearances of the children.<br>
             <br>
-            Throughout the game, you will discover visions of the past through the persona. This is indicated by
-            entering a colorized version of the scene. You may also pick up evidences from NPCs or props on the grounds.
-            These evidences will hint at the places to go, or unravel bits of pieces of the storyline.
-            You are encouraged to replay a couple of times to get the whole story!
+            Throughout the game, you will discover visions of the past through
+            the persona. This is indicated by entering a colorized version of
+            the scene. You may also pick up evidences from NPCs or props on
+            the ground. These evidences will hint at the places to go, or
+            unravel bits of pieces of the storyline. You are encouraged to
+            replay a couple of times to get the whole story!
+          `
+        },
+        {
+          name: 'motivation',
+          title: 'MOTIVATION',
+          src: '',
+          text: `
+            The goal of this pixel story was to learn about the agency of
+            exploration, unraveling a story through unordered discovery
+            and gameplay, driven by interactions and dialogues between
+            characters and key items. It was also an avenue for me to
+            fiddle with pixel art and game design.
           `
         },
         {
@@ -195,11 +148,11 @@ export default {
           title: 'CHALLENGES',
           src: '',
           text: `
-            This project was challenging in the limitations to the use of sprites, rooms and items due to
-            module restrictions. Also, Bitsy hacks were not allowed in the module as well. However, these
-            restrictions did encourage creative and interesting workarounds, such as hiding entrypoints
-            to conversation or event-triggered scenes and using dialogues to guide players to these hiding
-            spots as the story unfolds.
+            There were module limitations set on the use of sprites, rooms
+            and items. Bitsy hacks were not allowed too. However, these
+            restrictions did encourage interesting workarounds, such as
+            hiding entrypoints to conversation or event-triggered scenes
+            and using dialogues to guide players to these hiding spots.
           `
         },
       ],
@@ -209,11 +162,13 @@ export default {
           title: 'GAME WORLD',
           src: '',
           text: `
-            The game world comprises of 9 distinct scenes, of which 6 scenes have alternate dimensions. Key items
-            are scattered among these scenes, supplemented with monologues that unravel the plot. Characters
-            can only be found in scenes of the past. Interacting with these NPCs will give clues to their identities,
-            as well as the role they play in the story. Depending on your possession of items, characters will
-            have different replies in their conversations.
+            The game world comprises of 9 distinct scenes, 6 of them with
+            alternate dimensions. Key items are scattered among these scenes,
+            supplemented with monologues that unravel the plot. Characters can
+            only be found in scenes of the past. Interacting with these NPCs
+            will give clues to their identities, as well as the role they play
+            in the story. Depending on your possession of items, characters
+            will have different replies to your conversations.
           `
         }
       ],
@@ -223,10 +178,12 @@ export default {
           title: 'ALTERNATE DIMENSIONS',
           src: '',
           text: `
-            You can travel between dimensions within scenes to interact with the past. These special rooms
-            represent the haunting of the past on the protagonist, and can be interpreted in many ways such as
-            hallucinations, supernatural occurrences, time portals, recalls, etc. They are distinct from the present
-            dimension in that they are coloured, filled with NPCs and have slight differences in furnishings.
+            You can travel between scenes to interact across dimensions. These
+            special dimensions represent the haunting of the past. To the
+            protagonist, it can be interpreted in many forms: hallucinations,
+            supernatural occurrences, time portals, recalls, etc. They are
+            distinct from the present dimensions in that they are coloured,
+            filled with NPCs and have slight differences in their setting.
           `
         },
         {
@@ -234,9 +191,10 @@ export default {
           title: 'HIDDEN ITEMS',
           src: '',
           text: `
-            Some items are hidden from plain sight. This allows you to explore the area, focus on dialogues
-            and the storyline to make interactions with the environment. It can also become a thrilling
-            "treasure hunt" if you prefer searching for them to listening for hints in dialogues.
+            Some items are hidden from plain sight. This allows you to explore
+            the area, focus on dialogues and the storyline to make interactions
+            with the environment. It can also become a thrilling "treasure hunt"
+            if you prefer searching for them to listening for hints in dialogues.
           `
         },
         {
@@ -244,8 +202,9 @@ export default {
           title: 'INTRICATE PIXEL ART AND DIALOGUES',
           src: '',
           text: `
-            Each glyph, item, or character is designed meticulously to capture traits, setting and character
-            personalities in the scene. Some designs are animated to illustrate events or create ambience.
+            Each glyph, item, or character is designed meticulously to capture
+            traits, setting and character personalities in the scene. Some designs
+            are animated to illustrate events or create ambience.
           `
         },
         {
@@ -253,35 +212,42 @@ export default {
           title: 'PARROT',
           src: '',
           text: `
-            You will find a parrot in the park scene, imitating random lines of passers-by. The parrot is
-            a mechanism to capture the story from a spectator's point of view, and provides a different
-            perspective to the story. The imitated lines will hint at the story, as well as your objectives
-            in different scenes.
+            You will find a parrot in the park scene, imitating random lines
+            of passers-by. The parrot is a mechanism to capture the story from
+            a spectator's point of view, and provides a different perspective
+            to the story. The imitated lines will hint at the story, as well
+            as your objectives in different scenes.
           `
         }
       ],
       references: [
         {
-          src: '',
           label: 'Balloon Diaspora',
           description: `
-            A game by Cardboard Computer focusing on the agency of exploration and emotion through dialogues.
-          `
+            A game by Cardboard Computer focusing on the agency of exploration
+            and emotion through dialogues.
+          `,
+          src: '',
+          url: 'http://cardboardcomputer.com/games/balloon-diaspora'
         },
         {
-          src: '',
           label: 'Glass',
           description: `
-            Interactive text story by Emily Short, putting the narrative in a spectator's perspective.
-          `
+            Interactive text story by Emily Short, putting the narrative in a
+            spectator's perspective.
+          `,
+          src: '',
+          url: 'http://inform7.com/learn/eg/glass/play.html'
         },
         {
-          src: '',
           label: 'Galatea',
           description: `
-            Also created by Emily Short, an interactive text story that inspires player to form associations
-            between key objects and entities with story fragments.
-          `
+            Also created by Emily Short, an interactive text story that inspires
+            player to form associations between key objects and entities with
+            story fragments.
+          `,
+          src: '',
+          url: 'http://pr-if.org/play/galatea'
         }
       ],
       actions: [

@@ -48,6 +48,11 @@ p {
   padding-top: 60px;
 }
 
+.page--splash {
+  min-height: calc(100vh - 100px);
+  padding-top: 70px;
+}
+
 .page.company,
 .page.company .page__content,
 .page.project,
@@ -55,9 +60,19 @@ p {
   background-color: #455a64;
 }
 
-.page--splash {
-  min-height: calc(100vh - 100px);
-  padding-top: 70px;
+.page.error {
+  position: relative;
+}
+
+.page.error .missing {
+  display: block;
+  left: 50%;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100vw;
 }
 
 .content {

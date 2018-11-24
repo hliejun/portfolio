@@ -2,21 +2,17 @@
   <div v-bind:class="['mockup', orientation, type]">
     <div class='mockup__container'>
       <div class='mockup__image'>
-
-        <!-- Variate size, rotations and paddings based on orientation and type -->
-
-        <amp-img
+        <amp-img v-if='src'
           class='isometric__image'
-          v-if='src'
+          v-bind:height="
+            type === 'wide'
+              ? orientation === 'portrait' ? '64vw' : '48vw'
+              : orientation === 'portrait' ? '64vw' : '40vw'"
           v-bind:src='src'
           v-bind:width="
             type === 'wide'
               ? orientation === 'portrait' ? '48vw' : '64vw'
-              : orientation === 'portrait' ? '40vw' : '64vw'"
-          v-bind:height="
-            type === 'wide'
-              ? orientation === 'portrait' ? '64vw' : '48vw'
-              : orientation === 'portrait' ? '64vw' : '40vw'" />
+              : orientation === 'portrait' ? '40vw' : '64vw'" />
       </div>
       <div class='mockup__shadow' />
     </div>

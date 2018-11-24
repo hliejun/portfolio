@@ -1,21 +1,22 @@
 <template>
   <div v-bind:class="['footer', theme, { splash }]">
     <div class='footer__content'>
-      <span class='code footer__text'>Hello world, let's connect!</span>
+      <span class='code footer__text'>{{text}}</span>
       <div class='social'>
-        <div class='button social__button' v-for='link in links' :key='link.url'>
+        <div v-for='link in links' :key='link.url' class='button social__button'>
           <a class='social__content' v-bind:href='link.url' target='_blank'>
             <amp-img
-              class='social-logo'
+              class='social__logo'
+              height='1'
               v-bind:src='link.src'
-              height='40'
-              width='40'
-              sizes='(min-width: 600px) 40px, 30px' />
+              width='1' />
           </a>
         </div>
       </div>
-      <div class='site-map' v-if='!splash'>
-        <!-- Place sitemap here -->
+      <div v-if='!splash' class='site-map'>
+
+        <!-- TODO: Sitemap table of links -->
+
       </div>
     </div>
   </div>
@@ -31,8 +32,8 @@ export default {
         if (value && value.length) {
           value.forEach(element => {
             if (!element
-              || typeof element.url !== 'string'
-              || typeof element.src !== 'string') {
+              || typeof element.src !== 'string'
+              || typeof element.url !== 'string') {
               return false
             }
           })
@@ -42,7 +43,7 @@ export default {
     },
     text: {
       type: String,
-      default: ''
+      default: "Hello world, let's connect!"
     },
     theme: {
       type: String,

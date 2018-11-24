@@ -36,7 +36,13 @@
   width: 80vw;
 }
 
+.index .title {
+  animation: raise .4s ease-in-out both;
+}
+
 .index .subtitle {
+  animation: raise .4s ease-in-out .1s both;
+
   display: block;
   font-size: .9em;
   font-weight: 400;
@@ -85,11 +91,20 @@
   overflow: visible;
 }
 
+.earth {
+  animation: raise .4s ease-in-out both;
+
+  min-height: 10em;
+  min-width: 10em;
+}
+
 .satellite {
   -webkit-animation: rotate 200s infinite linear both alternate-reverse;
   -moz-animation: rotate 200s infinite linear both alternate-reverse;
   animation: rotate 200s infinite linear both alternate-reverse;
 
+  min-height: 100px;
+  min-width: 100px;
   will-change: transform;
   z-index: 0;
 }
@@ -99,6 +114,8 @@
   -moz-animation: rotate 100s infinite linear both alternate;
   animation: rotate 100s infinite linear both alternate;
 
+  min-height: 300px;
+  min-width: 300px;
   will-change: transform;
   z-index: 0;
 }
@@ -109,6 +126,8 @@
   animation: revolve 20s infinite linear both;
 
   left: 48%;
+  min-height: 60px;
+  min-width: 60px;
   position: absolute;
   top: 40%;
   will-change: transform;
@@ -127,6 +146,8 @@
 // Resume
 
 .resume__link {
+  animation: raise .4s ease-in-out .2s both;
+
   display: block;
   margin: 15px auto;
   width: fit-content;

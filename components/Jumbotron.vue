@@ -3,19 +3,16 @@
     <amp-position-observer on='exit:fadeIn.start' intersection-ratios='0.2' layout='nodisplay' />
     <amp-position-observer on='enter:fadeOut.start' intersection-ratios='0.2' layout='nodisplay' />
     <div class='jumbotron__content'>
-      <amp-img
+      <amp-img v-if='src'
+        height='1'
         v-bind:class="['jumbotron__image', theme, name]"
-        v-if='src'
         v-bind:src='src'
-        height='150'
-        width='150'
-        sizes='(min-width: 600px) 150px, 100px' />
+        width='1' />
       <span class='stylized jumbotron__title'>{{title}}</span>
       <span class='stylized jumbotron__subtitle'>{{subtitle}}</span>
-      <div class='jumbotron__actions' v-if='actions.length'>
-        <a
+      <div v-if='actions.length' class='jumbotron__actions'>
+        <a v-for='action in actions' :key='action.url'
           class='jumbotron__link'
-          v-for='action in actions'
           v-bind:href='action.url'
           v-bind:target="action.in ? '_self' : '_blank'">
           <div class='code button jumbotron__button'>
@@ -48,7 +45,19 @@ export default {
     },
     actions: {
       type: Array,
-      default: []
+      default: [],
+      validator: value => {
+        if (value && value.length) {
+          value.forEach(element => {
+            if (!element
+              || typeof element.label !== 'string'
+              || typeof element.url !== 'string') {
+              return false
+            }
+          })
+        }
+        return true
+      }
     },
     theme: {
       type: String,

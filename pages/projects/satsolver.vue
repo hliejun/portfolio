@@ -2,94 +2,43 @@
   <div class='page satsolver project'>
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
+      :actions='jumbotron.actions'
       :name='jumbotron.name'
-      :title='jumbotron.title'
-      :subtitle='jumbotron.subtitle'
       :src='jumbotron.src'
-      :actions='jumbotron.actions' />
+      :subtitle='jumbotron.subtitle'
+      :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.1' layout='nodisplay' />
 
-      <!-- Pictures of graphs explaining results -->
+      <!-- TODO: Pictures of graphs explaining results -->
+      <!-- TODO: Icons and glyphs for sections and items -->
 
-      <div class='project__section technologies' v-if='technologies.length'>
-        <div class='section__title'>TECHNOLOGY</div>
-        <div class='section__container'>
-          <div v-bind:class="['section__items', section.name]" v-for='section in technologies'>
-            <div class='section__subtitle'>{{section.title}}</div>
-            <div class='section__row'>
-              <div class='section__item tag' v-for='item in section.items'>
-                <amp-img class='section__item-icon' v-if='item.src' v-bind:src='item.src' height='1' width='1' />
-                <span class='section__item-label tag' v-if='item.label'>{{item.label}}</span>
-                <span class='section__item-description' v-if='item.description'>{{item.description}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='project__section about' v-if='about.length'>
-        <div class='section__title'>ABOUT</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in about'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section design' v-if='design.length'>
-        <div class='section__title'>DESIGN</div>
-        <div v-bind:class="['section__items', section.name]" v-for='section in design'>
-          <div class='section__subtitle'>{{section.title}}</div>
-          <amp-img class='section__item-image' v-if='section.src' v-bind:src='section.src' height='1' width='1' />
-          <div v-bind:class="['section__item-text', section.name]" v-if='section.text' v-html='section.text' />
-        </div>
-      </div>
-      <div class='project__section team' v-if='team.length'>
-        <div class='section__title'>TEAM</div>
-        <div class='section__items'>
-          <div class='section__row'>
-            <div class='section__item' v-for='member in team'>
-              <amp-img class='section__item-icon' v-if='member.src' v-bind:src='member.src' height='1' width='1' />
-              <span class='section__item-label' v-if='member.name'>{{member.name}}</span>
-              <span class='section__item-description' v-if='member.description'>{{member.description}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='project__section references' v-if='references.length'>
-        <div class='section__title'>REFERENCES</div>
-        <div class='section__items'>
-          <div class='section__item' v-for='item in references'>
-            <amp-img class='section__item-icon' v-if='item.src' v-bind:src='item.src' height='1' width='1' />
-            <span class='section__item-label' v-if='item.label'>{{item.label}}</span>
-            <span class='section__item-description' v-if='item.description'>{{item.description}}</span>
-          </div>
-        </div>
-      </div>
-      <div class='project__section'>
-        <div class='project__actions' v-if='actions.length'>
-          <a
-            class='project__link'
-            v-for='action in actions'
-            v-bind:href='action.url'
-            v-bind:target="action.in ? '_self' : '_blank'">
-            <div class='code button project__button'>
-              {{action.label}}
-            </div>
-          </a>
-        </div>
-      </div>
+      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
+      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='design' label='DESIGN' :items='design' />
+      <LinksSection name='team' label='TEAM' :items='team' />
+      <LinksSection name='references' label='REFERENCES' :items='references' />
+      <ActionsSection name='actions' :items='actions' />
     </div>
   </div>
 </template>
 
 <script>
+import ActionsSection from '../../components/ActionsSection'
+import HTMLSection from '../../components/HTMLSection'
 import Jumbotron from '../../components/Jumbotron'
 import Mockup from '../../components/Mockup'
+import LinksSection from '../../components/LinksSection'
+import TagsSection from '../../components/TagsSection'
 
 export default {
   components: {
+    ActionsSection,
+    HTMLSection,
     Jumbotron,
-    Mockup
+    Mockup,
+    LinksSection,
+    TagsSection
   },
   data () {
     return {
@@ -116,72 +65,69 @@ export default {
         {
           name: 'build',
           title: 'BUILD',
-          items: [
+          tags: [
             {
-              src: '',
               label: 'Java',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'JUnit',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'Shell Script',
-              description: ''
+              src: ''
             }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
-          items: [
+          tags: [
             {
-              src: '',
               label: 'IntelliJ',
-              description: ''
+              src: ''
             },
             {
-              src: '',
               label: 'Bash',
-              description: ''
+              src: ''
             }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          items: [
+          tags: [
             {
-              src: '',
               label: 'UNIX',
-              description: ''
+              src: ''
             }
           ]
         }
       ],
       about: [
         {
-          name: 'motivation',
-          title: 'MOTIVATION',
-          src: '',
-          text: `
-            To understand the DPLL and CDCL algorithms through implementation, as well as to compare and
-            benchmark different heuristics.
-          `
-        },
-        {
           name: 'description',
           title: 'DESCRIPTION',
           src: '',
           text: `
-            This project is about comparison of different satisfiability resolution techniques,
-            such as DPLL and CDCL with different branching and conflict resolution heuristics. In this
-            project, we implemented several heuristics for solving satisfiability, and made comparisons
-            through cnf formatted test cases. We also modelled the Einstein's Puzzle into CNF form to
-            be used with our solvers.
+            This research compares different satisfiability resolution
+            techniques, such as DPLL and CDCL with different branching
+            and conflict resolution heuristics. In this project, we
+            implemented several heuristics for solving satisfiability
+            and made comparisons through cnf formatted test cases. We
+            also modelled the Einstein's Puzzle into CNF form to be used
+            with our solvers.
+          `
+        },
+        {
+          name: 'motivation',
+          title: 'MOTIVATION',
+          src: '',
+          text: `
+            The motivation behind creating the solvers was to understand
+            the DPLL and CDCL algorithms through implementation, as well
+            as to compare and benchmark different heuristics.
           `
         },
         {
@@ -189,8 +135,11 @@ export default {
           title: 'CHALLENGES',
           src: '',
           text: `
-            The challenge in this project was finding and implementing heuristics for conflict resolution
-            and picking branch variables that can improve the solvers.
+            The challenge in this project was finding and implementing
+            heuristics for conflict resolution and picking branch variables
+            that can improve the solvers. We went through several research
+            papers before settling with the more common techniques that
+            could be implemented within the project timeframe.
           `
         },
       ],
@@ -203,13 +152,15 @@ export default {
             We implemented 2 solvers for this project:<br>
             <br>
             <u>Davis–Putnam–Logemann–Loveland (DPLL)</u><br>
-            The DPLL algorithm is a backtracking search algorithm that performs chronological backtracking
-            until the variables are exhausted. We wrote it in both recursive and iterative forms.<br>
+            The DPLL algorithm is a backtracking search algorithm that
+            performs chronological backtracking until the variables are
+            exhausted. We wrote it in both recursive and iterative forms.<br>
             <br>
             <u>Conflict-Driven Clause Learning (CDCL)</u><br>
-            The CDCL algorithm performs conflict clause learning and non-chronological backtracking by
-            resolving an implication graph. CDCL can be customised with different heuristics for clause
-            learning and picking branching variables.
+            The CDCL algorithm performs conflict clause learning and
+            non-chronological backtracking by resolving an implication
+            graph. CDCL can be customised with different heuristics for
+            clause learning and picking branching variables.
           `
         },
         {
@@ -217,26 +168,34 @@ export default {
           title: 'CDCL HEURISTICS',
           src: '',
           text: `
-            For the CDCL solver, we implemented 3 variations of branching heuristics:<br>
+            For the CDCL solver, we implemented 3 variations of branching
+            heuristics:<br>
             <br>
             <u>2-Clause</u><br>
-            Pick an unassigned variable that occurred the most across 2­-clauses. This heuristic forces 2-­clauses
-            to become assertive after decision­ making.<br>
+            Pick an unassigned variable that occurred the most across
+            2­-clauses. This heuristic forces 2-­clauses to become assertive
+            after decision­ making.<br>
             <br>
             <u>All Clause</u><br>
-            Pick an unassigned variable that occurred the most across all clauses.<br>
+            Pick an unassigned variable that occurred the most across
+            all clauses.<br>
             <br>
             <u>Random</u><br>
-            Pick an unassigned variable randomly from a list of unassigned symbols.<br>
+            Pick an unassigned variable randomly from a list of unassigned
+            symbols.<br>
             <br>
-            For the conflict analysis and clause learning heuristic, we implemented 1-UIP:<br>
+            For the conflict analysis and clause learning heuristic, we
+            implemented 1-UIP:<br>
             <br>
             <u>1-Unique Implication Point (1-UIP)</u><br>
-            We used the implication graph to extract antecedent clauses to apply resolution with, starting
-            from the conflict clause antecedent to the conflict node. However, the resolution is terminated
-            as soon as we have reached a state where only 1 variable in the resolved clause belongs to the
-            conflict level. This provides us with an assertive clause that can be propagated after backtracking
-            to the highest level of the remaining variables in the resolved clause.
+            We used the implication graph to extract antecedent clauses
+            to apply resolution with, starting from the conflict clause
+            antecedent to the conflict node. However, the resolution is
+            terminated as soon as we have reached a state where only 1
+            variable in the resolved clause belongs to the conflict level.
+            This provides us with an assertive clause that can be propagated
+            after backtracking to the highest level of the remaining variables
+            in the resolved clause.
           `
         },
         {
@@ -244,12 +203,18 @@ export default {
           title: 'EINSTEIN PUZZLE',
           src: '',
           text: `
-            The Einstein Puzzle is a logic puzzle that establishes a list of conditions among 5 neighbours.
-            There are ﬁve houses in ﬁve diﬀerent colors. In each house lives a person with a diﬀerent nationality.
-            The ﬁve owners drink a certain type of beverage, smoke a certain brand of cigar, and keep a certain pet.
-            No owners have the same pet, smoke the same brand of cigar or drink the same beverage.<br>
+            The Einstein Puzzle is a logic puzzle that establishes a list
+            of conditions among 5 neighbours. There are ﬁve houses in ﬁve
+            diﬀerent colors. In each house lives a person with a diﬀerent
+            nationality. The ﬁve owners drink a certain type of beverage,
+            smoke a certain brand of cigar, and keep a certain pet. No owners
+            have the same pet, smoke the same brand of cigar or drink the
+            same beverage.<br>
             <br>
-            <u>Conditions</u><br>
+            <u>Question</u><br>
+            Who owns the fish?<br>
+            <br>
+            <u>Hints</u><br>
             <ul>
               <li>The Brit lives in the red house.</li>
               <li>The Swede keeps dogs as pets.</li>
@@ -278,102 +243,119 @@ export default {
               <li>They are next to each other, and are ordered from left to right as you face them.</li>
             </ul>
             <br>
-            <u>Question</u><br>
-            Who owns the fish?<br>
-            <br>
-            To model this problem, we created 150 variables to capture states and possible combinations.
-            From these 150 variables, we designed rules that comply with the conditions specified by the
-            puzzle. These rules were represented by 1300 clauses, categorised into several sections.<br>
+            To model this problem, we created 150 variables to capture
+            states and possible combinations. From these 150 variables,
+            we designed rules that comply with the conditions specified
+            by the puzzle. These rules were represented by 1300 clauses,
+            categorised into several sections.<br>
             <br>
             <u>Simple Rules</u><br>
-            2-clauses to represent specified conditions that bind 2 properties.<br>
+            2-clauses to represent specified conditions that bind 2
+            properties.<br>
             (i.e. If person P is Dane, then person P drinks tea.)<br>
             <br>
             <u>Proximity Rules</u><br>
-            Clauses representing implications between states (ownership of traits) and positions of the houses.<br>
-            (i.e. If person P is in first house and has green house, then if person Q is in second house, then
-            person Q has white house.)<br>
+            Clauses representing implications between states (ownership of
+            traits) and positions of the houses.<br>
+            (i.e. If person P is in first house and has green house, then
+            if person Q is in second house, then person Q has white house.)<br>
             <br>
             <u>Exactly-1 Rules</u><br>
-            Clauses that limit the ownership of each category of traits for a single owner.<br>
-            (i.e. If person P is in the first house, then person P cannot be in the second to fifth house, etc.) <br>
+            Clauses that limit the ownership of each category of traits
+            for a single owner.<br>
+            (i.e. If person P is in the first house, then person P cannot
+            be in the second to fifth house, etc.)<br>
             <br>
             <u>Unicity Rules</u><br>
             Clauses that define the exclusivity of traits between the owners.<br>
-            (i.e. If person P is in the first house, then person Q is not in the first house, etc.) <br>
+            (i.e. If person P is in the first house, then person Q is not
+            in the first house, etc.)<br>
             <br>
-            These set of literals and clauses were written in Conjunctive Normal Form (CNF) and used with
-            our solvers to solve the puzzle.
+            These set of literals and clauses were written in Conjunctive
+            Normal Form (CNF) and used with our solvers to solve the puzzle.
           `
         }
       ],
       team: [
         {
-          src: '',
-          name: 'Chase Tiong',
+          label: 'Chase Tiong',
           description: `
-            Chase is responsible for writing the recursive DPLL solver, designing the data structures to represent
-            literals and clauses, writing unit tests and shell scripts, analysis and benchmarking of results.
-          `
+            Chase was responsible for writing the recursive DPLL solver,
+            designing the data structures to represent literals and clauses,
+            writing unit tests and shell scripts, analysis and benchmarking
+            of results.
+          `,
+          src: '',
+          url: 'https://github.com/ChaseTiong'
         },
         {
-          src: '',
-          name: 'Huang Lie Jun',
+          label: 'Huang Lie Jun',
           description: `
-            I wrote the iterative DPLL solver, the implication graph data structures and modelled the Einstein's
-            Puzzle. Chase and I worked on the CDCL solver and heuristics together.
-          `
+            I wrote the iterative DPLL solver, the implication graph data
+            structures and modelled the Einstein's Puzzle. Chase and I
+            worked on the CDCL solver and heuristics together.
+          `,
+          src: '',
+          url: 'https://github.com/hliejun'
         }
       ],
       references: [
         {
-          src: '',
           label: 'SATLIB Benchmark Problems',
           description: `
-            http://www.cs.ubc.ca/~hoos/SATLIB/benchm.html
-          `
+            A collection of satisfiability benchmark problems in cnf form.
+          `,
+          src: '',
+          url: 'https://www.cs.ubc.ca/~hoos/SATLIB/benchm.html'
         },
         {
-          src: '',
           label: 'Exponential Recency Weighted Average Branching Heuristic for SAT Solvers',
           description: `
-            ...
-          `
+            ERWA branching heuristics for CDCL solvers.
+          `,
+          src: '',
+          url: 'https://pdfs.semanticscholar.org/7861/8983dec4a92a9c5a1909e31bc8b95a5705a5.pdf'
         },
         {
-          src: '',
           label: 'On Freezing and Reactivating Learnt Clauses',
           description: `
-            ...
-          `
+            Clause learning heuristics for CDCL solvers.
+          `,
+          src: '',
+          url: 'https://pdfs.semanticscholar.org/a1cd/dbc236cf94161f578dd91f77c7410b7ba5cf.pdf'
         },
         {
-          src: '',
           label: 'Clause Learning in SAT Seminar Automatic Problem Solving',
           description: `
-            ...
-          `
+            Clause learning with implementation of implication graph and
+            use of unique implication points.
+          `,
+          src: '',
+          url: 'https://www.cs.princeton.edu/courses/archive/fall13/cos402/readings/SAT_learning_clauses.pdf'
         },
         {
-          src: '',
-          label: 'Conflict­ Driven Clause Learning SAT Solvers',
+          label: 'CDCL SAT Solvers',
           description: `
-            ...
-          `
+            Detailed notes on CDCL solvers and its constituent procedures.
+          `,
+          src: '',
+          url: 'https://satassociation.org/articles/FAIA185-0131.pdf'
         },
         {
-          src: '',
-          label: 'Understanding VSIDS Branching Heuristics in Conflict ­Driven Clause­ Learning SAT Solvers',
+          label: 'VSIDS Branching Heuristics in CDCL SAT Solvers',
           description: `
-            ...
-          `
+            VSID branching heuristics for CDCL solvers.
+          `,
+          src: '',
+          url: 'https://arxiv.org/pdf/1506.08905.pdf'
         },
         {
-          src: '',
           label: 'Practical SAT Solving',
           description: `
-            ...
-          `
+            Reference SAT solving lecture series.
+          `,
+          src: '',
+          url: 'https://baldur.iti.kit.edu/sat'
         }
       ],
       actions: [

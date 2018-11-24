@@ -1,11 +1,20 @@
 <template>
+
+  <!-- TODO: Add icons for sections in about -->
+  <!-- TODO: Add animations and banner background image -->
+
   <div class='page about'>
     <Jumbotron
+      :actions='jumbotron.actions'
       :name='jumbotron.name'
-      :title='jumbotron.title'
-      :subtitle='jumbotron.subtitle'
       :src='jumbotron.src'
-      :actions='jumbotron.actions' />
+      :subtitle='jumbotron.subtitle'
+      :title='jumbotron.title' />
+    <div class='background-waves'>
+      <div class='background-wave' />
+      <div class='background-wave' />
+      <div class='background-wave' />
+    </div>
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='1' layout='nodisplay' />
       <div class='about__introduction'>
@@ -17,8 +26,8 @@
             Interactive Media Development Minor
           </h4>
           <br>
-          <div class='section' v-for='section in sections'>
-            <amp-img class='section__image' v-if='section.src' v-bind:src='section.src' width='1' height='1' />
+          <div v-for='section in sections' :key='section.title' class='section'>
+            <amp-img v-if='section.src' class='section__image' v-bind:src='section.src' height='1' width='1' />
             <div class='section__content'>
               <h5>{{section.title}}</h5>
               {{section.text}}
@@ -52,52 +61,44 @@ export default {
             label: 'Stories',
             url: 'https://medium.com/@hliejun.dev'
           }
-        ],
-        // src: '/vectors/jumbotron/book.svg'
+        ]
       },
       src: '/images/profiles/about.jpg',
       sections: [
         {
           title: 'PROFILE',
-          // src: '/vectors/about/profile.svg',
           text: `
-            I'm a full-stack software engineer
-            who is passionate about developing
-            user-centric solutions for the
-            betterment of the community.
+            I'm a full-stack software engineer who is passionate about
+            developing user-centric solutions for the betterment of the
+            community. I am a Singaporean, and I speak English, Mandarin
+            and Singlish.
           `
         },
         {
           title: 'INTERESTS',
-          // src: '/vectors/about/interests.svg',
           text: `
-            Besides getting psyched about the
-            latest technology, I also yearn to
-            pick up the best practices for various
-            frameworks and design paradigms.
-            I'm particularly interested in web
-            and mobile development, as well as
-            novel applications of machine learning
-            to real-life problems.
+            Besides getting psyched about the latest technology, I'm
+            particularly interested in web and mobile development, as
+            well as novel applications of machine learning to real-life
+            problems.
           `
         },
         {
           title: 'EDUCATION',
-          // src: '/vectors/about/education.svg',
           text: `
-            I completed my primary education at Woodlands Primary,
-            then high school at Hwa Chong Institution and tertiary
-            at National University of Singapore, School of Computing.
+            I completed my primary education at Woodlands Primary, then
+            high school at Hwa Chong Institution and tertiary at National
+            University of Singapore, School of Computing.
           `
         },
         {
           title: 'HOBBIES',
-          // src: '/vectors/about/hobbies.svg',
           text: `
-            Apart from programming and designing experiences,
-            my hobbies include food hunting, exploring nature,
-            browsing dank memes, binge watching drama and movies
-            and listening to good music.
+            Apart from programming and designing experiences, my hobbies
+            include food hunting, exploring nature, browsing dank memes,
+            binge watching drama and movies and listening to good music.
+            I was a huge fan of console and PC games before they became
+            too expensive for me.
           `
         }
       ]

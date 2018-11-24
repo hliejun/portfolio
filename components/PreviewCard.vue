@@ -11,7 +11,7 @@
             <span class='preview__text'>{{subtitle}}</span>
           </div>
           <div class='preview__tags'>
-            <div class='preview__tag' v-for='tag in tags' :key='tag'>
+            <div v-for='tag in tags' :key='tag' class='preview__tag'>
               <span>{{tag}}</span>
             </div>
           </div>
@@ -53,7 +53,17 @@ export default {
     },
     tags: {
       type: Array,
-      default: []
+      default: [],
+      validator: value => {
+        if (value && value.length) {
+          value.forEach(element => {
+            if (!element || typeof element !== 'string') {
+              return false
+            }
+          })
+        }
+        return true
+      }
     },
     theme: {
       type: String,
