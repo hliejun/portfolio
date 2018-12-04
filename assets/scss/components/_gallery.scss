@@ -1,107 +1,56 @@
+@import '../colors.scss';
+@import '../mixins.scss';
+
+// Frame
+
 .gallery {
   margin: 0 auto;
   padding: 0 10px;
   width: 100%;
 }
 
+// Content
+
 .gallery__content {
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -moz-box-direction: normal;
-  -moz-box-orient: horizontal;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-
+  @include align-items(center);
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+  @include use-flex;
   width: 100%;
 }
 
 .gallery__content.standalone {
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
+  @include justify-content(flex-start);
 }
 
+// Images
+
 .gallery__image--main {
-  animation: raise .4s ease-in-out both;
-
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 64, 128, .2);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 64, 128, .2);
-  box-shadow: 0 4px 8px 0 rgba(0, 64, 128, .2);
-
+  @include animation(raise .4s ease-in-out both);
+  @include box-shadow(0 4px 8px 0 rgba(0, 64, 128, .2));
   border-radius: 6px;
 }
 
 .gallery__supp-images {
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -moz-box-direction: normal;
-  -moz-box-orient: horizontal;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-
-  max-width: 570px;
+  @include align-items(center);
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+  @include use-flex;
   max-height: 430px;
+  max-width: 570px;
 }
 
 .gallery__image--supp {
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 64, 128, .2);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 64, 128, .2);
-  box-shadow: 0 4px 8px 0 rgba(0, 64, 128, .2);
-
+  @include box-shadow(0 4px 8px 0 rgba(0, 64, 128, .2));
   border-radius: 6px;
 }
 
-.gallery__supp-images .gallery__image-container:nth-child(1) {
-  animation: raise .4s ease-in-out .1s both;
-}
-
-.gallery__supp-images .gallery__image-container:nth-child(2) {
-  animation: raise .4s ease-in-out .2s both;
-}
-
-.gallery__supp-images .gallery__image-container:nth-child(3) {
-  animation: raise .4s ease-in-out .3s both;
-}
-
-.gallery__supp-images .gallery__image-container:nth-child(4) {
-  animation: raise .4s ease-in-out .4s both;
+@for $i from 1 to 5 {
+  .gallery__supp-images .gallery__image-container:nth-child(#{$i}) {
+    @include animation(raise .4s ease-in-out unquote(".#{$i}s") both);
+  }
 }
 
 .gallery__image--main img,
@@ -119,18 +68,18 @@
   outline: none;
 }
 
+// Media Queries
+
 @media (max-width: 600px) {
   .gallery__image--main {
     margin: 0 5px 5px 0;
     min-height: calc(.75 * (100vw - 120px));
     min-width: calc(100vw - 120px);
   }
-
   .gallery__supp-images {
     min-height: calc(.75 * (100vw - 120px));
     min-width: calc(100vw - 120px);
   }
-
   .gallery__image--supp {
     margin: 0 5px 0 0;
     min-height: calc(.49 * .75 * (100vw - 120px));
@@ -144,12 +93,10 @@
     min-height: calc(.75 * .45 * (100vw - 100px) + 20px);
     min-width: calc(.45 * (100vw - 100px) + 20px);
   }
-
   .gallery__supp-images {
     max-height: calc(.75 * .45 * (100vw - 100px) + 25px);
     max-width: calc(.45 * (100vw - 100px) + 25px);
   }
-
   .gallery__image--supp {
     margin: 0 5px 0 0;
     min-height: calc(.75 * .22 * (100vw - 100px) + 10px);
@@ -163,13 +110,11 @@
     min-height: 400px;
     min-width: 533px;
   }
-
   .gallery__supp-images {
+    margin-left: -5px;
     max-height: 430px;
     max-width: 570px;
-    margin-left: -5px;
   }
-
   .gallery__image--supp {
     margin: 0 10px 5px 0;
     min-height: 195px;

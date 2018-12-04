@@ -1,34 +1,15 @@
+@import '../colors.scss';
+@import '../mixins.scss';
+
+// Frame
+
 .mockup {
-  -webkit-animation: floating 5s infinite ease-in-out both;
-  -moz-animation: floating 5s infinite ease-in-out both;
-  animation: floating 5s infinite ease-in-out both;
-
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-box-direction: normal;
-  -webkit-box-orient: vertical;
-  -moz-box-direction: normal;
-  -moz-box-orient: vertical;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-
-  box-sizing: border-box;
+  @include animation(floating 5s infinite ease-in-out both);
+  @include align-items(center);
+  @include use-flex;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include flex-wrap(wrap);
   margin: 0;
 }
 
@@ -49,39 +30,30 @@
   position: relative;
 }
 
+// Isometric Image and Shadow
+
 .mockup__image,
 .mockup__shadow {
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  transition: all .3s ease;
-
-  transform-style: preserve-3d;
+  @include transition(all .3s ease);
+  @include transform-style(preserve-3d);
 }
 
 .portrait .mockup__shadow {
-  -webkit-animation: shadow-spread-portrait 5s infinite ease-in-out both;
-  -moz-animation: shadow-spread-portrait 5s infinite ease-in-out both;
-  animation: shadow-spread-portrait 5s infinite ease-in-out both;
+  @include animation(shadow-spread-portrait 5s infinite ease-in-out both);
 }
 
 .landscape .mockup__shadow {
-  -webkit-animation: shadow-spread-landscape 5s infinite ease-in-out both;
-  -moz-animation: shadow-spread-landscape 5s infinite ease-in-out both;
-  animation: shadow-spread-landscape 5s infinite ease-in-out both;
+  @include animation(shadow-spread-landscape 5s infinite ease-in-out both);
 }
 
 .portrait .mockup__image,
 .portrait .mockup__shadow {
-  -webkit-transform: rotateX(45deg) rotateZ(-45deg);
-  -moz-transform: rotateX(45deg) rotateZ(-45deg);
-  transform: rotateX(45deg) rotateZ(-45deg);
+  @include transform(rotateX(45deg) rotateZ(-45deg));
 }
 
 .landscape .mockup__image,
 .landscape .mockup__shadow {
-  -webkit-transform: rotateX(50deg) rotateZ(-40deg);
-  -moz-transform: rotateX(50deg) rotateZ(-40deg);
-  transform: rotateX(50deg) rotateZ(-40deg);
+  @include transform(rotateX(50deg) rotateZ(-40deg));
 }
 
 .mockup__image {
@@ -95,10 +67,7 @@
 }
 
 .mockup__image::before {
-  -webkit-transform: rotateX(90deg) translateY(-4px);
-  -moz-transform: rotateX(90deg) translateY(-4px);
-  transform: rotateX(90deg) translateY(-4px);
-
+  @include transform(rotateX(90deg) translateY(-4px));
   background-color: #d0d0d0;
   bottom: -4px;
   height: 8px;
@@ -107,10 +76,7 @@
 }
 
 .mockup__image::after {
-  -webkit-transform: rotateY(90deg) translateX(4px);
-  -moz-transform: rotateY(90deg) translateX(4px);
-  transform: rotateY(90deg) translateX(4px);
-
+  @include transform(rotateY(90deg) translateX(4px));
   background-color: #bbb;
   height: 100%;
   left: -4px;
@@ -119,10 +85,7 @@
 }
 
 .isometric__image {
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  transition: all .3s ease;
-
+  @include transition(all .3s ease);
   vertical-align: bottom;
 }
 
@@ -151,10 +114,7 @@
 }
 
 .mockup__shadow {
-  -webkit-box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-  -moz-box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-  box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-
+  @include box-shadow(-30px 40px 10px rgba(0, 0, 0, .1));
   height: 100%;
   left: 0;
   position: absolute;
@@ -164,89 +124,38 @@
 
 // Keyframes
 
-@-webkit-keyframes floating {
-  0% { -webkit-transform: translateY(0) }
-  50% { -webkit-transform: translateY(-15px) }
-  100% { -webkit-transform: translateY(0) }
+@include keyframes(floating) {
+  0% { @include transform(translateY(0)) }
+  50% { @include transform(translateY(-15px)) }
+  100% { @include transform(translateY(0)) }
 }
 
-@-moz-keyframes floating {
-  0% { -moz-transform: translateY(0) }
-  50% { -moz-transform: translateY(-15px) }
-  100% { -moz-transform: translateY(0) }
-}
-
-@keyframes floating {
+@include keyframes(shadow-spread-portrait) {
   0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+    @include box-shadow(-30px 40px 10px rgba(0, 0, 0, .1));
+    @include transform(rotateX(45deg) rotateZ(-45deg) translateY(0));
   }
-
   50% {
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
+    @include box-shadow(-40px 60px 20px rgba(0, 0, 0, .08));
+    @include transform(rotateX(45deg) rotateZ(-45deg) translateY(10px));
   }
-
   100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+    @include box-shadow(-30px 40px 10px rgba(0, 0, 0, .1));
+    @include transform(rotateX(45deg) rotateZ(-45deg) translateY(0));
   }
 }
 
-@keyframes shadow-spread-portrait {
+@include keyframes(shadow-spread-landscape) {
   0% {
-    -webkit-box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-    -moz-box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-    box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-
-    -webkit-transform: rotateX(45deg) rotateZ(-45deg) translateY(0);
-    transform: rotateX(45deg) rotateZ(-45deg) translateY(0);
+    @include box-shadow(-30px 40px 10px rgba(0, 0, 0, .1));
+    @include transform(rotateX(50deg) rotateZ(-40deg) translateY(0));
   }
-
   50% {
-    -webkit-box-shadow: -40px 60px 20px rgba(0, 0, 0, .08);
-    -moz-box-shadow: -40px 60px 20px rgba(0, 0, 0, .08);
-    box-shadow: -40px 60px 20px rgba(0, 0, 0, .08);
-
-    -webkit-transform: rotateX(45deg) rotateZ(-45deg) translateY(10px);
-    transform: rotateX(45deg) rotateZ(-45deg) translateY(10px);
+    @include box-shadow(-40px 60px 20px rgba(0, 0, 0, .08));
+    @include transform(rotateX(50deg) rotateZ(-40deg) translateY(10px));
   }
-
   100% {
-    -webkit-box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-    -moz-box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-    box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-
-    -webkit-transform: rotateX(45deg) rotateZ(-45deg) translateY(0);
-    transform: rotateX(45deg) rotateZ(-45deg) translateY(0);
-  }
-}
-
-@keyframes shadow-spread-landscape {
-  0% {
-    -webkit-box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-    -moz-box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-    box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-
-    -webkit-transform: rotateX(50deg) rotateZ(-40deg) translateY(0);
-    transform: rotateX(50deg) rotateZ(-40deg) translateY(0);
-  }
-
-  50% {
-    -webkit-box-shadow: -40px 60px 20px rgba(0, 0, 0, .08);
-    -moz-box-shadow: -40px 60px 20px rgba(0, 0, 0, .08);
-    box-shadow: -40px 60px 20px rgba(0, 0, 0, .08);
-
-    -webkit-transform: rotateX(50deg) rotateZ(-40deg) translateY(10px);
-    transform: rotateX(50deg) rotateZ(-40deg) translateY(10px);
-  }
-
-  100% {
-    -webkit-box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-    -moz-box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-    box-shadow: -30px 40px 10px rgba(0, 0, 0, .1);
-
-    -webkit-transform: rotateX(50deg) rotateZ(-40deg) translateY(0);
-    transform: rotateX(50deg) rotateZ(-40deg) translateY(0);
+    @include box-shadow(-30px 40px 10px rgba(0, 0, 0, .1));
+    @include transform(rotateX(50deg) rotateZ(-40deg) translateY(0));
   }
 }

@@ -95,7 +95,7 @@ export default {
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          items: [
+          tags: [
             {
               label: 'Google App Engine',
               src: ''

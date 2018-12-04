@@ -20,30 +20,11 @@
 }
 
 .logs .section {
-  -webkit-box-align: start;
-  -moz-box-align: start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -moz-box-direction: normal;
-  -moz-box-orient: horizontal;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-
-  animation: raise .4s ease-in-out both;
-
+  @include align-items(flex-start);
+  @include animation(raise .4s ease-in-out both);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include use-flex;
   margin-bottom: 30px;
   padding-bottom: 30px;
   position: relative;
@@ -55,12 +36,8 @@
 }
 
 .logs .timeline__date {
-  -webkit-box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
-  -moz-box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
-  box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
-
-  animation: raise .4s ease-in-out both;
-
+  @include animation(raise .4s ease-in-out both);
+  @include box-shadow(0 2px 4px rgba(0, 64, 128, .2));
   background-color: rgba(240, 240, 240, 1);
   border-radius: 20px;
   display: block;
@@ -74,34 +51,23 @@
 }
 
 .logs .timeline__image {
-  -webkit-box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
-  -moz-box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
-  box-shadow: 0 2px 4px rgba(0, 64, 128, .2);
-
-  animation: raise .4s ease-in-out both;
-
+  @include animation(raise .4s ease-in-out both);
+  @include box-shadow(0 2px 4px rgba(0, 64, 128, .2));
+  @include min-square(50px);
   border-radius: 50%;
-  margin-left: 5px;
-  margin-top: 20px;
-  min-height: 50px;
-  min-width: 50px;
+  margin: 20px 0 0 5px;
   z-index: 5;
 }
 
 .logs .timeline__image img,
 .logs .timeline__image svg {
+  @include min-square(60px);
   margin-left: -5px;
-  min-height: 60px;
-  min-width: 60px;
 }
 
 .logs .timeline__line {
-  -webkit-box-shadow: 0 2px 4px 1px rgba(0, 64, 128, .2);
-  -moz-box-shadow: 0 2px 4px 1px rgba(0, 64, 128, .2);
-  box-shadow: 0 2px 4px 1px rgba(0, 64, 128, .2);
-
-  animation: raise .4s ease-in-out both;
-
+  @include animation(raise .4s ease-in-out both);
+  @include box-shadow(0 2px 4px 1px rgba(0, 64, 128, .2));
   background-color: #455a64;
   bottom: 0;
   height: 100%;

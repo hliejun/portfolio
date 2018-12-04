@@ -5,7 +5,6 @@
 
 * {
   -webkit-tap-highlight-color: transparent;
-
   box-sizing: border-box;
   margin: 0;
 }
@@ -22,9 +21,9 @@ html {
 }
 
 body, #__nuxt, #__layout, .layout {
+  max-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  max-width: 100vw;
 }
 
 h1 {
@@ -65,13 +64,10 @@ p {
 }
 
 .page.error .missing {
+  @include centralize;
   display: block;
-  left: 50%;
   margin: auto;
-  position: absolute;
   text-align: center;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
   width: 100vw;
 }
 
@@ -90,25 +86,15 @@ p {
 }
 
 .card {
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
-
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  transition: all .3s ease;
+  @include box-shadow(0 4px 8px 0 rgba(0, 0, 0, .2));
+  @include transition(all .3s ease);
 }
 
 .card:hover {
-  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
-  -moz-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+  @include box-shadow(0 8px 16px 0 rgba(0, 0, 0, .2));
 }
 
-.stylized {
-  font-family: 'Roboto Mono', monospace;
-}
-
+.stylized,
 .code {
   font-family: 'Roboto Mono', monospace;
 }
@@ -124,5 +110,17 @@ p {
 @media (min-width: 601px) and (max-width: 800px) {
   html {
     font-size: 16px;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1200px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1201px) {
+  html {
+    font-size: 20px;
   }
 }

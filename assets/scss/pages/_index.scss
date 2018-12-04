@@ -1,52 +1,40 @@
 @import '../colors.scss';
 @import '../mixins.scss';
 
-// Main
+// Content
 
 .index .content {
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-
+  @include centralize;
   color: rgba(240, 240, 240, .7);
   height: 100%;
-  left: 50%;
-  margin: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 70px;
-  padding-bottom: 100px;
+  margin: 0 auto;
   overflow: hidden;
-  position: absolute;
+  padding: 70px 0 100px 0;
   text-align: center;
-  top: 50%;
   width: 100%;
 }
 
 .index .inner-content {
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-
+  @include centralize;
   display: block;
-  left: 50%;
   margin: auto;
-  position: absolute;
-  top: 50%;
   width: 80vw;
 }
 
+// Text
+
 .index .title {
-  animation: raise .4s ease-in-out both;
+  @include animation(raise .4s ease-in-out both);
 }
 
 .index .subtitle {
-  animation: raise .4s ease-in-out .1s both;
-
+  @include animation(raise .4s ease-in-out .1s both);
   display: block;
   font-size: .9em;
   font-weight: 400;
 }
+
+// Positions
 
 .index .left {
   position: absolute;
@@ -63,10 +51,7 @@
 // Background Objects
 
 .object__container--satellite {
-  -webkit-animation: float 60s infinite linear both alternate-reverse;
-  -moz-animation: float 60s infinite linear both alternate-reverse;
-  animation: float 60s infinite linear both alternate-reverse;
-
+  @include animation(float 60s infinite linear both alternate-reverse);
   left: 90%;
   position: absolute;
   top: 80%;
@@ -75,10 +60,7 @@
 }
 
 .object__container--astronaut {
-  -webkit-animation: float 5s infinite ease-in-out both alternate;
-  -moz-animation: float 5s infinite ease-in-out both alternate;
-  animation: float 5s infinite ease-in-out both alternate;
-
+  @include animation(float 5s infinite ease-in-out both alternate);
   left: 30%;
   position: absolute;
   top: 100%;
@@ -92,42 +74,28 @@
 }
 
 .earth {
-  animation: raise .4s ease-in-out both;
-
-  min-height: 10em;
-  min-width: 10em;
+  @include animation(raise .4s ease-in-out both);
+  @include min-square(10em);
 }
 
 .satellite {
-  -webkit-animation: rotate 200s infinite linear both alternate-reverse;
-  -moz-animation: rotate 200s infinite linear both alternate-reverse;
-  animation: rotate 200s infinite linear both alternate-reverse;
-
-  min-height: 100px;
-  min-width: 100px;
+  @include animation(rotate 200s infinite linear both alternate-reverse);
+  @include min-square(100px);
   will-change: transform;
   z-index: 0;
 }
 
 .astronaut {
-  -webkit-animation: rotate 100s infinite linear both alternate;
-  -moz-animation: rotate 100s infinite linear both alternate;
-  animation: rotate 100s infinite linear both alternate;
-
-  min-height: 300px;
-  min-width: 300px;
+  @include animation(rotate 100s infinite linear both alternate);
+  @include min-square(300px);
   will-change: transform;
   z-index: 0;
 }
 
 .rocket {
-  -webkit-animation: revolve 20s infinite linear both;
-  -moz-animation: revolve 20s infinite linear both;
-  animation: revolve 20s infinite linear both;
-
+  @include animation(revolve 20s infinite linear both);
+  @include min-square(60px);
   left: 48%;
-  min-height: 60px;
-  min-width: 60px;
   position: absolute;
   top: 40%;
   will-change: transform;
@@ -135,19 +103,14 @@
 }
 
 .stars {
-  -webkit-animation: rotate 3000s infinite linear both;
-  -moz-animation: rotate 3000s infinite linear both;
-  animation: rotate 3000s infinite linear both;
-
-  height: 50vw;
-  width: 50vw;
+  @include animation(rotate 1000s infinite linear both);
+  @include min-square(50vw);
 }
 
 // Resume
 
 .resume__link {
-  animation: raise .4s ease-in-out .2s both;
-
+  @include animation(raise .4s ease-in-out .2s both);
   display: block;
   margin: 15px auto;
   width: fit-content;
@@ -155,10 +118,7 @@
 }
 
 .resume__button {
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  transition: all .3s ease;
-
+  @include transition(all .3s ease);
   background-color: rgba(126, 87, 194, .7);
   border-radius: 30px;
   color: rgba(240, 240, 240, 1);
@@ -185,228 +145,103 @@
 }
 
 .gradient--morning {
-  -webkit-animation: morning 60s linear infinite;
-  -moz-animation: morning 60s linear infinite;
-  animation: morning 60s linear infinite;
-
+  @include animation(morning 60s linear infinite);
   background: linear-gradient(0deg, #f3825f, #ffe26f);
 }
 
 .gradient--noon {
-  -webkit-animation: noon 60s linear infinite;
-  -moz-animation: noon 60s linear infinite;
-  animation: noon 60s linear infinite;
-
+  @include animation(noon 60s linear infinite);
   background: linear-gradient(20deg, #a7425c 0%, #f3825f 100%);
 }
 
 .gradient--evening {
-  -webkit-animation: evening 60s linear infinite;
-  -moz-animation: evening 60s linear infinite;
-  animation: evening 60s linear infinite;
+  @include animation(evening 60s linear infinite);
   background: linear-gradient(0deg, #563761 0%, #a7425c 100%);
 }
 
 .gradient--dusk {
-  -webkit-animation: dusk 60s linear infinite;
-  -moz-animation: dusk 60s linear infinite;
-  animation: dusk 60s linear infinite;
-
+  @include animation(dusk 60s linear infinite);
   background: linear-gradient(0deg, #a7425c 0%, #563761 100%);
 }
 
 .gradient--dawn {
-  -webkit-animation: dawn 60s linear infinite;
-  -moz-animation: dawn 60s linear infinite;
-  animation: dawn 60s linear infinite;
-
+  @include animation(dawn 60s linear infinite);
   background: linear-gradient(70deg, #f3825f 0%, #a7425c 100%);
 }
 
 // Media Queries
 
-@media (max-height: 600px) {
-  .rocket, .object__container--astronaut, .object__container--satellite {
-    height: 0;
-    visibility: hidden;
-    width: 0;
+@media (max-height: 400px) {
+  .footer__text, .object__container--earth, .stars {
+    @include hidden;
+    @include max-square(0);
   }
 }
 
 @media (max-height: 500px) {
   .earth {
-    height: 100px;
-    width: 100px;
+    @include min-square(100px);
   }
 }
 
-@media (max-height: 400px) {
-  .footer__text, .object__container--earth, .stars {
-    height: 0;
-    visibility: hidden;
-    width: 0;
+@media (max-height: 600px) {
+  .rocket, .object__container--astronaut, .object__container--satellite {
+    @include hidden;
+    @include max-square(0);
   }
 }
 
 @media (max-width: 1024px) {
   .object__container--astronaut, .object__container--satellite {
-    height: 0;
-    visibility: hidden;
-    width: 0;
+    @include hidden;
+    @include max-square(0);
   }
 }
 
-// Key Frames
+// Keyframes
 
-@-webkit-keyframes morning {
+@include keyframes(morning) {
   0% { opacity: 1 }
   100% { opacity: 1 }
 }
 
-@-moz-keyframes morning {
-  0% { opacity: 1 }
-  100% { opacity: 1 }
-}
-
-@keyframes morning {
-  0% { opacity: 1 }
-  100% { opacity: 1 }
-}
-
-@-webkit-keyframes noon {
+@include keyframes(noon) {
   0% { opacity: 0 }
   15% { opacity: 1 }
   100% { opacity: 0 }
 }
 
-@-moz-keyframes noon {
-  0% { opacity: 0 }
-  15% { opacity: 1 }
-  100% { opacity: 0 }
-}
-
-@keyframes noon {
-  0% { opacity: 0 }
-  15% { opacity: 1 }
-  100% { opacity: 0 }
-}
-
-@-webkit-keyframes evening {
+@include keyframes (evening) {
   0% { opacity: 0 }
   15% { opacity: 0 }
   30% { opacity: 1 }
   100% { opacity: 0 }
 }
 
-@-moz-keyframes evening {
-  0% { opacity: 0 }
-  15% { opacity: 0 }
-  30% { opacity: 1 }
-  100% { opacity: 0 }
-}
-
-@keyframes evening {
-  0% { opacity: 0 }
-  15% { opacity: 0 }
-  30% { opacity: 1 }
-  100% { opacity: 0 }
-}
-
-@-webkit-keyframes dusk {
+@include keyframes(dusk) {
   0% { opacity: 0 }
   30% { opacity: 0 }
   60% { opacity: 1 }
   100% { opacity: 0 }
 }
 
-@-moz-keyframes dusk {
-  0% { opacity: 0 }
-  30% { opacity: 0 }
-  60% { opacity: 1 }
-  100% { opacity: 0 }
-}
-
-@keyframes dusk {
-  0% { opacity: 0 }
-  30% { opacity: 0 }
-  60% { opacity: 1 }
-  100% { opacity: 0 }
-}
-
-@-webkit-keyframes dawn {
+@include keyframes(dawn) {
   0% { opacity: 0 }
   60% { opacity: 0 }
   90% { opacity: 1 }
   100% { opacity: 0 }
 }
 
-@-moz-keyframes dawn {
-  0% { opacity: 0 }
-  60% { opacity: 0 }
-  90% { opacity: 1 }
-  100% { opacity: 0 }
+@include keyframes(float) {
+  0% { @include transform(translateX(calc(-115% - 7vw)) translateY(calc(-28vh))) }
+  100% { @include transform(translateX(calc(-115% - 7vw)) translateY(calc(-32vh))) }
 }
 
-@keyframes dawn {
-  0% { opacity: 0 }
-  60% { opacity: 0 }
-  90% { opacity: 1 }
-  100% { opacity: 0 }
+@include keyframes(rotate) {
+  100% { @include transform(rotate(-720deg)) }
 }
 
-@-webkit-keyframes float {
-  0% { -webkit-transform: translateX(calc(-115% - 7vw)) translateY(calc(-28vh)) }
-  100% { -webkit-transform: translateX(calc(-115% - 7vw)) translateY(calc(-32vh)) }
-}
-
-@-moz-keyframes float {
-  0% { -moz-transform: translateX(calc(-115% - 7vw)) translateY(calc(-28vh)) }
-  100% { -moz-transform: translateX(calc(-115% - 7vw)) translateY(calc(-32vh)) }
-}
-
-@keyframes float {
-  0% {
-    -webkit-transform: translateX(calc(-115% - 7vw)) translateY(calc(-28vh));
-    transform: translateX(calc(-115% - 7vw)) translateY(calc(-28vh));
-  }
-  100% {
-    -webkit-transform: translateX(calc(-115% - 7vw)) translateY(calc(-32vh));
-    transform: translateX(calc(-115% - 7vw)) translateY(calc(-32vh));
-  }
-}
-
-@-webkit-keyframes rotate {
-  100% { -webkit-transform: rotate(-720deg) }
-}
-
-@-moz-keyframes rotate {
-  100% { -moz-transform: rotate(-720deg) }
-}
-
-@keyframes rotate {
-  100% {
-    -webkit-transform: rotate(-720deg);
-    transform:rotate(-720deg);
-  }
-}
-
-@-webkit-keyframes revolve {
-  0% { -webkit-transform: rotate(0) translateX(-200px) translateY(-200px) }
-  100% { -webkit-transform: rotate(360deg) translateX(-200px) translateY(-200px) }
-}
-
-@-moz-keyframes revolve {
-  0% { -moz-transform: rotate(0) translateX(-200px) translateY(-200px) }
-  100% { -moz-transform: rotate(360deg) translateX(-200px) translateY(-200px) }
-}
-
-@keyframes revolve {
-  0% {
-    -webkit-transform: rotate(0) translateX(-200px) translateY(-200px);
-    transform: rotate(0) translateX(-200px) translateY(-200px);
-  }
-  100% {
-    -webkit-transform: rotate(360deg) translateX(-200px) translateY(-200px);
-    transform: rotate(360deg) translateX(-200px) translateY(-200px);
-  }
+@include keyframes(revolve) {
+  0% { @include transform(rotate(0) translateX(-200px) translateY(-200px)) }
+  100% { @include transform(rotate(360deg) translateX(-200px) translateY(-200px)) }
 }
