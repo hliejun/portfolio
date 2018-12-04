@@ -2,8 +2,8 @@
   "name": "portfolio",
   "version": "1.0.0",
   "dependencies": {
-    "nuxt": "^2.2.0",
-    "nuxt-edge": "latest"
+    "nuxt": "^2.3.4",
+    "nuxt-edge": "^2.4.0-25732112.9c15c18"
   },
   "scripts": {
     "dev": "nuxt",
@@ -12,10 +12,9 @@
     "generate": "nuxt generate"
   },
   "devDependencies": {
-    "eslint": "^5.7.0",
-    "eslint-plugin-vue": "^5.0.0-beta.3",
-    "node-sass": "^4.9.4",
-    "nuxt-purgecss": "0.0.2",
+    "eslint": "^5.9.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0"
   }
 }

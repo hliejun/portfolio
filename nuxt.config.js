@@ -30,7 +30,7 @@ export default {
     title: 'dev/hliejun',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width,minimum-scale=1' },
+      { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { name: 'mobile-web-app-capable', content: 'yes' }
     ],
@@ -45,13 +45,6 @@ export default {
     bodyAttrs: {
       id: 'body'
     }
-  },
-  modules: [
-    'nuxt-purgecss'
-  ],
-  purgeCSS: {
-    mode: 'postcss',
-    enabled: false
   },
   css: [
     '~/assets/scss/main.scss'

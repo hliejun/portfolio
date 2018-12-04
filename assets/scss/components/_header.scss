@@ -63,7 +63,7 @@
   display: inline-block;
   float: right;
   height: 60px;
-  margin: 14px 10px 0 0;
+  margin: 12px 8px 0 0;
   overflow: visible;
 }
 
@@ -86,6 +86,7 @@
 }
 
 .links--mobile .link {
+  @include pointer-events(auto);
   background: transparent;
   display: block;
   height: 50px;
@@ -156,6 +157,7 @@
 .menu {
   display: inline-block;
   float: right;
+  overflow-x: hidden;
 }
 
 .splash .menu__button {
@@ -193,22 +195,23 @@
 }
 
 .menu__panel {
+  @include pointer-events(none);
   @include transition(all .6s ease);
   bottom: 0;
   height: 100%;
   position: fixed;
-  right: -150px;
+  right: 0;
   top: 0;
-  width: 150px;
+  width: 0;
   z-index: 10;
 }
 
 .menu__panel.hiding .link {
-  @include transform(translateX(0));
+  @include transform(translateX(150px));
 }
 
 .menu__panel:not(.hiding) .link {
-  @include transform(translateX(-150px));
+  @include transform(translateX(-75px));
 }
 
 .menu__panel .link {
@@ -272,6 +275,12 @@
   }
   .header:not(.splash) .link__container:hover {
     background-color: rgba(255, 255, 255, 1);
+  }
+}
+
+@media (min-width: 1201px) {
+  .links {
+    margin: 10px 8px 0 0;
   }
 }
 

@@ -178,6 +178,12 @@
   visibility: hidden;
 }
 
+@mixin pointer-events($value) {
+  -webkit-pointer-events: $value;
+  -moz-pointer-events: $value;
+  pointer-events: $value;
+}
+
 // Typography
 
 @mixin boost-readability {

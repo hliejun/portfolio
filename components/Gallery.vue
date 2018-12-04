@@ -1,7 +1,7 @@
 <template>
   <div v-bind:class="['gallery', theme, name]">
     <div v-bind:class="['gallery__content', { standalone: !suppImages || !suppImages.length }]">
-      <amp-image-lightbox id='lightbox' layout='nodisplay' />
+      <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
       <amp-video controls autoplay loop noaudio v-if='mainImage.video'
         class='gallery__image--main'
         height='1'

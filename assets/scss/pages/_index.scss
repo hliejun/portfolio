@@ -172,7 +172,7 @@
 // Media Queries
 
 @media (max-height: 400px) {
-  .footer__text, .object__container--earth, .stars {
+  .splash .footer__text, .object__container--earth, .stars {
     @include hidden;
     @include max-square(0);
   }
