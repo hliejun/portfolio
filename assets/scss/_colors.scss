@@ -1,0 +1,61 @@
+// Colors
+
+$blue: #386a9d;
+$green: #368852;
+$indigo: #563761;
+$lavender: #7e57c2;
+$lime: #8dc26f;
+$peach: #f3825f;
+$purple: #a7425c;
+$teal: #43aea2;
+$yellow: #ffe26f;
+
+$light: #f5f5f5;
+$lighter: #fafafa;
+$lightest: #fff;
+
+$dark: #546e7a;
+$darker: #455a64;
+$darkest: #37474f;
+
+$light-gray: #eceff1;
+$gray: #eee;
+$dark-gray: #b0bec5;
+$black: #000;
+
+// Backgrounds
+
+$background-light: $lighter;
+$background-dark: $darker;
+
+$backing-light: rgba($light, .8);
+$backing-lighter: rgba($lighter, .9);
+$backing-lightest: rgba($lightest, 1);
+
+$backing-dark: rgba($dark, .8);
+$backing-darker: rgba($darker, .9);
+$backing-darkest: rgba($darkest, 1);
+
+$wave-light: $lighter;
+$wave-dark: $gray;
+
+// Shadows
+
+$shadow-light: rgba($darkest, .2);
+$shadow-dark: rgba($black, .2);
+
+$mockup-border-light: $light-gray;
+$mockup-border-dark: $dark-gray;
+
+// Text
+
+$text-light: $lighter;
+$text-dark: $darker;
+
+$text-light-translucent: rgba($text-light, .8);
+$text-dark-translucent: rgba($text-dark, .8);
+
+// Action
+
+$action: rgba($lavender, .8);
+$action-highlight: rgba($lavender, 1);

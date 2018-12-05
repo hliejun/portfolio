@@ -1,10 +1,7 @@
-@import '../colors.scss';
-@import '../mixins.scss';
-
 // Frame
 
 .footer {
-  background-color: #455a64;
+  background-color: $background-dark;
   min-height: 110px;
   overflow: hidden;
   position: relative;
@@ -27,7 +24,7 @@
 
 .footer__text {
   @include animation(raise .4s ease-in-out both);
-  color: rgba(240, 240, 240, .7);
+  color: $backing-light;
   display: block;
   font-size: .8em;
   margin: 0 auto 20px auto;
@@ -38,7 +35,7 @@
 .footer__subtext {
   @include animation(raise .4s ease-in-out .1s both);
   bottom: 0;
-  color: rgba(240, 240, 240, .7);
+  color: $backing-light;
   display: block;
   float: right;
   font-size: .8em;
@@ -84,7 +81,7 @@
 }
 
 .social__logo svg {
-  @include box-shadow(0 4px 8px 0 rgba(0, 0, 0, .2));
+  @include box-shadow(0 4px 8px 0 $shadow-dark);
 }
 
 // Media Queries
@@ -93,14 +90,4 @@
   .social__logo {
     @include min-square(25px);
   }
-}
-
-// Keyframes
-
-@include keyframes(raise-translucent) {
-  0% {
-    @include transform(translateY(30px));
-    opacity: 0;
-  }
-  100% { @include transform(translateY(0)) }
 }

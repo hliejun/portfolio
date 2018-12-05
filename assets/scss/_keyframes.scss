@@ -1,0 +1,126 @@
+// Keyframes
+
+@include keyframes(raise-translucent) {
+  0% {
+    @include transform(translateY(30px));
+    opacity: 0;
+  }
+  100% { @include transform(translateY(0)) }
+}
+
+@include keyframes(drop-translucent) {
+  0% {
+    @include transform(translateY(-30px));
+    opacity: 0;
+  }
+  100% { @include transform(translateY(0)) }
+}
+
+@include keyframes(drop) {
+  0% {
+    @include transform(translateY(-30px));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translateY(0));
+    opacity: 1;
+  }
+}
+
+@include keyframes(floating) {
+  0% { @include transform(translateY(0)) }
+  50% { @include transform(translateY(-15px)) }
+  100% { @include transform(translateY(0)) }
+}
+
+@include keyframes(shadow-spread-portrait) {
+  0% {
+    @include box-shadow(-30px 40px 10px rgba(0, 0, 0, .1));
+    @include transform(rotateX(45deg) rotateZ(-45deg) translateY(0));
+  }
+  50% {
+    @include box-shadow(-40px 60px 20px rgba(0, 0, 0, .08));
+    @include transform(rotateX(45deg) rotateZ(-45deg) translateY(10px));
+  }
+  100% {
+    @include box-shadow(-30px 40px 10px rgba(0, 0, 0, .1));
+    @include transform(rotateX(45deg) rotateZ(-45deg) translateY(0));
+  }
+}
+
+@include keyframes(shadow-spread-landscape) {
+  0% {
+    @include box-shadow(-30px 40px 10px rgba(0, 0, 0, .1));
+    @include transform(rotateX(50deg) rotateZ(-40deg) translateY(0));
+  }
+  50% {
+    @include box-shadow(-40px 60px 20px rgba(0, 0, 0, .08));
+    @include transform(rotateX(50deg) rotateZ(-40deg) translateY(10px));
+  }
+  100% {
+    @include box-shadow(-30px 40px 10px rgba(0, 0, 0, .1));
+    @include transform(rotateX(50deg) rotateZ(-40deg) translateY(0));
+  }
+}
+
+@include keyframes(morning) {
+  0% { opacity: 1 }
+  100% { opacity: 1 }
+}
+
+@include keyframes(noon) {
+  0% { opacity: 0 }
+  15% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+@include keyframes (evening) {
+  0% { opacity: 0 }
+  15% { opacity: 0 }
+  30% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+@include keyframes(dusk) {
+  0% { opacity: 0 }
+  30% { opacity: 0 }
+  60% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+@include keyframes(dawn) {
+  0% { opacity: 0 }
+  60% { opacity: 0 }
+  90% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+@include keyframes(float) {
+  0% { @include transform(translateX(calc(-115% - 7vw)) translateY(calc(-28vh))) }
+  100% { @include transform(translateX(calc(-115% - 7vw)) translateY(calc(-32vh))) }
+}
+
+@include keyframes(rotate) {
+  100% { @include transform(rotate(-720deg)) }
+}
+
+@include keyframes(revolve) {
+  0% { @include transform(rotate(0) translateX(-200px) translateY(-200px)) }
+  100% { @include transform(rotate(360deg) translateX(-200px) translateY(-200px)) }
+}
+
+@keyframes drift {
+  from { @include transform(rotate(0deg)) }
+  to { @include transform(rotate(360deg)) }
+}
+
+@keyframes raise {
+  0% {
+    @include transform(translateY(30px));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translateY(0));
+    opacity: 1;
+  }
+}

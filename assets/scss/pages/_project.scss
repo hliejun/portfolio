@@ -1,6 +1,3 @@
-@import '../colors.scss';
-@import '../mixins.scss';
-
 // Content
 
 .project .page__content * {
@@ -9,7 +6,7 @@
 
 .project .page__content {
   @include boost-readability;
-  color: rgba(240, 240, 240, .7);
+  color: $text-light;
   font-family: 'Roboto', sans-serif;
   line-height: 1.414;
   margin: auto;
@@ -94,9 +91,9 @@
 }
 
 .project__section .section__item-label.tag {
-  background-color: rgba(255, 255, 255, .7);
+  background-color: $backing-lighter;
   border-radius: 20px;
-  color: #455a64;
+  color: $text-dark;
   font-family: 'Roboto Mono', monospace;
   font-size: .9em;
   font-weight: 600;
@@ -135,8 +132,8 @@
 .project__button {
   @include transition(all .3s ease);
   border-radius: 30px;
-  border: 2px solid rgba(240, 240, 240, .7);
-  color: rgba(240, 240, 240, .7);
+  border: 2px solid $backing-lighter;
+  color: $backing-lighter;
   cursor: pointer;
   font-size: .8em;
   font-weight: 600;
@@ -145,8 +142,8 @@
 }
 
 .project__button:hover {
-  background-color: rgba(240, 240, 240, 1);
-  color: #455a64;
+  background-color: $backing-lighter;
+  color: $text-dark;
 }
 
 // Media Queries

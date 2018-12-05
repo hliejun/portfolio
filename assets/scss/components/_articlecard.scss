@@ -1,6 +1,3 @@
-@import '../colors.scss';
-@import '../mixins.scss';
-
 // Frame
 
 .article {
@@ -50,8 +47,8 @@
 
 .article__tag,
 .article__link {
-  @include box-shadow(0 2px 4px rgba(0, 64, 128, .1));
-  background-color: rgba(240, 240, 240, 1);
+  @include box-shadow(0 2px 4px $shadow-light);
+  background-color: $backing-light;
   border-radius: 20px;
   font-family: 'Roboto Mono', monospace;
   font-size: .66em;
@@ -74,10 +71,10 @@
 }
 
 .article__link {
-  @include box-shadow(0 2px 4px rgba(0, 64, 128, .2));
+  @include box-shadow(0 2px 4px $shadow-light);
   @include transition(all .3s ease);
-  background-color: rgba(#455a64, .9);
-  color: #fff;
+  background-color: $backing-dark;
+  color: $text-light;
   font-family: 'Roboto', sans-serif;
   font-size: .8em;
   font-weight: 500;
@@ -87,8 +84,8 @@
 }
 
 .article__link:hover {
-  @include box-shadow(0 4px 8px rgba(0, 64, 128, .2));
-  background-color: rgba(#37474f, .9);
+  @include box-shadow(0 4px 8px $shadow-light);
+  background-color: $backing-darker;
 }
 
 .article__link-icon {

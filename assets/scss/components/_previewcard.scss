@@ -1,10 +1,7 @@
-@import '../colors.scss';
-@import '../mixins.scss';
-
 // Frame
 
 .preview {
-  @include box-shadow(0 4px 8px 0 rgba(0, 64, 128, .2));
+  @include box-shadow(0 4px 8px 0 $shadow-light);
   border-radius: 6px;
   box-sizing: border-box;
   margin: 20px;
@@ -56,8 +53,8 @@
 }
 
 .preview__tag {
-  @include box-shadow(0 2px 4px rgba(0, 64, 128, .1));
-  background-color: rgba(255, 255, 255, .7);
+  @include box-shadow(0 2px 4px $shadow-light);
+  background-color: $backing-lighter;
   border-radius: 20px;
   font-family: 'Roboto Mono', monospace;
   font-size: .66em;
@@ -92,7 +89,7 @@
 .preview__info-pane {
   @include transform(translateY(15px));
   @include transition(all .4s ease);
-  background-color: rgba(255, 255, 255, .8);
+  background-color: $backing-lighter;
   background: inherit;
   bottom: 0;
   left: 0;
@@ -104,7 +101,7 @@
 }
 
 .preview__info-pane::before {
-  @include box-shadow(inset 0 0 0 300px rgba(255, 255, 255, .75));
+  @include box-shadow(inset 0 0 0 300px $backing-light);
   @include filter(blur, 8px);
   @include transform(translateY(calc(-10px + .5em)));
   @include transition(all .4s ease);

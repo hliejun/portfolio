@@ -1,10 +1,7 @@
-@import './colors.scss';
-@import './mixins.scss';
-
 // Jumbotron
 
 .work .jumbotron {
-  background: linear-gradient(0deg, #a7425c 0%, #f3825f 100%);
+  background: linear-gradient(0deg, $purple 0%, $peach 100%);
 }
 
 .work .jumbotron .jumbotron__content {
@@ -40,12 +37,12 @@
 }
 
 .work__gallery .preview {
-  @include box-shadow(0 4px 8px 0 rgba(0, 64, 128, .2));
+  @include box-shadow(0 4px 8px 0 $shadow-light);
   @include transition(box-shadow .3s ease-in-out);
 }
 
 .work__gallery .preview:hover {
-  @include box-shadow(0 8px 16px 0 rgba(0, 64, 128, .2));
+  @include box-shadow(0 8px 16px 0 $shadow-light);
 }
 
 // Media Queries
@@ -53,23 +50,5 @@
 @media (min-width: 801px) {
   .background-wave {
     top: 200px;
-  }
-}
-
-// Keyframes
-
-@keyframes drift {
-  from { @include transform(rotate(0deg)) }
-  to { @include transform(rotate(360deg)) }
-}
-
-@keyframes raise {
-  0% {
-    @include transform(translateY(30px));
-    opacity: 0;
-  }
-  100% {
-    @include transform(translateY(0));
-    opacity: 1;
   }
 }

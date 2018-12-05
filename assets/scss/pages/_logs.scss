@@ -1,13 +1,14 @@
-@import './colors.scss';
-@import './mixins.scss';
+// Jumbotron
 
 .logs .jumbotron {
-  background: linear-gradient(0deg, #368852 0%, #8dc26f 100%);
+  background: linear-gradient(0deg, $green 0%, $lime 100%);
 }
 
 .logs .jumbotron .jumbotron__content {
   z-index: 6;
 }
+
+// Content
 
 .logs .page__content {
   padding: 50px 0 15px 0;
@@ -18,6 +19,8 @@
   max-width: 1200px;
   width: calc(100vw - 20px);
 }
+
+// Section
 
 .logs .section {
   @include align-items(flex-start);
@@ -35,10 +38,12 @@
   margin-left: 5px;
 }
 
+// Timeline
+
 .logs .timeline__date {
   @include animation(raise .4s ease-in-out both);
-  @include box-shadow(0 2px 4px rgba(0, 64, 128, .2));
-  background-color: rgba(240, 240, 240, 1);
+  @include box-shadow(0 2px 4px $shadow-light);
+  background-color: $backing-lightest;
   border-radius: 20px;
   display: block;
   font-family: 'Roboto Mono', monospace;
@@ -52,7 +57,7 @@
 
 .logs .timeline__image {
   @include animation(raise .4s ease-in-out both);
-  @include box-shadow(0 2px 4px rgba(0, 64, 128, .2));
+  @include box-shadow(0 2px 4px $shadow-light);
   @include min-square(50px);
   border-radius: 50%;
   margin: 20px 0 0 5px;
@@ -67,16 +72,18 @@
 
 .logs .timeline__line {
   @include animation(raise .4s ease-in-out both);
-  @include box-shadow(0 2px 4px 1px rgba(0, 64, 128, .2));
-  background-color: #455a64;
+  @include box-shadow(0 2px 4px 1px $shadow-light);
+  background-color: $backing-darker;
   bottom: 0;
   height: 100%;
   left: 33px;
   position: absolute;
-  top: 50px;
+  top: 45px;
   width: 4px;
   z-index: 1;
 }
+
+// Media Queries
 
 @media (max-width: 600px) {
   .logs .timeline__date {
