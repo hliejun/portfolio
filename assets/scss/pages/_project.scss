@@ -193,6 +193,12 @@
   min-height: 15em;
 }
 
+.project .section__flying-carpet,
+.project .section__item-image {
+  @include box-shadow(0 4px 8px 0 $shadow-dark);
+  border-radius: .4em;
+}
+
 .section__flying-carpet-image {
   height: 170vw;
   min-height: 170vw;
