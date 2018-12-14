@@ -187,12 +187,12 @@
 // Typography
 
 @mixin boost-readability {
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 @mixin normal-render {
-  -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }

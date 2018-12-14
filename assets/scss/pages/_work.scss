@@ -15,9 +15,10 @@
 }
 
 .work .page__container {
+  @include justify-content(center);
+  @include use-flex;
   margin: 10px auto;
-  max-width: 1600px;
-  width: calc(100vw - 10px);
+  width: calc(100vw - 20px);
 }
 
 // Gallery
@@ -25,12 +26,13 @@
 .work__gallery {
   @include flex-direction(row);
   @include flex-wrap(wrap);
-  @include justify-content(center);
+  @include justify-content(flex-start);
   @include use-flex;
+  max-width: 1600px;
   padding: 10px 0;
 }
 
-@for $i from 1 to 13 {
+@for $i from 1 to 14 {
   .work__gallery .preview:nth-child(#{$i}) {
     @include animation(raise .4s ease-in-out unquote("#{($i - 1) * 50}ms") both);
   }
@@ -50,5 +52,263 @@
 @media (min-width: 801px) {
   .background-wave {
     top: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .work__gallery {
+    width: calc(80vw + 40px);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1400px) {
+  .work__gallery {
+    width: calc((40vw + 40px) * 2);
+  }
+}
+
+@media (min-width: 1401px) and (max-width: 1600px) {
+  .work__gallery {
+    width: calc((25vw + 40px) * 3);
+  }
+}
+
+@media (min-width: 1601px) {
+  .work__gallery {
+    width: calc((400px + 40px) * 3);
+  }
+}
+
+// Preview Thumbs Media Queries
+
+@media (max-width: 640px) {
+  .preview {
+    @include min-square(80vw);
+  }
+  .todo-list .preview__info-pane::before {
+    background: url(/images/previews/todolist.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .weight .preview__info-pane::before {
+    background: url(/images/previews/weight.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .bubble .preview__info-pane::before {
+    background: url(/images/previews/bubble.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .food-logging .preview__info-pane::before {
+    background: url(/images/previews/food-logging.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .sat-solver .preview__info-pane::before {
+    background: url(/images/previews/sat-solver.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .hypedyn .preview__info-pane::before {
+    background: url(/images/previews/hypedyn.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .bitsy .preview__info-pane::before {
+    background: url(/images/previews/bitsy.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .pokemania .preview__info-pane::before {
+    background: url(/images/previews/pokemania.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .little-lives .preview__info-pane::before {
+    background: url(/images/previews/little-lives.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .urbanzoom .preview__info-pane::before {
+    background: url(/images/previews/urbanzoom.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .react-chat .preview__info-pane::before {
+    background: url(/images/previews/react-chat.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .portfolio .preview__info-pane::before {
+    background: url(/images/previews/portfolio.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+  .whatsapp-widgets .preview__info-pane::before {
+    background: url(/images/previews/whatsapp-widgets.jpg) no-repeat center bottom;
+    background-size: calc(80vw + 30px) calc(80vw + 40px);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1400px) {
+  .preview {
+    @include min-square(40vw);
+  }
+  .todo-list .preview__info-pane::before {
+    background: url(/images/previews/todolist.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .weight .preview__info-pane::before {
+    background: url(/images/previews/weight.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .bubble .preview__info-pane::before {
+    background: url(/images/previews/bubble.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .food-logging .preview__info-pane::before {
+    background: url(/images/previews/food-logging.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .sat-solver .preview__info-pane::before {
+    background: url(/images/previews/sat-solver.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .hypedyn .preview__info-pane::before {
+    background: url(/images/previews/hypedyn.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .bitsy .preview__info-pane::before {
+    background: url(/images/previews/bitsy.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .pokemania .preview__info-pane::before {
+    background: url(/images/previews/pokemania.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .little-lives .preview__info-pane::before {
+    background: url(/images/previews/little-lives.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .urbanzoom .preview__info-pane::before {
+    background: url(/images/previews/urbanzoom.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .react-chat .preview__info-pane::before {
+    background: url(/images/previews/react-chat.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .portfolio .preview__info-pane::before {
+    background: url(/images/previews/portfolio.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+  .whatsapp-widgets .preview__info-pane::before {
+    background: url(/images/previews/whatsapp-widgets.jpg) no-repeat center bottom;
+    background-size: calc(40vw + 30px) calc(40vw + 40px);
+  }
+}
+
+@media (min-width: 1401px) and (max-width: 1600px) {
+  .preview {
+    @include min-square(25vw);
+  }
+  .todo-list .preview__info-pane::before {
+    background: url(/images/previews/todolist.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .weight .preview__info-pane::before {
+    background: url(/images/previews/weight.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .bubble .preview__info-pane::before {
+    background: url(/images/previews/bubble.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .food-logging .preview__info-pane::before {
+    background: url(/images/previews/food-logging.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .sat-solver .preview__info-pane::before {
+    background: url(/images/previews/sat-solver.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .hypedyn .preview__info-pane::before {
+    background: url(/images/previews/hypedyn.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .bitsy .preview__info-pane::before {
+    background: url(/images/previews/bitsy.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .pokemania .preview__info-pane::before {
+    background: url(/images/previews/pokemania.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .little-lives .preview__info-pane::before {
+    background: url(/images/previews/little-lives.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .urbanzoom .preview__info-pane::before {
+    background: url(/images/previews/urbanzoom.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .react-chat .preview__info-pane::before {
+    background: url(/images/previews/react-chat.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .portfolio .preview__info-pane::before {
+    background: url(/images/previews/portfolio.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+  .whatsapp-widgets .preview__info-pane::before {
+    background: url(/images/previews/whatsapp-widgets.jpg) no-repeat center bottom;
+    background-size: calc(25vw + 30px) calc(25vw + 40px);
+  }
+}
+
+@media (min-width: 1601px) {
+  .preview {
+    @include min-square(400px);
+  }
+  .todo-list .preview__info-pane::before {
+    background: url(/images/previews/todolist.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .weight .preview__info-pane::before {
+    background: url(/images/previews/weight.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .bubble .preview__info-pane::before {
+    background: url(/images/previews/bubble.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .food-logging .preview__info-pane::before {
+    background: url(/images/previews/food-logging.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .sat-solver .preview__info-pane::before {
+    background: url(/images/previews/sat-solver.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .hypedyn .preview__info-pane::before {
+    background: url(/images/previews/hypedyn.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .bitsy .preview__info-pane::before {
+    background: url(/images/previews/bitsy.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .pokemania .preview__info-pane::before {
+    background: url(/images/previews/pokemania.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .little-lives .preview__info-pane::before {
+    background: url(/images/previews/little-lives.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .urbanzoom .preview__info-pane::before {
+    background: url(/images/previews/urbanzoom.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .react-chat .preview__info-pane::before {
+    background: url(/images/previews/react-chat.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .portfolio .preview__info-pane::before {
+    background: url(/images/previews/portfolio.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
+  }
+  .whatsapp-widgets .preview__info-pane::before {
+    background: url(/images/previews/whatsapp-widgets.jpg) no-repeat center bottom;
+    background-size: 430px 440px;
   }
 }

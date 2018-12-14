@@ -34,17 +34,16 @@
 
 .avatar__image {
   @include animation(drop-translucent .4s ease-in-out both);
-  @include min-square(50px);
+  @include min-square(38px);
   background-color: $backing-light;
   border-radius: 50%;
-  margin: 0 0 -20px 10px;
+  margin: 0 15px -12px 13px;
 }
 
 .avatar__image img {
-  @include min-square(56px);
+  @include min-square(38px);
   display: inline;
   float: left;
-  margin-left: -3px;
   object-fit: cover;
   opacity: .8;
   padding: 10px;
@@ -139,13 +138,17 @@
   height: 60px;
 }
 
+.splash .logo__content {
+  margin: 10px 0 0 10px;
+}
+
 .logo__content {
   color: $text-light-translucent;
   display: block;
   font-family: 'Roboto', sans-serif;
   font-size: 22px;
   font-weight: 500;
-  margin: 15px 0 0 10px;
+  margin: 15px 0 0 0;
   text-decoration: none;
 }
 
@@ -163,7 +166,8 @@
 
 .menu__button {
   @include animation(drop .4s ease-in-out both);
-  @include box-shadow(none);
+  @include box-shadow(0 4px 8px 0 $shadow-dark);
+  @include transition(all .3s ease);
   background-color: $backing-light;
   border-radius: 50%;
   cursor: pointer;
@@ -177,7 +181,7 @@
 }
 
 .menu__button:hover {
-  @include box-shadow(none);
+  @include box-shadow(0 8px 16px 0 $shadow-dark);
   background-color: $backing-lightest;
 }
 
@@ -240,7 +244,7 @@
     background-color: $backing-darkest;
     border-radius: 20px;
     height: 35px;
-    left: 10px;
+    left: 60px;
     opacity: 0;
     padding: 0;
     position: fixed;
@@ -254,11 +258,17 @@
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 500;
-    margin: 15px 0 0 20px;
     text-decoration: none;
   }
   .links {
     @include hidden;
+  }
+  .avatar__image {
+    @include box-shadow(0 4px 8px 0 $shadow-dark);
+    @include transition(all .3s ease);
+  }
+  .avatar__image:hover {
+    @include box-shadow(0 8px 16px 0 $shadow-dark);
   }
 }
 

@@ -19,7 +19,7 @@
       </div>
       <div class='inner-content'>
         <div class='object__container--earth'>
-          <amp-img class='earth' src='/vectors/splash/earth.svg' height='1' width='1' />
+          <amp-img class='earth' src='/images/splash/avatar-opaque.png' height='1' width='1' />
         </div>
         <h1 class='title'>hliejun</h1>
         <span class='stylized subtitle'>Full-Stack Developer</span>

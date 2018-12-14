@@ -1,5 +1,6 @@
 <template>
   <div class='page weight project'>
+    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
       :actions='jumbotron.actions'
@@ -9,12 +10,8 @@
       :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-
-      <!-- TODO: Video of gameplay, screenshots -->
-      <!-- TODO: Icons and glyphs for sections and items -->
-
       <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
       <HTMLSection name='design' label='DESIGN' :items='design' />
       <LinksSection name='team' label='TEAM' :items='team' />
       <LinksSection name='references' label='REFERENCES' :items='references' />
@@ -53,7 +50,7 @@ export default {
         ]
       },
       mockup: {
-        src: '/images/projects/weight-1.png',
+        src: '/images/projects/weight-1.jpg',
         orientation: 'landscape',
         type: 'narrow'
       },
@@ -62,42 +59,32 @@ export default {
           name: 'build',
           title: 'BUILD',
           tags: [
-            {
-              label: 'C#',
-              src: ''
-            }
+            { label: 'C#' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            {
-              label: 'Unity',
-              src: ''
-            }
+            { label: 'Unity' }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
           tags: [
-            {
-              label: 'Windows',
-              src: ''
-            },
-            {
-              label: 'macOS',
-              src: ''
-            }
+            { label: 'Windows' },
+            { label: 'macOS' }
           ]
         }
       ],
+      carpets: {
+        about: ''
+      },
       about: [
         {
           name: 'description',
           title: 'DESCRIPTION',
-          src: '',
           text: `
             Weight is a infinite runner where you control the gravity shift
             in a room. You control the fate of a fox who has had some bad
@@ -111,7 +98,6 @@ export default {
         {
           name: 'motivation',
           title: 'MOTIVATION',
-          src: '',
           text: `
             The objective of Weight was to experiment with infinite runner
             game design and learn how to use Unity to create a simple 2D
@@ -121,7 +107,6 @@ export default {
         {
           name: 'constraints',
           title: 'CHALLENGES',
-          src: '',
           text: `
             This project was difficult as it was my first time trying out
             Unity and I'm the only programmer in the team. It was also
@@ -133,8 +118,9 @@ export default {
       design: [
         {
           name: 'progression',
-          title: 'Game Progression',
-          src: '',
+          title: 'GAME PROGRESSION',
+          video: '/videos/project-weight-01.mp4',
+          webm: '/videos/project-weight-01.webm',
           text: `
             As the game progresses, evil halfs and mushrooms will spawn
             at an increasing rate. This increase the difficulty by reducing
@@ -144,8 +130,9 @@ export default {
         },
         {
           name: 'balance',
-          title: 'Balancing Mechanisms',
-          src: '',
+          title: 'BALANCING MECHANISM',
+          video: '/videos/project-weight-02.mp4',
+          webm: '/videos/project-weight-02.webm',
           text: `
             Evil halfs are spawned at random locations with a buffer period.
             Mushrooms can be avoided or eaten to adjust the weight of the
@@ -158,34 +145,34 @@ export default {
       team: [
         {
           label: 'Ashley Tan',
+          src: '/images/profiles/placeholder.jpg',
           description: `
             Ashley was the writer and UI designer. She helped Bettina with
             asset creation.
-          `,
-          src: ''
+          `
         },
         {
           label: 'Bettina Tan',
+          src: '/images/profiles/placeholder.jpg',
           description: `
             Bettina was our asset and content creator. She drew game
             graphics, procured music and fonts.
-          `,
-          src: ''
+          `
         },
         {
           label: 'Koh Tze Hui',
+          src: '/images/profiles/placeholder.jpg',
           description: `
             Tze Hui was the producer and QA. She validated and documented
             the game development.
-          `,
-          src: ''
+          `
         },
         {
           label: 'Huang Lie Jun',
+          src: '/images/profiles/liejun.jpg',
           description: `
             I worked on game prototyping and implementation using Unity.
-          `,
-          src: ''
+          `
         }
       ],
       references: [
@@ -194,8 +181,8 @@ export default {
           description: `
             Tutorials on building a 2D game in Unity.
           `,
-          src: '',
-          url: ''
+          src: '/images/links/unity.jpg',
+          url: 'https://unity3d.com/learn/tutorials/s/2d-game-creation'
         }
       ],
       actions: [

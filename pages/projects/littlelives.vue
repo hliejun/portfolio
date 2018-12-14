@@ -1,5 +1,6 @@
 <template>
   <div class='page littlelives project'>
+    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
       :actions='jumbotron.actions'
@@ -9,12 +10,8 @@
       :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.1' layout='nodisplay' />
-
-      <!-- TODO: Screenshots and videos of flow -->
-      <!-- TODO: Icons and glyphs for sections and items -->
-
       <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
       <HTMLSection name='design' label='DESIGN' :items='design' />
       <HTMLSection name='features' label='FEATURES' :items='features' />
       <LinksSection name='team' label='TEAM' :items='team' />
@@ -54,7 +51,7 @@ export default {
         ]
       },
       mockup: {
-        src: '/images/projects/littlelives-1.png',
+        src: '/images/projects/littlelives-1.jpg',
         orientation: 'portrait',
         type: 'wide'
       },
@@ -63,66 +60,38 @@ export default {
           name: 'build',
           title: 'BUILD',
           tags: [
-            {
-              label: 'Swift',
-              src: ''
-            },
-            {
-              label: 'Alamofire',
-              src: ''
-            },
-            {
-              label: 'Vision',
-              src: ''
-            },
-            {
-              label: 'Azure Face',
-              src: ''
-            },
-            {
-              label: 'CoreData',
-              src: ''
-            },
-            {
-              label: 'SnapKit',
-              src: ''
-            }
+            { label: 'Swift' },
+            { label: 'Alamofire' },
+            { label: 'Vision' },
+            { label: 'Azure Face' },
+            { label: 'CoreData' },
+            { label: 'SnapKit' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            {
-              label: 'XCode',
-              src: ''
-            },
-            {
-              label: 'Jazzy',
-              src: ''
-            },
-            {
-              label: 'SwiftLint',
-              src: ''
-            }
+            { label: 'XCode' },
+            { label: 'Jazzy' },
+            { label: 'SwiftLint' }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
           tags: [
-            {
-              label: 'iOS',
-              src: ''
-            }
+            { label: 'iOS' }
           ]
         }
       ],
+      carpets: {
+        about: '/images/projects/littlelives-2.jpg'
+      },
       about: [
         {
           name: 'description',
           title: 'DESCRIPTION',
-          src: '',
           text: `
             Little Lives Check-In is an iOS application optimised for
             iPads and used to perform check-in on re-schoolers by taking
@@ -134,7 +103,6 @@ export default {
         {
           name: 'motivation',
           title: 'MOTIVATION',
-          src: '',
           text: `
             This application was built with the goal to speed up the check-in
             process of pre-schoolers. The face recognition solution was explored
@@ -148,7 +116,6 @@ export default {
         {
           name: 'constraints',
           title: 'CHALLENGES',
-          src: '',
           text: `
             The main issue we faced was speed and performance of the face-tracking,
             especially on older iPads. Since visual computations tend to be expensive,
@@ -177,7 +144,7 @@ export default {
         {
           name: 'architecture',
           title: 'ARCHITECTURE',
-          src: '',
+          src: '/images/projects/littlelives-3.jpg',
           text: `
             Little Lives Check-In was written in a VIPER (Views, Interactors, Presenters,
             Entities, Router) architecture, along with Data Access Objects, Service Workers
@@ -192,7 +159,7 @@ export default {
         {
           name: 'group',
           title: 'MULTI-FACE RECOGNITION',
-          src: '',
+          src: '/images/projects/littlelives-4.jpg',
           text: `
             Mutiple faces can be detected and recognised in a single picture.
           `
@@ -200,7 +167,8 @@ export default {
         {
           name: 'tracking',
           title: 'LIVE FACE TRACKING',
-          src: '',
+          video: '/videos/project-littlelives-01.mp4',
+          webm: '/videos/project-littlelives-01.webm',
           text: `
             Faces will be boxed and tracked when previewing before taking the photo.
           `
@@ -208,15 +176,15 @@ export default {
         {
           name: 'emotion',
           title: 'EMOTION DETECTION',
-          src: '',
+          src: '/images/projects/littlelives-5.jpg',
           text: `
             All faces will be tagged with their detected emotions if network is available.
           `
         },
         {
           name: 'manual',
-          title: 'MANUAL SEARCH AND TAG',
-          src: '',
+          title: 'MANUAL SEARCH & TAG',
+          src: '/images/projects/littlelives-6.jpg',
           text: `
             In the occasion that a face is tagged wrongly or has no valid tags,
             you may manually search and tag the face using the school registry.
@@ -225,10 +193,20 @@ export default {
         {
           name: 'access',
           title: 'ACCESS CONTROL',
-          src: '',
+          src: '/images/projects/littlelives-7.jpg',
           text: `
             Passwords can be set to lock certain views such as the check-in view
             from unauthorised access to the check-in feature.
+          `
+        },
+        {
+          name: 'nda',
+          text: `
+            <i>
+            NOTE:<br>
+            Due to non-disclosure agreement, the screengrabs did not feature children at the pre-schools.
+            Instead, we used stock photos and faces of celebrities, politicians and myself.
+            </i>
           `
         }
       ],
@@ -239,7 +217,7 @@ export default {
             Abel was responsible for writing data access objects, offline face
             service and face tracking.
           `,
-          src: '',
+          src: '/images/profiles/abel.jpg',
           url: 'https://github.com/abellimz'
         },
         {
@@ -247,7 +225,7 @@ export default {
           description: `
             Joel wrote the access control module and face rectangles logic.
           `,
-          src: '',
+          src: '/images/profiles/joel.jpg',
           url: 'https://aljorhythm.github.io'
         },
         {
@@ -256,7 +234,7 @@ export default {
             Nicholas was in-charged of writing network services, Azure Face
             service and data entities.
           `,
-          src: '',
+          src: '/images/profiles/nicholas.jpg',
           url: 'https://github.com/nicholasluimy'
         },
         {
@@ -265,7 +243,7 @@ export default {
             I wrote the views, interactors, presenters and controllers, linking
             the UI with services and data layers.
           `,
-          src: '',
+          src: '/images/profiles/liejun.jpg',
           url: 'https://github.com/hliejun'
         }
       ],
@@ -275,7 +253,7 @@ export default {
           description: `
             Guide to the VIPER design principles, structure and implementations.
           `,
-          src: '',
+          src: '/images/links/medium.jpg',
           url: 'https://medium.com/@smalam119/viper-design-pattern-for-ios-application-development-7a9703902af6'
         },
         {
@@ -284,7 +262,7 @@ export default {
             Instructions to using Azure Face for emotion detection, face detection
             and face recognition.
           `,
-          src: '',
+          src: '/images/links/azure.jpg',
           url: 'https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview'
         },
         {
@@ -293,7 +271,7 @@ export default {
             Details on how to process and link the camera frame inputs with detection
             and tracking using Vision.
           `,
-          src: '',
+          src: '/images/links/apple.jpg',
           url: 'https://developer.apple.com/documentation/vision/recognizing_objects_in_live_capture'
         }
       ],

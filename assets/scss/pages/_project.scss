@@ -1,5 +1,9 @@
 // Content
 
+.page.project .page__content {
+  background: transparent;
+}
+
 .project .page__content * {
   z-index: 5;
 }
@@ -15,7 +19,7 @@
   width: 85vw;
 }
 
-// Section Elements
+// Section Containers
 
 .project .project__section {
   padding: 10px 0;
@@ -38,32 +42,10 @@
   margin: 10px 0;
 }
 
-.project__section .section__title {
-  @include animation(raise .4s ease-in-out both);
-  display: block;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.2em;
-  font-weight: 600;
-  margin: 20px auto;
-  text-align: center;
-  width: fit-content;
-}
+// Section Items
 
 .project__section .section__items {
   padding: 10px 0;
-}
-
-.project__section .section__subtitle {
-  @include animation(raise .4s ease-in-out .1s both);
-  display: block;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1em;
-  font-weight: 600;
-  width: fit-content;
-}
-
-.project__section .section__items:not(.build):not(.tools):not(.platforms) .section__subtitle {
-  margin-bottom: 1em;
 }
 
 .project__section .section__item {
@@ -78,11 +60,6 @@
 
 .project__section .section__item.tag {
   margin-bottom: 0;
-}
-
-.project__section .section__item-icon {
-  @include min-square(calc(5px + 1.3em));
-  margin: 0 2px -.4em 0;
 }
 
 .project__section .section__item-label:not(.tag) {
@@ -102,6 +79,32 @@
   min-width: 36px;
   padding: 4px 8px;
   text-align: center;
+}
+
+// Section Text
+
+.project__section .section__title {
+  @include animation(raise .4s ease-in-out both);
+  display: block;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 20px auto;
+  text-align: center;
+  width: fit-content;
+}
+
+.project__section .section__subtitle {
+  @include animation(raise .4s ease-in-out .1s both);
+  display: block;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1em;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.project__section .section__items:not(.build):not(.tools):not(.platforms) .section__subtitle {
+  margin-bottom: 1em;
 }
 
 .project__section .section__item-text {
@@ -146,6 +149,57 @@
   color: $text-dark;
 }
 
+.project .section__item-link {
+  @include align-items(flex-start);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include transition(all .2s ease);
+  @include use-flex;
+  color: $text-light;
+  height: 100%;
+  padding: 10px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.project .section__item-link:not(.disabled) {
+  background-color: $backing-dark;
+}
+
+.project .section__item-link:not(.disabled):hover {
+  background-color: $backing-light;
+  color: $text-dark;
+}
+
+// Images
+
+.project__section .section__item-icon {
+  @include min-square(calc(5px + 1.3em));
+  margin: 0 2px -.4em 0;
+}
+
+.project .team .section__item-image {
+  @include min-square(3.5em);
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.project .references .section__item-image {
+  @include min-square(4em);
+  margin-right: 1em;
+}
+
+.project .section__flying-carpet {
+  min-height: 15em;
+}
+
+.section__flying-carpet-image {
+  height: 170vw;
+  min-height: 170vw;
+  min-width: 85vw;
+  width: 85vw;
+}
+
 // Media Queries
 
 @media (max-width: 1000px) {
@@ -153,6 +207,15 @@
     @include align-items(flex-start);
     @include flex-direction(column);
     @include justify-content(center);
+  }
+}
+
+@media (min-width: 800px) {
+  .project .section__sub-row {
+    @include align-items(flex-start);
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+    @include use-flex;
   }
 }
 
@@ -167,5 +230,71 @@
   .littlelives .section__items.tools,
   .littlelives .section__items.platforms {
     max-width: 45%;
+  }
+  .section__flying-carpet-image {
+    min-height: 100em;
+    height: 100em;
+    min-width: 50em;
+    width: 50em;
+  }
+}
+
+// General Section Images
+
+.project .design .section__item-image,
+.project .features .section__item-image {
+  @include animation(raise .4s ease-in-out .2s both);
+  @include min-square(85vw);
+  margin: 10px 0;
+}
+
+@media (min-width: 800px) {
+  .project .features .section__item-image,
+  .project .design .section__item-image {
+    @include min-square(300px);
+    margin: -2.1em 0 0 1em;
+  }
+  .project .features .section__sub-row,
+  .project .design .section__sub-row {
+    @include flex-direction(row-reverse);
+  }
+}
+
+// Custom Sections
+
+.project.bitsy .design .section__item-image,
+.project.littlelives .design .section__item-image,
+.project.pokemania .design .section__item-image {
+  @include animation(raise .4s ease-in-out .2s both);
+  margin: 10px 0;
+  min-height: 52.15vw;
+  min-width: 85vw;
+}
+
+.project.bitsy .features .section__item-image {
+  @include animation(raise .4s ease-in-out .2s both);
+  @include min-square(85vw);
+  margin: 10px 0;
+}
+
+@media (min-width: 800px) {
+  .project.bitsy .design .section__item-image,
+  .project.littlelives .design .section__item-image,
+  .project.pokemania .design .section__item-image {
+    margin: 5px 1em 0 0;
+    min-height: 188px;
+    min-width: 300px;
+  }
+  .project.bitsy .features .section__item-image {
+    @include min-square(300px);
+    margin: -2.1em 0 0 1em;
+  }
+  .project.bitsy .design .section__sub-row,
+  .project.littlelives .design .section__sub-row,
+  .project.pokemania .design .section__sub-row {
+    @include flex-direction(row);
+  }
+  .project.bitsy .features .section__sub-row {
+    @include flex-direction(row-reverse);
   }
 }

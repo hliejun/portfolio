@@ -1,5 +1,6 @@
 <template>
   <div class='page todolist project'>
+    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
       :actions='jumbotron.actions'
@@ -9,13 +10,8 @@
       :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-
-      <!-- TODO: Screenshots and video for different functions, sequences -->
-      <!-- TODO: Icons and glyphs for sections and items -->
-
       <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' />
-      <HTMLSection name='design' label='DESIGN' :items='design' />
+      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
       <HTMLSection name='features' label='FEATURES' :items='features' />
       <LinksSection name='team' label='TEAM' :items='team' />
       <LinksSection name='references' label='REFERENCES' :items='references' />
@@ -66,7 +62,7 @@ export default {
         ]
       },
       mockup: {
-        src: '/images/projects/todolist-1.png',
+        src: '/images/projects/todolist-1.jpg',
         orientation: 'landscape',
         type: 'wide'
       },
@@ -75,44 +71,29 @@ export default {
           name: 'build',
           title: 'BUILD',
           tags: [
-            {
-              label: 'JavaFX',
-              src: ''
-            },
-            {
-              label: 'ControlsFX',
-              src: ''
-            },
-            {
-              label: 'JUnit',
-              src: ''
-            },
-            {
-              label: 'Natty',
-              src: ''
-            },
-            {
-              label: 'PrettyTime',
-              src: ''
-            }
+            { label: 'JavaFX' },
+            { label: 'ControlsFX' },
+            { label: 'JUnit' },
+            { label: 'Natty' },
+            { label: 'PrettyTime' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            {
-              label: 'Javadoc',
-              src: ''
-            }
+            { label: 'Eclipse' },
+            { label: 'Javadoc' }
           ]
         }
       ],
+      carpets: {
+        about: '/images/projects/todolist-2.jpg'
+      },
       about: [
         {
           name: 'description',
           title: 'DESCRIPTION',
-          src: '',
           text: `
             ToDoList is an agenda organiser for keyboard experts. It manipulates an
             agenda list by natural text commands.
@@ -121,7 +102,6 @@ export default {
         {
           name: 'motivation',
           title: 'MOTIVATION',
-          src: '',
           text: `
             ToDoList was our first software engineering project, part of a module
             to learn the essentials of software architecture and software development
@@ -131,7 +111,6 @@ export default {
         {
           name: 'constraints',
           title: 'CHALLENGES',
-          src: '',
           text: `
             The challenge in designing ToDoList was the constraint of limiting most
             interactions to the keyboard. We had to experiment with practical and
@@ -140,22 +119,11 @@ export default {
           `
         },
       ],
-      design: [
-        {
-          name: 'architecture',
-          title: 'Software Architecture',
-          src: '',
-          text: `
-            We split our application into interface, logic and storage modules in a
-            Model-View-Controller design pattern.
-          `
-        }
-      ],
       features: [
         {
           name: 'natural',
-          title: 'Natural Commands',
-          src: '',
+          title: 'NATURAL COMMANDS',
+          src: '/images/projects/todolist-3.jpg',
           text: `
             ToDoList will recognize special events or occasions, time of the day and
             verbs as actions or commands, adverbs of time.
@@ -163,8 +131,8 @@ export default {
         },
         {
           name: 'search',
-          title: 'Search and Filter',
-          src: '',
+          title: 'SEARCH & FILTER',
+          src: '/images/projects/todolist-4.jpg',
           text: `
             You can search for an event by its title or name, or filter events by their
             tagged categories.
@@ -172,16 +140,17 @@ export default {
         },
         {
           name: 'sort',
-          title: 'Sort',
-          src: '',
+          title: 'SORTING',
+          src: '/images/projects/todolist-5.jpg',
           text: `
             You can sort events by title, start or end time, duration, and more.
           `
         },
         {
           name: 'undo',
-          title: 'Undo and Redo',
-          src: '',
+          title: 'UNDO & REDO',
+          video: '/videos/project-todolist-01.mp4',
+          webm: '/videos/project-todolist-01.webm',
           text: `
             If you wish to correct your previous action, you can choose to undo or
             redo changes made to your agenda list.
@@ -189,8 +158,9 @@ export default {
         },
         {
           name: 'remind',
-          title: 'Reminders',
-          src: '',
+          title: 'REMINDERS',
+          video: '/videos/project-todolist-02.mp4',
+          webm: '/videos/project-todolist-02.webm',
           text: `
             Reminders can be set for important events and you will be notified as
             long as you have the Java Applet running.
@@ -198,8 +168,8 @@ export default {
         },
         {
           name: 'recurring',
-          title: 'Recurring Tasks',
-          src: '',
+          title: 'RECURRING TASKS',
+          src: '/images/projects/todolist-6.jpg',
           text: `
             You can choose to set a task to be recurring for a specified time interval
             and it will be reflected in your agenda list.
@@ -207,8 +177,9 @@ export default {
         },
         {
           name: 'shortcuts',
-          title: 'Shortcuts',
-          src: '',
+          title: 'SHORTCUTS',
+          video: '/videos/project-todolist-03.mp4',
+          webm: '/videos/project-todolist-03.webm',
           text: `
             You can refer to agenda items by their index, make aliases for commands
             and use arrow keys to browse the agenda list.
@@ -216,8 +187,9 @@ export default {
         },
         {
           name: 'night',
-          title: 'Day and Night Mode',
-          src: '',
+          title: 'DAY & NIGHT MODE',
+          video: '/videos/project-todolist-04.mp4',
+          webm: '/videos/project-todolist-04.webm',
           text: `
             If you work in low-light environment, you can choose to switch over to
             night mode.
@@ -230,7 +202,7 @@ export default {
           description: `
             Yu Xin wrote the search and database modules for ToDoList.
           `,
-          src: '',
+          src: '/images/profiles/yuxin.jpg',
           url: 'https://github.com/XiaoYuxin'
         },
         {
@@ -238,16 +210,16 @@ export default {
           description: `
             Jiyi designed and implemented the parsers and logic components.
           `,
-          src: '',
+          src: '/images/profiles/jiyi.jpg',
           url: 'https://github.com/cs2103t'
         },
         {
-          name: 'Huang Lie Jun',
+          label: 'Huang Lie Jun',
           description: `
             I worked on the UI/UX designs, the views, controllers and project
             coordination.
           `,
-          src: '',
+          src: '/images/profiles/liejun.jpg',
           url: 'https://github.com/hliejun'
         }
       ],
@@ -257,23 +229,23 @@ export default {
           description: `
             How to use JavaFX to implement interfaces in a Java applet.
           `,
-          src: '',
+          src: '/images/links/oracle.jpg',
           url: 'https://docs.oracle.com/javase/8/javafx/get-started-tutorial/get_start_apps.htm'
         },
         {
-          label: 'Natty Guide',
+          label: 'Natty Repository',
           description: `
-            Guide on how to integrate Natty into Java applications.
+            Natural language date-time parser built by joestelmach for Java applications.
           `,
-          src: '',
-          url: 'http://natty.joestelmach.com/doc.jsp'
+          src: '/images/links/github.jpg',
+          url: 'https://github.com/joestelmach/natty'
         },
         {
           label: 'PrettyTime Documentation',
           description: `
             Documentation on PrettyTime API.
           `,
-          src: '',
+          src: '/images/links/prettytime.jpg',
           url: 'http://www.ocpsoft.org/prettytime'
         }
       ],

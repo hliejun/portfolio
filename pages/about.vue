@@ -63,7 +63,7 @@ export default {
           }
         ]
       },
-      src: '/images/profiles/about.jpg',
+      src: '/images/about/avatar.jpg',
       sections: [
         {
           title: 'PROFILE',

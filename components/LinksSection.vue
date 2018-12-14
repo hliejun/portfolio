@@ -8,9 +8,13 @@
     <div class='section__title'>{{label}}</div>
     <div v-bind:class="['section__items', name]">
       <div v-for='item in items' :key='item.label' class='section__item'>
-        <amp-img v-if='item.src' class='section__item-image' v-bind:src='item.src' height='1' width='1' />
-        <span v-if='item.label' class='section__item-label'>{{item.label}}</span>
-        <span v-if='item.description' class='section__item-description'>{{item.description}}</span>
+        <a v-bind:class="['section__item-link', { disabled: !item.url }]" v-bind:href='item.url' target='_blank'>
+          <amp-img v-if='item.src' class='section__item-image' v-bind:src='item.src' height='1' width='1' />
+          <div class='section__item-content'>
+            <span v-if='item.label' class='section__item-label'>{{item.label}}</span>
+            <span v-if='item.description' class='section__item-description'>{{item.description}}</span>
+          </div>
+        </a>
       </div>
     </div>
   </div>

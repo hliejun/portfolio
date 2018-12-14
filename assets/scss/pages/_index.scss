@@ -75,6 +75,10 @@
   @include min-square(10em);
 }
 
+.earth img {
+  opacity: .9;
+}
+
 .satellite {
   @include animation(rotate 200s infinite linear both alternate-reverse);
   @include min-square(100px);

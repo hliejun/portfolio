@@ -1,5 +1,6 @@
 <template>
   <div class='page portfolio project'>
+    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
       :actions='jumbotron.actions'
@@ -9,12 +10,8 @@
       :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-
-      <!-- TODO: Screenshots and videos of mobile versions -->
-      <!-- TODO: Icons and glyphs for sections and items -->
-
       <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
       <LinksSection name='references' label='REFERENCES' :items='references' />
       <ActionsSection name='actions' :items='actions' />
     </div>
@@ -51,7 +48,7 @@ export default {
         ]
       },
       mockup: {
-        src: '/images/projects/portfolio-1.png',
+        src: '/images/projects/portfolio-1.jpg',
         orientation: 'portrait',
         type: 'wide'
       },
@@ -60,58 +57,36 @@ export default {
           name: 'build',
           title: 'BUILD',
           tags: [
-            {
-              label: 'Vue',
-              src: ''
-            },
-            {
-              label: 'Nuxt',
-              src: ''
-            },
-            {
-              label: 'AMP',
-              src: ''
-            },
-            {
-              label: 'SCSS',
-              src: ''
-            }
+            { label: 'Vue' },
+            { label: 'Nuxt' },
+            { label: 'AMP' },
+            { label: 'SCSS' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            {
-              label: 'NPM',
-              src: ''
-            },
-            {
-              label: 'Photoshop',
-              src: ''
-            }
+            { label: 'NPM' },
+            { label: 'Photoshop' }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
           tags: [
-            {
-              label: 'Google App Engine',
-              src: ''
-            },
-            {
-              label: 'GitHub Pages',
-              src: ''
-            }
+            { label: 'Google App Engine' },
+            { label: 'GitHub Pages' }
           ]
         }
       ],
+      carpets: {
+        about: '/images/projects/portfolio-2.jpg'
+      },
       about: [
         {
           name: 'description',
           title: 'DESCRIPTION',
-          src: '',
           text: `
             This portfolio lists some of my past work and projects, as well
             as my job history. It serves as a platform for me to share about
@@ -128,7 +103,6 @@ export default {
         {
           name: 'motivation',
           title: 'MOTIVATION',
-          src: '',
           text: `
             I created this portfolio to document my work, projects
             and learning experiences. It also served as an opportunity
@@ -144,7 +118,6 @@ export default {
         {
           name: 'constraints',
           title: 'CHALLENGES',
-          src: '',
           text: `
             The main challenge that I faced would be to have AMP play nice
             with Nuxt and scripts. Due to the restrictions that AMP imposes,
@@ -163,7 +136,7 @@ export default {
           description: `
             About AMP directives, restrictions, async components.
           `,
-          src: '',
+          src: '/images/links/amp.jpg',
           url: 'https://www.ampproject.org/docs'
         },
         {
@@ -171,7 +144,7 @@ export default {
           description: `
             Explains Vue directives and framework.
           `,
-          src: '',
+          src: '/images/links/vue.jpg',
           url: 'https://vuejs.org/v2/guide'
         },
         {
@@ -180,7 +153,7 @@ export default {
             Useful for Nuxt configurations, custom headers, routing,
             rendering options, structure and attributes usage.
           `,
-          src: '',
+          src: '/images/links/nuxt.jpg',
           url: 'https://nuxtjs.org/guide/views'
         },
         {
@@ -189,7 +162,7 @@ export default {
             Describes the integration of AMP with Nuxt, especially in
             header and metadata configurations.
           `,
-          src: '',
+          src: '/images/links/toor.jpg',
           url: 'https://toor.co/blog/amp-pages-using-nuxt-js'
         },
         {
@@ -197,23 +170,23 @@ export default {
           description: `
             Guide to search engine optimisation by Google.
           `,
-          src: '',
+          src: '/images/links/google.jpg',
           url: 'https://support.google.com/webmasters/answer/7451184?hl=en'
         },
         {
           label: 'Nuxt SEO Guide',
           description: `
-            Information on search engine optimisations for server-rendered
-            Nuxt pages.
+            Article about search engine optimisations for server-rendered
+            Nuxt pages on Medium.
           `,
-          src: '',
+          src: '/images/links/medium.jpg',
           url: 'https://medium.com/vue-mastery/best-practices-for-nuxt-js-seo-32399c49b2e5'
         }
       ],
       actions: [
         {
-          label: 'Return',
-          url: '/work',
+          label: 'Widgets for WhatsApp™',
+          url: '/projects/whatsappwidgets',
           in: true
         },
         {

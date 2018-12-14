@@ -74,7 +74,7 @@
   100% { opacity: 0 }
 }
 
-@include keyframes (evening) {
+@include keyframes(evening) {
   0% { opacity: 0 }
   15% { opacity: 0 }
   30% { opacity: 1 }
@@ -109,12 +109,12 @@
   100% { @include transform(rotate(360deg) translateX(-200px) translateY(-200px)) }
 }
 
-@keyframes drift {
+@include keyframes(drift) {
   from { @include transform(rotate(0deg)) }
   to { @include transform(rotate(360deg)) }
 }
 
-@keyframes raise {
+@include keyframes(raise) {
   0% {
     @include transform(translateY(30px));
     opacity: 0;

@@ -1,7 +1,7 @@
 <template>
   <div v-bind:class="['header', theme, { splash }]">
     <nuxt-link class='avatar' to='/'>
-      <amp-img v-if='splash' class='avatar__image' v-bind:src='avatar' height='1' width='1' />
+      <amp-img v-if='!splash' class='avatar__image' v-bind:src='avatar' height='1' width='1' />
     </nuxt-link>
     <div v-if='logo' class='logo'>
       <div class='logo__button link'>
@@ -70,7 +70,7 @@ export default {
   props: {
     avatar: {
       type: String,
-      default: '/images/splash/avatar.png'
+      default: '/images/splash/avatar-opaque.png'
     },
     logo: {
       type: Object,

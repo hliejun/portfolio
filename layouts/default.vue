@@ -32,8 +32,7 @@ export default {
             + '"#headerBackground","keyframes": [{"opacity": "0"}]}]}',
       logo: {
         label: 'dev/hliejun',
-        link: '/',
-        src: '/images/splash/profile.png'
+        link: '/'
       },
       siteLinks: [
         {

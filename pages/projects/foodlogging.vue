@@ -1,5 +1,6 @@
 <template>
   <div class='page foodlogging project'>
+    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
       :actions='jumbotron.actions'
@@ -9,12 +10,8 @@
       :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-
-      <!-- TODO: Video and screenshots of interaction designs (incl original Nibble) -->
-      <!-- TODO: Icons and glyphs for sections and items -->
-
       <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
       <HTMLSection name='design' label='DESIGN' :items='design' />
       <LinksSection name='team' label='TEAM' :items='team' />
       <LinksSection name='references' label='REFERENCES' :items='references' />
@@ -65,7 +62,7 @@ export default {
         ]
       },
       mockup: {
-        src: '/images/projects/foodlogging-1.png',
+        src: '/images/projects/foodlogging-1.jpg',
         orientation: 'portrait',
         type: 'narrow'
       },
@@ -74,26 +71,22 @@ export default {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            {
-              label: 'Marvel',
-              src: ''
-            },
-            {
-              label: 'CogTool',
-              src: ''
-            }
+            { label: 'Marvel' },
+            { label: 'CogTool' }
           ]
         }
       ],
+      carpets: {
+        about: '/images/projects/foodlogging-2.jpg'
+      },
       about: [
         {
           name: 'description',
           title: 'DESCRIPTION',
-          src: '',
           text: `
             This project is a UI/UX prototype of a mobile food logger application.
             The interface is based on an existing prototype application titled
-            Nibble as a module requirement. The improved design is established
+            Nibble as a module requirement. The altered design is established
             by considering various UI/UX principles and laws, measured and compared
             through CogTool.
           `
@@ -101,7 +94,6 @@ export default {
         {
           name: 'motivation',
           title: 'MOTIVATION',
-          src: '',
           text: `
             The purpose of this food logger interaction design is to study
             the application of UI/UX laws and principles to practical design
@@ -111,20 +103,19 @@ export default {
         {
           name: 'constraints',
           title: 'CHALLENGES',
-          src: '',
           text: `
             The main constraint for this project was to identify areas of improvement
-            for an already polished product: Nibble. The suggested improvements
-            were purely based on CogTool analysis, since no product requirements were
-            specified for the project.
+            for an already polished product: Nibble. The suggested designs in our renditions
+            of Nibble were purely based on CogTool analysis, since no product requirements
+            were specified for the project.
           `
         },
       ],
       design: [
         {
           name: 'recognition',
-          title: 'Recognition Over Recall',
-          src: '',
+          title: 'RECOGNITION OVER RECALL',
+          src: '/images/projects/foodlogging-3.jpg',
           text: `
             Intuitive chromes that are commonly used across applications are chosen,
             such as the hamburger icon for menu, camera icon for camera, plus, minus
@@ -136,35 +127,34 @@ export default {
         },
         {
           name: 'tolerance',
-          title: 'Button Tolerance',
-          src: '',
+          title: 'BUTTON TOLERANCE',
+          src: '/images/projects/foodlogging-4.jpg',
           text: `
-            Buttons are designed to be wide and large for better tolerance by providing
+            Buttons are designed to be wide and large for tolerance by providing
             larger areas of interaction. This can be seen especially in the "Add a Meal"
             button, the "Results List" items, and the "Add to Diary" button. They are
             also stuck to the edges as a Navigation Bar element or a floating button
-            for better pointing tolerance and consistency.
+            for pointing tolerance and consistency.
           `
         },
         {
           name: 'accessibility',
-          title: 'Accessibility',
-          src: '',
+          title: 'ACCESSIBILITY',
+          src: '/images/projects/foodlogging-5.jpg',
           text: `
-            Redundancies are added for better accessibility, such as the "Add a Meal"
+            Redundancies are added for accessibility, such as the "Add a Meal"
             button that compliments the camera button at the top of the screen.
           `
         },
         {
           name: 'time',
-          title: 'Scroll, Homing and Cognition Time',
-          src: '',
+          title: 'SCROLL, HOMING & COGNITION',
+          src: '/images/projects/foodlogging-6.jpg',
           text: `
             Most buttons are flushed to the edge of the screen for reduced homing time.
-            Non-interactable widgets such as the dashboard are concisely sized to reduce
-            unnecessary bulk in the page and save on scroll time. The number of pages to
-            navigate is reduced to prevent adding unnecessary congitive time when
-            processing changes in context.
+            Non-interactable widgets such as the dashboard are resized to save on
+            scroll time. The number of pages to navigate is reduced to lighten
+            cognitive load when processing changes in context.
           `
         }
       ],
@@ -175,7 +165,7 @@ export default {
             Jia Lin was responsible for her initial design. We worked on the UX flow, slides
             and CogTool calculations for the combined design together.
           `,
-          src: '',
+          src: '/images/profiles/jialin.jpg',
           url: 'http://jlin95.github.io'
         },
         {
@@ -183,7 +173,7 @@ export default {
           description: `
             I worked on my design and the combined design with Jia Lin.
           `,
-          src: '',
+          src: '/images/profiles/liejun.jpg',
           url: 'https://github.com/hliejun'
         }
       ],
@@ -193,15 +183,15 @@ export default {
           description: `
             Instructions and tutorials on using CogTool for analysis.
           `,
-          src: '',
+          src: '/images/links/cogtool.jpg',
           url: 'https://github.com/cogtool/documentation/blob/master/end-user/user-guide/CogToolUserGuide_1_2%202.pdf'
         },
         {
-          label: 'Law of UX',
+          label: 'Laws of UX',
           description: `
             Guidelines, principles and laws used in UX design.
           `,
-          src: '',
+          src: '/images/links/lawsofux.jpg',
           url: 'https://lawsofux.com'
         },
         {
@@ -209,7 +199,7 @@ export default {
           description: `
             More about Nibble, an amazing food logger prototype by Chng Xinni.
           `,
-          src: '',
+          src: '/images/links/nibble.jpg',
           url: 'http://xinni.co/nibble.html'
         }
       ],

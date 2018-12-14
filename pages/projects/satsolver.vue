@@ -9,10 +9,6 @@
       :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.1' layout='nodisplay' />
-
-      <!-- TODO: Pictures of graphs explaining results -->
-      <!-- TODO: Icons and glyphs for sections and items -->
-
       <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
       <HTMLSection name='about' label='ABOUT' :items='about' />
       <HTMLSection name='design' label='DESIGN' :items='design' />
@@ -57,7 +53,7 @@ export default {
         ]
       },
       mockup: {
-        src: '/images/projects/satsolver-1.png',
+        src: '/images/projects/satsolver-1.jpg',
         orientation: 'landscape',
         type: 'wide'
       },
@@ -66,42 +62,24 @@ export default {
           name: 'build',
           title: 'BUILD',
           tags: [
-            {
-              label: 'Java',
-              src: ''
-            },
-            {
-              label: 'JUnit',
-              src: ''
-            },
-            {
-              label: 'Shell Script',
-              src: ''
-            }
+            { label: 'Java' },
+            { label: 'JUnit' },
+            { label: 'Shell Script' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            {
-              label: 'IntelliJ',
-              src: ''
-            },
-            {
-              label: 'Bash',
-              src: ''
-            }
+            { label: 'IntelliJ' },
+            { label: 'Bash' }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
           tags: [
-            {
-              label: 'UNIX',
-              src: ''
-            }
+            { label: 'UNIX' }
           ]
         }
       ],
@@ -109,7 +87,6 @@ export default {
         {
           name: 'description',
           title: 'DESCRIPTION',
-          src: '',
           text: `
             This research compares different satisfiability resolution
             techniques, such as DPLL and CDCL with different branching
@@ -123,7 +100,6 @@ export default {
         {
           name: 'motivation',
           title: 'MOTIVATION',
-          src: '',
           text: `
             The motivation behind creating the solvers was to understand
             the DPLL and CDCL algorithms through implementation, as well
@@ -133,7 +109,6 @@ export default {
         {
           name: 'constraints',
           title: 'CHALLENGES',
-          src: '',
           text: `
             The challenge in this project was finding and implementing
             heuristics for conflict resolution and picking branch variables
@@ -147,7 +122,6 @@ export default {
         {
           name: 'solvers',
           title: 'SOLVERS',
-          src: '',
           text: `
             We implemented 2 solvers for this project:<br>
             <br>
@@ -166,7 +140,6 @@ export default {
         {
           name: 'heuristics',
           title: 'CDCL HEURISTICS',
-          src: '',
           text: `
             For the CDCL solver, we implemented 3 variations of branching
             heuristics:<br>
@@ -201,7 +174,6 @@ export default {
         {
           name: 'puzzle',
           title: 'EINSTEIN PUZZLE',
-          src: '',
           text: `
             The Einstein Puzzle is a logic puzzle that establishes a list
             of conditions among 5 neighbours. There are ﬁve houses in ﬁve
@@ -285,7 +257,7 @@ export default {
             writing unit tests and shell scripts, analysis and benchmarking
             of results.
           `,
-          src: '',
+          src: '/images/profiles/chase.jpg',
           url: 'https://github.com/ChaseTiong'
         },
         {
@@ -295,7 +267,7 @@ export default {
             structures and modelled the Einstein's Puzzle. Chase and I
             worked on the CDCL solver and heuristics together.
           `,
-          src: '',
+          src: '/images/profiles/liejun.jpg',
           url: 'https://github.com/hliejun'
         }
       ],
@@ -305,7 +277,7 @@ export default {
           description: `
             A collection of satisfiability benchmark problems in cnf form.
           `,
-          src: '',
+          src: '/images/links/ubc.jpg',
           url: 'https://www.cs.ubc.ca/~hoos/SATLIB/benchm.html'
         },
         {
@@ -313,7 +285,7 @@ export default {
           description: `
             ERWA branching heuristics for CDCL solvers.
           `,
-          src: '',
+          src: '/images/links/semanticscholar.jpg',
           url: 'https://pdfs.semanticscholar.org/7861/8983dec4a92a9c5a1909e31bc8b95a5705a5.pdf'
         },
         {
@@ -321,7 +293,7 @@ export default {
           description: `
             Clause learning heuristics for CDCL solvers.
           `,
-          src: '',
+          src: '/images/links/semanticscholar.jpg',
           url: 'https://pdfs.semanticscholar.org/a1cd/dbc236cf94161f578dd91f77c7410b7ba5cf.pdf'
         },
         {
@@ -330,7 +302,7 @@ export default {
             Clause learning with implementation of implication graph and
             use of unique implication points.
           `,
-          src: '',
+          src: '/images/links/princeton.jpg',
           url: 'https://www.cs.princeton.edu/courses/archive/fall13/cos402/readings/SAT_learning_clauses.pdf'
         },
         {
@@ -338,7 +310,7 @@ export default {
           description: `
             Detailed notes on CDCL solvers and its constituent procedures.
           `,
-          src: '',
+          src: '/images/links/satassociation.jpg',
           url: 'https://satassociation.org/articles/FAIA185-0131.pdf'
         },
         {
@@ -346,7 +318,7 @@ export default {
           description: `
             VSID branching heuristics for CDCL solvers.
           `,
-          src: '',
+          src: '/images/links/arxiv.jpg',
           url: 'https://arxiv.org/pdf/1506.08905.pdf'
         },
         {
@@ -354,7 +326,7 @@ export default {
           description: `
             Reference SAT solving lecture series.
           `,
-          src: '',
+          src: '/images/links/kit.jpg',
           url: 'https://baldur.iti.kit.edu/sat'
         }
       ],

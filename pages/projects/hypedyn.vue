@@ -1,5 +1,6 @@
 <template>
   <div class='page hypedyn project'>
+    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
       :actions='jumbotron.actions'
@@ -9,12 +10,8 @@
       :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-
-      <!-- TODO: Video and screenshots of interactions -->
-      <!-- TODO: Icons and glyphs for sections and items -->
-
       <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
       <HTMLSection name='features' label='FEATURES' :items='features' />
       <LinksSection name='references' label='REFERENCES' :items='references' />
       <ActionsSection name='actions' :items='actions' />
@@ -60,7 +57,7 @@ export default {
         ]
       },
       mockup: {
-        src: '/images/projects/hypedyn-1.png',
+        src: '/images/projects/hypedyn-1.jpg',
         orientation: 'portrait',
         type: 'wide'
       },
@@ -69,46 +66,33 @@ export default {
           name: 'build',
           title: 'BUILD',
           tags: [
-            {
-              label: 'Javascript',
-              src: ''
-            },
-            {
-              label: 'HTML',
-              src: ''
-            },
-            {
-              label: 'CSS',
-              src: ''
-            }
+            { label: 'Javascript' },
+            { label: 'HTML' },
+            { label: 'CSS' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            {
-              label: 'HypeDyn',
-              src: ''
-            }
+            { label: 'HypeDyn' }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
           tags: [
-            {
-              label: 'GitHub Pages',
-              src: ''
-            }
+            { label: 'GitHub Pages' }
           ]
         }
       ],
+      carpets: {
+        about: '/images/projects/hypedyn-2.jpg'
+      },
       about: [
         {
           name: 'description',
           title: 'DESCRIPTION',
-          src: '',
           text: `
             Air Crash Investigation is a story about choice and replayability.
             The player puts herself in the shoes of the flight investigator and
@@ -128,7 +112,6 @@ export default {
         {
           name: 'motivation',
           title: 'MOTIVATION',
-          src: '',
           text: `
             These stories were helpful in learning about various techniques and agencies
             of interactive storytelling. This project was also about learning to use HypeDyn,
@@ -138,7 +121,6 @@ export default {
         {
           name: 'constraints',
           title: 'CHALLENGES',
-          src: '',
           text: `
             The challenge with this project was to tell a story without long narratives
             or graphical media. Instead, I had to rely on emotions, choices, dialogues,
@@ -150,8 +132,8 @@ export default {
       features: [
         {
           name: 'interactivity',
-          title: 'READER INCLUSION AND INTERACTIVITY',
-          src: '',
+          title: 'READER INCLUSION',
+          src: '/images/projects/hypedyn-3.jpg',
           text: `
             These interactive text stories are heavily littered with action and decision
             links, engaging readers with the plot progression with inclusive inputs and
@@ -161,7 +143,7 @@ export default {
         {
           name: 'branched',
           title: 'BRANCHED ACTIONS OR ENDINGS',
-          src: '',
+          src: '/images/projects/hypedyn-4.jpg',
           text: `
             Your actions and decisions will have an impact on either the immediate outcome,
             or the eventual endings of the stories. These variances in plot are customised
@@ -172,7 +154,7 @@ export default {
         {
           name: 'ascii',
           title: 'ASCII ART',
-          src: '',
+          src: '/images/projects/hypedyn-5.jpg',
           text: `
             The stories are decorated with ASCII art designed to illustrate the setting
             for different stages or scenes in the stories.
@@ -185,7 +167,7 @@ export default {
           description: `
             Article on replay and re-reading by Janet H. Murray.
           `,
-          src: '',
+          src: '/images/links/inventingthemedium.jpg',
           url: 'https://inventingthemedium.com/2013/05/15/six-key-design-strategies-for-replay-stories'
         },
         {
@@ -193,7 +175,7 @@ export default {
           description: `
             Paper on agency by Wardrip-Fruin et. al.
           `,
-          src: '',
+          src: '/images/links/digra.jpg',
           url: 'http://www.digra.org/wp-content/uploads/digital-library/09287.41281.pdf'
         },
         {
@@ -201,7 +183,7 @@ export default {
           description: `
             Interactive story by Porpentine.
           `,
-          src: '',
+          src: '/images/links/angelicunderstanding.jpg',
           url: 'http://aliendovecote.com/uploads/twine/angels/angel.html'
         },
         {
@@ -209,7 +191,7 @@ export default {
           description: `
             Interactive story by Sam Barlow.
           `,
-          src: '',
+          src: '/images/links/aisle.jpg',
           url: 'https://www.ifiction.org/games/playz.php?cat=&game=232&mode=html'
         },
         {
@@ -217,7 +199,7 @@ export default {
           description: `
              Article on agency of choice by Gregory Weir.
           `,
-          src: '',
+          src: '/images/links/gamesetwatch.jpg',
           url: 'http://www.gamesetwatch.com/2011/04/incidental_character_choices_i.php'
         },
         {
@@ -225,7 +207,7 @@ export default {
           description: `
             Article on play character discovery by Emily Short.
           `,
-          src: '',
+          src: '/images/links/gamasutra.jpg',
           url: 'https://www.gamasutra.com/view/news/115115/Analysis_The_Accretive_Player_Character.php'
         }
       ],

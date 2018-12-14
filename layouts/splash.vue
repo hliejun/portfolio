@@ -19,8 +19,7 @@ export default {
     return {
       logo: {
         label: 'dev/hliejun',
-        link: '/',
-        src: '/images/splash/profile.png'
+        link: '/'
       },
       siteLinks: [
         {

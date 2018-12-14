@@ -1,5 +1,6 @@
 <template>
   <div class='page urbanzoom project'>
+    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
       :actions='jumbotron.actions'
@@ -9,12 +10,8 @@
       :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-
-      <!-- TODO: Screenshots and videos of flow and suggestions -->
-      <!-- TODO: Icons and glyphs for sections and items -->
-
       <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
       <HTMLSection name='features' label='FEATURES' :items='features' />
       <LinksSection name='references' label='REFERENCES' :items='references' />
       <ActionsSection name='actions' :items='actions' />
@@ -56,7 +53,7 @@ export default {
         ]
       },
       mockup: {
-        src: '/images/projects/urbanzoom-1.png',
+        src: '/images/projects/urbanzoom-1.jpg',
         orientation: 'portrait',
         type: 'narrow'
       },
@@ -65,54 +62,35 @@ export default {
           name: 'build',
           title: 'BUILD',
           tags: [
-            {
-              label: 'Express',
-              src: ''
-            },
-            {
-              label: 'Dialogflow',
-              src: ''
-            },
-            {
-              label: 'TwiML',
-              src: ''
-            }
+            { label: 'Express' },
+            { label: 'Dialogflow' },
+            { label: 'TwiML' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            {
-              label: 'Google Actions',
-              src: ''
-            },
-            {
-              label: 'Postman',
-              src: ''
-            }
+            { label: 'Google Actions' },
+            { label: 'Postman' }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
           tags: [
-            {
-              label: 'Firebase',
-              src: ''
-            },
-            {
-              label: 'Google App Engine',
-              src: ''
-            }
+            { label: 'Firebase' },
+            { label: 'Google App Engine' }
           ]
         }
       ],
+      carpets: {
+        about: '/images/projects/urbanzoom-2.jpg'
+      },
       about: [
         {
           name: 'description',
           title: 'DESCRIPTION',
-          src: '',
           text: `
             UrbanZoom agent is a Google Assistant application built for property price
             prediction of Singapore homes, with support for Google Assistant users,
@@ -127,7 +105,6 @@ export default {
         {
           name: 'motivation',
           title: 'MOTIVATION',
-          src: '',
           text: `
             The UrbanZoom action was created to make UrbanZoom property valuation
             API accessible to consumers, regardless of their technical knowledge
@@ -140,7 +117,6 @@ export default {
         {
           name: 'constraints',
           title: 'CHALLENGES',
-          src: '',
           text: `
             One of the biggest challenges would be to ensure accuracy and reliability
             in speech-to-text recognition of addresses. For users with Singaporean accent
@@ -170,7 +146,7 @@ export default {
         {
           name: 'accuracy',
           title: 'ACCURACY',
-          src: '',
+          src: '/images/projects/urbanzoom-3.jpg',
           text: `
             UrbanZoom Assistant utilises the UrbanZoom API for highly accurate
             property valuation results. This allows the agent to provide reliable
@@ -180,7 +156,8 @@ export default {
         {
           name: 'guided',
           title: 'GUIDED INTERFACE',
-          src: '',
+          video: '/videos/project-urbanzoom-01.mp4',
+          webm: '/videos/project-urbanzoom-01.webm',
           text: `
             Dialogues with UrbanZoom Assistant are guided with clear instructions
             and feedback to prompt users for required fields such as postal code,
@@ -193,7 +170,7 @@ export default {
         {
           name: 'agnostic',
           title: 'DEVICE AGNOSTIC',
-          src: '',
+          src: '/images/projects/urbanzoom-4.jpg',
           text: `
             Integrating with Google Action means the agent can be accessed through
             all Google Assistant enabled devices, regardless of the input surface.
@@ -209,18 +186,19 @@ export default {
         {
           label: 'Dialogflow Fulfillment Webhook API',
           description: `
-            Guide to handle Dialogflow requests with custom responses using Promises.
+            Fulfillment API repository with guide on handling Dialogflow requests and
+            custom responses using Promises.
           `,
-          src: '',
+          src: '/images/links/github.jpg',
           url: 'https://github.com/dialogflow/dialogflow-fulfillment-nodejs'
         },
         {
           label: 'Dialogflow Client API',
           description: `
-            How to construct queries for Dialogflow agent from generic third-party
-            applications.
+            Client API repository for constructing Dialogflow queries from generic
+            third-party applications or agents.
           `,
-          src: '',
+          src: '/images/links/github.jpg',
           url: 'https://github.com/googleapis/nodejs-dialogflow'
         },
         {
@@ -229,7 +207,7 @@ export default {
             Instructions to control call sessions, handle voice and keypad inputs,
             build queries and hold calls.
           `,
-          src: '',
+          src: '/images/links/twilio.jpg',
           url: 'https://www.twilio.com/docs/voice/twiml'
         }
       ],

@@ -1,5 +1,6 @@
 <template>
   <div class='page reactchat project'>
+    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
       :actions='jumbotron.actions'
@@ -9,12 +10,8 @@
       :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.1' layout='nodisplay' />
-
-      <!-- TODO: Screenshots and videos of mobile and responsive -->
-      <!-- TODO: Icons and glyphs for sections and items -->
-
       <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
       <HTMLSection name='design' label='DESIGN' :items='design' />
       <HTMLSection name='features' label='FEATURES' :items='features' />
       <LinksSection name='references' label='REFERENCES' :items='references' />
@@ -61,7 +58,7 @@ export default {
         ]
       },
       mockup: {
-        src: '/images/projects/reactchat-1.png',
+        src: '/images/projects/reactchat-1.jpg',
         orientation: 'landscape',
         type: 'wide'
       },
@@ -70,74 +67,40 @@ export default {
           name: 'build',
           title: 'BUILD',
           tags: [
-            {
-              label: 'React',
-              src: ''
-            },
-            {
-              label: 'SCSS',
-              src: ''
-            },
-            {
-              label: 'Webpack',
-              src: ''
-            },
-            {
-              label: 'Rollup',
-              src: ''
-            },
-            {
-              label: 'Babel',
-              src: ''
-            },
-            {
-              label: 'Storybook',
-              src: ''
-            }
+            { label: 'React' },
+            { label: 'SCSS' },
+            { label: 'Webpack' },
+            { label: 'Rollup' },
+            { label: 'Babel' },
+            { label: 'Storybook' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            {
-              label: 'Yarn',
-              src: ''
-            },
-            {
-              label: 'ESLint',
-              src: ''
-            },
-            {
-              label: 'SASSLint',
-              src: ''
-            }
+            { label: 'Yarn' },
+            { label: 'ESLint' },
+            { label: 'SASSLint' }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
           tags: [
-            {
-              label: 'NPM',
-              src: ''
-            },
-            {
-              label: 'GitHub Pages',
-              src: ''
-            },
-            {
-              label: 'Travis CI',
-              src: ''
-            }
+            { label: 'NPM' },
+            { label: 'GitHub Pages' },
+            { label: 'Travis CI' }
           ]
         }
       ],
+      carpets: {
+        about: '/images/projects/reactchat-2.jpg'
+      },
       about: [
         {
           name: 'description',
           title: 'DESCRIPTION',
-          src: '',
           text: `
             The React Chat library consists of a ChatList and a ChatRoom
             component, each extensible through receiving a collection of
@@ -149,7 +112,6 @@ export default {
         {
           name: 'motivation',
           title: 'MOTIVATION',
-          src: '',
           text: `
             While I was working for NodeFlair, I was tasked to create a
             responsive messaging view for their webpage. I noticed that
@@ -171,7 +133,6 @@ export default {
         {
           name: 'constraints',
           title: 'CHALLENGES',
-          src: '',
           text: `
             A substantial part of the project was about setting up the
             environment for a React component micro library. One main
@@ -190,7 +151,6 @@ export default {
         {
           name: 'components',
           title: 'COMPONENTS',
-          src: '',
           text: `
             I adopted the presentational component design pattern for ChatList,
             ChatRoom and their functional child components. Data is received
@@ -205,7 +165,6 @@ export default {
         {
           name: 'bundling',
           title: 'LIBRARY BUNDLING',
-          src: '',
           text: `
             Using Rollup configurations, I exported the ChatList and ChatRoom
             component together as a single module in both UMD and ES module
@@ -222,7 +181,7 @@ export default {
         {
           name: 'extensible',
           title: 'EXTENSIBLE PROPS',
-          src: '',
+          src: '/images/projects/reactchat-3.jpg',
           text: `
             The functionalities of the components are extensible by optional
             props. This allows you to provide handler functions as props to
@@ -235,8 +194,8 @@ export default {
         },
         {
           name: 'actions',
-          title: 'CUSTOM MENU AND ACTIONS',
-          src: '',
+          title: 'CUSTOM MENU & ACTIONS',
+          src: '/images/projects/reactchat-4.jpg',
           text: `
             The chat list items and message items can optionally trigger an
             action menu, of which the menu options can be customised through
@@ -245,8 +204,9 @@ export default {
         },
         {
           name: 'search',
-          title: 'SEARCH AND FILTER',
-          src: '',
+          title: 'SEARCH & FILTER',
+          video: '/videos/project-reactchat-01.mp4',
+          webm: '/videos/project-reactchat-01.webm',
           text: `
             Search and filter bars are available in both ChatList and ChatRoom
             components, and they support both live and manual search behaviours.
@@ -258,7 +218,8 @@ export default {
         {
           name: 'responsive',
           title: 'RESPONSIVE DESIGN',
-          src: '',
+          video: '/videos/project-reactchat-02.mp4',
+          webm: '/videos/project-reactchat-02.webm',
           text: `
             Chat components are responsive to different screen sizes, and works
             well for mobile, tablet and desktop environment. Layouts are dynamic,
@@ -269,39 +230,32 @@ export default {
         {
           name: 'layouts',
           title: 'SWITCHABLE LAYOUTS',
-          src: '',
+          video: '/videos/project-reactchat-03.mp4',
+          webm: '/videos/project-reactchat-03.webm',
           text: `
             2 distinct layout designs are supported, one with staggered messages
-            similar to chat applications such as WhatsApp and Telegram, and another
+            similar to chat applications such as WhatsApp™ and Telegram™, and another
             with aligned messages seen on Slack and web forums.
           `
         },
         {
           name: 'async',
-          title: 'ASYNCHRONOUS IMAGES',
-          src: '',
+          title: 'ASYNCHRONOUS CONTENT',
+          video: '/videos/project-reactchat-04.mp4',
+          webm: '/videos/project-reactchat-04.webm',
           text: `
-            Images are loaded asynchronously, with options to display loaders or
+            Images and chats are loaded asynchronously, with options to display loaders or
             placeholders preloaded in the library.
           `
         },
         {
           name: 'fallback',
           title: 'FALLBACK ASSETS',
-          src: '',
+          src: '/images/projects/reactchat-5.jpg',
           text: `
             Fallback assets are available as preloaded polymer icons. Lettered
             initials avatars are available as placeholders when avatar images
             are unavailable.
-          `
-        },
-        {
-          name: 'styling',
-          title: 'BEM NOTATIONS',
-          src: '',
-          text: `
-            Classnames library and BEM notations are used in styling, exposing
-            customisable and standardised handles for custom styling of components.
           `
         }
       ],
@@ -309,25 +263,25 @@ export default {
         {
           label: 'React Library Guide',
           description: `
-            Article on setting up the environment for publishing ReactJS libraries.
+            Article about setting up the environment for publishing ReactJS libraries on Hackernoon.
           `,
-          src: '',
+          src: '/images/links/hackernoon.jpg',
           url: 'https://hackernoon.com/making-of-a-component-library-for-react-e6421ea4e6c7'
         },
         {
           label: 'Rollup Bundling Guide',
           description: `
-            Article on plugins, loaders and bundling configurations for Rollup.
+            Article on plugins, loaders and bundling configurations for Rollup by Jason Lengstorf.
           `,
-          src: '',
+          src: '/images/links/lengstorf.jpg',
           url: 'https://code.lengstorf.com/learn-rollup-js'
         },
         {
           label: 'React Pure Components Guide',
           description: `
-            Writing and optimising stateless components.
+            Writing and optimising stateless components by Lucy Bain.
           `,
-          src: '',
+          src: '/images/links/lucybain.jpg',
           url: 'https://lucybain.com/blog/2018/react-js-pure-component'
         }
       ],

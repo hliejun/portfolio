@@ -1,7 +1,4 @@
 <template>
-
-  <!-- TODO: Add animations and banner background image -->
-
   <div class='page logs'>
     <Jumbotron
       :actions='jumbotron.actions'
@@ -180,17 +177,17 @@ export default {
           date: 'MAR 18',
           avatar: '/vectors/logos/littlelives.svg',
           mainImage: {
-            src: '/images/logs/article-littlelives-01.png'
+            src: '/images/logs/article-littlelives-01.jpg'
           },
           suppImages: [
             {
-              src: '/images/logs/article-littlelives-02.png'
+              src: '/images/logs/article-littlelives-02.jpg'
             },
             {
-              src: '/images/logs/article-littlelives-03.png'
+              src: '/images/logs/article-littlelives-03.jpg'
             },
             {
-              src: '/images/logs/article-littlelives-04.png'
+              src: '/images/logs/article-littlelives-04.jpg'
             },
             {
               video: '/videos/article-littlelives-05.mp4',
@@ -230,20 +227,20 @@ export default {
           date: 'DEC 16',
           avatar: '/vectors/logos/shopback.svg',
           mainImage: {
-            src: '/images/logs/article-shopback-01.png'
+            src: '/images/logs/article-shopback-01.jpg'
           },
           suppImages: [
             {
-              src: '/images/logs/article-shopback-02.png'
+              src: '/images/logs/article-shopback-02.jpg'
             },
             {
-              src: '/images/logs/article-shopback-03.png'
+              src: '/images/logs/article-shopback-03.jpg'
             },
             {
-              src: '/images/logs/article-shopback-04.png'
+              src: '/images/logs/article-shopback-04.jpg'
             },
             {
-              src: '/images/logs/article-shopback-05.png'
+              src: '/images/logs/article-shopback-05.jpg'
             }
           ],
           title: 'ShopBack',
@@ -308,7 +305,7 @@ export default {
         {
           name: 'saf',
           date: 'JUN 13',
-          avatar: '/images/logos/saf.png',
+          avatar: '/images/logos/saf.jpg',
           mainImage: {},
           suppImages: [],
           title: 'Singapore Armed Forces',

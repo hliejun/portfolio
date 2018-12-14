@@ -1,5 +1,6 @@
 <template>
   <div class='page bitsy project'>
+    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
     <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
     <Jumbotron
       :actions='jumbotron.actions'
@@ -9,12 +10,8 @@
       :title='jumbotron.title' />
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-
-      <!-- TODO: Screenshots of scenes and video of interactions + styling -->
-      <!-- TODO: Icons and glyphs for sections and items -->
-
       <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' />
+      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
       <HTMLSection name='design' label='DESIGN' :items='design' />
       <HTMLSection name='features' label='FEATURES' :items='features' />
       <LinksSection name='references' label='REFERENCES' :items='references' />
@@ -61,51 +58,36 @@ export default {
         ]
       },
       mockup: {
-        src: '/images/projects/bitsy-1.png',
+        src: '/images/projects/bitsy-1.jpg',
         orientation: 'landscape',
         type: 'wide'
+      },
+      carpets: {
+        about: '/images/projects/bitsy-2.jpg'
       },
       technologies: [
         {
           name: 'build',
           title: 'BUILD',
           tags: [
-            {
-              label: 'Javascript',
-              src: ''
-            },
-            {
-              label: 'HTML',
-              src: ''
-            },
-            {
-              label: 'CSS',
-              src: ''
-            }
+            { label: 'Javascript' },
+            { label: 'HTML' },
+            { label: 'CSS' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            {
-              label: 'Bitsy',
-              src: ''
-            }
+            { label: 'Bitsy' }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
           tags: [
-            {
-              label: 'itch.io',
-              src: ''
-            },
-            {
-              label: 'GitHub Pages',
-              src: ''
-            }
+            { label: 'itch.io' },
+            { label: 'GitHub Pages' }
           ]
         }
       ],
@@ -113,7 +95,6 @@ export default {
         {
           name: 'description',
           title: 'DESCRIPTION',
-          src: '',
           text: `
             Set in the small town of Ann Siang Hill, an infamous cold case
             on children going missing led to the abandonment of the ghastly
@@ -134,7 +115,6 @@ export default {
         {
           name: 'motivation',
           title: 'MOTIVATION',
-          src: '',
           text: `
             The goal of this pixel story was to learn about the agency of
             exploration, unraveling a story through unordered discovery
@@ -146,7 +126,6 @@ export default {
         {
           name: 'constraints',
           title: 'CHALLENGES',
-          src: '',
           text: `
             There were module limitations set on the use of sprites, rooms
             and items. Bitsy hacks were not allowed too. However, these
@@ -160,7 +139,7 @@ export default {
         {
           name: 'world',
           title: 'GAME WORLD',
-          src: '',
+          src: '/images/projects/bitsy-3.jpg',
           text: `
             The game world comprises of 9 distinct scenes, 6 of them with
             alternate dimensions. Key items are scattered among these scenes,
@@ -176,7 +155,8 @@ export default {
         {
           name: 'dimensions',
           title: 'ALTERNATE DIMENSIONS',
-          src: '',
+          video: '/videos/project-bitsy-01.mp4',
+          webm: '/videos/project-bitsy-01.webm',
           text: `
             You can travel between scenes to interact across dimensions. These
             special dimensions represent the haunting of the past. To the
@@ -189,7 +169,8 @@ export default {
         {
           name: 'hidden',
           title: 'HIDDEN ITEMS',
-          src: '',
+          video: '/videos/project-bitsy-02.mp4',
+          webm: '/videos/project-bitsy-02.webm',
           text: `
             Some items are hidden from plain sight. This allows you to explore
             the area, focus on dialogues and the storyline to make interactions
@@ -199,8 +180,9 @@ export default {
         },
         {
           name: 'intricate',
-          title: 'INTRICATE PIXEL ART AND DIALOGUES',
-          src: '',
+          title: 'INTRICATE PIXEL ART & DIALOGUES',
+          video: '/videos/project-bitsy-03.mp4',
+          webm: '/videos/project-bitsy-03.webm',
           text: `
             Each glyph, item, or character is designed meticulously to capture
             traits, setting and character personalities in the scene. Some designs
@@ -210,7 +192,8 @@ export default {
         {
           name: 'parrot',
           title: 'PARROT',
-          src: '',
+          video: '/videos/project-bitsy-04.mp4',
+          webm: '/videos/project-bitsy-04.webm',
           text: `
             You will find a parrot in the park scene, imitating random lines
             of passers-by. The parrot is a mechanism to capture the story from
@@ -227,7 +210,7 @@ export default {
             A game by Cardboard Computer focusing on the agency of exploration
             and emotion through dialogues.
           `,
-          src: '',
+          src: '/images/links/balloondiaspora.jpg',
           url: 'http://cardboardcomputer.com/games/balloon-diaspora'
         },
         {
@@ -236,7 +219,7 @@ export default {
             Interactive text story by Emily Short, putting the narrative in a
             spectator's perspective.
           `,
-          src: '',
+          src: '/images/links/glass.jpg',
           url: 'http://inform7.com/learn/eg/glass/play.html'
         },
         {
@@ -246,7 +229,7 @@ export default {
             player to form associations between key objects and entities with
             story fragments.
           `,
-          src: '',
+          src: '/images/links/galatea.jpg',
           url: 'http://pr-if.org/play/galatea'
         }
       ],
