@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "nuxt": "^2.3.4",
-    "nuxt-edge": "^2.4.0-25732112.9c15c18"
+    "nuxt-edge": "^2.4.0-25732112.9c15c18",
+    "nuxt-purgecss": "0.0.2"
   },
   "scripts": {
     "dev": "nuxt",

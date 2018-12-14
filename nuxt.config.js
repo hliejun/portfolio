@@ -52,6 +52,12 @@ export default {
       id: 'body'
     }
   },
+  modules: [
+    'nuxt-purgecss'
+  ],
+  purgeCSS: {
+    mode: 'postcss'
+  },
   css: [
     '~/assets/scss/main.scss'
   ],
