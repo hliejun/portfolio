@@ -56,7 +56,8 @@ export default {
     'nuxt-purgecss'
   ],
   purgeCSS: {
-    mode: 'postcss'
+    mode: 'postcss',
+    enabled: false
   },
   css: [
     '~/assets/scss/main.scss'
