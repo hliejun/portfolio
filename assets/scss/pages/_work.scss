@@ -47,6 +47,54 @@
   @include box-shadow(0 8px 16px 0 $shadow-light);
 }
 
+// Preview Thumbs
+
+.work .preview__info-pane::before {
+  background-attachment: center;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.todo-list .preview__info-pane::before {
+  background-image: url(/images/previews/todolist.jpg);
+}
+.weight .preview__info-pane::before {
+  background-image: url(/images/previews/weight.jpg);
+}
+.bubble .preview__info-pane::before {
+  background-image: url(/images/previews/bubble.jpg);
+}
+.food-logging .preview__info-pane::before {
+  background-image: url(/images/previews/food-logging.jpg);
+}
+.sat-solver .preview__info-pane::before {
+  background-image: url(/images/previews/sat-solver.jpg);
+}
+.hypedyn .preview__info-pane::before {
+  background-image: url(/images/previews/hypedyn.jpg);
+}
+.bitsy .preview__info-pane::before {
+  background-image: url(/images/previews/bitsy.jpg);
+}
+.pokemania .preview__info-pane::before {
+  background-image: url(/images/previews/pokemania.jpg);
+}
+.little-lives .preview__info-pane::before {
+  background-image: url(/images/previews/little-lives.jpg);
+}
+.urbanzoom .preview__info-pane::before {
+  background-image: url(/images/previews/urbanzoom.jpg);
+}
+.react-chat .preview__info-pane::before {
+  background-image: url(/images/previews/react-chat.jpg);
+}
+.portfolio .preview__info-pane::before {
+  background-image: url(/images/previews/portfolio.jpg);
+}
+.whatsapp-widgets .preview__info-pane::before {
+  background-image: url(/images/previews/whatsapp-widgets.jpg);
+}
+
 // Media Queries
 
 @media (min-width: 801px) {
@@ -79,62 +127,13 @@
   }
 }
 
-// Preview Thumbs Media Queries
+// Thumbs Media Queries
 
 @media (max-width: 640px) {
   .preview {
     @include min-square(80vw);
   }
-  .todo-list .preview__info-pane::before {
-    background: url(/images/previews/todolist.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .weight .preview__info-pane::before {
-    background: url(/images/previews/weight.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .bubble .preview__info-pane::before {
-    background: url(/images/previews/bubble.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .food-logging .preview__info-pane::before {
-    background: url(/images/previews/food-logging.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .sat-solver .preview__info-pane::before {
-    background: url(/images/previews/sat-solver.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .hypedyn .preview__info-pane::before {
-    background: url(/images/previews/hypedyn.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .bitsy .preview__info-pane::before {
-    background: url(/images/previews/bitsy.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .pokemania .preview__info-pane::before {
-    background: url(/images/previews/pokemania.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .little-lives .preview__info-pane::before {
-    background: url(/images/previews/little-lives.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .urbanzoom .preview__info-pane::before {
-    background: url(/images/previews/urbanzoom.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .react-chat .preview__info-pane::before {
-    background: url(/images/previews/react-chat.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .portfolio .preview__info-pane::before {
-    background: url(/images/previews/portfolio.jpg) no-repeat center bottom;
-    background-size: calc(80vw + 30px) calc(80vw + 40px);
-  }
-  .whatsapp-widgets .preview__info-pane::before {
-    background: url(/images/previews/whatsapp-widgets.jpg) no-repeat center bottom;
+  .preview__info-pane::before {
     background-size: calc(80vw + 30px) calc(80vw + 40px);
   }
 }
@@ -143,56 +142,7 @@
   .preview {
     @include min-square(40vw);
   }
-  .todo-list .preview__info-pane::before {
-    background: url(/images/previews/todolist.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .weight .preview__info-pane::before {
-    background: url(/images/previews/weight.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .bubble .preview__info-pane::before {
-    background: url(/images/previews/bubble.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .food-logging .preview__info-pane::before {
-    background: url(/images/previews/food-logging.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .sat-solver .preview__info-pane::before {
-    background: url(/images/previews/sat-solver.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .hypedyn .preview__info-pane::before {
-    background: url(/images/previews/hypedyn.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .bitsy .preview__info-pane::before {
-    background: url(/images/previews/bitsy.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .pokemania .preview__info-pane::before {
-    background: url(/images/previews/pokemania.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .little-lives .preview__info-pane::before {
-    background: url(/images/previews/little-lives.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .urbanzoom .preview__info-pane::before {
-    background: url(/images/previews/urbanzoom.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .react-chat .preview__info-pane::before {
-    background: url(/images/previews/react-chat.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .portfolio .preview__info-pane::before {
-    background: url(/images/previews/portfolio.jpg) no-repeat center bottom;
-    background-size: calc(40vw + 30px) calc(40vw + 40px);
-  }
-  .whatsapp-widgets .preview__info-pane::before {
-    background: url(/images/previews/whatsapp-widgets.jpg) no-repeat center bottom;
+  .preview__info-pane::before {
     background-size: calc(40vw + 30px) calc(40vw + 40px);
   }
 }
@@ -201,56 +151,7 @@
   .preview {
     @include min-square(25vw);
   }
-  .todo-list .preview__info-pane::before {
-    background: url(/images/previews/todolist.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .weight .preview__info-pane::before {
-    background: url(/images/previews/weight.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .bubble .preview__info-pane::before {
-    background: url(/images/previews/bubble.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .food-logging .preview__info-pane::before {
-    background: url(/images/previews/food-logging.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .sat-solver .preview__info-pane::before {
-    background: url(/images/previews/sat-solver.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .hypedyn .preview__info-pane::before {
-    background: url(/images/previews/hypedyn.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .bitsy .preview__info-pane::before {
-    background: url(/images/previews/bitsy.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .pokemania .preview__info-pane::before {
-    background: url(/images/previews/pokemania.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .little-lives .preview__info-pane::before {
-    background: url(/images/previews/little-lives.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .urbanzoom .preview__info-pane::before {
-    background: url(/images/previews/urbanzoom.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .react-chat .preview__info-pane::before {
-    background: url(/images/previews/react-chat.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .portfolio .preview__info-pane::before {
-    background: url(/images/previews/portfolio.jpg) no-repeat center bottom;
-    background-size: calc(25vw + 30px) calc(25vw + 40px);
-  }
-  .whatsapp-widgets .preview__info-pane::before {
-    background: url(/images/previews/whatsapp-widgets.jpg) no-repeat center bottom;
+  .preview__info-pane::before {
     background-size: calc(25vw + 30px) calc(25vw + 40px);
   }
 }
@@ -259,56 +160,7 @@
   .preview {
     @include min-square(400px);
   }
-  .todo-list .preview__info-pane::before {
-    background: url(/images/previews/todolist.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .weight .preview__info-pane::before {
-    background: url(/images/previews/weight.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .bubble .preview__info-pane::before {
-    background: url(/images/previews/bubble.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .food-logging .preview__info-pane::before {
-    background: url(/images/previews/food-logging.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .sat-solver .preview__info-pane::before {
-    background: url(/images/previews/sat-solver.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .hypedyn .preview__info-pane::before {
-    background: url(/images/previews/hypedyn.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .bitsy .preview__info-pane::before {
-    background: url(/images/previews/bitsy.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .pokemania .preview__info-pane::before {
-    background: url(/images/previews/pokemania.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .little-lives .preview__info-pane::before {
-    background: url(/images/previews/little-lives.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .urbanzoom .preview__info-pane::before {
-    background: url(/images/previews/urbanzoom.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .react-chat .preview__info-pane::before {
-    background: url(/images/previews/react-chat.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .portfolio .preview__info-pane::before {
-    background: url(/images/previews/portfolio.jpg) no-repeat center bottom;
-    background-size: 430px 440px;
-  }
-  .whatsapp-widgets .preview__info-pane::before {
-    background: url(/images/previews/whatsapp-widgets.jpg) no-repeat center bottom;
+  .preview__info-pane::before {
     background-size: 430px 440px;
   }
 }
