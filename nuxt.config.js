@@ -52,13 +52,6 @@ export default {
       id: 'body'
     }
   },
-  modules: [
-    'nuxt-purgecss'
-  ],
-  purgeCSS: {
-    mode: 'postcss',
-    enabled: false
-  },
   css: [
     '~/assets/scss/main.scss'
   ],
@@ -68,13 +61,20 @@ export default {
     resourceHints: false
   },
   hooks: {
-    // This hook is called before generatic static html files for SPA mode
+    // This hook is called before generating static html files for SPA mode
     'generate:page': (page) => {
-      page.html = modifyHtml(page.html)
+      page.html = modifyHtml(page.html, page.route)
     },
     // This hook is called before rendering the html to the browser
     'render:route': (url, page, { req, res }) => {
       page.html = modifyHtml(page.html, url)
     }
+  },
+  modules: [
+    'nuxt-purgecss'
+  ],
+  purgeCSS: {
+    mode: 'postcss',
+    enabled: false
   }
 }
