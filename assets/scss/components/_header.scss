@@ -197,6 +197,7 @@
 
 .menu__link-icon {
   @include min-square(1.1em);
+  color: $darker;
   margin-right: 4px;
 }
 
