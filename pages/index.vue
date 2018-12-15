@@ -8,14 +8,14 @@
       <div class='gradient gradient--dawn' />
     </div>
     <div class='content'>
-      <amp-img class='stars left' src='/vectors/splash/stars.svg' height='1' width='1' layout='responsive' />
-      <amp-img class='stars right' src='/vectors/splash/stars.svg' height='1' width='1' layout='responsive' />
-      <amp-img class='rocket' src='/vectors/splash/rocket.svg' height='1' width='1' />
+      <amp-img class='stars left' src='/vectors/splash/stars.svg' height='1' width='1' layout='responsive' noloading />
+      <amp-img class='stars right' src='/vectors/splash/stars.svg' height='1' width='1' layout='responsive' noloading />
+      <amp-img class='rocket' src='/vectors/splash/rocket.svg' height='1' width='1' noloading />
       <div class='object__container--satellite'>
-        <amp-img class='satellite' src='/vectors/splash/satellite.svg' height='1' width='1' />
+        <amp-img class='satellite' src='/vectors/splash/satellite.svg' height='1' width='1' noloading />
       </div>
       <div class='object__container--astronaut'>
-        <amp-img class='astronaut' src='/images/splash/astronaut.png' height='1' width='1' />
+        <amp-img class='astronaut' src='/images/splash/astronaut.png' height='1' width='1' noloading />
       </div>
       <div class='inner-content'>
         <div class='object__container--earth'>
@@ -24,7 +24,7 @@
         <h1 class='title'>hliejun</h1>
         <span class='stylized subtitle'>Full-Stack Developer</span>
         <span class='stylized subtitle'>Singapore</span>
-        <a class='link__content resume__link' href='/documents/cv.pdf' target='_blank'>
+        <a class='link__content resume__link' href='/documents/cv_hliejun.pdf' target='_blank'>
           <div class='card code button resume__button'>Curriculum Vitæ</div>
         </a>
       </div>

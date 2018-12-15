@@ -24,19 +24,23 @@ export default {
       siteLinks: [
         {
           label: 'home',
-          url: '/'
+          url: '/',
+          src: '/vectors/header/home.svg'
         },
         {
           label: 'work',
-          url: '/work'
+          url: '/work',
+          src: '/vectors/header/work.svg'
         },
         {
           label: 'logs',
-          url: '/logs'
+          url: '/logs',
+          src: '/vectors/header/logs.svg'
         },
         {
-          label: 'about',
-          url: '/about'
+          label: 'info',
+          url: '/about',
+          src: '/vectors/header/about.svg'
         }
       ],
       socialLinks: [

@@ -14,6 +14,7 @@
       <div v-for='link in links' :key='link.label' class='link'>
         <div class='card link__container'>
           <nuxt-link class='code link__content' v-bind:to='link.url'>
+            <amp-img class='menu__link-icon' v-bind:src='link.src' height='1' width='1' />
             {{link.label}}
           </nuxt-link>
         </div>
@@ -26,6 +27,7 @@
             <div v-for='link in links' :key='link.label' class='link'>
               <div class='card link__container'>
                 <nuxt-link class='code link__content' v-bind:to='link.url'>
+                  <amp-img class='menu__link-icon' v-bind:src='link.src' height='1' width='1' />
                   {{link.label}}
                 </nuxt-link>
               </div>

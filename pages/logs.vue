@@ -63,7 +63,7 @@ export default {
           },
           {
             label: 'Curriculum Vitæ',
-            url: '/documents/cv.pdf'
+            url: '/documents/cv_hliejun.pdf'
           }
         ]
       },
