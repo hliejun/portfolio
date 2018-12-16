@@ -78,7 +78,7 @@ export default {
             well as novel applications of machine learning to real-life
             problems. While I focus mainly on front-end development, I
             also fiddle with a variety of technologies concerning RESTful
-            microservices, databases and DevOps.
+            microservices, web sockets, databases and DevOps.
           `
         },
         {
