@@ -38,9 +38,17 @@ export default {
   },
   head () {
     return {
-      title: 'Widgets for WhatsApp™ - hliejun',
+      title: 'Widgets for WhatsApp™ - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Android widgets for WhatsApp™ users, designed for elderly.' }
+        { charset: 'utf-8' },
+        { hid: 'description', name: 'description', content: 'Android widgets for WhatsApp™ users, designed for elderly.' },
+        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { property: 'og:title', content: 'Widgets for WhatsApp™ - hliejun/projects' },
+        { property: 'og:description', content: 'Android widgets for WhatsApp™ users, designed for elderly.' },
+        { property: 'og:url', content: 'hliejun.github.io' },
+        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
       ]
     }
   },

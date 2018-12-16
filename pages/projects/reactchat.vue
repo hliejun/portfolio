@@ -39,9 +39,17 @@ export default {
   },
   head () {
     return {
-      title: 'React Chat - hliejun',
+      title: 'React Chat - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Extensible presentational components for ReactJS chat interfaces, packaged as an NPM library.' }
+        { charset: 'utf-8' },
+        { hid: 'description', name: 'description', content: 'Extensible presentational components for ReactJS chat interfaces, packaged as an NPM library.' },
+        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { property: 'og:title', content: 'React Chat - hliejun/projects' },
+        { property: 'og:description', content: 'Extensible presentational components for ReactJS chat interfaces, packaged as an NPM library.' },
+        { property: 'og:url', content: 'hliejun.github.io' },
+        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
       ]
     }
   },

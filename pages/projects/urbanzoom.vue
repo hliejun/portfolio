@@ -38,9 +38,17 @@ export default {
   },
   head () {
     return {
-      title: 'UrbanZoom Assistant - hliejun',
+      title: 'UrbanZoom Assistant - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Google Assistant and Twilio agent that performs property valuation homes in Singapore.' }
+        { charset: 'utf-8' },
+        { hid: 'description', name: 'description', content: 'Google Assistant and Twilio agent that performs property valuation homes in Singapore.' },
+        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { property: 'og:title', content: 'UrbanZoom Assistant - hliejun/projects' },
+        { property: 'og:description', content: 'Google Assistant and Twilio agent that performs property valuation homes in Singapore.' },
+        { property: 'og:url', content: 'hliejun.github.io' },
+        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
       ]
     }
   },

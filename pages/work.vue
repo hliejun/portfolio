@@ -42,7 +42,15 @@ export default {
     return {
       title: 'Projects - hliejun',
       meta: [
-        { hid: 'description', name: 'description', content: "Lie Jun's ongoing and completed projects or creatives." }
+        { charset: 'utf-8' },
+        { hid: 'description', name: 'description', content: "Lie Jun's ongoing and completed projects or creatives." },
+        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { property: 'og:title', content: 'Projects - hliejun' },
+        { property: 'og:description', content: "Lie Jun's ongoing and completed projects or creatives." },
+        { property: 'og:url', content: 'hliejun.github.io' },
+        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
       ]
     }
   },

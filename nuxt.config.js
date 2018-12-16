@@ -39,7 +39,7 @@ export default {
       { property: 'og:title', content: "hliejun's Portfolio" },
       { property: 'og:description', content: 'Lie Jun is a front-end engineer for modern web, Android and iOS.' },
       { property: 'og:url', content: 'hliejun.github.io' },
-      { property: 'og:image', content: '/images/meta/preview.png' }
+      { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
     ],
     link: [
       { rel: 'canonical', href: '/' },
@@ -84,10 +84,10 @@ export default {
     exclude: [
       '/companies/**'
     ],
-    // hostname: 'https://hliejun-portfolio.appspot.com', // Need to toggle manually when doing nuxt build and nuxt generate
-    // generate: false, // Need to toggle manually when doing nuxt build and nuxt generate
-    hostname: 'https://hliejun.github.io', // Need to toggle manually when doing nuxt build and nuxt generate
-    generate: true, // Need to toggle manually when doing nuxt build and nuxt generate
+    hostname: 'https://hliejun-portfolio.appspot.com', // Need to toggle manually when doing nuxt build and nuxt generate
+    generate: false, // Need to toggle manually when doing nuxt build and nuxt generate
+    // hostname: 'https://hliejun.github.io', // Need to toggle manually when doing nuxt build and nuxt generate
+    // generate: true, // Need to toggle manually when doing nuxt build and nuxt generate
   },
   purgeCSS: {
     mode: 'postcss',

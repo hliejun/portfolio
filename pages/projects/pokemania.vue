@@ -39,9 +39,17 @@ export default {
   },
   head () {
     return {
-      title: 'Pokemania - hliejun',
+      title: 'Pokemania - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Pokémon-themed bubble blast iOS game application.' }
+        { charset: 'utf-8' },
+        { hid: 'description', name: 'description', content: 'Pokémon-themed bubble blast iOS game application.' },
+        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { property: 'og:title', content: 'Pokemania - hliejun/projects' },
+        { property: 'og:description', content: 'Pokémon-themed bubble blast iOS game application.' },
+        { property: 'og:url', content: 'hliejun.github.io' },
+        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
       ]
     }
   },

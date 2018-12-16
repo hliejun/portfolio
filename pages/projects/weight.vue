@@ -39,9 +39,17 @@ export default {
   },
   head () {
     return {
-      title: 'Weight - hliejun',
+      title: 'Weight - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Gravity-driven infinite run mini-game made using Unity.' }
+        { charset: 'utf-8' },
+        { hid: 'description', name: 'description', content: 'Gravity-driven infinite run mini-game made using Unity.' },
+        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { property: 'og:title', content: 'Weight - hliejun/projects' },
+        { property: 'og:description', content: 'Gravity-driven infinite run mini-game made using Unity.' },
+        { property: 'og:url', content: 'hliejun.github.io' },
+        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
       ]
     }
   },

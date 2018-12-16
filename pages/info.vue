@@ -46,7 +46,15 @@ export default {
     return {
       title: 'About - hliejun',
       meta: [
-        { hid: 'description', name: 'description', content: 'More details about Lie Jun in work and in person.' }
+        { charset: 'utf-8' },
+        { hid: 'description', name: 'description', content: 'More details about Lie Jun in work and in person.' },
+        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { property: 'og:title', content: 'About - hliejun' },
+        { property: 'og:description', content: 'More details about Lie Jun in work and in person.' },
+        { property: 'og:url', content: 'hliejun.github.io' },
+        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
       ]
     }
   },

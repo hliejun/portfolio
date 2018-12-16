@@ -54,7 +54,15 @@ export default {
     return {
       title: 'Work Experiences - hliejun',
       meta: [
-        { hid: 'description', name: 'description', content: "A brief summary of Lie Jun's employment history." }
+        { charset: 'utf-8' },
+        { hid: 'description', name: 'description', content: "A brief summary of Lie Jun's employment history." },
+        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { property: 'og:title', content: 'Work Experiences - hliejun' },
+        { property: 'og:description', content: "A brief summary of Lie Jun's employment history." },
+        { property: 'og:url', content: 'hliejun.github.io' },
+        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
       ]
     }
   },

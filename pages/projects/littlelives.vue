@@ -40,9 +40,17 @@ export default {
   },
   head () {
     return {
-      title: 'Little Lives Check-In - hliejun',
+      title: 'Little Lives Check-In - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Face Check-In features built into Little Check-In iOS application.' }
+        { charset: 'utf-8' },
+        { hid: 'description', name: 'description', content: 'Face Check-In features built into Little Check-In iOS application.' },
+        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { property: 'og:title', content: 'Little Lives Check-In - hliejun/projects' },
+        { property: 'og:description', content: 'Face Check-In features built into Little Check-In iOS application.' },
+        { property: 'og:url', content: 'hliejun.github.io' },
+        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
       ]
     }
   },
