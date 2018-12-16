@@ -38,6 +38,14 @@ export default {
     Jumbotron,
     PreviewCard
   },
+  head () {
+    return {
+      title: 'Projects - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: "Lie Jun's ongoing and completed projects or creatives." }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

@@ -37,11 +37,19 @@ export default {
     LinksSection,
     TagsSection
   },
+  head () {
+    return {
+      title: 'Weight - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Gravity-driven infinite run mini-game made using Unity.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {
         title: 'Weight',
-        subtitle: 'Group project on gravity-driven infinite run mini-game made using Unity.',
+        subtitle: 'Gravity-driven infinite run mini-game made using Unity.',
         actions: [
           {
             label: 'Game Release',

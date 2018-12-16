@@ -36,6 +36,14 @@ export default {
     LinksSection,
     TagsSection
   },
+  head () {
+    return {
+      title: 'SAT Solver - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Group research on efficiency of satisfiability resolution strategies.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

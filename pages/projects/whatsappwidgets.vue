@@ -36,6 +36,14 @@ export default {
     Mockup,
     TagsSection
   },
+  head () {
+    return {
+      title: 'Widgets for WhatsApp™ - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Android widgets for WhatsApp™ users, designed for elderly.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

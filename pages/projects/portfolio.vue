@@ -35,6 +35,14 @@ export default {
     LinksSection,
     TagsSection
   },
+  head () {
+    return {
+      title: 'Portfolio - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Portfolio website documenting my personal work and projects.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

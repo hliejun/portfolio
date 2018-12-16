@@ -37,6 +37,14 @@ export default {
     Mockup,
     TagsSection
   },
+  head () {
+    return {
+      title: 'Pokemania - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Pokémon-themed bubble blast iOS game application.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

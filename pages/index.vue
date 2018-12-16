@@ -36,6 +36,14 @@
 export default {
   layout (context) {
     return 'splash'
+  },
+  head () {
+    return {
+      title: 'Home - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Lie Jun is a front-end engineer focusing on modern web, Android and iOS development.' }
+      ]
+    }
   }
 }
 </script>

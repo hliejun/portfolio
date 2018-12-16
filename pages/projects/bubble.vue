@@ -37,6 +37,14 @@ export default {
     LinksSection,
     TagsSection
   },
+  head () {
+    return {
+      title: 'Bubble - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Problem-solving and stress management anonymous chat application.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

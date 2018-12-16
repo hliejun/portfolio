@@ -29,14 +29,14 @@ const modifyHtml = (html, url) => {
 
 export default {
   head: {
-    title: "hliejun's portfolio",
+    title: "hliejun's Portfolio",
     meta: [
       { charset: 'utf-8' },
-      { name: 'description', content: 'Lie Jun is a front-end engineer for modern web, Android and iOS.' },
+      { hid: 'description', name: 'description', content: 'Lie Jun is a front-end engineer focusing on modern web, Android and iOS development.' },
       { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { name: 'mobile-web-app-capable', content: 'yes' },
-      { property: 'og:title', content: "hliejun's portfolio" },
+      { property: 'og:title', content: "hliejun's Portfolio" },
       { property: 'og:description', content: 'Lie Jun is a front-end engineer for modern web, Android and iOS.' },
       { property: 'og:url', content: 'hliejun.github.io' },
       { property: 'og:image', content: '/images/meta/preview.png' }
@@ -74,8 +74,21 @@ export default {
     }
   },
   modules: [
-    'nuxt-purgecss'
+    'nuxt-purgecss',
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    path: '/sitemap.xml',
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    exclude: [
+      '/companies/**'
+    ],
+    // hostname: 'https://hliejun-portfolio.appspot.com', // Need to toggle manually when doing nuxt build and nuxt generate
+    // generate: false, // Need to toggle manually when doing nuxt build and nuxt generate
+    hostname: 'https://hliejun.github.io', // Need to toggle manually when doing nuxt build and nuxt generate
+    generate: true, // Need to toggle manually when doing nuxt build and nuxt generate
+  },
   purgeCSS: {
     mode: 'postcss',
     enabled: false

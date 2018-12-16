@@ -50,6 +50,14 @@ export default {
     Gallery,
     Jumbotron
   },
+  head () {
+    return {
+      title: 'Work Experiences - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: "A brief summary of Lie Jun's employment history." }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

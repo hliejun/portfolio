@@ -37,6 +37,14 @@ export default {
     LinksSection,
     TagsSection
   },
+  head () {
+    return {
+      title: 'ToDoList - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Group project on keyboard and text-based agenda and organiser Java applet.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

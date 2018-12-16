@@ -36,6 +36,14 @@ export default {
     LinksSection,
     TagsSection
   },
+  head () {
+    return {
+      title: 'UrbanZoom Assistant - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Google Assistant and Twilio agent that performs property valuation homes in Singapore.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

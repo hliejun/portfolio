@@ -37,6 +37,14 @@ export default {
     LinksSection,
     TagsSection
   },
+  head () {
+    return {
+      title: 'React Chat - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Extensible presentational components for ReactJS chat interfaces, packaged as an NPM library.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

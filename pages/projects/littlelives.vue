@@ -38,6 +38,14 @@ export default {
     LinksSection,
     TagsSection
   },
+  head () {
+    return {
+      title: 'Little Lives Check-In - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Face Check-In features built into Little Check-In iOS application.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

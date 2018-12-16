@@ -37,6 +37,14 @@ export default {
     LinksSection,
     TagsSection
   },
+  head () {
+    return {
+      title: 'Food Logging - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'UI/UX design group project on mobile food logger application.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

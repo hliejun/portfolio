@@ -37,6 +37,14 @@ export default {
     LinksSection,
     TagsSection
   },
+  head () {
+    return {
+      title: 'Missing Children - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Interactive pixel story made using Bitsy.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

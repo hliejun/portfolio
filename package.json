@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "dependencies": {
+    "@nuxtjs/sitemap": "^0.1.2",
     "nuxt": "^2.3.4",
     "nuxt-edge": "^2.4.0-25732112.9c15c18",
     "nuxt-purgecss": "0.0.2"

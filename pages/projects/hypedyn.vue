@@ -36,6 +36,14 @@ export default {
     LinksSection,
     TagsSection
   },
+  head () {
+    return {
+      title: 'HypeDyn Stories - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Interactive text stories made using HypeDyn.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {

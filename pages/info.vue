@@ -42,6 +42,14 @@ export default {
   components: {
     Jumbotron
   },
+  head () {
+    return {
+      title: 'About - hliejun',
+      meta: [
+        { hid: 'description', name: 'description', content: 'More details about Lie Jun in work and in person.' }
+      ]
+    }
+  },
   data () {
     return {
       jumbotron: {
