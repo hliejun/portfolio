@@ -32,23 +32,27 @@ export default {
     title: "hliejun's portfolio",
     meta: [
       { charset: 'utf-8' },
-      { name: 'description', content: 'Lie Jun is a front-end software developer focusing on modern web, Android and iOS development. Check out his portfolio here.' },
+      { name: 'description', content: 'Lie Jun is a front-end engineer for modern web, Android and iOS.' },
       { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { name: 'mobile-web-app-capable', content: 'yes' },
       { property: 'og:title', content: "hliejun's portfolio" },
-      { property: 'og:description', content: 'Lie Jun is a front-end software developer focusing on modern web, Android and iOS development. Check out his portfolio here.' },
+      { property: 'og:description', content: 'Lie Jun is a front-end engineer for modern web, Android and iOS.' },
       { property: 'og:url', content: 'hliejun.github.io' },
-      { property: 'og:image', content: '/images/splash/avatar-opaque.png' }
+      { property: 'og:image', content: '/images/meta/preview.png' }
     ],
     link: [
       { rel: 'canonical', href: '/' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700' },
       { rel: 'manifest', href: '/manifest.json' },
-      { rel: 'shortcut-icon', href: '/fav-icon.ico', type: 'image/x-icon' },
-      { rel: 'apple-touch-icon', href: '/apple-icon.png' },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-icon-180x180.png' }
+      { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' },
+      { rel: 'shortcut icon', sizes: '32x32', href: '/favicon-32x32.png', type: 'image/png' },
+      { rel: 'shortcut icon', sizes: '96x96', href: '/favicon-96x96.png', type: 'image/png' },
+      { rel: 'apple-touch-icon', href: '/apple-icon.png', type: 'image/png' },
+      { rel: 'apple-touch-icon', sizes: '144x144', href: '/android-icon-144x144.png', type: 'image/png' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-icon-180x180.png', type: 'image/png' },
+      { rel: 'apple-touch-icon', sizes: '192x192', href: '/android-icon-192x192.png', type: 'image/png' }
     ],
     bodyAttrs: {
       id: 'body'
