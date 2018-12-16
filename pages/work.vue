@@ -1,7 +1,4 @@
 <template>
-
-  <!-- TODO: Add animations and banner background image -->
-
   <div class='page work'>
     <Jumbotron
       :actions='jumbotron.actions'

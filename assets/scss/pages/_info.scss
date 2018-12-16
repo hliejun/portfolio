@@ -1,23 +1,23 @@
 // Content
 
-.about .page__content {
+.info .page__content {
   @include animation(raise .4s ease-in-out both);
   padding: 40px 10px;
 }
 
 // Jumbotron
 
-.about .jumbotron {
+.info .jumbotron {
   background: linear-gradient(0deg, $blue 0%, $teal 100%);
 }
 
-.about .jumbotron .jumbotron__content {
+.info .jumbotron .jumbotron__content {
   z-index: 6;
 }
 
 // Image
 
-.about .introduction__image {
+.info .introduction__image {
   @include animation(raise .4s ease-in-out both);
   @include min-square(10vw);
   border-radius: 50%;
@@ -25,18 +25,18 @@
   margin: 5px 10px;
 }
 
-.about .introduction__image img {
+.info .introduction__image img {
   object-fit: cover;
 }
 
-.about .section__image {
+.info .section__image {
   @include min-square(50px);
   margin-right: 10px;
 }
 
 // Introduction
 
-.about__introduction {
+.info__introduction {
   @include align-items(flex-start);
   @include box-shadow(0 4px 8px 0 $shadow-light);
   @include flex-direction(row);
@@ -49,21 +49,21 @@
   padding: 10px 5px;
 }
 
-.about__introduction-text {
+.info__introduction-text {
   @include boost-readability;
   margin: 5px 15px;
   width: calc(90vw - 30px);
 }
 
-.about__introduction-text h2 {
+.info__introduction-text h2 {
   @include animation(raise .4s ease-in-out .1s both);
 }
 
-.about__introduction-text h4 {
+.info__introduction-text h4 {
   @include animation(raise .4s ease-in-out .2s both);
 }
 
-.about .section {
+.info .section {
   @include align-items(flex-start);
   @include flex-direction(row);
   @include justify-content(flex-start);
@@ -72,7 +72,7 @@
 }
 
 @for $i from 1 to 6 {
-  .about__introduction-text .section:nth-child(#{$i + 3}) {
+  .info__introduction-text .section:nth-child(#{$i + 3}) {
     @include animation(raise .4s ease-in-out unquote(".#{$i + 1}s") both);
   }
 }
@@ -80,45 +80,45 @@
 // Media Queries
 
 @media (max-width: 500px) {
-  .about__introduction,
-  .about .section {
+  .info__introduction,
+  .info .section {
     display: block;
   }
-  .about .introduction__image {
+  .info .introduction__image {
     @include min-square(80px);
     margin: auto;
   }
-  .about__introduction-text h2,
-  .about__introduction-text h4 {
+  .info__introduction-text h2,
+  .info__introduction-text h4 {
     text-align: center;
   }
-  .about .section__image {
+  .info .section__image {
     display: block;
     margin: auto;
   }
-  .about__introduction-text h5 {
+  .info__introduction-text h5 {
     margin: 5px 0;
     text-align: center;
   }
 }
 
 @media (min-width: 501px) and (max-width: 600px) {
-  .about__introduction {
+  .info__introduction {
     display: block;
   }
-  .about .introduction__image {
+  .info .introduction__image {
     @include min-square(80px);
     margin: auto;
   }
-  .about__introduction-text h2,
-  .about__introduction-text h4 {
+  .info__introduction-text h2,
+  .info__introduction-text h4 {
     margin-left: 15px;
     text-align: center;
   }
 }
 
 @media (min-width: 601px) {
-  .about .introduction__image {
+  .info .introduction__image {
     margin: 5px 10px 5px 20px;
   }
 }

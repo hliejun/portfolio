@@ -9,7 +9,8 @@
         v-bind:src='src'
         width='1' />
       <span class='stylized jumbotron__title'>{{title}}</span>
-      <span class='stylized jumbotron__subtitle'>{{subtitle}}</span>
+      <div v-if="subtitle.includes('<br>')" class='stylized jumbotron__subtitle' v-html='subtitle' />
+      <span v-else class='stylized jumbotron__subtitle'>{{subtitle}}</span>
       <div v-if='actions.length' class='jumbotron__actions'>
         <a v-for='action in actions' :key='action.url'
           class='jumbotron__link'

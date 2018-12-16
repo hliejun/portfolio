@@ -1,7 +1,4 @@
 <template>
-
-  <!-- TODO: Icons and glyphs for sections and items -->
-
   <div v-if='items.length' v-bind:class="['project__section', name]">
     <amp-fx-flying-carpet v-if='carpet' class='section__flying-carpet' height='1'>
       <amp-img class='section__flying-carpet-image' v-bind:src='carpet' height='1' width='1' />

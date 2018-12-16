@@ -59,18 +59,6 @@ p {
   background-color: $background-dark;
 }
 
-.page.error {
-  position: relative;
-}
-
-.page.error .missing {
-  @include centralize;
-  display: block;
-  margin: auto;
-  text-align: center;
-  width: 100vw;
-}
-
 .content {
   z-index: 5;
 }

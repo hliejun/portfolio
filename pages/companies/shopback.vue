@@ -24,7 +24,8 @@ export default {
       jumbotron: {
         title: 'ShopBack',
         subtitle: `
-          Sorry, but this page is currently under construction.
+          Heave-ho, heave-ho! Phew!<br>
+          Sorry, but I am still building this page. <br>
           Please check back later.
         `,
         actions: [

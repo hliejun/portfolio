@@ -1,9 +1,4 @@
 <template>
-
-  <!-- TODO: Icons and glyphs for sections and items -->
-  <!-- TODO: Thumb previews -->
-  <!-- TODO: Links -->
-
   <div v-if='items.length' v-bind:class="['project__section', name]">
     <div class='section__title'>{{label}}</div>
     <div v-bind:class="['section__items', name]">

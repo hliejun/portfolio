@@ -40,7 +40,7 @@
                 1.03-.26.21-.36.09-.82-.26-1.03l-2.88-1.71v-3.4c0-.4-.34-.74-.75-.74z
               ' />
             </svg>
-            <svg id='about-icon' class='menu__link-icon' viewBox='0 0 24 24' v-if="link.url === '/about'">
+            <svg id='info-icon' class='menu__link-icon' viewBox='0 0 24 24' v-if="link.url === '/info'">
               <path fill='none' d='M0 0h24v24H0V0z' />
               <path fill='currentColor' d='
                 M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-.55
@@ -85,7 +85,7 @@
                       1.03-.26.21-.36.09-.82-.26-1.03l-2.88-1.71v-3.4c0-.4-.34-.74-.75-.74z
                     ' />
                   </svg>
-                  <svg id='about-icon' class='menu__link-icon' viewBox='0 0 24 24' v-if="link.url === '/about'">
+                  <svg id='info-icon' class='menu__link-icon' viewBox='0 0 24 24' v-if="link.url === '/info'">
                     <path fill='none' d='M0 0h24v24H0V0z' />
                     <path fill='currentColor' d='
                       M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-.55

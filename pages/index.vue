@@ -22,7 +22,7 @@
           <amp-img class='earth' src='/images/splash/avatar-opaque.png' height='1' width='1' />
         </div>
         <h1 class='title'>hliejun</h1>
-        <span class='stylized subtitle'>Full-Stack Developer</span>
+        <span class='stylized subtitle'>Front-End Developer</span>
         <span class='stylized subtitle'>Singapore</span>
         <a class='link__content resume__link' href='/documents/cv_hliejun.pdf' target='_blank'>
           <div class='card code button resume__button'>Curriculum Vitæ</div>

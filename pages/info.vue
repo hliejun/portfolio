@@ -1,9 +1,5 @@
 <template>
-
-  <!-- TODO: Add icons for sections in about -->
-  <!-- TODO: Add animations and banner background image -->
-
-  <div class='page about'>
+  <div class='page info'>
     <Jumbotron
       :actions='jumbotron.actions'
       :name='jumbotron.name'
@@ -17,9 +13,9 @@
     </div>
     <div class='page__content'>
       <amp-position-observer on='enter:fadeIn.start' intersection-ratios='1' layout='nodisplay' />
-      <div class='about__introduction'>
+      <div class='info__introduction'>
         <amp-img class='introduction__image' v-bind:src='src' width='1' height='1' />
-        <div class='about__introduction-text'>
+        <div class='info__introduction-text'>
           <h2>Huang Lie Jun</h2>
           <h4>
             BComp. (CS)<br>
@@ -50,7 +46,7 @@ export default {
     return {
       jumbotron: {
         name: 'book',
-        title: './about',
+        title: './info',
         subtitle: 'introduction about me and my background',
         actions: [
           {
@@ -63,12 +59,12 @@ export default {
           }
         ]
       },
-      src: '/images/about/avatar.jpg',
+      src: '/images/info/avatar.jpg',
       sections: [
         {
           title: 'PROFILE',
           text: `
-            I'm a full-stack software engineer who is passionate about
+            I'm a front-end software engineer who is passionate about
             developing user-centric solutions for the betterment of the
             community. I am a Singaporean, and I speak English, Mandarin
             and Singlish.
@@ -80,7 +76,9 @@ export default {
             Besides getting psyched about the latest technology, I'm
             particularly interested in web and mobile development, as
             well as novel applications of machine learning to real-life
-            problems.
+            problems. While I focus mainly on front-end development, I
+            also fiddle with a variety of technologies concerning RESTful
+            microservices, databases and DevOps.
           `
         },
         {

@@ -49,7 +49,7 @@ export default {
         },
         {
           label: 'info',
-          url: '/about'
+          url: '/info'
         }
       ],
       socialLinks: [

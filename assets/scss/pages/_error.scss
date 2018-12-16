@@ -1,0 +1,36 @@
+.error {
+  position: relative;
+}
+
+.error .background {
+  background: linear-gradient(0deg, $purple 0%, $indigo 100%);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.error .jumbotron {
+  @include centralize;
+  margin-top: 2vh;
+  height: 100vh;
+  width: 100vw;
+}
+
+.error .left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.error .right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.error .stars {
+  @include animation(rotate 1000s infinite linear both);
+  @include min-square(50vw);
+}

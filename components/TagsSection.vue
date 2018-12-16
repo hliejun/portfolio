@@ -1,7 +1,4 @@
 <template>
-
-  <!-- TODO: Icons and glyphs for sections and items -->
-
   <div v-bind:class="['project__section', name]" v-if='items.length'>
     <div class='section__title'>{{label}}</div>
     <div class='section__container'>
