@@ -40,11 +40,7 @@ export default {
     return {
       title: 'SAT Solver - hliejun/projects',
       meta: [
-        { charset: 'utf-8' },
         { hid: 'description', name: 'description', content: 'Group research on efficiency of satisfiability resolution strategies.' },
-        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
-        { name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { name: 'mobile-web-app-capable', content: 'yes' },
         { property: 'og:title', content: 'SAT Solver - hliejun/projects' },
         { property: 'og:description', content: 'Group research on efficiency of satisfiability resolution strategies.' },
         { property: 'og:url', content: 'hliejun.github.io' },

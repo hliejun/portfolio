@@ -41,11 +41,7 @@ export default {
     return {
       title: 'Missing Children - hliejun/projects',
       meta: [
-        { charset: 'utf-8' },
         { hid: 'description', name: 'description', content: 'Interactive pixel story made using Bitsy.' },
-        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
-        { name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { name: 'mobile-web-app-capable', content: 'yes' },
         { property: 'og:title', content: 'Missing Children - hliejun/projects' },
         { property: 'og:description', content: 'Interactive pixel story made using Bitsy.' },
         { property: 'og:url', content: 'hliejun.github.io' },

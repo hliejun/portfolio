@@ -41,11 +41,7 @@ export default {
     return {
       title: 'Bubble - hliejun/projects',
       meta: [
-        { charset: 'utf-8' },
         { hid: 'description', name: 'description', content: 'Problem-solving and stress management anonymous chat application.' },
-        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
-        { name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { name: 'mobile-web-app-capable', content: 'yes' },
         { property: 'og:title', content: 'Bubble - hliejun/projects' },
         { property: 'og:description', content: 'Problem-solving and stress management anonymous chat application.' },
         { property: 'og:url', content: 'hliejun.github.io' },

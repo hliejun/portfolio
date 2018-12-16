@@ -41,11 +41,7 @@ export default {
     return {
       title: 'ToDoList - hliejun/projects',
       meta: [
-        { charset: 'utf-8' },
         { hid: 'description', name: 'description', content: 'Group project on keyboard and text-based agenda and organiser Java applet.' },
-        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
-        { name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { name: 'mobile-web-app-capable', content: 'yes' },
         { property: 'og:title', content: 'ToDoList - hliejun/projects' },
         { property: 'og:description', content: 'Group project on keyboard and text-based agenda and organiser Java applet.' },
         { property: 'og:url', content: 'hliejun.github.io' },

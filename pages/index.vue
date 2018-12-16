@@ -41,11 +41,7 @@ export default {
     return {
       title: 'Home - hliejun',
       meta: [
-        { charset: 'utf-8' },
         { hid: 'description', name: 'description', content: 'Lie Jun is a front-end engineer focusing on modern web, Android and iOS development.' },
-        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
-        { name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { name: 'mobile-web-app-capable', content: 'yes' },
         { property: 'og:title', content: 'Home - hliejun' },
         { property: 'og:description', content: 'Lie Jun is a front-end engineer for modern web, Android and iOS.' },
         { property: 'og:url', content: 'hliejun.github.io' },

@@ -41,11 +41,7 @@ export default {
     return {
       title: 'Food Logging - hliejun/projects',
       meta: [
-        { charset: 'utf-8' },
         { hid: 'description', name: 'description', content: 'UI/UX design group project on mobile food logger application.' },
-        { name: 'viewport', content: 'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no' },
-        { name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { name: 'mobile-web-app-capable', content: 'yes' },
         { property: 'og:title', content: 'Food Logging - hliejun/projects' },
         { property: 'og:description', content: 'UI/UX design group project on mobile food logger application.' },
         { property: 'og:url', content: 'hliejun.github.io' },

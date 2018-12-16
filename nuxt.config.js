@@ -84,10 +84,10 @@ export default {
     exclude: [
       '/companies/**'
     ],
-    hostname: 'https://hliejun-portfolio.appspot.com', // Need to toggle manually when doing nuxt build and nuxt generate
-    generate: false, // Need to toggle manually when doing nuxt build and nuxt generate
-    // hostname: 'https://hliejun.github.io', // Need to toggle manually when doing nuxt build and nuxt generate
-    // generate: true, // Need to toggle manually when doing nuxt build and nuxt generate
+    // hostname: 'https://hliejun-portfolio.appspot.com', // Need to toggle manually when doing nuxt build and nuxt generate
+    // generate: false, // Need to toggle manually when doing nuxt build and nuxt generate
+    hostname: 'https://hliejun.github.io', // Need to toggle manually when doing nuxt build and nuxt generate
+    generate: true, // Need to toggle manually when doing nuxt build and nuxt generate
   },
   purgeCSS: {
     mode: 'postcss',
