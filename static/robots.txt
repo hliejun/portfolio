@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /documents/
 Disallow: /images/
 Disallow: /vectors/
 Disallow: /videos/
