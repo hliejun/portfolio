@@ -1,21 +1,43 @@
 <template>
-  <div class='page bitsy project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page bitsy project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <HTMLSection name='design' label='DESIGN' :items='design' />
-      <HTMLSection name='features' label='FEATURES' :items='features' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".3"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <HTMLSection name="design" label="DESIGN" :items="design" />
+      <HTMLSection name="features" label="FEATURES" :items="features" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -37,19 +59,32 @@ export default {
     LinksSection,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'Missing Children - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Interactive pixel story made using Bitsy.' },
-        { property: 'og:title', content: 'Missing Children - hliejun/projects' },
-        { property: 'og:description', content: 'Interactive pixel story made using Bitsy.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Interactive pixel story made using Bitsy.'
+        },
+        {
+          property: 'og:title',
+          content: 'Missing Children - hliejun/projects'
+        },
+        {
+          property: 'og:description',
+          content: 'Interactive pixel story made using Bitsy.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'Missing Children of Ann Siang Hill',
@@ -81,26 +116,17 @@ export default {
         {
           name: 'build',
           title: 'BUILD',
-          tags: [
-            { label: 'Javascript' },
-            { label: 'HTML' },
-            { label: 'CSS' }
-          ]
+          tags: [{ label: 'Javascript' }, { label: 'HTML' }, { label: 'CSS' }]
         },
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [
-            { label: 'Bitsy' }
-          ]
+          tags: [{ label: 'Bitsy' }]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [
-            { label: 'itch.io' },
-            { label: 'GitHub Pages' }
-          ]
+          tags: [{ label: 'itch.io' }, { label: 'GitHub Pages' }]
         }
       ],
       about: [
@@ -145,7 +171,7 @@ export default {
             hiding entrypoints to conversation or event-triggered scenes
             and using dialogues to guide players to these hiding spots.
           `
-        },
+        }
       ],
       design: [
         {

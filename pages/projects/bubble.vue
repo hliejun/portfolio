@@ -1,21 +1,43 @@
 <template>
-  <div class='page bubble project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page bubble project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <HTMLSection name='features' label='FEATURES' :items='features' />
-      <LinksSection name='team' label='TEAM' :items='team' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".3"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <HTMLSection name="features" label="FEATURES" :items="features" />
+      <LinksSection name="team" label="TEAM" :items="team" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -37,23 +59,36 @@ export default {
     LinksSection,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'Bubble - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Problem-solving and stress management anonymous chat application.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Problem-solving and stress management anonymous chat application.'
+        },
         { property: 'og:title', content: 'Bubble - hliejun/projects' },
-        { property: 'og:description', content: 'Problem-solving and stress management anonymous chat application.' },
+        {
+          property: 'og:description',
+          content:
+            'Problem-solving and stress management anonymous chat application.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'Bubble Chat',
-        subtitle: 'Problem-solving and stress management anonymous chat application.',
+        subtitle:
+          'Problem-solving and stress management anonymous chat application.',
         actions: [
           {
             label: 'Project Repo',
@@ -139,7 +174,7 @@ export default {
             to provide these facilities and eventually failed to publish on the iOS App
             Store, we did succeed in releasing on Play Store and web in the module term.
           `
-        },
+        }
       ],
       features: [
         {
@@ -241,7 +276,8 @@ export default {
             Tutorial about using socket.io with React Native for a chat application on Hackernoon.
           `,
           src: '/images/links/hackernoon.jpg',
-          url: 'https://hackernoon.com/a-simple-messaging-app-with-react-native-and-socket-io-e1cae3df7bda'
+          url:
+            'https://hackernoon.com/a-simple-messaging-app-with-react-native-and-socket-io-e1cae3df7bda'
         },
         {
           label: 'React Native Gifted Chat',

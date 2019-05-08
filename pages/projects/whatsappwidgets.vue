@@ -1,20 +1,42 @@
 <template>
-  <div class='page whatsappwidgets project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page whatsappwidgets project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <HTMLSection name='features' label='FEATURES' :items='features' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".3"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <HTMLSection name="features" label="FEATURES" :items="features" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -36,19 +58,32 @@ export default {
     Mockup,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'Widgets for WhatsApp™ - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Android widgets for WhatsApp™ users, designed for elderly.' },
-        { property: 'og:title', content: 'Widgets for WhatsApp™ - hliejun/projects' },
-        { property: 'og:description', content: 'Android widgets for WhatsApp™ users, designed for elderly.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Android widgets for WhatsApp™ users, designed for elderly.'
+        },
+        {
+          property: 'og:title',
+          content: 'Widgets for WhatsApp™ - hliejun/projects'
+        },
+        {
+          property: 'og:description',
+          content: 'Android widgets for WhatsApp™ users, designed for elderly.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'Widgets for WhatsApp™',
@@ -56,7 +91,8 @@ export default {
         actions: [
           {
             label: 'Play Store',
-            url: 'https://play.google.com/store/apps/details?id=com.hliejun.dev.widgets'
+            url:
+              'https://play.google.com/store/apps/details?id=com.hliejun.dev.widgets'
           },
           {
             label: 'Repo',
@@ -82,17 +118,12 @@ export default {
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [
-            { label: 'Android Studio' },
-            { label: 'Photoshop' }
-          ]
+          tags: [{ label: 'Android Studio' }, { label: 'Photoshop' }]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [
-            { label: 'Android' }
-          ]
+          tags: [{ label: 'Android' }]
         }
       ],
       carpets: {
@@ -138,7 +169,7 @@ export default {
             store optimizations to make the application more discoverable and
             accessible to the public.
           `
-        },
+        }
       ],
       features: [
         {
@@ -212,7 +243,8 @@ export default {
             Design guidelines for designing Android widgets.
           `,
           src: '/images/links/androiddev.jpg',
-          url: 'https://developer.android.com/guide/practices/ui_guidelines/widget_design'
+          url:
+            'https://developer.android.com/guide/practices/ui_guidelines/widget_design'
         },
         {
           label: 'App Store Optimization',

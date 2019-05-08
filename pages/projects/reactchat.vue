@@ -1,21 +1,43 @@
 <template>
-  <div class='page reactchat project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page reactchat project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.1' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <HTMLSection name='design' label='DESIGN' :items='design' />
-      <HTMLSection name='features' label='FEATURES' :items='features' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".1"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <HTMLSection name="design" label="DESIGN" :items="design" />
+      <HTMLSection name="features" label="FEATURES" :items="features" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -37,23 +59,36 @@ export default {
     LinksSection,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'React Chat - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Extensible presentational components for ReactJS chat interfaces, packaged as an NPM library.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Extensible presentational components for ReactJS chat interfaces, packaged as an NPM library.'
+        },
         { property: 'og:title', content: 'React Chat - hliejun/projects' },
-        { property: 'og:description', content: 'Extensible presentational components for ReactJS chat interfaces, packaged as an NPM library.' },
+        {
+          property: 'og:description',
+          content:
+            'Extensible presentational components for ReactJS chat interfaces, packaged as an NPM library.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'React Chat',
-        subtitle: 'Extensible presentational components for ReactJS chat interfaces, packaged as an NPM library.',
+        subtitle:
+          'Extensible presentational components for ReactJS chat interfaces, packaged as an NPM library.',
         actions: [
           {
             label: 'Docs',
@@ -90,11 +125,7 @@ export default {
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [
-            { label: 'Yarn' },
-            { label: 'ESLint' },
-            { label: 'SASSLint' }
-          ]
+          tags: [{ label: 'Yarn' }, { label: 'ESLint' }, { label: 'SASSLint' }]
         },
         {
           name: 'platforms',
@@ -157,7 +188,7 @@ export default {
             of use cases, a lot of optional and generic props were provided,
             along with proptypes checking.
           `
-        },
+        }
       ],
       design: [
         {
@@ -278,7 +309,8 @@ export default {
             Article about setting up the environment for publishing ReactJS libraries on Hackernoon.
           `,
           src: '/images/links/hackernoon.jpg',
-          url: 'https://hackernoon.com/making-of-a-component-library-for-react-e6421ea4e6c7'
+          url:
+            'https://hackernoon.com/making-of-a-component-library-for-react-e6421ea4e6c7'
         },
         {
           label: 'Rollup Bundling Guide',

@@ -1,20 +1,42 @@
 <template>
-  <div class='page urbanzoom project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page urbanzoom project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <HTMLSection name='features' label='FEATURES' :items='features' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".3"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <HTMLSection name="features" label="FEATURES" :items="features" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -36,27 +58,44 @@ export default {
     LinksSection,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'UrbanZoom Assistant - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Google Assistant and Twilio agent that performs property valuation homes in Singapore.' },
-        { property: 'og:title', content: 'UrbanZoom Assistant - hliejun/projects' },
-        { property: 'og:description', content: 'Google Assistant and Twilio agent that performs property valuation homes in Singapore.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Google Assistant and Twilio agent that performs property valuation homes in Singapore.'
+        },
+        {
+          property: 'og:title',
+          content: 'UrbanZoom Assistant - hliejun/projects'
+        },
+        {
+          property: 'og:description',
+          content:
+            'Google Assistant and Twilio agent that performs property valuation homes in Singapore.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'UrbanZoom Assistant',
-        subtitle: 'Google Assistant and Twilio agent that performs property valuation homes in Singapore.',
+        subtitle:
+          'Google Assistant and Twilio agent that performs property valuation homes in Singapore.',
         actions: [
           {
             label: 'Try the Action',
-            url: 'https://assistant.google.com/services/a/uid/0000002516830acd?hl=en&source=web'
+            url:
+              'https://assistant.google.com/services/a/uid/0000002516830acd?hl=en&source=web'
           },
           {
             label: 'Dial In (SG)',
@@ -82,18 +121,12 @@ export default {
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [
-            { label: 'Google Actions' },
-            { label: 'Postman' }
-          ]
+          tags: [{ label: 'Google Actions' }, { label: 'Postman' }]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [
-            { label: 'Firebase' },
-            { label: 'Google App Engine' }
-          ]
+          tags: [{ label: 'Firebase' }, { label: 'Google App Engine' }]
         }
       ],
       carpets: {
@@ -152,7 +185,7 @@ export default {
             traffic to the webhook was low or sporadic. Switching over to Google App Engine
             improved the experience tremendously.
           `
-        },
+        }
       ],
       features: [
         {

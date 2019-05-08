@@ -1,21 +1,43 @@
 <template>
-  <div class='page foodlogging project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page foodlogging project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <HTMLSection name='design' label='DESIGN' :items='design' />
-      <LinksSection name='team' label='TEAM' :items='team' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".3"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <HTMLSection name="design" label="DESIGN" :items="design" />
+      <LinksSection name="team" label="TEAM" :items="team" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -37,23 +59,36 @@ export default {
     LinksSection,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'Food Logging - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'UI/UX design group project on mobile food logger application.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'UI/UX design group project on mobile food logger application.'
+        },
         { property: 'og:title', content: 'Food Logging - hliejun/projects' },
-        { property: 'og:description', content: 'UI/UX design group project on mobile food logger application.' },
+        {
+          property: 'og:description',
+          content:
+            'UI/UX design group project on mobile food logger application.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'Food Logging',
-        subtitle: 'UI/UX design group project on mobile food logger application.',
+        subtitle:
+          'UI/UX design group project on mobile food logger application.',
         actions: [
           {
             label: 'Lie Jun',
@@ -69,7 +104,8 @@ export default {
           },
           {
             label: 'Deck',
-            url: 'https://docs.google.com/presentation/d/1C-1YvsayLtcTbMYFXw-r3_8-kw7GGPjPY69AhSX68W8/present?usp=sharing'
+            url:
+              'https://docs.google.com/presentation/d/1C-1YvsayLtcTbMYFXw-r3_8-kw7GGPjPY69AhSX68W8/present?usp=sharing'
           }
         ]
       },
@@ -82,10 +118,7 @@ export default {
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [
-            { label: 'Marvel' },
-            { label: 'CogTool' }
-          ]
+          tags: [{ label: 'Marvel' }, { label: 'CogTool' }]
         }
       ],
       carpets: {
@@ -121,7 +154,7 @@ export default {
             of Nibble were purely based on CogTool analysis, since no product requirements
             were specified for the project.
           `
-        },
+        }
       ],
       design: [
         {
@@ -196,7 +229,8 @@ export default {
             Instructions and tutorials on using CogTool for analysis.
           `,
           src: '/images/links/cogtool.jpg',
-          url: 'https://github.com/cogtool/documentation/blob/master/end-user/user-guide/CogToolUserGuide_1_2%202.pdf'
+          url:
+            'https://github.com/cogtool/documentation/blob/master/end-user/user-guide/CogToolUserGuide_1_2%202.pdf'
         },
         {
           label: 'Laws of UX',

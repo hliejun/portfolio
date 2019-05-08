@@ -1,22 +1,44 @@
 <template>
-  <div class='page littlelives project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page littlelives project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.1' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <HTMLSection name='design' label='DESIGN' :items='design' />
-      <HTMLSection name='features' label='FEATURES' :items='features' />
-      <LinksSection name='team' label='TEAM' :items='team' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".1"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <HTMLSection name="design" label="DESIGN" :items="design" />
+      <HTMLSection name="features" label="FEATURES" :items="features" />
+      <LinksSection name="team" label="TEAM" :items="team" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -38,23 +60,39 @@ export default {
     LinksSection,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'Little Lives Check-In - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Face Check-In features built into Little Check-In iOS application.' },
-        { property: 'og:title', content: 'Little Lives Check-In - hliejun/projects' },
-        { property: 'og:description', content: 'Face Check-In features built into Little Check-In iOS application.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Face Check-In features built into Little Check-In iOS application.'
+        },
+        {
+          property: 'og:title',
+          content: 'Little Lives Check-In - hliejun/projects'
+        },
+        {
+          property: 'og:description',
+          content:
+            'Face Check-In features built into Little Check-In iOS application.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'Little Lives Check-In',
-        subtitle: 'Face Check-In features built into Little Check-In iOS application.',
+        subtitle:
+          'Face Check-In features built into Little Check-In iOS application.',
         actions: [
           {
             label: 'About Little Lives',
@@ -84,17 +122,21 @@ export default {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            { label: 'XCode' },
-            { label: 'Jazzy' },
-            { label: 'SwiftLint' }
+            {
+              label: 'XCode'
+            },
+            {
+              label: 'Jazzy'
+            },
+            {
+              label: 'SwiftLint'
+            }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [
-            { label: 'iOS' }
-          ]
+          tags: [{ label: 'iOS' }]
         }
       ],
       carpets: {
@@ -150,7 +192,7 @@ export default {
             afford higher refresh rates and more reliable tracking with relatively lesser
             performance trade-off.
           `
-        },
+        }
       ],
       design: [
         {
@@ -266,7 +308,8 @@ export default {
             Guide to the VIPER design principles, structure and implementations.
           `,
           src: '/images/links/medium.jpg',
-          url: 'https://medium.com/@smalam119/viper-design-pattern-for-ios-application-development-7a9703902af6'
+          url:
+            'https://medium.com/@smalam119/viper-design-pattern-for-ios-application-development-7a9703902af6'
         },
         {
           label: 'Azure Face API',
@@ -275,7 +318,8 @@ export default {
             and face recognition.
           `,
           src: '/images/links/azure.jpg',
-          url: 'https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview'
+          url:
+            'https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview'
         },
         {
           label: 'AVCapture and Vision API',
@@ -284,7 +328,8 @@ export default {
             and tracking using Vision.
           `,
           src: '/images/links/apple.jpg',
-          url: 'https://developer.apple.com/documentation/vision/recognizing_objects_in_live_capture'
+          url:
+            'https://developer.apple.com/documentation/vision/recognizing_objects_in_live_capture'
         }
       ],
       actions: [

@@ -1,20 +1,42 @@
 <template>
-  <div class='page hypedyn project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page hypedyn project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <HTMLSection name='features' label='FEATURES' :items='features' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".3"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <HTMLSection name="features" label="FEATURES" :items="features" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -36,19 +58,32 @@ export default {
     LinksSection,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'HypeDyn Stories - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Interactive text stories made using HypeDyn.' },
-        { property: 'og:title', content: 'HypeDyn Stories - hliejun/projects' },
-        { property: 'og:description', content: 'Interactive text stories made using HypeDyn.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Interactive text stories made using HypeDyn.'
+        },
+        {
+          property: 'og:title',
+          content: 'HypeDyn Stories - hliejun/projects'
+        },
+        {
+          property: 'og:description',
+          content: 'Interactive text stories made using HypeDyn.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'HypeDyn Stories',
@@ -77,25 +112,17 @@ export default {
         {
           name: 'build',
           title: 'BUILD',
-          tags: [
-            { label: 'Javascript' },
-            { label: 'HTML' },
-            { label: 'CSS' }
-          ]
+          tags: [{ label: 'Javascript' }, { label: 'HTML' }, { label: 'CSS' }]
         },
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [
-            { label: 'HypeDyn' }
-          ]
+          tags: [{ label: 'HypeDyn' }]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [
-            { label: 'GitHub Pages' }
-          ]
+          tags: [{ label: 'GitHub Pages' }]
         }
       ],
       carpets: {
@@ -139,7 +166,7 @@ export default {
             re-readings, performances to build a story through the player's interaction
             with the text.
           `
-        },
+        }
       ],
       features: [
         {
@@ -180,7 +207,8 @@ export default {
             Article on replay and re-reading by Janet H. Murray.
           `,
           src: '/images/links/inventingthemedium.jpg',
-          url: 'https://inventingthemedium.com/2013/05/15/six-key-design-strategies-for-replay-stories'
+          url:
+            'https://inventingthemedium.com/2013/05/15/six-key-design-strategies-for-replay-stories'
         },
         {
           label: 'Agency Reconsidered',
@@ -188,7 +216,8 @@ export default {
             Paper on agency by Wardrip-Fruin et. al.
           `,
           src: '/images/links/digra.jpg',
-          url: 'http://www.digra.org/wp-content/uploads/digital-library/09287.41281.pdf'
+          url:
+            'http://www.digra.org/wp-content/uploads/digital-library/09287.41281.pdf'
         },
         {
           label: 'Their Angelic Understanding',
@@ -204,7 +233,8 @@ export default {
             Interactive story by Sam Barlow.
           `,
           src: '/images/links/aisle.jpg',
-          url: 'https://www.ifiction.org/games/playz.php?cat=&game=232&mode=html'
+          url:
+            'https://www.ifiction.org/games/playz.php?cat=&game=232&mode=html'
         },
         {
           label: 'Incidental Character Choices in Balloon Diaspora',
@@ -212,7 +242,8 @@ export default {
              Article on agency of choice by Gregory Weir.
           `,
           src: '/images/links/gamesetwatch.jpg',
-          url: 'http://www.gamesetwatch.com/2011/04/incidental_character_choices_i.php'
+          url:
+            'http://www.gamesetwatch.com/2011/04/incidental_character_choices_i.php'
         },
         {
           label: 'Accretive Player Character',
@@ -220,7 +251,8 @@ export default {
             Article on play character discovery by Emily Short.
           `,
           src: '/images/links/gamasutra.jpg',
-          url: 'https://www.gamasutra.com/view/news/115115/Analysis_The_Accretive_Player_Character.php'
+          url:
+            'https://www.gamasutra.com/view/news/115115/Analysis_The_Accretive_Player_Character.php'
         }
       ],
       actions: [

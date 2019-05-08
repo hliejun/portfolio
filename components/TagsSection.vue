@@ -1,14 +1,36 @@
 <template>
-  <div v-bind:class="['project__section', name]" v-if='items.length'>
-    <div class='section__title'>{{label}}</div>
-    <div class='section__container'>
-      <div v-bind:class="['section__items', item.name]" v-for='item in items' :key='item.name'>
-        <div class='section__subtitle'>{{item.title}}</div>
-        <div class='section__row'>
-          <div class='section__item tag' v-for='tag in item.tags' :key='tag.label'>
-            <amp-img class='section__item-icon' v-if='tag.src' v-bind:src='tag.src' height='1' width='1' />
-            <span class='section__item-label tag' v-if='tag.label'>{{tag.label}}</span>
-            <span class='section__item-description' v-if='tag.description'>{{tag.description}}</span>
+  <div v-if="items.length" :class="['project__section', name]">
+    <div class="section__title">
+      {{ label }}
+    </div>
+    <div class="section__container">
+      <div
+        v-for="item in items"
+        :key="item.name"
+        :class="['section__items', item.name]"
+      >
+        <div class="section__subtitle">
+          {{ item.title }}
+        </div>
+        <div class="section__row">
+          <div
+            v-for="tag in item.tags"
+            :key="tag.label"
+            class="section__item tag"
+          >
+            <amp-img
+              v-if="tag.src"
+              class="section__item-icon"
+              :src="tag.src"
+              height="1"
+              width="1"
+            />
+            <span v-if="tag.label" class="section__item-label tag">{{
+              tag.label
+            }}</span>
+            <span v-if="tag.description" class="section__item-description">{{
+              tag.description
+            }}</span>
           </div>
         </div>
       </div>
@@ -29,20 +51,24 @@ export default {
     },
     items: {
       type: Array,
-      default: [],
+      default: () => [],
       validator: value => {
         if (value && value.length) {
           value.forEach(element => {
-            if (!element
-              || typeof element.name !== 'string'
-              || typeof element.tags !== 'array'
-              || typeof element.title !== 'string') {
+            if (
+              !element ||
+              typeof element.name !== 'string' ||
+              typeof element.title !== 'string' ||
+              !Array.isArray(element.tags)
+            ) {
               return false
             }
-            tags.forEach(tag => {
-              if (!tag
-                || typeof tag.description !== 'string'
-                || typeof tag.label !== 'string') {
+            element.tags.forEach(tag => {
+              if (
+                !tag ||
+                typeof tag.description !== 'string' ||
+                typeof tag.label !== 'string'
+              ) {
                 return false
               }
             })

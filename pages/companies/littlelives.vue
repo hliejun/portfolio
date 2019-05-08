@@ -1,13 +1,18 @@
 <template>
-  <div class='page littlelives company'>
+  <div class="page littlelives company">
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='0' layout='nodisplay' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios="0"
+        layout="nodisplay"
+      />
     </div>
   </div>
 </template>
@@ -19,7 +24,7 @@ export default {
   components: {
     Jumbotron
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'Little Lives',

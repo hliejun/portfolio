@@ -1,21 +1,43 @@
 <template>
-  <div class='page todolist project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page todolist project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <HTMLSection name='features' label='FEATURES' :items='features' />
-      <LinksSection name='team' label='TEAM' :items='team' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".3"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <HTMLSection name="features" label="FEATURES" :items="features" />
+      <LinksSection name="team" label="TEAM" :items="team" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -37,23 +59,36 @@ export default {
     LinksSection,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'ToDoList - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Group project on keyboard and text-based agenda and organiser Java applet.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Group project on keyboard and text-based agenda and organiser Java applet.'
+        },
         { property: 'og:title', content: 'ToDoList - hliejun/projects' },
-        { property: 'og:description', content: 'Group project on keyboard and text-based agenda and organiser Java applet.' },
+        {
+          property: 'og:description',
+          content:
+            'Group project on keyboard and text-based agenda and organiser Java applet.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'ToDoList',
-        subtitle: 'Group project on keyboard and text-based agenda and organiser Java applet.',
+        subtitle:
+          'Group project on keyboard and text-based agenda and organiser Java applet.',
         actions: [
           {
             label: 'Repo',
@@ -61,7 +96,8 @@ export default {
           },
           {
             label: 'Release',
-            url: 'https://github.com/cs2103jan2016-w13-2j/ToDoList/releases/tag/V0.6'
+            url:
+              'https://github.com/cs2103jan2016-w13-2j/ToDoList/releases/tag/V0.6'
           },
           {
             label: 'Docs',
@@ -93,10 +129,7 @@ export default {
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [
-            { label: 'Eclipse' },
-            { label: 'Javadoc' }
-          ]
+          tags: [{ label: 'Eclipse' }, { label: 'Javadoc' }]
         }
       ],
       carpets: {
@@ -129,7 +162,7 @@ export default {
             natural ways to manipulate the agenda items without the use of a pointer
             device.
           `
-        },
+        }
       ],
       features: [
         {
@@ -242,7 +275,8 @@ export default {
             How to use JavaFX to implement interfaces in a Java applet.
           `,
           src: '/images/links/oracle.jpg',
-          url: 'https://docs.oracle.com/javase/8/javafx/get-started-tutorial/get_start_apps.htm'
+          url:
+            'https://docs.oracle.com/javase/8/javafx/get-started-tutorial/get_start_apps.htm'
         },
         {
           label: 'Natty Repository',

@@ -1,37 +1,56 @@
 <template>
-  <div class='page logs'>
+  <div class="page logs">
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='background-waves'>
-      <div class='background-wave' />
-      <div class='background-wave' />
-      <div class='background-wave' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="background-waves">
+      <div class="background-wave" />
+      <div class="background-wave" />
+      <div class="background-wave" />
     </div>
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.4' layout='nodisplay' />
-      <div class='page__container'>
-        <div v-for='article in articles' :key='article.name' v-bind:class="['section', article.name]">
-          <div class='section__left'>
-            <div class='timeline__line' />
-            <div class='timeline__date'>
-              {{article.date}}
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".4"
+        layout="nodisplay"
+      />
+      <div class="page__container">
+        <div
+          v-for="article in articles"
+          :key="article.name"
+          :class="['section', article.name]"
+        >
+          <div class="section__left">
+            <div class="timeline__line" />
+            <div class="timeline__date">
+              {{ article.date }}
             </div>
-            <amp-img class='timeline__image' v-bind:src='article.avatar' height='1' width='1' />
+            <amp-img
+              class="timeline__image"
+              :src="article.avatar"
+              height="1"
+              width="1"
+            />
           </div>
-          <div class='section__right'>
+          <div class="section__right">
             <ArticleCard
-              :links='article.links'
-              :name='article.name'
-              :notes='article.notes'
-              :subtitle='article.subtitle'
-              :tags='article.tags'
-              :text='article.text'
-              :title='article.title' />
-            <Gallery :name='article.name' :mainImage='article.mainImage' :suppImages='article.suppImages' />
+              :links="article.links"
+              :name="article.name"
+              :notes="article.notes"
+              :subtitle="article.subtitle"
+              :tags="article.tags"
+              :text="article.text"
+              :title="article.title"
+            />
+            <Gallery
+              :name="article.name"
+              :main-image="article.mainImage"
+              :supp-images="article.suppImages"
+            />
           </div>
         </div>
       </div>
@@ -50,19 +69,29 @@ export default {
     Gallery,
     Jumbotron
   },
-  head () {
+  head() {
     return {
       title: 'Work Experiences - hliejun',
       meta: [
-        { hid: 'description', name: 'description', content: "A brief summary of Lie Jun's employment history." },
+        {
+          hid: 'description',
+          name: 'description',
+          content: "A brief summary of Lie Jun's employment history."
+        },
         { property: 'og:title', content: 'Work Experiences - hliejun' },
-        { property: 'og:description', content: "A brief summary of Lie Jun's employment history." },
+        {
+          property: 'og:description',
+          content: "A brief summary of Lie Jun's employment history."
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         name: 'logs',
@@ -147,7 +176,8 @@ export default {
           },
           suppImages: [],
           title: 'UrbanZoom',
-          subtitle: 'Property Valuation Google Assistant and Twilio Voice Service',
+          subtitle:
+            'Property Valuation Google Assistant and Twilio Voice Service',
           tags: ['VOICE', 'CHATBOT', 'TELEPHONY', 'ASSISTANT'],
           text: `
             <p>
@@ -180,7 +210,8 @@ export default {
             {
               src: '/vectors/logs/try.svg',
               label: 'Try it on Google Assistant',
-              url: 'https://assistant.google.com/services/a/uid/0000002516830acd?hl=en&source=web'
+              url:
+                'https://assistant.google.com/services/a/uid/0000002516830acd?hl=en&source=web'
             }
           ]
         },
@@ -207,7 +238,8 @@ export default {
             }
           ],
           title: 'Little Lives',
-          subtitle: 'Face Recognition iOS Attendance Application for Pre-Schools',
+          subtitle:
+            'Face Recognition iOS Attendance Application for Pre-Schools',
           tags: ['IOS', 'NATIVE', 'FACE RECOGNITION', 'LIVE DETECTION'],
           text: `
           <p>
@@ -289,7 +321,8 @@ export default {
           mainImage: {},
           suppImages: [],
           title: 'Defence Science Organisation',
-          subtitle: 'Object and Blob Tracking with Multi-Threading and Multi-Processing Optimisations',
+          subtitle:
+            'Object and Blob Tracking with Multi-Threading and Multi-Processing Optimisations',
           tags: ['IMAGE PROCESSING', 'OPTIMISATIONS', 'RESEARCH'],
           text: `
             <p>
@@ -321,7 +354,8 @@ export default {
           mainImage: {},
           suppImages: [],
           title: 'Singapore Armed Forces',
-          subtitle: 'Battalion Manpower, Transport and Discipline Administration',
+          subtitle:
+            'Battalion Manpower, Transport and Discipline Administration',
           tags: ['ARMY', 'STAFF', 'ADMINISTRATION'],
           text: `
           <p>

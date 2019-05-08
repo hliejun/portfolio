@@ -1,15 +1,15 @@
 <template>
-  <div class='layout'>
-    <amp-animation id='fadeIn' layout='nodisplay'>
-      <script type='application/json' v-html='fadeIn' />
+  <div class="layout">
+    <amp-animation id="fadeIn" layout="nodisplay">
+      <script type="application/json" v-html="fadeIn" />
     </amp-animation>
-    <amp-animation id='fadeOut' layout='nodisplay'>
-      <script type='application/json' v-html='fadeOut' />
+    <amp-animation id="fadeOut" layout="nodisplay">
+      <script type="application/json" v-html="fadeOut" />
     </amp-animation>
-    <div id='headerBackground' class='header__background card' />
-    <Header :logo= 'logo' :links='siteLinks' />
-    <nuxt/>
-    <Footer :links='socialLinks' />
+    <div id="headerBackground" class="header__background card" />
+    <Header :logo="logo" :links="siteLinks" />
+    <nuxt />
+    <Footer :links="socialLinks" />
   </div>
 </template>
 
@@ -22,14 +22,16 @@ export default {
     Footer,
     Header
   },
-  data () {
+  data() {
     return {
-      fadeIn: '{"duration": "200ms","fill": "both","iterations": "1",'
-            + '"direction": "alternate","animations": [{"selector": '
-            + '"#headerBackground","keyframes": [{"opacity": "1"}]}]}',
-      fadeOut: '{"duration": "200ms","fill": "both","iterations": "1",'
-            + '"direction": "alternate","animations": [{"selector": '
-            + '"#headerBackground","keyframes": [{"opacity": "0"}]}]}',
+      fadeIn:
+        '{"duration": "200ms","fill": "both","iterations": "1",' +
+        '"direction": "alternate","animations": [{"selector": ' +
+        '"#headerBackground","keyframes": [{"opacity": "1"}]}]}',
+      fadeOut:
+        '{"duration": "200ms","fill": "both","iterations": "1",' +
+        '"direction": "alternate","animations": [{"selector": ' +
+        '"#headerBackground","keyframes": [{"opacity": "0"}]}]}',
       logo: {
         label: 'dev/hliejun',
         link: '/'

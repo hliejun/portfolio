@@ -1,21 +1,43 @@
 <template>
-  <div class='page weight project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page weight project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <HTMLSection name='design' label='DESIGN' :items='design' />
-      <LinksSection name='team' label='TEAM' :items='team' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".3"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <HTMLSection name="design" label="DESIGN" :items="design" />
+      <LinksSection name="team" label="TEAM" :items="team" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -37,19 +59,29 @@ export default {
     LinksSection,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'Weight - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Gravity-driven infinite run mini-game made using Unity.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Gravity-driven infinite run mini-game made using Unity.'
+        },
         { property: 'og:title', content: 'Weight - hliejun/projects' },
-        { property: 'og:description', content: 'Gravity-driven infinite run mini-game made using Unity.' },
+        {
+          property: 'og:description',
+          content: 'Gravity-driven infinite run mini-game made using Unity.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'Weight',
@@ -70,24 +102,17 @@ export default {
         {
           name: 'build',
           title: 'BUILD',
-          tags: [
-            { label: 'C#' }
-          ]
+          tags: [{ label: 'C#' }]
         },
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [
-            { label: 'Unity' }
-          ]
+          tags: [{ label: 'Unity' }]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [
-            { label: 'Windows' },
-            { label: 'macOS' }
-          ]
+          tags: [{ label: 'Windows' }, { label: 'macOS' }]
         }
       ],
       carpets: {
@@ -125,7 +150,7 @@ export default {
             challenging to procure game assets and meet the module
             requirements of an infinite run game.
           `
-        },
+        }
       ],
       design: [
         {

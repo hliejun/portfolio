@@ -1,32 +1,43 @@
 <template>
-  <div class='page info'>
+  <div class="page info">
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='background-waves'>
-      <div class='background-wave' />
-      <div class='background-wave' />
-      <div class='background-wave' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="background-waves">
+      <div class="background-wave" />
+      <div class="background-wave" />
+      <div class="background-wave" />
     </div>
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='1' layout='nodisplay' />
-      <div class='info__introduction'>
-        <amp-img class='introduction__image' v-bind:src='src' width='1' height='1' />
-        <div class='info__introduction-text'>
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios="1"
+        layout="nodisplay"
+      />
+      <div class="info__introduction">
+        <amp-img class="introduction__image" :src="src" width="1" height="1" />
+        <div class="info__introduction-text">
           <h2>Huang Lie Jun</h2>
           <h4>
-            BComp. (CS)<br>
+            BComp. (CS)<br />
             Interactive Media Development Minor
           </h4>
-          <br>
-          <div v-for='section in sections' :key='section.title' class='section'>
-            <amp-img v-if='section.src' class='section__image' v-bind:src='section.src' height='1' width='1' />
-            <div class='section__content'>
-              <h5>{{section.title}}</h5>
-              {{section.text}}
+          <br />
+          <div v-for="section in sections" :key="section.title" class="section">
+            <amp-img
+              v-if="section.src"
+              class="section__image"
+              :src="section.src"
+              height="1"
+              width="1"
+            />
+            <div class="section__content">
+              <h5>{{ section.title }}</h5>
+              {{ section.text }}
             </div>
           </div>
         </div>
@@ -42,19 +53,29 @@ export default {
   components: {
     Jumbotron
   },
-  head () {
+  head() {
     return {
       title: 'About - hliejun',
       meta: [
-        { hid: 'description', name: 'description', content: 'More details about Lie Jun in work and in person.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'More details about Lie Jun in work and in person.'
+        },
         { property: 'og:title', content: 'About - hliejun' },
-        { property: 'og:description', content: 'More details about Lie Jun in work and in person.' },
+        {
+          property: 'og:description',
+          content: 'More details about Lie Jun in work and in person.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         name: 'book',

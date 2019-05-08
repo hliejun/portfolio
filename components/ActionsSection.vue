@@ -1,15 +1,17 @@
 <template>
-
   <!-- TODO: Hover thumbnail previews -->
 
-  <div v-if='items.length' v-bind:class="['project__section', name]">
-    <div class='project__actions'>
-      <a v-for='action in items' :key='action.url'
-        class='project__link'
-        v-bind:href='action.url'
-        v-bind:target="action.in ? '_self' : '_blank'">
-        <div class='code button project__button'>
-          {{action.label}}
+  <div v-if="items.length" :class="['project__section', name]">
+    <div class="project__actions">
+      <a
+        v-for="action in items"
+        :key="action.url"
+        class="project__link"
+        :href="action.url"
+        :target="action.in ? '_self' : '_blank'"
+      >
+        <div class="code button project__button">
+          {{ action.label }}
         </div>
       </a>
     </div>
@@ -25,13 +27,15 @@ export default {
     },
     items: {
       type: Array,
-      default: [],
+      default: () => [],
       validator: value => {
         if (value && value.length) {
           value.forEach(element => {
-            if (!element
-              || typeof element.label !== 'string'
-              || typeof element.url !== 'string') {
+            if (
+              !element ||
+              typeof element.label !== 'string' ||
+              typeof element.url !== 'string'
+            ) {
               return false
             }
           })

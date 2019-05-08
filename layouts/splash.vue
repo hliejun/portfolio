@@ -1,8 +1,8 @@
 <template>
-  <div class='layout'>
-    <Header :logo= 'logo' :links='siteLinks' splash />
-    <nuxt/>
-    <Footer :links='socialLinks' splash />
+  <div class="layout">
+    <Header :logo="logo" :links="siteLinks" splash />
+    <nuxt />
+    <Footer :links="socialLinks" splash />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
     Footer,
     Header
   },
-  data () {
+  data() {
     return {
       logo: {
         label: 'dev/hliejun',

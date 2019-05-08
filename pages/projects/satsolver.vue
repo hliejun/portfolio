@@ -1,20 +1,33 @@
 <template>
-  <div class='page satsolver project'>
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page satsolver project">
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.1' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' />
-      <HTMLSection name='design' label='DESIGN' :items='design' />
-      <LinksSection name='team' label='TEAM' :items='team' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".1"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection name="about" label="ABOUT" :items="about" />
+      <HTMLSection name="design" label="DESIGN" :items="design" />
+      <LinksSection name="team" label="TEAM" :items="team" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -36,23 +49,36 @@ export default {
     LinksSection,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'SAT Solver - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Group research on efficiency of satisfiability resolution strategies.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Group research on efficiency of satisfiability resolution strategies.'
+        },
         { property: 'og:title', content: 'SAT Solver - hliejun/projects' },
-        { property: 'og:description', content: 'Group research on efficiency of satisfiability resolution strategies.' },
+        {
+          property: 'og:description',
+          content:
+            'Group research on efficiency of satisfiability resolution strategies.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'SAT Solver',
-        subtitle: 'Group research on efficiency of satisfiability resolution strategies.',
+        subtitle:
+          'Group research on efficiency of satisfiability resolution strategies.',
         actions: [
           {
             label: 'GitHub Repo',
@@ -60,7 +86,8 @@ export default {
           },
           {
             label: 'Findings',
-            url: 'https://github.com/hliejun/SAT-Solver/blob/master/CS4244-SATSolver-Report.pdf'
+            url:
+              'https://github.com/hliejun/SAT-Solver/blob/master/CS4244-SATSolver-Report.pdf'
           }
         ]
       },
@@ -82,17 +109,12 @@ export default {
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [
-            { label: 'IntelliJ' },
-            { label: 'Bash' }
-          ]
+          tags: [{ label: 'IntelliJ' }, { label: 'Bash' }]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [
-            { label: 'UNIX' }
-          ]
+          tags: [{ label: 'UNIX' }]
         }
       ],
       about: [
@@ -128,7 +150,7 @@ export default {
             papers before settling with the more common techniques that
             could be implemented within the project timeframe.
           `
-        },
+        }
       ],
       design: [
         {
@@ -293,12 +315,14 @@ export default {
           url: 'https://www.cs.ubc.ca/~hoos/SATLIB/benchm.html'
         },
         {
-          label: 'Exponential Recency Weighted Average Branching Heuristic for SAT Solvers',
+          label:
+            'Exponential Recency Weighted Average Branching Heuristic for SAT Solvers',
           description: `
             ERWA branching heuristics for CDCL solvers.
           `,
           src: '/images/links/semanticscholar.jpg',
-          url: 'https://pdfs.semanticscholar.org/7861/8983dec4a92a9c5a1909e31bc8b95a5705a5.pdf'
+          url:
+            'https://pdfs.semanticscholar.org/7861/8983dec4a92a9c5a1909e31bc8b95a5705a5.pdf'
         },
         {
           label: 'On Freezing and Reactivating Learnt Clauses',
@@ -306,7 +330,8 @@ export default {
             Clause learning heuristics for CDCL solvers.
           `,
           src: '/images/links/semanticscholar.jpg',
-          url: 'https://pdfs.semanticscholar.org/a1cd/dbc236cf94161f578dd91f77c7410b7ba5cf.pdf'
+          url:
+            'https://pdfs.semanticscholar.org/a1cd/dbc236cf94161f578dd91f77c7410b7ba5cf.pdf'
         },
         {
           label: 'Clause Learning in SAT Seminar Automatic Problem Solving',
@@ -315,7 +340,8 @@ export default {
             use of unique implication points.
           `,
           src: '/images/links/princeton.jpg',
-          url: 'https://www.cs.princeton.edu/courses/archive/fall13/cos402/readings/SAT_learning_clauses.pdf'
+          url:
+            'https://www.cs.princeton.edu/courses/archive/fall13/cos402/readings/SAT_learning_clauses.pdf'
         },
         {
           label: 'CDCL SAT Solvers',

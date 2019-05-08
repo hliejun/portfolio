@@ -1,21 +1,43 @@
 <template>
-  <div class='page pokemania project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page pokemania project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <HTMLSection name='design' label='DESIGN' :items='design' />
-      <HTMLSection name='features' label='FEATURES' :items='features' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".3"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <HTMLSection name="design" label="DESIGN" :items="design" />
+      <HTMLSection name="features" label="FEATURES" :items="features" />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -37,19 +59,29 @@ export default {
     Mockup,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'Pokemania - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Pokémon-themed bubble blast iOS game application.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Pokémon-themed bubble blast iOS game application.'
+        },
         { property: 'og:title', content: 'Pokemania - hliejun/projects' },
-        { property: 'og:description', content: 'Pokémon-themed bubble blast iOS game application.' },
+        {
+          property: 'og:description',
+          content: 'Pokémon-themed bubble blast iOS game application.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'Pokémania',
@@ -92,10 +124,8 @@ export default {
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [
-            { label: 'iOS' }
-          ]
-        },
+          tags: [{ label: 'iOS' }]
+        }
       ],
       carpets: {
         about: '/images/projects/pokemania-2.jpg'
@@ -129,7 +159,7 @@ export default {
             external dependencies and the 3 weeks time limit imposed.
             It was also my first native iOS development experience.
           `
-        },
+        }
       ],
       design: [
         {
@@ -207,7 +237,8 @@ export default {
             developing iOS applications.
           `,
           src: '/images/links/youtube.jpg',
-          url: 'https://www.youtube.com/playlist?list=PLPA-ayBrweUzGFmkT_W65z64MoGnKRZMq'
+          url:
+            'https://www.youtube.com/playlist?list=PLPA-ayBrweUzGFmkT_W65z64MoGnKRZMq'
         },
         {
           label: 'Cocoapods Guide',

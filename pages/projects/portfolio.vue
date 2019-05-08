@@ -1,19 +1,41 @@
 <template>
-  <div class='page portfolio project'>
-    <amp-image-lightbox id='lightbox' class='gallery__lightbox' layout='nodisplay' />
-    <Mockup :src='mockup.src' :orientation='mockup.orientation' :type='mockup.type' />
+  <div class="page portfolio project">
+    <amp-image-lightbox
+      id="lightbox"
+      class="gallery__lightbox"
+      layout="nodisplay"
+    />
+    <Mockup
+      :src="mockup.src"
+      :orientation="mockup.orientation"
+      :type="mockup.type"
+    />
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle='jumbotron.subtitle'
-      :title='jumbotron.title' />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='.3' layout='nodisplay' />
-      <TagsSection name='technologies' label='TECHNOLOGY' :items='technologies' />
-      <HTMLSection name='about' label='ABOUT' :items='about' :carpet='carpets.about' />
-      <LinksSection name='references' label='REFERENCES' :items='references' />
-      <ActionsSection name='actions' :items='actions' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="jumbotron.subtitle"
+      :title="jumbotron.title"
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios=".3"
+        layout="nodisplay"
+      />
+      <TagsSection
+        name="technologies"
+        label="TECHNOLOGY"
+        :items="technologies"
+      />
+      <HTMLSection
+        name="about"
+        label="ABOUT"
+        :items="about"
+        :carpet="carpets.about"
+      />
+      <LinksSection name="references" label="REFERENCES" :items="references" />
+      <ActionsSection name="actions" :items="actions" />
     </div>
   </div>
 </template>
@@ -35,23 +57,36 @@ export default {
     LinksSection,
     TagsSection
   },
-  head () {
+  head() {
     return {
       title: 'Portfolio - hliejun/projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Portfolio website documenting my personal work and projects.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Portfolio website documenting my personal work and projects.'
+        },
         { property: 'og:title', content: 'Portfolio - hliejun/projects' },
-        { property: 'og:description', content: 'Portfolio website documenting my personal work and projects.' },
+        {
+          property: 'og:description',
+          content:
+            'Portfolio website documenting my personal work and projects.'
+        },
         { property: 'og:url', content: 'hliejun.github.io' },
-        { property: 'og:image', content: 'https://hliejun.github.io/images/meta/preview.png' }
+        {
+          property: 'og:image',
+          content: 'https://hliejun.github.io/images/meta/preview.png'
+        }
       ]
     }
   },
-  data () {
+  data() {
     return {
       jumbotron: {
         title: 'Portfolio',
-        subtitle: 'Portfolio website documenting my personal work and projects.',
+        subtitle:
+          'Portfolio website documenting my personal work and projects.',
         actions: [
           {
             label: 'GitHub Repo',
@@ -78,18 +113,12 @@ export default {
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [
-            { label: 'NPM' },
-            { label: 'Photoshop' }
-          ]
+          tags: [{ label: 'NPM' }, { label: 'Photoshop' }]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [
-            { label: 'Google App Engine' },
-            { label: 'GitHub Pages' }
-          ]
+          tags: [{ label: 'Google App Engine' }, { label: 'GitHub Pages' }]
         }
       ],
       carpets: {
@@ -140,7 +169,7 @@ export default {
             getting used to the Vue framework and use of directives to populate
             DOM elements.
           `
-        },
+        }
       ],
       references: [
         {
@@ -192,7 +221,8 @@ export default {
             Nuxt pages on Medium.
           `,
           src: '/images/links/medium.jpg',
-          url: 'https://medium.com/vue-mastery/best-practices-for-nuxt-js-seo-32399c49b2e5'
+          url:
+            'https://medium.com/vue-mastery/best-practices-for-nuxt-js-seo-32399c49b2e5'
         }
       ],
       actions: [

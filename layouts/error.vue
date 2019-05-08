@@ -1,17 +1,44 @@
 <template>
-  <div class='page error'>
-    <div class='background'>
-      <amp-img class='stars left' src='/vectors/splash/stars.svg' height='1' width='1' layout='responsive' noloading />
-      <amp-img class='stars right' src='/vectors/splash/stars.svg' height='1' width='1' layout='responsive' noloading />
+  <div class="page error">
+    <div class="background">
+      <amp-img
+        class="stars left"
+        src="/vectors/splash/stars.svg"
+        height="1"
+        width="1"
+        layout="responsive"
+        noloading
+      />
+      <amp-img
+        class="stars right"
+        src="/vectors/splash/stars.svg"
+        height="1"
+        width="1"
+        layout="responsive"
+        noloading
+      />
     </div>
     <Jumbotron
-      :actions='jumbotron.actions'
-      :name='jumbotron.name'
-      :src='jumbotron.src'
-      :subtitle="error.statusCode === 404 ? messages.missing.subtitle : messages.default.subtitle"
-      :title="error.statusCode === 404 ? messages.missing.title : messages.default.title" />
-    <div class='page__content'>
-      <amp-position-observer on='enter:fadeIn.start' intersection-ratios='0' layout='nodisplay' />
+      :actions="jumbotron.actions"
+      :name="jumbotron.name"
+      :src="jumbotron.src"
+      :subtitle="
+        error.statusCode === 404
+          ? messages.missing.subtitle
+          : messages.default.subtitle
+      "
+      :title="
+        error.statusCode === 404
+          ? messages.missing.title
+          : messages.default.title
+      "
+    />
+    <div class="page__content">
+      <amp-position-observer
+        on="enter:fadeIn.start"
+        intersection-ratios="0"
+        layout="nodisplay"
+      />
     </div>
   </div>
 </template>
@@ -23,11 +50,16 @@ export default {
   components: {
     Jumbotron
   },
-  props: ['error'],
-  layout (context) {
+  props: {
+    error: {
+      type: Object,
+      required: true
+    }
+  },
+  layout() {
     return 'splash'
   },
-  data () {
+  data() {
     return {
       messages: {
         missing: {
