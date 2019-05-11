@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="features" label="FEATURES" :items="features" />
       <LinksSection name="references" label="REFERENCES" :items="references" />
@@ -104,6 +106,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/urbanzoom-1.webp',
         src: '/images/projects/urbanzoom-1.jpg',
         orientation: 'portrait',
         type: 'narrow'
@@ -130,7 +133,8 @@ export default {
         }
       ],
       carpets: {
-        about: '/images/projects/urbanzoom-2.jpg'
+        about: '/images/projects/urbanzoom-2.webp',
+        aboutFallback: '/images/projects/urbanzoom-2.jpg'
       },
       about: [
         {
@@ -191,6 +195,7 @@ export default {
         {
           name: 'accuracy',
           title: 'ACCURACY',
+          webp: '/images/projects/urbanzoom-3.webp',
           src: '/images/projects/urbanzoom-3.jpg',
           text: `
             UrbanZoom Assistant utilises the UrbanZoom API for highly accurate
@@ -215,6 +220,7 @@ export default {
         {
           name: 'agnostic',
           title: 'DEVICE AGNOSTIC',
+          webp: '/images/projects/urbanzoom-4.webp',
           src: '/images/projects/urbanzoom-4.jpg',
           text: `
             Integrating with Google Action means the agent can be accessed through

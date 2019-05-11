@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="design" label="DESIGN" :items="design" />
       <HTMLSection name="features" label="FEATURES" :items="features" />
@@ -105,12 +107,14 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/bitsy-1.webp',
         src: '/images/projects/bitsy-1.jpg',
         orientation: 'landscape',
         type: 'wide'
       },
       carpets: {
-        about: '/images/projects/bitsy-2.jpg'
+        about: '/images/projects/bitsy-2.webp',
+        aboutFallback: '/images/projects/bitsy-2.jpg'
       },
       technologies: [
         {
@@ -177,6 +181,7 @@ export default {
         {
           name: 'world',
           title: 'GAME WORLD',
+          webp: '/images/projects/bitsy-3.webp',
           src: '/images/projects/bitsy-3.jpg',
           text: `
             The game world comprises of 9 distinct scenes, 6 of them with

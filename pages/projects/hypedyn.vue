@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="features" label="FEATURES" :items="features" />
       <LinksSection name="references" label="REFERENCES" :items="references" />
@@ -104,6 +106,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/hypedyn-1.webp',
         src: '/images/projects/hypedyn-1.jpg',
         orientation: 'portrait',
         type: 'wide'
@@ -126,7 +129,8 @@ export default {
         }
       ],
       carpets: {
-        about: '/images/projects/hypedyn-2.jpg'
+        about: '/images/projects/hypedyn-2.webp',
+        aboutFallback: '/images/projects/hypedyn-2.jpg'
       },
       about: [
         {
@@ -172,6 +176,7 @@ export default {
         {
           name: 'interactivity',
           title: 'READER INCLUSION',
+          webp: '/images/projects/hypedyn-3.webp',
           src: '/images/projects/hypedyn-3.jpg',
           text: `
             These interactive text stories are heavily littered with action and decision
@@ -182,6 +187,7 @@ export default {
         {
           name: 'branched',
           title: 'BRANCHED ACTIONS OR ENDINGS',
+          webp: '/images/projects/hypedyn-4.webp',
           src: '/images/projects/hypedyn-4.jpg',
           text: `
             Your actions and decisions will have an impact on either the immediate outcome,
@@ -193,6 +199,7 @@ export default {
         {
           name: 'ascii',
           title: 'ASCII ART',
+          webp: '/images/projects/hypedyn-5.webp',
           src: '/images/projects/hypedyn-5.jpg',
           text: `
             The stories are decorated with ASCII art designed to illustrate the setting

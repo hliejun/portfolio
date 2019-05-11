@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="design" label="DESIGN" :items="design" />
       <HTMLSection name="features" label="FEATURES" :items="features" />
@@ -98,6 +100,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/pokemania-1.webp',
         src: '/images/projects/pokemania-1.jpg',
         orientation: 'portrait',
         type: 'wide'
@@ -128,7 +131,8 @@ export default {
         }
       ],
       carpets: {
-        about: '/images/projects/pokemania-2.jpg'
+        about: '/images/projects/pokemania-2.webp',
+        aboutFallback: '/images/projects/pokemania-2.jpg'
       },
       about: [
         {
@@ -165,6 +169,7 @@ export default {
         {
           name: 'architecture',
           title: 'ARCHITECTURE',
+          webp: '/images/projects/pokemania-3.webp',
           src: '/images/projects/pokemania-3.jpg',
           text: `
             This project was designed using the Model View Controller pattern.

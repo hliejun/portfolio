@@ -21,7 +21,7 @@
 // Links
 
 .preview__link {
-  @include transition(all .4s ease);
+  @include transition(all 0.4s ease);
   border-radius: 6px;
   color: inherit;
   height: 100%;
@@ -38,7 +38,7 @@
 }
 
 .preview__link:hover .preview__info-pane::before {
-  @include transform(translateY(calc(5px + .5em)));
+  @include transform(translateY(calc(5px + 0.5em)));
 }
 
 // Tags
@@ -47,7 +47,7 @@
   @include align-items(center);
   @include flex-direction(row);
   @include flex-wrap(wrap);
-  @include justify-content(start);
+  @include justify-content(flex-start);
   @include use-flex;
   margin: 5px 0;
 }
@@ -57,7 +57,7 @@
   background-color: $backing-lighter;
   border-radius: 20px;
   font-family: 'Roboto Mono', monospace;
-  font-size: .66em;
+  font-size: 0.66em;
   font-weight: 500;
   margin: 5px;
   min-width: 36px;
@@ -73,14 +73,14 @@
 
 .preview__image {
   @include min-square(100%);
-  @include transition(all .4s ease);
+  @include transition(all 0.4s ease);
   border-radius: 6px;
   z-index: 1;
 }
 
 .preview__image img {
-  @include transform(scale(1.07) translateY(.5em));
-  @include transition(all .4s ease);
+  @include transform(scale(1.07) translateY(0.5em));
+  @include transition(all 0.4s ease);
   object-fit: cover;
 }
 
@@ -88,7 +88,7 @@
 
 .preview__info-pane {
   @include transform(translateY(15px));
-  @include transition(all .4s ease);
+  @include transition(all 0.4s ease);
   background-color: $backing-lighter;
   background: inherit;
   bottom: 0;
@@ -103,8 +103,8 @@
 .preview__info-pane::before {
   @include box-shadow(inset 0 0 0 300px $backing-light-translucent);
   @include filter(blur, 8px);
-  @include transform(translateY(calc(-10px + .5em)));
-  @include transition(all .4s ease);
+  @include transform(translateY(calc(-10px + 0.5em)));
+  @include transition(all 0.4s ease);
   bottom: 0;
   content: ' ';
   height: calc(100% + 40px);
@@ -126,14 +126,14 @@
 
 .preview__subtitle {
   font-family: 'Roboto Mono', monospace;
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 .preview__description {
   @include boost-readability;
   @include transform(translateY(30px));
-  @include transition(all .4s ease);
+  @include transition(all 0.4s ease);
   font-family: 'Roboto', sans-serif;
-  font-size: .9em;
+  font-size: 0.9em;
   max-height: 0;
 }

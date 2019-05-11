@@ -38,8 +38,8 @@
 </template>
 
 <script>
-import Jumbotron from '../components/Jumbotron';
-import PreviewCard from '../components/PreviewCard';
+import Jumbotron from '../components/Jumbotron'
+import PreviewCard from '../components/PreviewCard'
 
 export default {
   components: {
@@ -66,7 +66,7 @@ export default {
           content: 'https://hliejun.github.io/images/meta/preview.png'
         }
       ]
-    };
+    }
   },
   data() {
     return {
@@ -227,7 +227,7 @@ export default {
           tags: ['JAVAFX', 'DESKTOP', 'AGENDA']
         }
       ]
-    };
+    }
   }
-};
+}
 </script>

@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="design" label="DESIGN" :items="design" />
       <HTMLSection name="features" label="FEATURES" :items="features" />
@@ -105,6 +107,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/reactchat-1.webp',
         src: '/images/projects/reactchat-1.jpg',
         orientation: 'landscape',
         type: 'wide'
@@ -138,7 +141,8 @@ export default {
         }
       ],
       carpets: {
-        about: '/images/projects/reactchat-2.jpg'
+        about: '/images/projects/reactchat-2.webp',
+        aboutFallback: '/images/projects/reactchat-2.jpg'
       },
       about: [
         {
@@ -224,6 +228,7 @@ export default {
         {
           name: 'extensible',
           title: 'EXTENSIBLE PROPS',
+          webp: '/images/projects/reactchat-3.webp',
           src: '/images/projects/reactchat-3.jpg',
           text: `
             The functionalities of the components are extensible by optional
@@ -238,6 +243,7 @@ export default {
         {
           name: 'actions',
           title: 'CUSTOM MENU & ACTIONS',
+          webp: '/images/projects/reactchat-4.webp',
           src: '/images/projects/reactchat-4.jpg',
           text: `
             The chat list items and message items can optionally trigger an
@@ -294,6 +300,7 @@ export default {
         {
           name: 'fallback',
           title: 'FALLBACK ASSETS',
+          webp: '/images/projects/reactchat-5.webp',
           src: '/images/projects/reactchat-5.jpg',
           text: `
             Fallback assets are available as preloaded polymer icons. Lettered

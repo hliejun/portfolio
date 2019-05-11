@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="design" label="DESIGN" :items="design" />
       <LinksSection name="team" label="TEAM" :items="team" />
@@ -94,6 +96,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/weight-1.webp',
         src: '/images/projects/weight-1.jpg',
         orientation: 'landscape',
         type: 'narrow'
@@ -116,7 +119,8 @@ export default {
         }
       ],
       carpets: {
-        about: ''
+        about: '',
+        aboutFallback: ''
       },
       about: [
         {

@@ -10,7 +10,15 @@
         :src="carpet"
         height="1"
         width="1"
-      />
+      >
+        <amp-img
+          fallback
+          class="section__flying-carpet-image"
+          :src="carpetFallback"
+          height="1"
+          width="1"
+        />
+      </amp-img>
     </amp-fx-flying-carpet>
     <div class="section__title">
       {{ label }}
@@ -45,9 +53,20 @@
           on="tap:lightbox"
           role="button"
           tabindex="0"
-          :src="item.src"
+          :src="item.webp"
           width="1"
-        />
+        >
+          <amp-img
+            fallback
+            class="section__item-image--fallback"
+            height="1"
+            on="tap:lightbox"
+            role="button"
+            tabindex="0"
+            :src="item.src"
+            width="1"
+          />
+        </amp-img>
         <div
           v-if="item.text"
           :class="['section__item-text', item.name]"
@@ -62,6 +81,10 @@
 export default {
   props: {
     carpet: {
+      type: String,
+      default: ''
+    },
+    carpetFallback: {
       type: String,
       default: ''
     },
@@ -85,13 +108,13 @@ export default {
               typeof element.text !== 'string' ||
               typeof element.title !== 'string'
             ) {
-              return false;
+              return false
             }
-          });
+          })
         }
-        return true;
+        return true
       }
     }
   }
-};
+}
 </script>

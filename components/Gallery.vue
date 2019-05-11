@@ -90,10 +90,10 @@ export default {
               typeof value.webm !== 'string') &&
             typeof value.src !== 'string'
           ) {
-            return false;
+            return false
           }
         }
-        return true;
+        return true
       }
     },
     suppImages: {
@@ -108,11 +108,11 @@ export default {
                 typeof element.webm !== 'string') &&
                 typeof element.src !== 'string')
             ) {
-              return false;
+              return false
             }
-          });
+          })
         }
-        return true;
+        return true
       }
     },
     theme: {
@@ -120,5 +120,5 @@ export default {
       default: 'light'
     }
   }
-};
+}
 </script>

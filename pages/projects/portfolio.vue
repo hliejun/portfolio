@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <LinksSection name="references" label="REFERENCES" :items="references" />
       <ActionsSection name="actions" :items="actions" />
@@ -95,6 +97,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/portfolio-1.webp',
         src: '/images/projects/portfolio-1.jpg',
         orientation: 'portrait',
         type: 'wide'
@@ -122,7 +125,8 @@ export default {
         }
       ],
       carpets: {
-        about: '/images/projects/portfolio-2.jpg'
+        about: '/images/projects/portfolio-2.webp',
+        aboutFallback: '/images/projects/portfolio-2.jpg'
       },
       about: [
         {

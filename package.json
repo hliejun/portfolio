@@ -4,27 +4,35 @@
   "dependencies": {
     "@nuxtjs/sitemap": "^0.1.2",
     "nuxt": "^2.3.4",
-    "nuxt-edge": "^2.4.0-25732112.9c15c18",
-    "nuxt-purgecss": "0.0.2"
+    "nuxt-edge": "^2.4.0-25732112.9c15c18"
   },
   "scripts": {
-    "build": "nuxt build",
+    "build": "HOST=https://hliejun-portfolio.appspot.com nuxt build",
+    "deploy:gae": "gcloud app deploy --project hliejun-portfolio",
+    "deploy:gh": "gh-pages -r https://github.com/hliejun/hliejun.github.io -b master -d dist",
     "dev": "nuxt",
-    "generate": "nuxt generate",
+    "generate": "HOST=https://hliejun.github.io GENERATE=true nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "start": "nuxt start"
   },
-  "precommit": "yarn lint",
+  "pre-commit": [
+    "lint"
+  ],
   "devDependencies": {
+    "@babel/runtime-corejs2": "^7.4.4",
     "babel-eslint": "^10.0.1",
+    "core-js": "2",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-vue": "^5.2.2",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.10.0",
+    "pre-commit": "^1.2.2",
     "prettier": "^1.17.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.31.0"
   }
 }

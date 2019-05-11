@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="features" label="FEATURES" :items="features" />
       <LinksSection name="team" label="TEAM" :items="team" />
@@ -97,12 +99,14 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/bubble-1.webp',
         src: '/images/projects/bubble-1.jpg',
         orientation: 'portrait',
         type: 'narrow'
       },
       carpets: {
-        about: '/images/projects/bubble-2.jpg'
+        about: '/images/projects/bubble-2.webp',
+        aboutFallback: '/images/projects/bubble-2.jpg'
       },
       technologies: [
         {
@@ -180,6 +184,7 @@ export default {
         {
           name: 'anonymity',
           title: 'ANONYMITY',
+          webp: '/images/projects/bubble-3.webp',
           src: '/images/projects/bubble-3.jpg',
           text: `
             Chat anonymously with strangers in topical chat rooms. No sign-in or registration
@@ -190,6 +195,7 @@ export default {
         {
           name: 'realtime',
           title: 'REAL-TIME',
+          webp: '/images/projects/bubble-4.webp',
           src: '/images/projects/bubble-4.jpg',
           text: `
             Chats are fired in real-time through socket events along with mobile application
@@ -200,6 +206,7 @@ export default {
         {
           name: 'categories',
           title: 'CATEGORY TAGGING',
+          webp: '/images/projects/bubble-5.webp',
           src: '/images/projects/bubble-5.jpg',
           text: `
             Chat rooms can be labelled or tagged with categorised tags. These tags
@@ -209,6 +216,7 @@ export default {
         {
           name: 'filter',
           title: 'SEARCH & FILTER',
+          webp: '/images/projects/bubble-6.webp',
           src: '/images/projects/bubble-6.jpg',
           text: `
             You can search for rooms by room title, or filter them by their tagged

@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="features" label="FEATURES" :items="features" />
       <LinksSection name="references" label="REFERENCES" :items="references" />
@@ -42,12 +44,12 @@
 </template>
 
 <script>
-import ActionsSection from '../../components/ActionsSection';
-import HTMLSection from '../../components/HTMLSection';
-import Jumbotron from '../../components/Jumbotron';
-import LinksSection from '../../components/LinksSection';
-import Mockup from '../../components/Mockup';
-import TagsSection from '../../components/TagsSection';
+import ActionsSection from '../../components/ActionsSection'
+import HTMLSection from '../../components/HTMLSection'
+import Jumbotron from '../../components/Jumbotron'
+import LinksSection from '../../components/LinksSection'
+import Mockup from '../../components/Mockup'
+import TagsSection from '../../components/TagsSection'
 
 export default {
   components: {
@@ -81,7 +83,7 @@ export default {
           content: 'https://hliejun.github.io/images/meta/preview.png'
         }
       ]
-    };
+    }
   },
   data() {
     return {
@@ -101,6 +103,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/whatsappwidgets-1.webp',
         src: '/images/projects/whatsappwidgets-1.jpg',
         orientation: 'portrait',
         type: 'narrow'
@@ -127,7 +130,8 @@ export default {
         }
       ],
       carpets: {
-        about: '/images/projects/whatsappwidgets-2.jpg'
+        about: '/images/projects/whatsappwidgets-2.webp',
+        aboutFallback: '/images/projects/whatsappwidgets-2.jpg'
       },
       about: [
         {
@@ -200,6 +204,7 @@ export default {
         {
           name: 'customizable',
           title: 'CUSTOMIZABLE',
+          webp: '/images/projects/whatsappwidgets-3.webp',
           src: '/images/projects/whatsappwidgets-3.jpg',
           text: `
             You can customize the label and description on your widgets,
@@ -267,7 +272,7 @@ export default {
           in: true
         }
       ]
-    };
+    }
   }
-};
+}
 </script>

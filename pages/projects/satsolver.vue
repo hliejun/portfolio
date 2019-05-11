@@ -1,6 +1,7 @@
 <template>
   <div class="page satsolver project">
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -92,6 +93,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/satsolver-1.webp',
         src: '/images/projects/satsolver-1.jpg',
         orientation: 'landscape',
         type: 'wide'

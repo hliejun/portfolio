@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="design" label="DESIGN" :items="design" />
       <HTMLSection name="features" label="FEATURES" :items="features" />
@@ -101,6 +103,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/littlelives-1.webp',
         src: '/images/projects/littlelives-1.jpg',
         orientation: 'portrait',
         type: 'wide'
@@ -140,7 +143,8 @@ export default {
         }
       ],
       carpets: {
-        about: '/images/projects/littlelives-2.jpg'
+        about: '/images/projects/littlelives-2.webp',
+        aboutFallback: '/images/projects/littlelives-2.jpg'
       },
       about: [
         {
@@ -198,6 +202,7 @@ export default {
         {
           name: 'architecture',
           title: 'ARCHITECTURE',
+          webp: '/images/projects/littlelives-3.webp',
           src: '/images/projects/littlelives-3.jpg',
           text: `
             Little Lives Check-In was written in a VIPER (Views, Interactors, Presenters,
@@ -213,6 +218,7 @@ export default {
         {
           name: 'group',
           title: 'MULTI-FACE RECOGNITION',
+          webp: '/images/projects/littlelives-4.webp',
           src: '/images/projects/littlelives-4.jpg',
           text: `
             Mutiple faces can be detected and recognised in a single picture.
@@ -230,6 +236,7 @@ export default {
         {
           name: 'emotion',
           title: 'EMOTION DETECTION',
+          webp: '/images/projects/littlelives-5.webp',
           src: '/images/projects/littlelives-5.jpg',
           text: `
             All faces will be tagged with their detected emotions if network is available.
@@ -238,6 +245,7 @@ export default {
         {
           name: 'manual',
           title: 'MANUAL SEARCH & TAG',
+          webp: '/images/projects/littlelives-6.webp',
           src: '/images/projects/littlelives-6.jpg',
           text: `
             In the occasion that a face is tagged wrongly or has no valid tags,
@@ -247,6 +255,7 @@ export default {
         {
           name: 'access',
           title: 'ACCESS CONTROL',
+          webp: '/images/projects/littlelives-7.webp',
           src: '/images/projects/littlelives-7.jpg',
           text: `
             Passwords can be set to lock certain views such as the check-in view

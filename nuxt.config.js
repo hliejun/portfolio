@@ -65,15 +65,6 @@ export default {
     ],
     link: [
       { rel: 'canonical', href: '/' },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700'
-      },
       { rel: 'manifest', href: '/manifest.json' },
       { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' },
       {
@@ -106,6 +97,14 @@ export default {
         sizes: '192x192',
         href: '/android-icon-192x192.png',
         type: 'image/png'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700'
       }
     ],
     bodyAttrs: {
@@ -125,19 +124,28 @@ export default {
       page.html = modifyHtml(page.html, url)
     }
   },
-  modules: ['nuxt-purgecss', '@nuxtjs/sitemap'],
+  modules: ['@nuxtjs/sitemap'],
   sitemap: {
     path: '/sitemap.xml',
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     exclude: ['/companies/**'],
-    // hostname: 'https://hliejun-portfolio.appspot.com', // Need to toggle manually when doing nuxt build and nuxt generate
-    // generate: false // Need to toggle manually when doing nuxt build and nuxt generate
-    hostname: 'https://hliejun.github.io', // Need to toggle manually when doing nuxt build and nuxt generate
-    generate: true // Need to toggle manually when doing nuxt build and nuxt generate
+    hostname: process.env.HOST,
+    generate: !!process.env.GENERATE
   },
-  purgeCSS: {
-    mode: 'postcss',
-    enabled: false
+  build: {
+    babel: {
+      presets({ isServer }) {
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app'),
+            {
+              buildTarget: isServer ? 'server' : 'client',
+              corejs: { version: 2 }
+            }
+          ]
+        ]
+      }
+    }
   }
 }

@@ -256,11 +256,20 @@
   margin: 10px 0;
 }
 
+.project .design .section__item-image--fallback,
+.project .features .section__item-image--fallback {
+  @include min-square(85vw);
+}
+
 @media (min-width: 800px) {
   .project .features .section__item-image,
   .project .design .section__item-image {
     @include min-square(300px);
     margin: -2.1em 0 0 1em;
+  }
+  .project .features .section__item-image--fallback,
+  .project .design .section__item-image--fallback {
+    @include min-square(300px);
   }
   .project .features .section__sub-row,
   .project .design .section__sub-row {
@@ -286,6 +295,18 @@
   margin: 10px 0;
 }
 
+.project.bitsy .design .section__item-image--fallback,
+.project.ethereum-explorer .design .section__item-image--fallback,
+.project.littlelives .design .section__item-image--fallback,
+.project.pokemania .design .section__item-image--fallback {
+  min-height: 52.15vw;
+  min-width: 85vw;
+}
+
+.project.bitsy .features .section__item-image--fallback {
+  @include min-square(85vw);
+}
+
 @media (min-width: 800px) {
   .project.bitsy .design .section__item-image,
   .project.ethereum-explorer .design .section__item-image,
@@ -298,6 +319,16 @@
   .project.bitsy .features .section__item-image {
     @include min-square(300px);
     margin: -2.1em 0 0 1em;
+  }
+  .project.bitsy .design .section__item-image--fallback,
+  .project.ethereum-explorer .design .section__item-image--fallback,
+  .project.littlelives .design .section__item-image--fallback,
+  .project.pokemania .design .section__item-image--fallback {
+    min-height: 52.15vw;
+    min-width: 85vw;
+  }
+  .project.bitsy .features .section__item-image--fallback {
+    @include min-square(300px);
   }
   .project.bitsy .design .section__sub-row,
   .project.ethereum-explorer .design .section__sub-row,
@@ -315,6 +346,13 @@
   .project.ethereum-explorer .design .section__item-image,
   .project.littlelives .design .section__item-image,
   .project.pokemania .design .section__item-image {
+    min-height: 31.3em;
+    min-width: 50em;
+  }
+  .project.bitsy .design .section__item-image--fallback,
+  .project.ethereum-explorer .design .section__item-image--fallback,
+  .project.littlelives .design .section__item-image--fallback,
+  .project.pokemania .design .section__item-image--fallback {
     min-height: 31.3em;
     min-width: 50em;
   }

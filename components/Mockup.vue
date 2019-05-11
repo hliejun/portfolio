@@ -14,7 +14,7 @@
               ? '64vw'
               : '40vw'
           "
-          :src="src"
+          :src="webp"
           :width="
             type === 'wide'
               ? orientation === 'portrait'
@@ -24,7 +24,30 @@
               ? '40vw'
               : '64vw'
           "
-        />
+        >
+          <amp-img
+            class="isometric__image"
+            :height="
+              type === 'wide'
+                ? orientation === 'portrait'
+                  ? '64vw'
+                  : '48vw'
+                : orientation === 'portrait'
+                ? '64vw'
+                : '40vw'
+            "
+            :src="src"
+            :width="
+              type === 'wide'
+                ? orientation === 'portrait'
+                  ? '48vw'
+                  : '64vw'
+                : orientation === 'portrait'
+                ? '40vw'
+                : '64vw'
+            "
+          />
+        </amp-img>
       </div>
       <div class="mockup__shadow" />
     </div>
@@ -35,6 +58,10 @@
 export default {
   props: {
     src: {
+      type: String,
+      default: ''
+    },
+    webp: {
       type: String,
       default: ''
     },

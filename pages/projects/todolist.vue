@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="features" label="FEATURES" :items="features" />
       <LinksSection name="team" label="TEAM" :items="team" />
@@ -110,6 +112,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/todolist-1.webp',
         src: '/images/projects/todolist-1.jpg',
         orientation: 'landscape',
         type: 'wide'
@@ -133,7 +136,8 @@ export default {
         }
       ],
       carpets: {
-        about: '/images/projects/todolist-2.jpg'
+        about: '/images/projects/todolist-2.webp',
+        aboutFallback: '/images/projects/todolist-2.jpg'
       },
       about: [
         {
@@ -168,6 +172,7 @@ export default {
         {
           name: 'natural',
           title: 'NATURAL COMMANDS',
+          webp: '/images/projects/todolist-3.webp',
           src: '/images/projects/todolist-3.jpg',
           text: `
             ToDoList will recognize special events or occasions, time of the day and
@@ -177,6 +182,7 @@ export default {
         {
           name: 'search',
           title: 'SEARCH & FILTER',
+          webp: '/images/projects/todolist-4.webp',
           src: '/images/projects/todolist-4.jpg',
           text: `
             You can search for an event by its title or name, or filter events by their
@@ -186,6 +192,7 @@ export default {
         {
           name: 'sort',
           title: 'SORTING',
+          webp: '/images/projects/todolist-5.webp',
           src: '/images/projects/todolist-5.jpg',
           text: `
             You can sort events by title, start or end time, duration, and more.
@@ -214,6 +221,7 @@ export default {
         {
           name: 'recurring',
           title: 'RECURRING TASKS',
+          webp: '/images/projects/todolist-6.webp',
           src: '/images/projects/todolist-6.jpg',
           text: `
             You can choose to set a task to be recurring for a specified time interval

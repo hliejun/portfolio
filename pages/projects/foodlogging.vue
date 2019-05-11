@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="design" label="DESIGN" :items="design" />
       <LinksSection name="team" label="TEAM" :items="team" />
@@ -110,6 +112,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/foodlogging-1.webp',
         src: '/images/projects/foodlogging-1.jpg',
         orientation: 'portrait',
         type: 'narrow'
@@ -122,7 +125,8 @@ export default {
         }
       ],
       carpets: {
-        about: '/images/projects/foodlogging-2.jpg'
+        about: '/images/projects/foodlogging-2.webp',
+        aboutFallback: '/images/projects/foodlogging-2.jpg'
       },
       about: [
         {
@@ -160,6 +164,7 @@ export default {
         {
           name: 'recognition',
           title: 'RECOGNITION OVER RECALL',
+          webp: '/images/projects/foodlogging-3.webp',
           src: '/images/projects/foodlogging-3.jpg',
           text: `
             Intuitive chromes that are commonly used across applications are chosen,
@@ -173,6 +178,7 @@ export default {
         {
           name: 'tolerance',
           title: 'BUTTON TOLERANCE',
+          webp: '/images/projects/foodlogging-4.webp',
           src: '/images/projects/foodlogging-4.jpg',
           text: `
             Buttons are designed to be wide and large for tolerance by providing
@@ -185,6 +191,7 @@ export default {
         {
           name: 'accessibility',
           title: 'ACCESSIBILITY',
+          webp: '/images/projects/foodlogging-5.webp',
           src: '/images/projects/foodlogging-5.jpg',
           text: `
             Redundancies are added for accessibility, such as the "Add a Meal"
@@ -194,6 +201,7 @@ export default {
         {
           name: 'time',
           title: 'SCROLL, HOMING & COGNITION',
+          webp: '/images/projects/foodlogging-6.webp',
           src: '/images/projects/foodlogging-6.jpg',
           text: `
             Most buttons are flushed to the edge of the screen for reduced homing time.

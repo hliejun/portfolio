@@ -6,6 +6,7 @@
       layout="nodisplay"
     />
     <Mockup
+      :webp="mockup.webp"
       :src="mockup.src"
       :orientation="mockup.orientation"
       :type="mockup.type"
@@ -33,6 +34,7 @@
         label="ABOUT"
         :items="about"
         :carpet="carpets.about"
+        :carpet-fallback="carpets.aboutFallback"
       />
       <HTMLSection name="design" label="DESIGN" :items="design" />
       <HTMLSection name="features" label="FEATURES" :items="features" />
@@ -43,12 +45,12 @@
 </template>
 
 <script>
-import ActionsSection from '../../components/ActionsSection';
-import HTMLSection from '../../components/HTMLSection';
-import Jumbotron from '../../components/Jumbotron';
-import Mockup from '../../components/Mockup';
-import LinksSection from '../../components/LinksSection';
-import TagsSection from '../../components/TagsSection';
+import ActionsSection from '../../components/ActionsSection'
+import HTMLSection from '../../components/HTMLSection'
+import Jumbotron from '../../components/Jumbotron'
+import Mockup from '../../components/Mockup'
+import LinksSection from '../../components/LinksSection'
+import TagsSection from '../../components/TagsSection'
 
 export default {
   components: {
@@ -84,7 +86,7 @@ export default {
           content: 'https://hliejun.github.io/images/meta/preview.png'
         }
       ]
-    };
+    }
   },
   data() {
     return {
@@ -108,6 +110,7 @@ export default {
         ]
       },
       mockup: {
+        webp: '/images/projects/ethereumexp-1.webp',
         src: '/images/projects/ethereumexp-1.jpg',
         orientation: 'portrait',
         type: 'narrow'
@@ -143,7 +146,8 @@ export default {
         }
       ],
       carpets: {
-        about: '/images/projects/ethereumexp-2.jpg'
+        about: '/images/projects/ethereumexp-2.webp',
+        aboutFallback: '/images/projects/ethereumexp-2.jpg'
       },
       about: [
         {
@@ -199,6 +203,7 @@ export default {
         {
           name: 'structure',
           title: 'PROJECT STRUCTURE',
+          webp: '/images/projects/ethereumexp-3.webp',
           src: '/images/projects/ethereumexp-3.jpg',
           text: `
             This application uses the React-Redux architecture to achieve a 
@@ -443,7 +448,7 @@ export default {
           in: true
         }
       ]
-    };
+    }
   }
-};
+}
 </script>

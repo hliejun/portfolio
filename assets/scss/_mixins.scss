@@ -149,9 +149,9 @@
 // Filters
 
 @mixin filter($type, $value) {
-  -webkit-filter: $type+unquote('(#{$value})');
-  -moz-filter: $type+unquote('(#{$value})');
-  filter: $type+unquote('(#{$value})');
+  -webkit-filter: $type + unquote('(#{$value})');
+  -moz-filter: $type + unquote('(#{$value})');
+  filter: $type + unquote('(#{$value})');
 }
 
 // Constraints
