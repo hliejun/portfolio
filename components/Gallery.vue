@@ -22,7 +22,7 @@
         :poster="mainImage.poster"
         width="1"
       >
-        <source :src="mainImage.webm" type="video/webm" />
+        <!-- <source :src="mainImage.webm" type="video/webm" /> -->
         <source :src="mainImage.video" type="video/mp4" />
       </amp-video>
       <amp-img
@@ -53,7 +53,7 @@
             :poster="image.poster"
             width="1"
           >
-            <source :src="image.webm" type="video/webm" />
+            <!-- <source :src="image.webm" type="video/webm" /> -->
             <source :src="image.video" type="video/mp4" />
           </amp-video>
           <amp-img
@@ -90,10 +90,10 @@ export default {
               typeof value.webm !== 'string') &&
             typeof value.src !== 'string'
           ) {
-            return false
+            return false;
           }
         }
-        return true
+        return true;
       }
     },
     suppImages: {
@@ -108,11 +108,11 @@ export default {
                 typeof element.webm !== 'string') &&
                 typeof element.src !== 'string')
             ) {
-              return false
+              return false;
             }
-          })
+          });
         }
-        return true
+        return true;
       }
     },
     theme: {
@@ -120,5 +120,5 @@ export default {
       default: 'light'
     }
   }
-}
+};
 </script>

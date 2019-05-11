@@ -35,7 +35,7 @@
           :poster="item.poster"
           width="1"
         >
-          <source :src="item.webm" type="video/webm" />
+          <!-- <source :src="item.webm" type="video/webm" /> -->
           <source :src="item.video" type="video/mp4" />
         </amp-video>
         <amp-img
@@ -85,13 +85,13 @@ export default {
               typeof element.text !== 'string' ||
               typeof element.title !== 'string'
             ) {
-              return false
+              return false;
             }
-          })
+          });
         }
-        return true
+        return true;
       }
     }
   }
-}
+};
 </script>
