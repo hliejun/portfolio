@@ -38,8 +38,8 @@
 </template>
 
 <script>
-import Jumbotron from '../components/Jumbotron'
-import PreviewCard from '../components/PreviewCard'
+import Jumbotron from '../components/Jumbotron';
+import PreviewCard from '../components/PreviewCard';
 
 export default {
   components: {
@@ -66,7 +66,7 @@ export default {
           content: 'https://hliejun.github.io/images/meta/preview.png'
         }
       ]
-    }
+    };
   },
   data() {
     return {
@@ -86,6 +86,16 @@ export default {
         ]
       },
       projects: [
+        {
+          name: 'ethereum-explorer',
+          src: '/images/previews/ethereum-explorer.jpg',
+          title: 'Ethereum Explorer',
+          subtitle: '2019 / PERSONAL / 3 WEEKS',
+          description:
+            'A block explorer web application to browse Ethereum transactions.',
+          url: '/projects/ethereumexp',
+          tags: ['REACT', 'EXPRESS', 'ETHEREUM']
+        },
         {
           name: 'whatsapp-widgets',
           src: '/images/previews/whatsapp-widgets.jpg',
@@ -217,7 +227,7 @@ export default {
           tags: ['JAVAFX', 'DESKTOP', 'AGENDA']
         }
       ]
-    }
+    };
   }
-}
+};
 </script>

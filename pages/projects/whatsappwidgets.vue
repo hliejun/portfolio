@@ -42,12 +42,12 @@
 </template>
 
 <script>
-import ActionsSection from '../../components/ActionsSection'
-import HTMLSection from '../../components/HTMLSection'
-import Jumbotron from '../../components/Jumbotron'
-import LinksSection from '../../components/LinksSection'
-import Mockup from '../../components/Mockup'
-import TagsSection from '../../components/TagsSection'
+import ActionsSection from '../../components/ActionsSection';
+import HTMLSection from '../../components/HTMLSection';
+import Jumbotron from '../../components/Jumbotron';
+import LinksSection from '../../components/LinksSection';
+import Mockup from '../../components/Mockup';
+import TagsSection from '../../components/TagsSection';
 
 export default {
   components: {
@@ -81,7 +81,7 @@ export default {
           content: 'https://hliejun.github.io/images/meta/preview.png'
         }
       ]
-    }
+    };
   },
   data() {
     return {
@@ -257,8 +257,8 @@ export default {
       ],
       actions: [
         {
-          label: 'Return',
-          url: '/work',
+          label: 'Ethereum Explorer',
+          url: '/projects/ethereumexp',
           in: true
         },
         {
@@ -267,7 +267,7 @@ export default {
           in: true
         }
       ]
-    }
+    };
   }
-}
+};
 </script>

@@ -32,15 +32,17 @@
   padding: 10px 0;
 }
 
-@for $i from 1 to 14 {
+@for $i from 1 to 15 {
   .work__gallery .preview:nth-child(#{$i}) {
-    @include animation(raise .4s ease-in-out unquote("#{($i - 1) * 50}ms") both);
+    @include animation(
+      raise 0.4s ease-in-out unquote('#{($i - 1) * 50}ms') both
+    );
   }
 }
 
 .work__gallery .preview {
   @include box-shadow(0 4px 8px 0 $shadow-light);
-  @include transition(box-shadow .3s ease-in-out);
+  @include transition(box-shadow 0.3s ease-in-out);
 }
 
 .work__gallery .preview:hover {
@@ -93,6 +95,9 @@
 }
 .whatsapp-widgets .preview__info-pane::before {
   background-image: url(/images/previews/whatsapp-widgets.jpg);
+}
+.ethereum-explorer .preview__info-pane::before {
+  background-image: url(/images/previews/ethereum-explorer.jpg);
 }
 
 // Media Queries

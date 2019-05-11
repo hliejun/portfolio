@@ -52,9 +52,9 @@
   margin-bottom: 1em;
 }
 
-@for $i from 1 to 11 {
+@for $i from 1 to 12 {
   .project__section .section__item:nth-child(#{$i}) {
-    @include animation(raise .4s ease-in-out unquote(".#{$i}s") both);
+    @include animation(raise 0.4s ease-in-out unquote('#{$i / 10}s') both);
   }
 }
 
@@ -72,7 +72,7 @@
   border-radius: 20px;
   color: $text-dark;
   font-family: 'Roboto Mono', monospace;
-  font-size: .9em;
+  font-size: 0.9em;
   font-weight: 600;
   line-height: 2.8;
   margin-right: 10px;
@@ -84,7 +84,7 @@
 // Section Text
 
 .project__section .section__title {
-  @include animation(raise .4s ease-in-out both);
+  @include animation(raise 0.4s ease-in-out both);
   display: block;
   font-family: 'Roboto Mono', monospace;
   font-size: 1.2em;
@@ -95,7 +95,7 @@
 }
 
 .project__section .section__subtitle {
-  @include animation(raise .4s ease-in-out .1s both);
+  @include animation(raise 0.4s ease-in-out 0.1s both);
   display: block;
   font-family: 'Roboto Mono', monospace;
   font-size: 1em;
@@ -103,12 +103,14 @@
   width: fit-content;
 }
 
-.project__section .section__items:not(.build):not(.tools):not(.platforms) .section__subtitle {
+.project__section
+  .section__items:not(.build):not(.tools):not(.platforms)
+  .section__subtitle {
   margin-bottom: 1em;
 }
 
 .project__section .section__item-text {
-  @include animation(raise .4s ease-in-out .2s both);
+  @include animation(raise 0.4s ease-in-out 0.2s both);
   margin-bottom: -10px 0 20px 0;
   width: 100%;
 }
@@ -126,19 +128,19 @@
 }
 
 .project__link {
-  @include animation(raise .4s ease-in-out .2s both);
+  @include animation(raise 0.4s ease-in-out 0.2s both);
   display: block;
   margin: 15px 0;
   width: fit-content;
 }
 
 .project__button {
-  @include transition(all .3s ease);
+  @include transition(all 0.3s ease);
   border-radius: 30px;
   border: 2px solid $backing-lighter;
   color: $backing-lighter;
   cursor: pointer;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: 600;
   padding: 5px 10px;
   white-space: nowrap;
@@ -153,7 +155,7 @@
   @include align-items(flex-start);
   @include flex-direction(row);
   @include justify-content(flex-start);
-  @include transition(all .2s ease);
+  @include transition(all 0.2s ease);
   @include use-flex;
   color: $text-light;
   height: 100%;
@@ -175,7 +177,7 @@
 
 .project__section .section__item-icon {
   @include min-square(calc(5px + 1.3em));
-  margin: 0 2px -.4em 0;
+  margin: 0 2px -0.4em 0;
 }
 
 .project .team .section__item-image {
@@ -196,7 +198,7 @@
 .project .section__flying-carpet,
 .project .section__item-image {
   @include box-shadow(0 4px 8px 0 $shadow-dark);
-  border-radius: .4em;
+  border-radius: 0.4em;
 }
 
 .section__flying-carpet-image {
@@ -249,7 +251,7 @@
 
 .project .design .section__item-image,
 .project .features .section__item-image {
-  @include animation(raise .4s ease-in-out .2s both);
+  @include animation(raise 0.4s ease-in-out 0.2s both);
   @include min-square(85vw);
   margin: 10px 0;
 }
@@ -269,38 +271,51 @@
 // Custom Sections
 
 .project.bitsy .design .section__item-image,
+.project.ethereum-explorer .design .section__item-image,
 .project.littlelives .design .section__item-image,
 .project.pokemania .design .section__item-image {
-  @include animation(raise .4s ease-in-out .2s both);
+  @include animation(raise 0.4s ease-in-out 0.2s both);
   margin: 10px 0;
   min-height: 52.15vw;
   min-width: 85vw;
 }
 
 .project.bitsy .features .section__item-image {
-  @include animation(raise .4s ease-in-out .2s both);
+  @include animation(raise 0.4s ease-in-out 0.2s both);
   @include min-square(85vw);
   margin: 10px 0;
 }
 
 @media (min-width: 800px) {
   .project.bitsy .design .section__item-image,
+  .project.ethereum-explorer .design .section__item-image,
   .project.littlelives .design .section__item-image,
   .project.pokemania .design .section__item-image {
-    margin: 5px 1em 0 0;
-    min-height: 188px;
-    min-width: 300px;
+    margin: 5px 0 1em;
+    min-height: 52.15vw;
+    min-width: 85vw;
   }
   .project.bitsy .features .section__item-image {
     @include min-square(300px);
     margin: -2.1em 0 0 1em;
   }
   .project.bitsy .design .section__sub-row,
+  .project.ethereum-explorer .design .section__sub-row,
   .project.littlelives .design .section__sub-row,
   .project.pokemania .design .section__sub-row {
-    @include flex-direction(row);
+    @include flex-direction(column);
   }
   .project.bitsy .features .section__sub-row {
     @include flex-direction(row-reverse);
+  }
+}
+
+@media (min-width: 1080px) {
+  .project.bitsy .design .section__item-image,
+  .project.ethereum-explorer .design .section__item-image,
+  .project.littlelives .design .section__item-image,
+  .project.pokemania .design .section__item-image {
+    min-height: 31.3em;
+    min-width: 50em;
   }
 }
