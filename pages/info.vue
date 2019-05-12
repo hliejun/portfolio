@@ -58,6 +58,11 @@ export default {
       title: 'About - hliejun',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'About - hliejun'
+        },
+        {
           hid: 'description',
           name: 'description',
           content: 'More details about Lie Jun in work and in person.'
@@ -70,9 +75,10 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/meta/info.jpg'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: `${process.env.HOST}/info` }]
     }
   },
   data() {

@@ -66,11 +66,19 @@ export default {
       title: 'Weight - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'Weight Gravity Unity Game - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content: 'Gravity-driven infinite run mini-game made using Unity.'
         },
-        { property: 'og:title', content: 'Weight - hliejun/projects' },
+        {
+          property: 'og:title',
+          content: 'Weight Gravity Unity Game - hliejun/projects'
+        },
         {
           property: 'og:description',
           content: 'Gravity-driven infinite run mini-game made using Unity.'
@@ -78,9 +86,10 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/previews/weight.jpg'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: `${process.env.HOST}/projects/weight` }]
     }
   },
   data() {

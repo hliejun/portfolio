@@ -66,6 +66,11 @@ export default {
       title: 'Pokemania - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'Pokemania - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content: 'Pokémon-themed bubble blast iOS game application.'
@@ -78,8 +83,11 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/previews/pokemania.jpg'
         }
+      ],
+      link: [
+        { rel: 'canonical', href: `${process.env.HOST}/projects/pokemania` }
       ]
     }
   },

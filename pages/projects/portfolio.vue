@@ -64,6 +64,11 @@ export default {
       title: 'Portfolio - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'Portfolio - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content:
@@ -78,8 +83,11 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/previews/portfolio.jpg'
         }
+      ],
+      link: [
+        { rel: 'canonical', href: `${process.env.HOST}/projects/portfolio` }
       ]
     }
   },

@@ -65,6 +65,11 @@ export default {
       title: 'HypeDyn Stories - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'HypeDyn Stories - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content: 'Interactive text stories made using HypeDyn.'
@@ -80,9 +85,10 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/previews/hypedyn.jpg'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: `${process.env.HOST}/projects/hypedyn` }]
     }
   },
   data() {

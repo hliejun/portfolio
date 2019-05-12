@@ -66,13 +66,18 @@ export default {
       title: 'Missing Children - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'Missing Children of Ang Siang Hill - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content: 'Interactive pixel story made using Bitsy.'
         },
         {
           property: 'og:title',
-          content: 'Missing Children - hliejun/projects'
+          content: 'Missing Children of Ang Siang Hill - hliejun/projects'
         },
         {
           property: 'og:description',
@@ -81,9 +86,10 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/previews/bitsy.jpg'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: `${process.env.HOST}/projects/bitsy` }]
     }
   },
   data() {

@@ -66,12 +66,20 @@ export default {
       title: 'Food Logging - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'Food Logging UI/UX Research - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content:
             'UI/UX design group project on mobile food logger application.'
         },
-        { property: 'og:title', content: 'Food Logging - hliejun/projects' },
+        {
+          property: 'og:title',
+          content: 'Food Logging UI/UX Research - hliejun/projects'
+        },
         {
           property: 'og:description',
           content:
@@ -80,8 +88,11 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/previews/food-logging.jpg'
         }
+      ],
+      link: [
+        { rel: 'canonical', href: `${process.env.HOST}/projects/foodlogging` }
       ]
     }
   },

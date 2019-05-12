@@ -66,6 +66,11 @@ export default {
       title: 'Ethereum Explorer - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'Ethereum Blockchain Explorer - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content:
@@ -73,7 +78,7 @@ export default {
         },
         {
           property: 'og:title',
-          content: 'Ethereum Explorer - hliejun/projects'
+          content: 'Ethereum Blockchain Explorer - hliejun/projects'
         },
         {
           property: 'og:description',
@@ -83,8 +88,12 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content:
+            'https://hliejun.github.io/images/previews/ethereum-explorer.jpg'
         }
+      ],
+      link: [
+        { rel: 'canonical', href: `${process.env.HOST}/projects/ethereumexp` }
       ]
     }
   },

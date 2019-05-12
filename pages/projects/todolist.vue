@@ -66,6 +66,11 @@ export default {
       title: 'ToDoList - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'ToDoList - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content:
@@ -80,8 +85,11 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/previews/todolist.jpg'
         }
+      ],
+      link: [
+        { rel: 'canonical', href: `${process.env.HOST}/projects/todolist` }
       ]
     }
   },

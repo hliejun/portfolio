@@ -51,6 +51,11 @@ export default {
       title: 'Projects - hliejun',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'Projects - hliejun'
+        },
+        {
           hid: 'description',
           name: 'description',
           content: "Lie Jun's ongoing and completed projects or creatives."
@@ -63,9 +68,10 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/meta/work.jpg'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: `${process.env.HOST}/work` }]
     }
   },
   data() {

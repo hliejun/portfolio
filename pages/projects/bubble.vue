@@ -66,12 +66,17 @@ export default {
       title: 'Bubble - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'Bubble Chat - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content:
             'Problem-solving and stress management anonymous chat application.'
         },
-        { property: 'og:title', content: 'Bubble - hliejun/projects' },
+        { property: 'og:title', content: 'Bubble Chat - hliejun/projects' },
         {
           property: 'og:description',
           content:
@@ -80,9 +85,10 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/previews/bubble.jpg'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: `${process.env.HOST}/projects/bubble` }]
     }
   },
   data() {

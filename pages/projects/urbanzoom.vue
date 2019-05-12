@@ -65,6 +65,11 @@ export default {
       title: 'UrbanZoom Assistant - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'UrbanZoom Assistant - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content:
@@ -82,8 +87,11 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/previews/urbanzoom.jpg'
         }
+      ],
+      link: [
+        { rel: 'canonical', href: `${process.env.HOST}/projects/urbanzoom` }
       ]
     }
   },

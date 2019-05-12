@@ -65,6 +65,11 @@ export default {
       title: 'Widgets for WhatsApp™ - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'Widgets for WhatsApp™ - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content: 'Android widgets for WhatsApp™ users, designed for elderly.'
@@ -80,7 +85,14 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content:
+            'https://hliejun.github.io/images/previews/whatsapp-widgets.jpg'
+        }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: `${process.env.HOST}/projects/whatsappwidgets`
         }
       ]
     }

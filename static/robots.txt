@@ -4,4 +4,5 @@ Disallow: /images/
 Disallow: /vectors/
 Disallow: /videos/
 
-Sitemap: /sitemap.xml
+Sitemap: https://hliejun-portfolio.appspot.com/sitemap.xml
+Sitemap: https://hliejun.github.io/sitemap.xml

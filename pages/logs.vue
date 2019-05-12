@@ -74,6 +74,11 @@ export default {
       title: 'Work Experiences - hliejun',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'Work Experiences - hliejun'
+        },
+        {
           hid: 'description',
           name: 'description',
           content: "A brief summary of Lie Jun's employment history."
@@ -86,9 +91,10 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/meta/logs.jpg'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: `${process.env.HOST}/logs` }]
     }
   },
   data() {

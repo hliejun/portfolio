@@ -67,6 +67,11 @@ export default {
       title: 'Little Lives Check-In - hliejun/projects',
       meta: [
         {
+          hid: 'title',
+          name: 'title',
+          content: 'Little Lives Check-In - hliejun/projects'
+        },
+        {
           hid: 'description',
           name: 'description',
           content:
@@ -84,8 +89,11 @@ export default {
         { property: 'og:url', content: 'hliejun.github.io' },
         {
           property: 'og:image',
-          content: 'https://hliejun.github.io/images/meta/preview.png'
+          content: 'https://hliejun.github.io/images/previews/little-lives.jpg'
         }
+      ],
+      link: [
+        { rel: 'canonical', href: `${process.env.HOST}/projects/littlelives` }
       ]
     }
   },

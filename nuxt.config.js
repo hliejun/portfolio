@@ -57,14 +57,9 @@ export default {
         content:
           'Lie Jun is a front-end engineer for modern web, Android and iOS.'
       },
-      { property: 'og:url', content: 'hliejun.github.io' },
-      {
-        property: 'og:image',
-        content: 'https://hliejun.github.io/images/meta/preview.png'
-      }
+      { property: 'og:url', content: 'hliejun.github.io' }
     ],
     link: [
-      { rel: 'canonical', href: '/' },
       { rel: 'manifest', href: '/manifest.json' },
       { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' },
       {
@@ -129,12 +124,11 @@ export default {
   },
   modules: ['@nuxtjs/sitemap'],
   sitemap: {
-    path: '/sitemap.xml',
-    cacheTime: 1000 * 60 * 15,
-    gzip: true,
+    cacheTime: 1000 * 60 * 60,
     exclude: ['/companies/**'],
-    hostname: process.env.HOST,
-    generate: !!process.env.GENERATE
+    generate: !!process.env.GENERATE,
+    gzip: true,
+    hostname: process.env.HOST
   },
   build: {
     babel: {

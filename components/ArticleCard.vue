@@ -21,7 +21,7 @@
             class="article__link"
             :href="link.url"
             :target="link.in ? '_self' : '_blank'"
-            :rel="link.in ? '' : 'noopener'"
+            :rel="link.in ? undefined : 'noopener'"
           >
             <amp-img
               class="article__link-icon"
