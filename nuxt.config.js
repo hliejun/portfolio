@@ -47,7 +47,7 @@ export default {
       {
         name: 'viewport',
         content:
-          'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no'
+          'width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=5,user-scalable=yes'
       },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { name: 'mobile-web-app-capable', content: 'yes' },
@@ -107,6 +107,9 @@ export default {
         href: 'https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700'
       }
     ],
+    htmlAttrs: {
+      lang: 'en'
+    },
     bodyAttrs: {
       id: 'body'
     }

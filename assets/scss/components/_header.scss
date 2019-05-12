@@ -18,7 +18,7 @@
 }
 
 .header__background {
-  @include transition(all .3s ease);
+  @include transition(all 0.3s ease);
   background-color: $backing-darker;
   height: 60px;
   left: 0;
@@ -33,7 +33,7 @@
 // Avatar
 
 .avatar__image {
-  @include animation(drop-translucent .4s ease-in-out both);
+  @include animation(drop-translucent 0.4s ease-in-out both);
   @include min-square(38px);
   background-color: $backing-light;
   border-radius: 50%;
@@ -45,7 +45,7 @@
   display: inline;
   float: left;
   object-fit: cover;
-  opacity: .8;
+  opacity: 0.8;
   padding: 10px;
 }
 
@@ -65,7 +65,7 @@
 
 @for $i from 1 to 5 {
   .links .link:nth-child(#{$i}) {
-    @include animation(drop .4s ease-in-out unquote(".#{$i - 1}s") both);
+    @include animation(drop 0.4s ease-in-out unquote('.#{$i - 1}s') both);
   }
 }
 
@@ -92,7 +92,8 @@
   background-color: $backing-lighter;
 }
 
-.button, .link {
+.button,
+.link {
   background-color: transparent;
   border: 0;
   display: inline-block;
@@ -104,7 +105,7 @@
 }
 
 .link__container {
-  @include transition(all .3s ease);
+  @include transition(all 0.3s ease);
   background-color: $backing-light;
   border-radius: 1em;
   margin: 0 auto;
@@ -133,7 +134,7 @@
 // Logo
 
 .logo {
-  @include animation(drop .4s ease-in-out both);
+  @include animation(drop 0.4s ease-in-out both);
   display: inline-block;
   height: 60px;
 }
@@ -161,7 +162,6 @@
 .menu {
   display: inline-block;
   float: right;
-  overflow-x: hidden;
 }
 
 .splash .menu__button {
@@ -169,9 +169,9 @@
 }
 
 .menu__button {
-  @include animation(drop .4s ease-in-out both);
+  @include animation(drop 0.4s ease-in-out both);
   @include box-shadow(0 4px 8px 0 $shadow-dark);
-  @include transition(all .3s ease);
+  @include transition(all 0.3s ease);
   background-color: $backing-light;
   border-radius: 50%;
   cursor: pointer;
@@ -207,7 +207,7 @@
 
 .menu__panel {
   @include pointer-events(none);
-  @include transition(all .6s ease);
+  @include transition(all 0.6s ease);
   bottom: 0;
   height: 100%;
   position: fixed;
@@ -226,12 +226,12 @@
 }
 
 .menu__panel .link {
-  @include transition(all .4s ease);
+  @include transition(all 0.4s ease);
 }
 
 @for $i from 1 to 5 {
   .menu__panel .link:nth-child(#{$i}) {
-    @include transition-delay(unquote("#{($i - 1) * 50}ms"));
+    @include transition-delay(unquote('#{($i - 1) * 50}ms'));
   }
 }
 
@@ -239,7 +239,7 @@
   @include align-items(center);
   @include flex-direction(column);
   @include justify-content(flex-start);
-  @include transition(all .6s ease);
+  @include transition(all 0.6s ease);
   @include use-flex;
   height: 100%;
   margin-top: 70px;
@@ -275,7 +275,7 @@
   }
   .avatar__image {
     @include box-shadow(0 4px 8px 0 $shadow-dark);
-    @include transition(all .3s ease);
+    @include transition(all 0.3s ease);
   }
   .avatar__image:hover {
     @include box-shadow(0 8px 16px 0 $shadow-dark);

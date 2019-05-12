@@ -9,6 +9,7 @@
         class="project__link"
         :href="action.url"
         :target="action.in ? '_self' : '_blank'"
+        :rel="action.in ? '' : 'noopener'"
       >
         <div class="code button project__button">
           {{ action.label }}

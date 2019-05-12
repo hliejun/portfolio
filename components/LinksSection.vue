@@ -9,6 +9,7 @@
           :class="['section__item-link', { disabled: !item.url }]"
           :href="item.url"
           target="_blank"
+          rel="noopener"
         >
           <amp-img
             v-if="item.src"

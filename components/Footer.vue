@@ -8,7 +8,12 @@
           :key="link.url"
           class="button social__button"
         >
-          <a class="social__content" :href="link.url" target="_blank">
+          <a
+            class="social__content"
+            :href="link.url"
+            target="_blank"
+            rel="noopener"
+          >
             <amp-img
               class="social__logo"
               height="1"

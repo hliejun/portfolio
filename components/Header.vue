@@ -99,7 +99,7 @@
                 <nuxt-link class="code link__content" :to="link.url">
                   <svg
                     v-if="link.url === '/'"
-                    id="home-icon"
+                    id="home-icon-mobile"
                     class="menu__link-icon"
                     viewBox="0 0 24 24"
                   >
@@ -115,7 +115,7 @@
                   </svg>
                   <svg
                     v-if="link.url === '/work'"
-                    id="work-icon"
+                    id="work-icon-mobile"
                     class="menu__link-icon"
                     viewBox="0 0 24 24"
                   >
@@ -130,7 +130,7 @@
                   </svg>
                   <svg
                     v-if="link.url === '/logs'"
-                    id="logs-icon"
+                    id="logs-icon-mobile"
                     class="menu__link-icon"
                     viewBox="0 0 24 24"
                   >
@@ -149,7 +149,7 @@
                   </svg>
                   <svg
                     v-if="link.url === '/info'"
-                    id="info-icon"
+                    id="info-icon-mobile"
                     class="menu__link-icon"
                     viewBox="0 0 24 24"
                   >

@@ -32,6 +32,7 @@
           class="jumbotron__link"
           :href="action.url"
           :target="action.in ? '_self' : '_blank'"
+          :rel="action.in ? '' : 'noopener'"
         >
           <div class="code button jumbotron__button">
             {{ action.label }}
