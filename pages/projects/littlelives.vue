@@ -122,26 +122,22 @@ export default {
           title: 'BUILD',
           tags: [
             { label: 'Swift' },
-            { label: 'Alamofire' },
+            { label: 'UIKit' },
+            { label: 'SnapKit' },
             { label: 'Vision' },
-            { label: 'Azure Face' },
             { label: 'CoreData' },
-            { label: 'SnapKit' }
+            { label: 'Alamofire' },
+            { label: 'Azure Face' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
           tags: [
-            {
-              label: 'XCode'
-            },
-            {
-              label: 'Jazzy'
-            },
-            {
-              label: 'SwiftLint'
-            }
+            { label: 'XCode' },
+            { label: 'Cocoapods' },
+            { label: 'Jazzy' },
+            { label: 'SwiftLint' }
           ]
         },
         {

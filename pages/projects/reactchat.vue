@@ -126,17 +126,21 @@ export default {
           title: 'BUILD',
           tags: [
             { label: 'React' },
-            { label: 'SCSS' },
-            { label: 'Webpack' },
-            { label: 'Rollup' },
+            { label: 'SASS' },
             { label: 'Babel' },
-            { label: 'Storybook' }
+            { label: 'Webpack' },
+            { label: 'Rollup' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [{ label: 'Yarn' }, { label: 'ESLint' }, { label: 'SASSLint' }]
+          tags: [
+            { label: 'Yarn' },
+            { label: 'ESLint' },
+            { label: 'SASSLint' },
+            { label: 'Storybook' }
+          ]
         },
         {
           name: 'platforms',

@@ -119,8 +119,9 @@ export default {
           title: 'BUILD',
           tags: [
             { label: 'Swift' },
+            { label: 'Foundation' },
             { label: 'UIKit' },
-            { label: 'Foundation' }
+            { label: 'XCTest' }
           ]
         },
         {

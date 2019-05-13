@@ -133,7 +133,11 @@ export default {
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [{ label: 'Android Studio' }, { label: 'Photoshop' }]
+          tags: [
+            { label: 'Android Studio' },
+            { label: 'Gradle' },
+            { label: 'Photoshop' }
+          ]
         },
         {
           name: 'platforms',

@@ -141,6 +141,11 @@ export default {
           name: 'tools',
           title: 'TOOLS',
           tags: [{ label: 'Eclipse' }, { label: 'Javadoc' }]
+        },
+        {
+          name: 'platforms',
+          title: 'PLATFORMS',
+          tags: [{ label: 'Windows' }, { label: 'macOS' }]
         }
       ],
       carpets: {

@@ -137,7 +137,12 @@ export default {
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [{ label: 'Firebase' }, { label: 'Google App Engine' }]
+          tags: [
+            { label: 'Firebase Functions' },
+            { label: 'Google App Engine' },
+            { label: 'Google Assistant' },
+            { label: 'Twilio' }
+          ]
         }
       ],
       carpets: {

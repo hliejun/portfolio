@@ -118,13 +118,17 @@ export default {
             { label: 'Vue' },
             { label: 'Nuxt' },
             { label: 'AMP' },
-            { label: 'SCSS' }
+            { label: 'SASS' }
           ]
         },
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [{ label: 'NPM' }, { label: 'Photoshop' }]
+          tags: [
+            { label: 'NPM' },
+            { label: 'Lighthouse' },
+            { label: 'Photoshop' }
+          ]
         },
         {
           name: 'platforms',

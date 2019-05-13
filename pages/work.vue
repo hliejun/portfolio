@@ -98,9 +98,9 @@ export default {
           title: 'Ethereum Explorer',
           subtitle: '2019 / PERSONAL / 3 WEEKS',
           description:
-            'A block explorer web application to browse Ethereum transactions.',
+            'Responsive block explorer web application to browse Ethereum transactions.',
           url: '/projects/ethereumexp',
-          tags: ['REACT', 'EXPRESS', 'ETHEREUM']
+          tags: ['REACT', 'REDUX', 'EXPRESS']
         },
         {
           name: 'whatsapp-widgets',
@@ -110,7 +110,7 @@ export default {
           description:
             'Android widgets for quick access to WhatsApp™ contacts, designed for elderly.',
           url: '/projects/whatsappwidgets',
-          tags: ['ANDROID', 'WIDGETS', 'DESIGN']
+          tags: ['JAVA', 'ANDROID', 'GRADLE']
         },
         {
           name: 'portfolio',
@@ -120,7 +120,7 @@ export default {
           description:
             'Lightweight personal portfolio website and experimenting with NuxtJS and AMPHTHML.',
           url: '/projects/portfolio',
-          tags: ['NUXT', 'VUE', 'AMP']
+          tags: ['VUE', 'NUXT', 'AMP']
         },
         {
           name: 'react-chat',
@@ -130,7 +130,7 @@ export default {
           description:
             'Extensible ReactJS presentational chat components written as an NPM library.',
           url: '/projects/reactchat',
-          tags: ['REACT', 'STORYBOOK', 'ROLLUP']
+          tags: ['REACT', 'ROLLUP', 'STORYBOOK']
         },
         {
           name: 'urbanzoom',
@@ -140,7 +140,7 @@ export default {
           description:
             'Property valuation Google Assistant agent accessible through Twilio Voice.',
           url: '/projects/urbanzoom',
-          tags: ['DIALOGFLOW', 'EXPRESS', 'TWILIO']
+          tags: ['EXPRESS', 'DIALOGFLOW', 'TWILIO']
         },
         {
           name: 'little-lives',
@@ -150,7 +150,7 @@ export default {
           description:
             'Pre-school attendance-taking iOS application made for LittleLives.',
           url: '/projects/littlelives',
-          tags: ['IOS', 'VISION', 'AZURE FACE']
+          tags: ['SWIFT', 'VISION', 'AZURE FACE']
         },
         {
           name: 'pokemania',
@@ -160,7 +160,7 @@ export default {
           description:
             'Pokémon-themed Bubble Blast game with a simple Physics and game engine library.',
           url: '/projects/pokemania',
-          tags: ['IOS', 'GAME', 'COCOAPODS']
+          tags: ['SWIFT', 'UIKIT', 'COCOAPODS']
         },
         {
           name: 'bitsy',
@@ -170,7 +170,7 @@ export default {
           description:
             'Explorative pixel-art story focused on replay and discoverability.',
           url: '/projects/bitsy',
-          tags: ['BITSY', 'STORY', 'PIXEL']
+          tags: ['BITSY', 'HTML', 'CSS']
         },
         {
           name: 'hypedyn',
@@ -180,7 +180,7 @@ export default {
           description:
             'Text-based interactive stories focused on emotions, agency of choice and replay.',
           url: '/projects/hypedyn',
-          tags: ['HYPEDYN', 'STORY', 'TEXT']
+          tags: ['HYPEDYN', 'HTML', 'CSS']
         },
         {
           name: 'sat-solver',
@@ -190,7 +190,7 @@ export default {
           description:
             'Implementing and comparing various satisfiability solving techniques and heuristics.',
           url: '/projects/satsolver',
-          tags: ['RESEARCH', 'KB', 'LOGIC']
+          tags: ['JAVA', 'JUNIT', 'SHELL']
         },
         {
           name: 'food-logging',
@@ -200,7 +200,7 @@ export default {
           description:
             'Mobile food logging interface prototyping with careful study of design principles.',
           url: '/projects/foodlogging',
-          tags: ['MARVEL', 'MOBILE', 'UX']
+          tags: ['MARVEL', 'COGTOOLS']
         },
         {
           name: 'bubble',
@@ -210,7 +210,7 @@ export default {
           description:
             'Topic-threaded mobile chat application using a real-time mobile chat event-based environment.',
           url: '/projects/bubble',
-          tags: ['REACT NATIVE', 'SOCKETS', 'CHAT']
+          tags: ['REACT NATIVE', 'SOCKETS', 'SQLITE']
         },
         {
           name: 'weight',
@@ -220,7 +220,7 @@ export default {
           description:
             'Infinite run game that pits the player against a gravity-field stage while maintaining weight.',
           url: '/projects/weight',
-          tags: ['UNITY', 'GAME DESIGN', 'INFINITE']
+          tags: ['C#', 'UNITY']
         },
         {
           name: 'todo-list',
@@ -230,7 +230,7 @@ export default {
           description:
             'To-do list application with focus on natural language text input and keyboard interactions.',
           url: '/projects/todolist',
-          tags: ['JAVAFX', 'DESKTOP', 'AGENDA']
+          tags: ['JAVAFX', 'CONTROLSFX', 'JUNIT']
         }
       ]
     }

@@ -132,7 +132,7 @@ export default {
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [{ label: 'Marvel' }, { label: 'CogTool' }]
+          tags: [{ label: 'Marvel' }, { label: 'CogTools' }]
         }
       ],
       carpets: {

@@ -131,7 +131,7 @@ export default {
           tags: [
             { label: 'React' },
             { label: 'Redux' },
-            { label: 'SCSS' },
+            { label: 'SASS' },
             { label: 'Babel' },
             { label: 'Webpack' },
             { label: 'Express' }
