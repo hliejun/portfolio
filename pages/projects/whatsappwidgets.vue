@@ -142,7 +142,7 @@ export default {
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [{ label: 'Android' }]
+          tags: [{ label: 'Android' }, { label: 'Google Play' }]
         }
       ],
       carpets: {

@@ -139,17 +139,14 @@ export default {
             { label: 'Yarn' },
             { label: 'ESLint' },
             { label: 'SASSLint' },
-            { label: 'Storybook' }
+            { label: 'Storybook' },
+            { label: 'Travis CI' }
           ]
         },
         {
           name: 'platforms',
           title: 'PLATFORMS',
-          tags: [
-            { label: 'NPM' },
-            { label: 'GitHub Pages' },
-            { label: 'Travis CI' }
-          ]
+          tags: [{ label: 'NPM' }, { label: 'GitHub Pages' }]
         }
       ],
       carpets: {

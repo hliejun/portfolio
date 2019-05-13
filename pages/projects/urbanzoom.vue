@@ -132,7 +132,11 @@ export default {
         {
           name: 'tools',
           title: 'TOOLS',
-          tags: [{ label: 'Google Actions' }, { label: 'Postman' }]
+          tags: [
+            { label: 'Grunt' },
+            { label: 'Actions on Google' },
+            { label: 'Postman' }
+          ]
         },
         {
           name: 'platforms',
