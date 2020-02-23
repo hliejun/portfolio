@@ -28,13 +28,13 @@ $black: #000;
 $background-light: $lighter;
 $background-dark: $darker;
 
-$backing-light-translucent: rgba($light, .6);
-$backing-light: rgba($light, .8);
-$backing-lighter: rgba($lighter, .9);
+$backing-light-translucent: rgba($light, 1);
+$backing-light: rgba($light, 0.8);
+$backing-lighter: rgba($lighter, 0.9);
 $backing-lightest: rgba($lightest, 1);
 
-$backing-dark: rgba($dark, .8);
-$backing-darker: rgba($darker, .9);
+$backing-dark: rgba($dark, 0.8);
+$backing-darker: rgba($darker, 0.9);
 $backing-darkest: rgba($darkest, 1);
 
 $wave-light: $lighter;
@@ -42,8 +42,8 @@ $wave-dark: $gray;
 
 // Shadows
 
-$shadow-light: rgba($darkest, .2);
-$shadow-dark: rgba($black, .2);
+$shadow-light: rgba($darkest, 0.2);
+$shadow-dark: rgba($black, 0.2);
 
 $mockup-border-light: $light-gray;
 $mockup-border-dark: $dark-gray;
@@ -53,10 +53,10 @@ $mockup-border-dark: $dark-gray;
 $text-light: $lighter;
 $text-dark: $darker;
 
-$text-light-translucent: rgba($text-light, .8);
-$text-dark-translucent: rgba($text-dark, .8);
+$text-light-translucent: rgba($text-light, 0.8);
+$text-dark-translucent: rgba($text-dark, 0.8);
 
 // Action
 
-$action: rgba($lavender, .8);
+$action: rgba($lavender, 0.8);
 $action-highlight: rgba($lavender, 1);
